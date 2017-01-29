@@ -9,10 +9,10 @@
 
 		<!-- FAVICON -->
 		<link href="./favicon.ico" rel="icon" type="image/ico" />
-		<link href="./favicon.ico" rel="shortcut icon" type="image/ico" />
+		<!-- <link href="./favicon.ico" rel="shortcut icon" type="image/ico" />
 		<link href="./ico/speed-dial.png" rel="apple-touch-icon" type="image/png" />
 		<link href="./ico/speed-dial.png" rel="icon" type="image/png" />
-		<link href="./ico/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" type="image/png" />
+		<link href="./ico/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" type="image/png" /> -->
 
 		<!-- SOURCES -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -20,6 +20,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 	  <Link rel="stylesheet" type="text/css" href="css/style2.css">
+
 
 		<!-- COMPATIBILITE IE8 -->
 		<!--[if lt IE 9]>
@@ -36,24 +37,40 @@
 
 <!-- NAVBAR -->
 
-<div class="container-fluid">
-		<div class="col-md-12">
-			<header>
-				<nav>
-					<img src="img/eavest-logo.png" alt="Eavest" class="center-block img-responsive logo"/>
 
-					<ul class="nav nav-pills center-block list-inline list-unstyled">
-						<li role="presentation"><a href="#">Disabled link</a></li>
-						<li role="presentation"><a href="#">Disabled link</a></li>
-						<li role="presentation"><a href="#">Disabled link</a></li>
-						<li role="presentation"><a href="#">Disabled link</a></li>
-						<li role="presentation"><a href="#">Disabled link</a></li>
-						<li role="presentation"><a href="#">Disabled link</a></li>
+<div class="container-fluid top-header">
+			<header>
+				<div class="nav">
+					<div class="language-switcher">
+						<a href="https://twitter.com/EAVEST_" id="twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+						<a href="http://eavest.com/">fr</a>/
+						<a href="http://eavest.com/en/">en</a>
+					</div>
+					<h1><img src="img/eavest-logo.png" alt="Eavest" class="center-block img-responsive logo" id="header"/></h1>
+
+					<ul class="navbar list-inline list-unstyled col-sm-hidden">
+						<li role="presentation" class="clickable link"><a href="#">mission</a></li>
+						<li role="presentation"><a href="#">methodologie</a></li>
+						<li role="presentation"><a href="#">sur mesure</a></li>
+						<li role="presentation"><a href="#">produits</a></li>
+						<li role="presentation"><a href="#">le blog</a></li>
+						<li role="presentation"><a href="#">FAQ</a></li>
+						<li role="presentation"><a href="#">contact</a></li>
 					</ul>
-				</nav>
+
+					<div class="slider_jquery slider">
+							<div class="slider-container">
+							</div>
+					</div>
+				</div>
 			</header>
+</div>
+
+<div class="slider">
+	<div class="wrapper">
 	</div>
 </div>
+
 
 <!-- HEADER -->
 
@@ -93,7 +110,7 @@
 </div>
 <div class="container-fluid agreement">
 	<div class="col-md-offset-3 col-md-9">
-		<h2>NOTRE AGRÉMENT</h2>
+		<h2><b>NOTRE AGRÉMENT</b></h2>
 		<div class="row padding">
 			<div class="col-md-2">
 				<img src="img/icone-agrement-eavest-final.png" alt="Eavest" class="img-responsive"/>
@@ -132,7 +149,7 @@
 <!-- SECTION OUR VALUES -->
 <div class="container-fluid">
 	<div class="col-md-offset-3 padding">
-		<h2>NOS VALEURS</h2>
+		<h2><b>NOS VALEURS</b></h2>
 		<div class="row values">
 			<div class="col-md-4">
 				<img src="img/independance.png" alt="independance" class="img-responsive values_img"/>
@@ -157,18 +174,89 @@
 		</div>
 	</div>
 </div>
-<!-- FONDATEUR -->
+<!-- SECTION FONDATEUR -->
 <div class="container-fluid block-content">
-		<div class="col-md-offset-3 col-md-7 detailed_content">
+		<div class="col-md-offset-3 col-md-6 detailed_content">
 			<h1>LE FONDATEUR</h1>
 			<h4>Franck Magne, fondateur et président de EAVEST.</h4>
-			<p class="description-sm founder-paragraph"><b>Après avoir débuté sa carrière chez J.P. Morgan en salle des marchés et en gestion privée à Paris et à Genève, il se positionne très vite comme expert dans la recherche et la conception de produits structurés et alternatifs sur toutes classes d’actifs au sein d’Exane, puis de Natixis.
-
-			Son expérience l’amène à créer l’équipe produits structurés banques privées et Family Offices en France, Monaco, Luxembourg et Suisse pour la banque conduite par François Pérol. C’est en 2004 qu’il rejoint Credit Suisse, en tant que Responsable de l’équipe produits structurés banques privées et Family Offices en France, Monaco et Luxembourg.
-
-			Convaincu qu’il peut avoir une approche singulière et indépendante dans la construction, le suivi et l’analyse des produits structurés et alternatifs, il crée EAVEST, un cabinet conseil alternatif mettant au coeur de sa mission la performance produits et la relation avec ses clients partenaires.</p>
+			<p class="description-sm founder-paragraph">Après avoir débuté sa carrière chez J.P. Morgan en salle des marchés et en gestion privée à Paris et à Genève, il se positionne très vite comme expert dans la recherche et la conception de produits structurés et alternatifs sur toutes classes d’actifs au sein d’Exane, puis de Natixis.</p>
+			<p class="founder-paragraph">
+				Son expérience l’amène à créer l’équipe produits structurés banques privées et Family Offices en France, Monaco, Luxembourg et Suisse pour la banque conduite par François Pérol. C’est en 2004 qu’il rejoint Credit Suisse, en tant que Responsable de l’équipe produits structurés banques privées et Family Offices en France, Monaco et Luxembourg.
+			</p>
+			<p class="founder-paragraph">
+				Convaincu qu’il peut avoir une approche singulière et indépendante dans la construction, le suivi et l’analyse des produits structurés et alternatifs, il crée EAVEST, un cabinet conseil alternatif mettant au coeur de sa mission la performance produits et la relation avec ses clients partenaires.
+			</p>
 		</div>
 </div>
+
+<!--SECTION PARCOURS / PROFESSIONAL-BACKGROUND -->
+<div class="container-fluid">
+	<div class="col-md-offset-3 col-md-9">
+		<h6>Son parcours en détails :</h6>
+		<ul class="list-inline">
+			<li id="grey_feature"></li>
+			<li id="violet_feature"></li>
+			<li id="blue_feature"></li>
+			<li id="green_feature"></li>
+		</ul>
+		<div class="col-md-5 professional_background">
+			<p><b>Credit Suisse</b><br />
+			Credit Suisse – Responsable Vente Produits Structurés pour le marché français des Conseillers en Gestion de Patrimoine</p>
+			<p class="professional_content">Juillet 2010 – Juillet 2013 Paris, France / Londres, Grande Bretagne</p>
+
+			<p><b>Credit Suisse</b><br/>
+			Vente Produits Dérivés Cross Assets pour clients Banques Privées, Family Offices et Sociétés de Gestion en France, Monaco et Luxembourg</p>
+			<p class="professional_content">Avril 2008 – Juin 2010 Paris, France / Londres, Grande Bretagne</p>
+
+			<p><b>Natixis</b><br/>
+			Responsable Vente Produits Structurés pour clients Banques Privées, Family Offices et Sociétés de Gestion en France, Monaco, Suisse et Luxembourg</p>
+			<p>Septembre 2004 – Mars 2008 Paris, France</p>
+		</div>
+		<div class="col-md-5 professional_content">
+			<p><b>Exane</b><br/>
+			Vente produits dérivés sur actions</p>
+			<p class="professional_content">Septembre 2001 / Août 2004 Paris, France</p>
+
+			<p><b>J.P. Morgan</b><br/>
+			Banquier Privé</p>
+			<p class="professional_content">Septembre 1999 – Septembre 2001 Paris, France</p>
+
+			<p><b>J.P. Morgan</b><br/>
+			Responsable du Middle-Office Private Banking pour l’Europe</p>
+			<p>Novembre 1998 – Aout 1999 Genève, Suisse</p>
+
+			<p><b>J.P. Morgan</b><br/>
+			Responsable du Middle-Office actions, Futures & Options du bureau de Paris</p>
+			<p>Septembre 1996 – Octobre 1998 Paris, France</p>
+		</div>
+	</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+	<div class="container-fluid black_p">
+		<div class="row">
+			<div class="col-md-3 padding_top">
+					<p class="description-xs">Immatriculé à l’Orias n° 14001795 (www.orias.fr)<br/>
+						Conseiller en Investissements Financiers</br/>
+						enregistré sous le n° E003753,</br/>
+						Membre de l’ANACOFI - Association agréée par l’AMF.</p>
+			</div>
+			<div class="padding_top">
+				<ul>
+					<li class="col-md-4"><b>EAVEST</b>- PRODUITS ALTERNATIFS ET STRUCTURÉS</li>
+					<li class="col-md-1 description-xs" id="footer_mail">contact@eavest.com</li>
+					<li class="col-md-2 description-xs"><span id="vertical_line">I</span>+33 (1) 42 80 21 99<span id="mentions_legales">Mentions légales</span></li>
+					<li class="col-md-2 description-xs"><span id="vertical_line">I</span>+33 (6) 30 07 36 85</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid center-block">
+			<a href="#header"><i class="fa fa-2x fa-chevron-circle-up center-block"></i></a>
+	</div>
+</footer>
 
 
 
@@ -176,6 +264,17 @@
 		<!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
 		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+				<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+				<script src="js/libs/jquery-1.10.1.min.js"></script>
+				<script src="js/extra.js"></script>
+				<script src="js/main.js"></script>
+				<script src="js/libs/jquery-1.10.1.min.js" ></script>
+				<script src="js/libs/jquery.autocomplete.js" ></script>
+				<script src="js/libs/jquery-ui-slider-1.10.4.custom.min.js" ></script>
+				<script src="js/libs/jquery.mCustomScrollbar.min.js" ></script>
+
+
 
 	</body>
 
