@@ -1,6 +1,6 @@
-$(function() {
-  $('.slider').hide();
-});
-	$(document).on('scroll', function(){
-		$('.slider').show();
-	});
+// $(function() {
+//   $('.slider').hide();
+// });
+// 	$(document).on('scroll', function(){
+// 		$('.slider').show();
+// 	});

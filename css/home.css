@@ -1,0 +1,168 @@
+/*GENERAL*/
+
+body {
+    /*text-align: center;*/
+    background: #F2F2F2;
+    color: #020202;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    justify-content: space-between;
+}
+
+h1 {
+  font-size: 17px;
+  line-height: 11px;
+  font-weight: bolder;
+}
+
+h2 {
+  font-size: 15px;
+  line-height: 19px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+}
+
+.clear {
+  clear: both;
+}
+
+.float-right {
+  float: right;
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0px;
+}
+
+.wrapper {
+  margin-top: 25px;
+}
+
+.min {
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.block-content {
+  margin: 25px 0;
+}
+
+
+/*NAVBAR*/
+.language-switcher {
+	color: black;
+	cursor: pointer;
+	text-transform: uppercase;
+	text-decoration: none;
+	position: absolute;
+	right: 25px;
+	top: 25px;
+	font-size: 14px;
+	font-family: "Quicksand", Arial;
+	font-weight: bold;
+}
+
+.nav {
+  background-color: white;
+	text-align: center;
+	color: black;
+	text-transform: uppercase;
+	font-weight: bold;
+  font-size: 13px;
+}
+
+.navbar {
+	margin: 45px 0 15px 0;
+  font-weight: bold;
+}
+
+.nav a {
+	color: black;
+	text-decoration: none;
+	padding: 5px;
+  font-weight: bold;
+}
+
+.nav a:hover {
+	color: blue !important;
+	background-color: white !important;
+}
+
+#home a {
+  color: blue !important;
+}
+
+.logo {
+	padding-top: 30px;
+}
+
+/*SECTION PRODUCT*/
+
+.products {
+  background-color: #F2F2F2;
+}
+
+.products-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: black !important;
+}
+
+.white-content {
+  background-color: white;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 15px;
+  height: 30px;
+}
+
+.margin {
+  margin-left: 8px;
+  vertical-align: -webkit-baseline-middle;
+}
+
+.black {
+  background-color: black;
+  color: white;
+  padding: 15px;
+  margin-bottom: 0;
+}
+
+.search {
+  background-color: white;
+  font-size: 12px;
+  text-transform: capitalize;
+  padding: 15px;
+  text-align: center;
+}
+
+.search-bar {
+  border: solid 2px blue;
+  height: 35px;
+  margin-bottom: 15px;
+}
+
+.fa {
+  color: blue;
+  float: right;
+  margin-right: 9px;
+  margin-top: 3px;
+}
+
+.border-green {
+  border: solid 2px #30FD30;
+  color: blue;
+  height: 50px;
+  width: 50px;
+  margin-top: 20px;
+  padding-top: 15px;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.translate {
+  transform: translateX(-6px);
+}

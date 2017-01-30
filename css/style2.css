@@ -7,6 +7,8 @@ input,
 select,
 textarea {
 	color: #222;
+	padding: 0;
+	margin: 0;
 }
 
 ::-moz-selection {
@@ -135,10 +137,9 @@ p {
 }
 
 .top-header {
-	position: fixed;
-	top: 0;
+	/*position: fixed;
+	top: 0;*/
 	background-color: white;
-	background-image: url(img/white.png);
 }
 
 .nav {
@@ -206,7 +207,7 @@ p {
 /*SECTION 2*/
 
 .block-content{
-	background-color: black;
+	background-color: blue;
 	color: white;
 	margin-bottom: 50px;
 }
@@ -358,4 +359,29 @@ li {
 	margin: 0 auto;
 	text-align: center;
 	display: block;
+}
+
+/*MEDIA QUERIES*/
+@media only screen and (max-width: 500px) {
+    .block-content {
+        background-color: lightblue;
+    }
+}
+
+@media(min-width:768px){
+	.block-content {
+			background-color: pink;
+	}
+}
+
+@media(min-width:992px){
+	.block-content {
+			background-color: green;
+	}
+}
+
+@media(min-width:1200px){
+	.block-content {
+			background-color: yellow;
+	}
 }
