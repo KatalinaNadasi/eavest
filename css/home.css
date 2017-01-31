@@ -34,6 +34,13 @@ h3 {
   text-align: center;
 }
 
+h4 {
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
 .clear {
   clear: both;
 }
@@ -121,7 +128,15 @@ h3 {
   color: black !important;
 }
 
-.white-content {
+.basic-list {
+  background-color: white;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 15px;
+  height: 30px;
+}
+
+.eavest-list {
   background-color: white;
   text-transform: uppercase;
   display: block;
@@ -135,8 +150,8 @@ h3 {
 }
 
 /*SEARCH-PRODUCT*/
-.search-product {
-  padding: 25px 0;
+.bottom-feature {
+  padding: 25px 0 0 17px;
   border-bottom: solid 2px black;
 }
 
@@ -198,13 +213,100 @@ h3 {
 .white-block {
   background-color: white;
   text-align: center;
+  margin-right: 15px;
 }
 
 .white-block h1 {
   padding-top: 10px;
 }
 
-
 .month-product {
-  padding: 30px;
+  display: inline-block;
+  margin-bottom: 50px;
+}
+
+/*SECTION PORTEFEUILLE*/
+
+.wallet-white-block {
+  background-color: white;
+  text-align: center;
+  margin-top: 25px;
+  margin-left: 15px;
+  padding: 48px;
+  width: 270px;
+}
+
+.wallet-black-block {
+  background-color: black;
+  color: white;
+  margin-top: 25px;
+  margin-left: 30px;
+  width: 837px;
+  padding-bottom: 25px;
+}
+
+.wallet-button {
+  text-align: center !important;
+  text-transform: uppercase !important;
+  background-color: black !important;
+  border: solid 1px white;
+}
+
+.bottom-feature-2 {
+  padding: 26px 1px 37px 17px;
+  border-bottom: solid 2px black;
+  padding-top: 25px;
+}
+
+/*BLOG SECTION*/
+.blog {
+  margin: 40px 0;
+}
+
+.grey-block {
+  background-color: #E5E5E5;
+  padding: 25px;
+}
+
+.blue-feature {
+  width: 30px;
+  border-bottom: solid 1px blue;
+}
+
+.blue-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: blue;
+  transform: translateY(6px);
+}
+
+.white-block-blog {
+  background-color: white;
+  text-align: center;
+  margin-right: 15px;
+  margin-left: 15px;
+  height: 210px;
+  padding: 0;
+}
+
+.white-block-blog h2 {
+  padding-top: 0;
+}
+
+.figure-month {
+  text-align: left;
+  font-size: 7rem;
+  font-weight: bolder;
+  border-bottom: 1px solid #30FD30;
+}
+
+.white-block-blog p {
+  margin-top: 25px;
+}
+
+.grey-block-2 {
+  background-color: #E5E5E5;
+  padding: 25px;
+  width: 345px;
+  height: 210px;
 }
