@@ -18,6 +18,16 @@ h1 {
 
 h2 {
   font-size: 15px;
+  line-height: 20px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding-top: 33px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+h3 {
+  font-size: 15px;
   line-height: 19px;
   text-transform: uppercase;
   font-weight: 600;
@@ -124,19 +134,26 @@ h2 {
   vertical-align: -webkit-baseline-middle;
 }
 
-.black {
+/*SEARCH-PRODUCT*/
+.search-product {
+  padding: 25px 0;
+  border-bottom: solid 2px black;
+}
+
+.block-1{
   background-color: black;
   color: white;
-  padding: 15px;
   margin-bottom: 0;
+  padding-bottom: 40px;
+  padding-top: 50px;
 }
 
 .search {
   background-color: white;
   font-size: 12px;
   text-transform: capitalize;
-  padding: 15px;
   text-align: center;
+  padding: 40px 15px 27px 15px;
 }
 
 .search-bar {
@@ -145,7 +162,7 @@ h2 {
   margin-bottom: 15px;
 }
 
-.fa {
+.fa-search{
   color: blue;
   float: right;
   margin-right: 9px;
@@ -165,4 +182,29 @@ h2 {
 
 .translate {
   transform: translateX(-6px);
+}
+
+/*TABLEAU*/
+.table-bordered, thead, tr, th, td {
+  border: black solid 2px !important;
+}
+
+.first-row {
+  font-weight: normal;
+  width: 350px;
+}
+
+/*PRODUIT MOIS*/
+.white-block {
+  background-color: white;
+  text-align: center;
+}
+
+.white-block h1 {
+  padding-top: 10px;
+}
+
+
+.month-product {
+  padding: 30px;
 }
