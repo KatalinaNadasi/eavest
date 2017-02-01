@@ -282,7 +282,7 @@ h4 {
   color: white;
   margin-top: 25px;
   margin-left: 30px;
-  width: 837px;
+  width: 800px;
   padding-bottom: 25px;
 }
 
@@ -397,7 +397,7 @@ h4 {
 
 /* SECTION OUR values*/
 
-.white-block-values {
+.white-block-style {
   background-color: white;
   height: 210px;
   margin-left: 15px;
@@ -408,4 +408,68 @@ h4 {
 .values {
   padding-left: 15px;
   padding-top: 20px;
+}
+
+
+/* SECTION METHODOLOGIE*/
+
+.our-methodologie {
+  margin-top: 20px;
+}
+
+.number {
+  font-size: 4rem;
+  margin: 15px;
+}
+
+.methodologie {
+  width: 150px;
+  margin: 5px;
+  margin-left: 25px;
+}
+
+.methodologie p {
+  margin-top: 15px;
+  font-size: 17px;
+}
+
+#methodo {
+  width: 580px;
+  height: 250px;
+}
+
+/*SECTION EQUIPE*/
+
+.grey-block-4 {
+  background-color: #E5E5E5;
+  margin-top: 35px;
+  margin-bottom: 90px;
+  padding: 15px 0 35px 32px;
+}
+
+.equipe {
+  margin-right: 35px;
+}
+
+.img-circle {
+  width: 100px;
+  height: 100px;
+}
+
+.img-more {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 65px;
+}
+
+.equipe-p {
+  margin-top: 10px;
+}
+
+/*FOOTER*/
+.footer-style {
+  background-color: black;
+  color: white;
+  height: 70px;
 }
