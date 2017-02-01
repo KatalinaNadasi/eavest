@@ -471,5 +471,15 @@ h4 {
 .footer-style {
   background-color: black;
   color: white;
-  height: 70px;
+}
+
+.footer-style p {
+    margin: 21px;
+    padding: 5px;
+    height: 100%;
+    text-align: end;
+  }
+
+.immatriculation-p {
+  font-weight: lighter;
 }
