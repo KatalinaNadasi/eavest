@@ -196,12 +196,12 @@ h4 {
   border-bottom: solid 2px black;
 }
 
-.black-bloc{
+.black-block{
   background-color: black;
   color: white;
   margin-bottom: 0;
   padding-bottom: 40px;
-  padding-top: 50px;
+  padding-top: 40px;
 }
 
 .search {
@@ -300,7 +300,7 @@ h4 {
 }
 
 /*BLOG SECTION*/
-.blog {
+.margin-block {
   margin: 40px 0;
 }
 
@@ -354,6 +354,14 @@ h4 {
 
 /*SECTION OUR AGREEMENT*/
 
+.black-block-partner {
+  background-color: black;
+  color: white;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  height: 240px;
+}
+
 .main-title {
   font-size: 15px;
   line-height: 20px;
@@ -361,4 +369,28 @@ h4 {
   text-transform: uppercase;
   padding-top: 33px;
   padding-bottom: 10px;
+}
+
+.grey-block-3 {
+  background-color: #E5E5E5;
+  padding: 25px;
+  margin-left: 35px;
+  width: 490px;
+}
+
+.grey-block-3 p {
+  font-weight: lighter;
+  width: 375px;
+}
+
+.white-block-partner {
+  background-color: white;
+  margin-left: 35px;
+  height: 210px;
+}
+
+#ok {
+  position: absolute;
+  top: 20px;
+  left: 430px;
 }
