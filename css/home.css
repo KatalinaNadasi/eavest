@@ -2,9 +2,10 @@
 
 body {
     /*text-align: center;*/
+    padding-top: 250px;
     background: #F2F2F2;
     color: #020202;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', Arial;
     font-size: 14px;
     line-height: 17px;
     justify-content: space-between;
@@ -63,6 +64,11 @@ h4 {
   font-weight: normal;
 }
 
+.italicized {
+  font-weight: lighter;
+  font-style: italic;
+}
+
 .block-content {
   margin: 25px 0;
 }
@@ -78,8 +84,12 @@ h4 {
 	right: 25px;
 	top: 25px;
 	font-size: 14px;
-	font-family: "Quicksand", Arial;
 	font-weight: bold;
+  line-height: 3;
+}
+
+.language:hover {
+  text-decoration: underline !important;
 }
 
 .nav {
@@ -96,24 +106,60 @@ h4 {
   font-weight: bold;
 }
 
-.nav a {
-	color: black;
-	text-decoration: none;
-	padding: 5px;
-  font-weight: bold;
+.navbar-fixed-top {
+  margin-top: 0;
 }
 
-.nav a:hover {
+.nav a {
+  color: black;
+}
+.navbar li {
+	text-decoration: none;
+	padding: 15px;
+}
+
+ul>li>a:hover {
 	color: blue !important;
 	background-color: white !important;
 }
 
-#home a {
+#twitter {
+  padding: 10px;
+}
+
+.zone-transit {
+  display: flex;
+}
+
+#menu-home a {
   color: blue !important;
 }
 
 .logo {
 	padding-top: 30px;
+}
+
+input.btn.btn-default {
+  border-radius: 0;
+  border: 2px solid black;
+  margin: 5px 4px;
+  text-transform: uppercase;
+  padding: 3px 15px;
+}
+
+.slider_jquery {
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.slider {
+	background: black;
+	color: white;
+	font-size: 18px;
+	line-height: 60px;
+	padding: 0px 0;
+  height: 55px;
 }
 
 /*SECTION PRODUCT*/
