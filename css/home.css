@@ -197,9 +197,8 @@ input.btn.btn-default {
   background-color: white;
   text-transform: uppercase;
   display: block;
-  margin-top: 15px;
-  height: 32px;
-  padding-top: 2px;
+  margin-top: 17px;
+  height: 31px;
   font-size: 16px;
 }
 
@@ -272,9 +271,8 @@ input.btn.btn-default {
 .search {
   background-color: white;
   font-size: 12px;
-  text-transform: capitalize;
   text-align: center;
-  padding: 40px 15px 40px 15px;
+  padding: 40px 15px 32px 15px;
 }
 
 .search-bar {
@@ -302,7 +300,7 @@ input[type=search] {
   margin: 0;
 }
 
-.fa-search{
+.fa-search {
   color: blue;
   border-left: none;
   margin-top: 5px;
@@ -314,8 +312,13 @@ input[type=search] {
   right: 36px;
 }
 
-.border-green {
+.numbers {
+padding-left: 5px;
+}
+
+.square-1 {
   border: solid 2px #30FD30;
+  border-right: none;
   color: blue;
   height: 50px;
   width: 50px;
@@ -325,26 +328,68 @@ input[type=search] {
   font-weight: bolder;
 }
 
+.square-2 {
+  border: solid 2px #30FD30;
+  color: blue;
+  height: 50px;
+  width: 50px;
+  margin-top: 20px;
+  padding-top: 15px;
+  font-size: 3rem;
+  font-weight: bolder;
+  transform: translateX(-4px);
+}
+
 .translate {
   transform: translateX(-6px);
 }
 
 /*TABLEAU*/
+
+table.table.table-bordered {
+    margin-top: 20px;
+}
+
+.table>thead>tr>th {
+    vertical-align: middle;
+}
+
+th:first-child {
+  font-weight: normal;
+}
+
+th.col-sm-1.col-md-1, td {
+    text-align: center;
+    line-height: 1;
+}
+
+td:first-child{
+  font-weight: bold;
+}
+
 .table-bordered, thead, tr, th, td {
   border: black solid 2px !important;
 }
 
-.first-row {
+.left-align{
+  text-align: left;
+}
+
+.special-width {
+  width: 100px;
+}
+
+/*.first-row {
   font-weight: normal;
   width: 350px;
-}
+}*/
 
 /*PRODUIT MOIS*/
 .white-block {
   background-color: white;
   text-align: center;
   margin-right: 15px;
-  padding-bottom: 9px;
+  padding-bottom: 8px;
 }
 
 .white-block h1 {
@@ -353,7 +398,7 @@ input[type=search] {
 
 .month-product {
   display: inline-block;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 /*SECTION PORTEFEUILLE*/
