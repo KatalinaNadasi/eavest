@@ -13,8 +13,8 @@ body {
 
 h1 {
   font-size: 17px;
-  line-height: 11px;
   font-weight: bolder;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -50,6 +50,10 @@ h4 {
   float: right;
 }
 
+.padding-left {
+  padding-left: 30px;
+}
+
 .container-fluid {
   margin: 0;
   padding: 0px;
@@ -62,6 +66,7 @@ h4 {
 .min {
   font-size: 15px;
   font-weight: normal;
+  text-transform: none;
 }
 
 .italicized {
@@ -102,7 +107,7 @@ h4 {
 }
 
 .navbar {
-	margin: 45px 0 15px 0;
+	margin: 40px 0 17px 0;
   font-weight: bold;
 }
 
@@ -112,6 +117,7 @@ h4 {
 
 .nav a {
   color: black;
+  font-size: 12px;
 }
 .navbar li {
 	text-decoration: none;
@@ -136,7 +142,7 @@ ul>li>a:hover {
 }
 
 .logo {
-	padding-top: 30px;
+	padding-top: 22px;
 }
 
 input.btn.btn-default {
@@ -164,12 +170,15 @@ input.btn.btn-default {
 
 /*SECTION PRODUCT*/
 
+.img-bell {
+  width: 55px;
+  height: 55px;
+}
 .products {
   background-color: #F2F2F2;
 }
 
 .products-title {
-  text-transform: uppercase;
   font-weight: bold;
   color: black !important;
 }
@@ -180,6 +189,8 @@ input.btn.btn-default {
   display: block;
   margin-top: 15px;
   height: 32px;
+  padding-top: 2px;
+  font-size: 16px;
 }
 
 .eavest-list {
@@ -188,6 +199,8 @@ input.btn.btn-default {
   display: block;
   margin-top: 15px;
   height: 32px;
+  padding-top: 2px;
+  font-size: 16px;
 }
 
 .margin {
@@ -195,8 +208,14 @@ input.btn.btn-default {
   vertical-align: -webkit-baseline-middle;
 }
 
+/*hover*/
+
+/*ul.product-content, li.basic-list, li.eavest-list:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}*/
+
 /*MODAL */
-#myModal {
+/*#myModal {
   top:5%;
   right:50%;
   outline: none;
@@ -227,14 +246,14 @@ input.btn.btn-default {
   text-transform: uppercase;
   margin-top: 15px;
   height: 32px;
-}
+}*/
 
 /*modal produits à rappeler*/
-#myModal2 {
+/*#myModal2 {
     top:5%;
     left:50%;
     outline: none;
-}
+}*/
 
 /*SEARCH-PRODUCT*/
 .bottom-feature {
@@ -255,20 +274,44 @@ input.btn.btn-default {
   font-size: 12px;
   text-transform: capitalize;
   text-align: center;
-  padding: 40px 15px 27px 15px;
+  padding: 40px 15px 40px 15px;
 }
 
 .search-bar {
+  height: 48px;
   border: solid 2px blue;
-  height: 35px;
+  margin-top: 15px;
+}
+
+input[type=search] {
+  border: solid 1px white;
+  border-right: none;
+  height: 37px;
   margin-bottom: 15px;
+  margin-top: 15px;
+  margin: 0;
+  padding: 0;
+  transform: translateY(-3px);
+  position: absolute;
+  width: 55%;
+  right: 70px;
+  transform: translateY(4px);
+}
+
+.search p {
+  margin: 0;
 }
 
 .fa-search{
   color: blue;
-  float: right;
-  margin-right: 9px;
-  margin-top: 3px;
+  border-left: none;
+  margin-top: 5px;
+  height: 37px;
+  padding-right: 5px;
+  transform: translateX(-3px);
+  padding: 3px;
+  position: absolute;
+  right: 36px;
 }
 
 .border-green {
@@ -301,6 +344,7 @@ input.btn.btn-default {
   background-color: white;
   text-align: center;
   margin-right: 15px;
+  padding-bottom: 9px;
 }
 
 .white-block h1 {
@@ -529,7 +573,16 @@ input.btn.btn-default {
 /*MEDIA QUERIES*/
 
 /*Small devices (landscape phones, 576px and up)*/
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+  input[type=search] {
+    width: 80%;
+  }
+
+  .logo {
+    padding-top: 30px;
+    margin-left: 20px;
+  }
+
   .wallet-black-block {
     margin: 0;
     padding: 0;
@@ -550,7 +603,14 @@ input.btn.btn-default {
 
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
-  .search-bar {
-    width: 100px !important;
+  .logo {
+    padding-top: 22px;
+    margin-left: auto;
   }
 }
+
+/*Desktop*/
+/*@media(min-width:992px){}*/
+
+/*Large screen*/
+/*@media(min-width:1200px){}*/

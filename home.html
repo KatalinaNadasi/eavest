@@ -38,6 +38,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
 		<div class="nav">
+			<h1><img src="img/eavest-logo.png" alt="Eavest" class="center-block img-responsive logo" id="header"/></h1>
 			<div class="language-switcher">
 				<a th:unless="${#authorization.expression('isAuthenticated()')}" href="http://localhost:8080/login" class="italicized">Connexion</a>
 				<a href="https://twitter.com/EAVEST_" id="twitter" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -56,7 +57,7 @@
 					</p>
 				</div>
 			</div>
-			<h1><img src="img/eavest-logo.png" alt="Eavest" class="center-block img-responsive logo" id="header"/></h1>
+
 
 			<ul class="navbar list-inline list-unstyled">
 				<li id="menu-home"><a href="/home">Home</a></li>
@@ -79,23 +80,23 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-6 col-md-6 wrapper">
-        <img src="img/bell.png" alt="bell"/>
-        <h1 class="product-title">PRODUITS REMBOURSÉS<span class="min"> depuis 30 jours</span></h1>
+        <img src="img/bell.png" alt="bell" class="img-responsive img-bell"/>
+        <h1 class="product-title">produits remboursés<span class="min"> depuis 30 jours</span></h1>
 
-        <ul class="list-unstyled">
-          <li class="eavest-list"><span class="margin">resonance 1/FR00196847</span>
+        <ul class="list-unstyled product-content">
+          <li class="eavest-list"><span class="margin">resonance 1 / FR00196847</span>
             <span><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" /></span>
           </li>
-          <li class="basic-list"><span class="margin">resonance 2/FR00196847</span></li>
-          <li class="basic-list"><span class="margin">resonance 3/FR00196847</span></li>
-          <li class="eavest-list"><span class="margin">resonance 4/FR00196847</span>
+          <li class="basic-list"><span class="margin">resonance 2 / FR00196847</span></li>
+          <li class="basic-list"><span class="margin">resonance 3 / FR00196847</span></li>
+          <li class="eavest-list"><span class="margin">resonance 4 / FR00196847</span>
             <span><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" /></span>
           </li>
-          <li class="basic-list"><span class="margin">resonance 5/FR00196847</span></li>
+          <li class="basic-list"><span class="margin">resonance 5 / FR00196847</span></li>
         </ul>
 
 <!-- modal produits remboursés-->
-        <div class="text-center">
+        <!-- <div class="text-center">
           <input type="image" name="more" src="img/show-more.png" data-toggle="modal" data-target=".modal-refund-product"></input>
           <div class="modal fade modal-refund-product" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="myModal">
             <div class="modal-dialog modal-lg" role="document">
@@ -140,25 +141,25 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
   <!-- End modal -->
 
       </div>
-      <div class="col-sm-6 col-md-6 wrapper">
-        <img src="img/bell.png" alt="bell" />
-        <h1 class="product-title"><b>PRODUITS A RAPPELER</b><span class="min"> dans les 30 jours</span></h1>
-        <ul class="list-unstyled">
-          <li class="basic-list"><span class="margin">resonance 9/FR00196847</span></li>
-          <li class="basic-list"><span class="margin">resonance 8/FR00196847</span></li>
-          <li class="eavest-list"><span class="margin">resonance 7/FR00196847</span>
+      <div class="col-sm-6 col-md-6 wrapper padding-left">
+        <img src="img/bell.png" alt="bell" class="img-responsive img-bell"/>
+        <h1 class="product-title"><b>produits à rappeler</b><span class="min"> dans les 30 jours</span></h1>
+        <ul class="list-unstyled product-content">
+          <li class="basic-list"><span class="margin">resonance 9 / FR00196847</span></li>
+          <li class="basic-list"><span class="margin">resonance 8 / FR00196847</span></li>
+          <li class="eavest-list"><span class="margin">resonance 7 / FR00196847</span>
             <span><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" /></span></li>
-          <li class="basic-list"><span class="margin">resonance 6/FR00196847</span></li>
-          <li class="basic-list"><span class="margin">resonance 5/FR00196847</span></li>
+          <li class="basic-list"><span class="margin">resonance 6 / FR00196847</span></li>
+          <li class="basic-list"><span class="margin">resonance 5 / FR00196847</span></li>
         </ul>
       </div>
 
   <!-- modal produits à rappeler -->
-              <div class="text-center">
+              <!-- <div class="text-center">
                 <input type="image" name="more" src="img/show-more.png" data-toggle="modal" data-target=".modal-callback-product"></input>
                 <div class="modal fade modal-callback-product" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="myModal2">
                   <div class="modal-dialog modal-lg" role="document">
@@ -184,19 +185,27 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
     <!-- End modal produits à rappeler-->
 
-
+		<!-- end row products -->
     </div>
+	<!-- end div container (products) -->
   </div>
   <div class="container bottom-feature">
     <div class="row">
       <div class="col-sm-3 col-md-3">
-          <h2 class="black-block">cherchez un produit parmis nos<br /> 200 références</h2>
+          <h2 class="black-block">cherchez un produit<br /> parmis nos<br /> 2000 références</h2>
+
           <div class="search">
-            <p>émetteur, code ISIN, nom du produit, sous-jacent</p>
-            <input type="search" style="background-image:url(img/loupe.png);background-position:right;background-repeat:no-repeat;padding-left:18px;width:175px;" class="search-bar"></input>
+            <p>émetteur, code ISIN,</p>
+						<p>nom du produit, sous-jacent</p>
+						<div class="search-bar">
+							<span>
+								<input type="search"></input>
+								<i class="fa fa-2x fa-search" aria-hidden="true"></i>
+							</span>
+						</div>
           </div>
           <div class="clear"></div>
       </div>

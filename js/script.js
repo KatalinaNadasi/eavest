@@ -9,3 +9,13 @@ $(function() {
     }
   });
 });
+
+// hover tentative
+// $('.product-content').mouseover(function()
+//      {
+//         $('.company-image-overlay').show();
+//      });
+// $('.product-content').mouseout(function()
+//      {
+//        $('.company-image-overlay').hide();
+//      });
