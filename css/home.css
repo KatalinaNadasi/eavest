@@ -18,24 +18,24 @@ h1 {
 }
 
 h2 {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 20px;
   font-weight: bolder;
   text-transform: uppercase;
-  padding-top: 33px;
+  padding-top: 18px;
   text-align: center;
-  padding-bottom: 10px;
+  padding-bottom: 7px;
 }
 
-h3 {
+/*h3 {
   font-size: 15px;
   line-height: 19px;
   text-transform: uppercase;
   font-weight: 600;
   text-align: center;
-}
+}*/
 
-h4 {
+h3 {
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
@@ -52,6 +52,7 @@ h4 {
 
 .padding-left {
   padding-left: 30px;
+  padding-right: 15px;
 }
 
 .container-fluid {
@@ -255,10 +256,6 @@ input.btn.btn-default {
 }*/
 
 /*SEARCH-PRODUCT*/
-.bottom-feature {
-  padding: 27px 1px 41px 17px;
-  border-bottom: solid 2px black;
-}
 
 .black-block{
   background-color: black;
@@ -272,7 +269,7 @@ input.btn.btn-default {
   background-color: white;
   font-size: 12px;
   text-align: center;
-  padding: 40px 15px 32px 15px;
+  padding: 40px 15px 39px 15px;
 }
 
 .search-bar {
@@ -346,9 +343,6 @@ padding-left: 5px;
 
 /*TABLEAU*/
 
-table.table.table-bordered {
-    margin-top: 20px;
-}
 
 .table>thead>tr>th {
     vertical-align: middle;
@@ -367,9 +361,33 @@ td:first-child{
   font-weight: bold;
 }
 
-.table-bordered, thead, tr, th, td {
-  border: black solid 2px !important;
+table.table.table-bordered {
+    margin-top: 20px;
 }
+
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border: black solid 2px;
+}
+
+.table>thead:first-child>tr:first-child>th {
+  border-top: black solid 2px;
+}
+
+.table>tfoot>tr>td {
+  border-bottom: 0px !important;
+  border-bottom: #F2F2F2 !important;
+}
+
+table {
+    border-bottom: 0px !important;
+}
+
+
 
 .left-align{
   text-align: left;
@@ -379,26 +397,20 @@ td:first-child{
   width: 100px;
 }
 
-/*.first-row {
-  font-weight: normal;
-  width: 350px;
-}*/
-
 /*PRODUIT MOIS*/
 .white-block {
   background-color: white;
   text-align: center;
-  margin-right: 15px;
-  padding-bottom: 8px;
-}
-
-.white-block h1 {
-  padding-top: 10px;
 }
 
 .month-product {
   display: inline-block;
-  margin-bottom: 40px;
+  height: 259px;
+}
+
+.img-product {
+  height: 262px;
+  width: 185px;
 }
 
 /*SECTION PORTEFEUILLE*/
@@ -406,18 +418,21 @@ td:first-child{
 .wallet-white-block {
   background-color: white;
   text-align: center;
-  margin-top: 25px;
+  width: 22%;
+  padding: 35px;
   margin-left: 15px;
-  padding: 48px;
-  width: 270px;
 }
 
 .wallet-black-block {
   background-color: black;
   color: white;
-  margin-top: 25px;
   margin-left: 30px;
-  padding-bottom: 25px;
+  padding-bottom: 36px;
+  width: 71%;
+}
+
+.wallet-black-block span {
+  display: block;
 }
 
 .wallet-button {
@@ -425,12 +440,17 @@ td:first-child{
   text-transform: uppercase !important;
   background-color: black !important;
   border: solid 1px white;
+  border-radius: 0px;
 }
 
-.bottom-feature-2 {
-  padding: 26px 1px 37px 17px;
-  border-bottom: solid 2px black;
-  padding-top: 25px;
+.wrap {
+  padding: 26px 1px 20px 17px;
+}
+
+.black-line {
+  padding-bottom: 35px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid black;
 }
 
 /*BLOG SECTION*/
@@ -438,9 +458,20 @@ td:first-child{
   margin: 40px 0;
 }
 
+.blog {
+  margin-top: 25px;
+}
+
+.blog-width {
+  width: 85%;
+}
+
 .grey-block {
   background-color: #E5E5E5;
-  padding: 25px;
+  margin-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 25px;
+  padding-left: 22px;
 }
 
 .blue-feature {
@@ -455,11 +486,23 @@ td:first-child{
   transform: translateY(6px);
 }
 
+.blog-img {
+  padding: 15px;
+}
+
+.article p {
+  font-size: 12px;
+}
+
+.article p span {
+  display: block;
+}
+
 .white-block-blog {
   background-color: white;
   text-align: center;
   margin-right: 15px;
-  margin-left: 15px;
+  margin-left: 35px;
   height: 210px;
   padding: 0;
 }
@@ -481,6 +524,7 @@ td:first-child{
 
 .grey-block-2 {
   background-color: #E5E5E5;
+  margin-left: 35px;
 }
 
 /*SECTION OUR AGREEMENT*/
@@ -619,30 +663,32 @@ td:first-child{
 
 /*Small devices (landscape phones, 576px and up)*/
 @media (max-width: 767px) {
-  input[type=search] {
-    width: 80%;
-  }
-
   .logo {
     padding-top: 30px;
     margin-left: 20px;
   }
-
-  .wallet-black-block {
-    margin: 0;
-    padding: 0;
+  .img-bell {
+    margin: auto;
+  }
+  .padding-left {
+    padding-left: 15px;
+  }
+  input[type=search] {
+    width: 83%;
+  }
+  .numbers, .perf-review {
     text-align: center;
   }
-  .grey-block-3 {
-    padding: 0;
-    margin: 0;
-    width: auto;
+  .wallet-black-block {
+    margin-left: 15px;
+    padding-bottom: 43px;
+    width: 94%;
   }
-  .white-block-partner {
-    margin-left: 0;
+  .wrap {
+      padding: 0px 1px 3px 17px;
   }
-  .white-block-style {
-    margin-right: 15px;
+  .black-line{
+    margin-bottom: 19px;
   }
 }
 
@@ -652,10 +698,38 @@ td:first-child{
     padding-top: 22px;
     margin-left: auto;
   }
+  input[type=search] {
+    width: 45%;;
+  }
+}
+
+@media (min-width: 980px) {
+  input[type=search] {
+    width: 55%;
+  }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 985px) {
+  .wallet-black-block {
+    width: 68%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wallet-black-block {
+    width: 72%;
+  }
+}
+
+@media (min-width: 1760px) {
+  .wallet-black-block {
+    width: 71%;
+  }
 }
 
 /*Desktop*/
 /*@media(min-width:992px){}*/
 
 /*Large screen*/
-/*@media(min-width:1200px){}*/
+/*@media(min-width:1200px){
+}*/
