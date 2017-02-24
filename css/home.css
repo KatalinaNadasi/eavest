@@ -399,8 +399,6 @@ table {
     border-bottom: 0px !important;
 }
 
-
-
 .left-align{
   text-align: left;
 }
@@ -613,6 +611,7 @@ table {
   height: 230px;
   padding-top: 20px;
   padding-left: 20px;
+  width: 23%;
 }
 
 .black-block-partner p {
@@ -649,7 +648,7 @@ table {
 .white-block-partner {
   background-color: white;
   float: right;
-  width: 21%;
+  width: 23%;
   padding-left: 20px;
 }
 
@@ -659,8 +658,8 @@ table {
 
 #ok {
   position: absolute;
-  top: 10%;
-  left: 84%;
+  top: 5%;
+  left: 85%;
 }
 
 /* SECTION OUR values*/
@@ -668,9 +667,18 @@ table {
 .white-block-style {
   background-color: white;
   margin-left: 15px;
-  width: 47%;
+  width: 43%;
   padding-left: 17px;
   padding-bottom: 17px;
+}
+
+.white-block-style-2 {
+  background-color: white;
+  margin-left: 15px;
+  padding-left: 17px;
+  padding-bottom: 17px;
+  float: right;
+  margin-right: 15px;
 }
 
 .values {
@@ -685,14 +693,12 @@ table {
 }
 
 .number {
-  font-size: 4rem;
-  margin: 15px;
+  font-size: 3rem;
 }
 
 .methodologie {
-  width: 150px;
   margin: 5px;
-  margin-left: 25px;
+  margin-right: 34px;
 }
 
 .methodologie p {
@@ -700,10 +706,42 @@ table {
   font-size: 17px;
 }
 
-#methodo {
-  height: 250px;
-  float: right;
-  margin-right: 15px;
+.p-width-2 {
+  width: 100%;
+}
+
+.p-width-2 span{
+  display: block;
+}
+
+.p-width-2 span p{
+  display: block;
+}
+
+.p-width-3 {
+  width: 134%;
+}
+
+.p-width-3 span {
+  display: block;
+}
+
+.methodo-img1 {
+  width: 50px;
+  height: 50px;
+  margin-top: 7px;
+}
+
+.methodo-img2 {
+  width: 74px;
+  height: 50px;
+  margin-top: 7px;
+}
+
+.methodo-img3 {
+  width: 74px;
+  height: 59px;
+  margin-top: 7px;
 }
 
 /*SECTION EQUIPE*/
@@ -788,9 +826,9 @@ table {
     margin-top: 15px;
   }
   .black-block-partner {
-    width: 100%;
+    width: auto;
     height: auto;
-    padding-bottom: 25px;
+    padding-bottom: 15px;
   }
   .black-block-partner p {
      width: 100%;
@@ -800,6 +838,9 @@ table {
     width: 100%;
     float: right;
     margin-top: 25px;
+  }
+  p .grey-letters {
+    width: 81%;
   }
 }
 
@@ -817,25 +858,20 @@ table {
 @media (max-width: 990px) {
   .grey-block {
     text-align: -webkit-center;
-    width: 100%;
+    width: auto;
   }
   .article p {
-      font-size: 14px;
-      margin-left: 0;
-      text-align: -webkit-center;
-      padding: 0px 25px 10px 25px;
+    font-size: 14px;
+    padding: 0px 25px 10px 25px;
+    text-align: -webkit-center;
   }
   .blog-img {
     padding: 15px;
     transform: translateY(-10px);
     text-align: center;
   }
-  .p1-width {
-    width: auto;
-  }
   .white-block-blog {
-    margin: 25px 10px 10px 16px;
-    margin-left: 40%;
+    margin: 0 auto;
   }
   .white-block-blog h2 {
     padding-top: 15px;
@@ -851,6 +887,7 @@ table {
     padding-top: 10px;
     margin-top: 15px;
     text-align: -webkit-center;
+    height: auto;
   }
   .white-block-partner {
     width: auto;
@@ -878,11 +915,29 @@ table {
     height: auto;
     padding-bottom: 29px;
   }
-  .grey-block-3 {
-    height: auto;
-    width: 60%;
+  .grey-block-2 {
+    width: 64%;
   }
-
+  .grey-block-3 {
+    width: 61%;
+    float: right;
+    height: auto;
+  }
+  .white-block-blog {
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+  .green-line {
+    top: 134px;
+  }
+  .article p {
+    font-size: 14px;
+    padding: 0px 25px 10px 25px;
+    text-align: -webkit-auto;
+  }
+  .white-block-partner{
+    margin-top: 15px;
+  }
 }
 
 /*2- Desktops and laptops*/
