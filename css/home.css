@@ -706,6 +706,28 @@ table {
   font-size: 17px;
 }
 
+.value-img1 {
+  width: 75px;
+  height: 60px;
+  transform: translateX(17px);
+}
+
+.value-img2 {
+  width: 55px;
+  height: 60px;
+  transform: translateX(7px);
+}
+
+.value-img3 {
+  width: 65px;
+  height: 60px;
+}
+
+.value-img4 {
+  width: 65px;
+  height: 60px;
+}
+
 .p-width-2 {
   width: 100%;
 }
@@ -842,6 +864,10 @@ table {
   p .grey-letters {
     width: 81%;
   }
+  .white-block-style {
+    width: 95%;
+    padding-top: 1px;
+  }
 }
 
 /*Medium devices (tablets, 768px and up)*/
@@ -892,6 +918,15 @@ table {
   .white-block-partner {
     width: auto;
   }
+  .value-img3 {
+    transform: translateX(20px);
+  }
+  .value-img4 {
+    transform: translateX(30px);
+  }
+  #proximity {
+    transform: translateX(26px);
+  }
 }
 
 @media (min-width: 980px) {
@@ -937,6 +972,10 @@ table {
   }
   .white-block-partner{
     margin-top: 15px;
+  }
+  .white-block-style {
+    width: 36%;
+    padding-bottom: 15px;
   }
 }
 
