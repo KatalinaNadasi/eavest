@@ -868,6 +868,12 @@ table {
     width: 95%;
     padding-top: 1px;
   }
+  .white-block-style-2 {
+    margin-top: 15px;
+  }
+  .methodo-img2 {
+    transform: translateY(-14px);
+  }
 }
 
 /*Medium devices (tablets, 768px and up)*/
@@ -927,6 +933,16 @@ table {
   #proximity {
     transform: translateX(26px);
   }
+  .methodologie p {
+    font-size: 16px;
+  }
+  .methodologie {
+    display: inline-block;
+  }
+  .p-width-2 {
+    width: 100%;
+    width: 85%;
+  }
 }
 
 @media (min-width: 980px) {
@@ -976,6 +992,22 @@ table {
   .white-block-style {
     width: 36%;
     padding-bottom: 15px;
+  }
+  .white-block-style-2 {
+    margin-right: 0px;
+    padding-bottom: 23px;
+    display: inline-block;
+    float: none;
+  }
+  .methodologie {
+    margin: 5px;
+    margin-right: 34px;
+    padding-right: 22px;
+    width: 23%;
+    display: inline-block;
+  }
+  .p-width-2 {
+    width: 116%;
   }
 }
 
