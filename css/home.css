@@ -34,6 +34,21 @@ h3 {
   margin-top: 20px;
 }
 
+h4 {
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
+.grey-letters {
+  color: #4A4A4A;
+}
+
+.grey-letters-light {
+  color: #777776;
+}
+
 .clear {
   clear: both;
 }
@@ -64,6 +79,7 @@ h3 {
   font-size: 15px;
   font-weight: normal;
   text-transform: none;
+  color: #4A4A4A;
 }
 
 .italicized {
@@ -473,7 +489,7 @@ table {
   padding-left: 22px;
   margin-right: auto;
   right: 15px;
-  /*height: 250px;*/
+  width: 46%;
 }
 
 .blue-feature-1 {
@@ -502,13 +518,19 @@ table {
   display: block;
 }
 
+.grey-block-2 p{
+  margin-top: 17px;
+  width: 85%;
+}
+
+
 .p1-width {
   width: 81%;
   padding-bottom: 10px;
 }
 
 .p2-width {
-  width: 55%;
+  width: 66%;
 }
 
 .blog-img {
@@ -528,11 +550,11 @@ table {
 .white-block-blog {
   background-color: white;
   text-align: center;
-  /* margin-left: 27px; */
-  height: 210px;
+  height: 195px;
   padding: 0px;
-  width: 170px;
+  width: 217px;
   margin: 0 10px 10px 10px;
+  margin-left: 21px;
 }
 
 
@@ -545,18 +567,19 @@ table {
 
 .figure-month {
   text-align: left;
-  font-size: 7rem;
+  font-size: 8rem;
   font-weight: bolder;
   position: absolute;
   left: 13px;
 }
 
 .green-line {
-  width: 140px;
+  width: 155px;
   border: 1px solid #30FD30;
   position: absolute;
   top: 123px;
   left: 13px;
+  margin-left: 8px;
 }
 
 .white-block-blog p {
@@ -570,16 +593,19 @@ table {
 .grey-block-2 {
   font-size: 12px;
   background-color: #E5E5E5;
-  width: 24%;
+  width: 23%;
   padding-top: 10px;
   padding-bottom: 25px;
   padding-left: 22px;
   float: right;
   right: 15px;
-  height: 250px;
+  height: 278px;
 }
 
 /*SECTION OUR AGREEMENT*/
+.agreement-block {
+  padding-bottom: 15px;
+}
 
 .black-block-partner {
   background-color: black;
@@ -599,12 +625,13 @@ table {
   font-weight: bolder;
   text-transform: uppercase;
   display: inline;
+  color: white;
 }
 
 .grey-block-3 {
   background-color: #E5E5E5;
-  margin-left: 15px;
-  padding-left: 20px;
+  margin-left: 30px;
+  padding-left: 18px;
   height: 230px;
   width: 44%;
 }
@@ -622,12 +649,12 @@ table {
 .white-block-partner {
   background-color: white;
   float: right;
-  width: 23%;
+  width: 21%;
   padding-left: 20px;
 }
 
 .white-block-partner p {
-  margin: 15px 0 25px 0;
+  margin: 10px 0 14px 0;
 }
 
 #ok {
@@ -640,15 +667,14 @@ table {
 
 .white-block-style {
   background-color: white;
-  height: 210px;
   margin-left: 15px;
-  margin-right: 35px;
-  padding-left: 15px;
+  width: 47%;
+  padding-left: 17px;
+  padding-bottom: 17px;
 }
 
 .values {
   padding-left: 15px;
-  padding-top: 20px;
 }
 
 
@@ -675,8 +701,9 @@ table {
 }
 
 #methodo {
-  width: 580px;
   height: 250px;
+  float: right;
+  margin-right: 15px;
 }
 
 /*SECTION EQUIPE*/
@@ -727,8 +754,8 @@ table {
 
 /*MEDIA QUERIES*/
 
-/*Small devices (landscape phones, 576px and up)*/
-@media (max-width: 767px) {
+/*1- Small devices (landscape phones, 576px and up)*/
+@media (max-width: 768px) {
   .logo {
     padding-top: 30px;
     margin-left: 20px;
@@ -756,6 +783,24 @@ table {
   .black-line{
     margin-bottom: 19px;
   }
+  .white-block-partner {
+    width: auto;
+    margin-top: 15px;
+  }
+  .black-block-partner {
+    width: 100%;
+    height: auto;
+    padding-bottom: 25px;
+  }
+  .black-block-partner p {
+     width: 100%;
+  }
+  .grey-block-3 {
+    height: auto;
+    width: 100%;
+    float: right;
+    margin-top: 25px;
+  }
 }
 
 /*Medium devices (tablets, 768px and up)*/
@@ -772,6 +817,7 @@ table {
 @media (max-width: 990px) {
   .grey-block {
     text-align: -webkit-center;
+    width: 100%;
   }
   .article p {
       font-size: 14px;
@@ -798,9 +844,6 @@ table {
     width: 83%;
     text-align: -webkit-center;
   }
-  .white-block-partner {
-    margin-top: 15px;
-  }
   .grey-block-2 {
     font-size: 14px;
     background-color: #E5E5E5;
@@ -808,16 +851,6 @@ table {
     padding-top: 10px;
     margin-top: 15px;
     text-align: -webkit-center;
-  }
-  .black-block-partner {
-    width: 34%;
-    height: auto;
-    padding-bottom: 29px;
-  }
-  .grey-block-3 {
-    height: auto;
-    width: 60%;
-    float: right;
   }
   .white-block-partner {
     width: auto;
@@ -830,19 +863,37 @@ table {
   }
 }
 
+@media (min-width: 992px) {
+  .container {
+    width: 1030px;
+  }
+}
+
 @media only screen and (min-device-width : 768px) and (max-device-width : 985px) {
   .wallet-black-block {
     width: 68%;
   }
+  .black-block-partner {
+    width: 34%;
+    height: auto;
+    padding-bottom: 29px;
+  }
+  .grey-block-3 {
+    height: auto;
+    width: 60%;
+  }
+
 }
 
-@media (min-width: 1200px) {
+/*2- Desktops and laptops*/
+@media (min-width: 1224px) {
   .wallet-black-block {
     width: 72%;
   }
 }
 
-@media (min-width: 1760px) {
+/*3- large screen*/
+@media (min-width: 1824px) {
   .wallet-black-block {
     width: 71%;
   }
