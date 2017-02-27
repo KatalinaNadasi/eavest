@@ -611,7 +611,7 @@ table {
   height: 230px;
   padding-top: 20px;
   padding-left: 20px;
-  width: 23%;
+  /*width: 23%;*/
 }
 
 .black-block-partner p {
@@ -766,7 +766,7 @@ table {
   margin-top: 7px;
 }
 
-/*SECTION EQUIPE*/
+/*SECTION TEAM*/
 
 .grey-block-4 {
   background-color: #E5E5E5;
@@ -775,8 +775,12 @@ table {
   padding: 15px 0 35px 32px;
 }
 
-.equipe {
-  margin-right: 35px;
+.grey-block-4 ul {
+  margin: 10px 20px 0 20px;
+}
+
+.team {
+  margin-right: 38px;
 }
 
 .img-circle {
@@ -791,22 +795,52 @@ table {
   top: 65px;
 }
 
-.equipe-p {
+.img-circle {
+  margin-bottom: 10px;
   margin-top: 10px;
 }
 
 /*FOOTER*/
-.footer-style {
-  background-color: black;
-  color: white;
+footer * {
+  font-weight: lighter;
 }
 
-.footer-style p {
+.footer-main {
+  background-color: black;
+  color: white;
+  padding: 18px 70px 32px 66px;
+}
+
+.always-left {
+  float: left;
+  font-size: 11px;
+  line-height: 11px;
+  margin-left: 10px;
+  text-align: left;
+}
+
+.always-left a,.always-right a {
+  color: white;
+  text-decoration: none;
+}
+
+.always-left span a {
+  margin-right: 30px;
+}
+
+.always-right {
+  font-size: 11px;
+  line-height: 11px;
+  float: right;
+  text-align: right;
+}
+
+/*.footer-style p {
     margin: 21px;
     padding: 5px;
     height: 100%;
     text-align: end;
-  }
+  }*/
 
 .immatriculation-p {
   font-weight: lighter;
@@ -815,6 +849,13 @@ table {
 /*MEDIA QUERIES*/
 
 /*1- Small devices (landscape phones, 576px and up)*/
+@media (max-width: 700px) {
+  .footer-main span a, always-right {
+    display: inline-block;
+    text-align: -webkit-center;
+  }
+}
+
 @media (max-width: 768px) {
   .logo {
     padding-top: 30px;
@@ -848,18 +889,12 @@ table {
     margin-top: 15px;
   }
   .black-block-partner {
-    width: auto;
+    width: 100%;
     height: auto;
     padding-bottom: 15px;
   }
   .black-block-partner p {
      width: 100%;
-  }
-  .grey-block-3 {
-    height: auto;
-    width: 100%;
-    float: right;
-    margin-top: 25px;
   }
   p .grey-letters {
     width: 81%;
@@ -874,6 +909,40 @@ table {
   .methodo-img2 {
     transform: translateY(-14px);
   }
+  .footer-main span a, always-right {
+    text-align: center;
+    margin: 22px;
+  }
+  .always-left {
+    float: none;
+    margin-left: 0px;
+    text-align: -webkit-center;
+    display: -webkit-box;
+  }
+  .always-right {
+    display: inline-block;
+    text-align: center;
+    margin: 15px;
+  }
+  .footer-main {
+    padding: 18px 190px 17px 145px;
+  }
+  .footer-main span a, always-right {
+    margin: 5px;
+  }
+  .grey-block-3 {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .grey-block-3 {
+    width: 100%;
+    padding-left: 18px;
+    height: 230px;
+    margin-top: 15px;
+  }
 }
 
 /*Medium devices (tablets, 768px and up)*/
@@ -884,6 +953,9 @@ table {
   }
   input[type=search] {
     width: 45%;;
+  }
+  .grey-block {
+    margin-bottom: 15px;
   }
 }
 
@@ -904,6 +976,7 @@ table {
   }
   .white-block-blog {
     margin: 0 auto;
+    transform: translateX(129%);
   }
   .white-block-blog h2 {
     padding-top: 15px;
@@ -911,6 +984,9 @@ table {
   .white-block-blog p {
     width: 83%;
     text-align: -webkit-center;
+  }
+  .green-line {
+    top: 134px;
   }
   .grey-block-2 {
     font-size: 14px;
@@ -923,6 +999,7 @@ table {
   }
   .white-block-partner {
     width: auto;
+    margin-top: 15px;
   }
   .value-img3 {
     transform: translateX(20px);
@@ -957,29 +1034,23 @@ table {
   }
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 985px) {
+@media only screen and (min-device-width : 768px) and (max-device-width : 988px) {
   .wallet-black-block {
     width: 68%;
-  }
-  .black-block-partner {
-    width: 34%;
-    height: auto;
-    padding-bottom: 29px;
   }
   .grey-block-2 {
     width: 64%;
   }
   .grey-block-3 {
-    width: 61%;
-    float: right;
-    height: auto;
+    /*float: right;
+    margin-left: 36px;
+    padding-left: 18px;
+    width: 62%;
+    height: auto;*/
   }
   .white-block-blog {
     margin-top: 15px;
     margin-left: 15px;
-  }
-  .green-line {
-    top: 134px;
   }
   .article p {
     font-size: 14px;
@@ -999,6 +1070,11 @@ table {
     display: inline-block;
     float: none;
   }
+  .black-block-partner {
+    width: 34%;
+    height: auto;
+    padding-bottom: 29px;
+  }
   .methodologie {
     margin: 5px;
     margin-right: 34px;
@@ -1016,6 +1092,11 @@ table {
   .wallet-black-block {
     width: 72%;
   }
+  .black-block-partner {
+    width: 23%;
+    height: auto;
+    padding-bottom: 29px;
+  }
 }
 
 /*3- large screen*/
@@ -1028,6 +1109,10 @@ table {
 /*Desktop*/
 /*@media(min-width:992px){}*/
 
+
 /*Large screen*/
-/*@media(min-width:1200px){
-}*/
+@media(min-width:1200px){
+  .footer-main {
+    padding: 18px 196px 32px 197px;
+  }
+}
