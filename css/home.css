@@ -236,10 +236,16 @@ input.btn.btn-default {
 
 /*hover*/
 
-/*ul.product-content, li.basic-list, li.eavest-list:hover {
-  background-color: rgba(255, 255, 255, 0.6);
-}*/
+#more-1, #more-2 {
+  display: inline-block;
+  background: transparent;
+  padding: 9px 25px;
+  position: absolute;
+  left: 36%;
+  top: 49%;
+}
 
+/*end hover*/
 
 /*SEARCH-PRODUCT*/
 

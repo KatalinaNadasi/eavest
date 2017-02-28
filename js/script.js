@@ -45,14 +45,27 @@ $(function() {
   });
 });
 
+// Mouse Over
+$(function() {
+  $('#more-1').hide();
+  $(".product-content-1").hover(function(){
+      $(this).css("opacity", 0.5);
+      $(this).css("background-color", "white");
+      $("#more-1").show();
+      }, function(){
+      $(this).css("opacity", 1);
+      $(this).css("background-color", "transparent");
+      $("#more-1").hide();
+  });
 
-
-// hover tentative
-// $('.product-content').mouseover(function()
-//      {
-//         $('.company-image-overlay').show();
-//      });
-// $('.product-content').mouseout(function()
-//      {
-//        $('.company-image-overlay').hide();
-//      });
+  $('#more-2').hide();
+  $(".product-content-2").hover(function(){
+    $(this).css("opacity", 0.5);
+    $(this).css("background-color", "white");
+    $("#more-2").show();
+    }, function(){
+    $(this).css("opacity", 1);
+    $(this).css("background-color", "transparent");
+    $("#more-2").hide();
+  });
+});
