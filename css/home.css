@@ -134,7 +134,7 @@ h5 {
 }
 
 .navbar {
-	margin: 40px 0 17px 0;
+	margin: 40px 3px 0px 0;
   font-weight: bold;
 }
 
@@ -807,8 +807,13 @@ footer * {
 .footer-arrow {
   position: fixed;
   right: 20px;
-  bottom: 20px; 
+  bottom: 20px;
 }
+
+#scroll-back-to-top {
+  text-align: center;
+}
+
 
 /*MEDIA QUERIES*/
 

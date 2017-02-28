@@ -25,7 +25,7 @@ $(function() {
   {
     $('.footer-arrow').css({
       position: 'fixed',
-      bottom: 150
+      bottom: 130
       });
     } else
     {
@@ -35,9 +35,13 @@ $(function() {
       });
     }
   })
-  // scroll up on click
+  // scroll up on click arrow big
   $('.footer-arrow').click(function(){
-  $('html, body').animate({scrollTop:0}, 'slow');
+  $('html, body').animate({scrollTop:0}, 'speed');
+  });
+    // scroll up on click arrow small
+  $('#scroll-back-to-top').click(function(){
+  $('html, body').animate({scrollTop:0}, 'speed');
   });
 });
 
