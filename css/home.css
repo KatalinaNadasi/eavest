@@ -35,7 +35,15 @@ h3 {
 }
 
 h4 {
-  font-size: 16px;
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: uppercase;
+  margin-top: 15px;
+  font-weight: 900;
+}
+
+h5 {
+  font-size: 15px;
   line-height: 20px;
   text-transform: uppercase;
   margin-top: 15px;
@@ -47,6 +55,7 @@ h4 {
 
 .grey-letters-light {
   color: #777776;
+  font-size: 16px;
 }
 
 .clear {
@@ -60,6 +69,11 @@ h4 {
 .padding-left {
   padding-left: 30px;
   padding-right: 15px;
+}
+
+.padding-right {
+  padding-right: 18px !important;
+  padding-left: 7px !important;
 }
 
 .padding-bottom {
@@ -226,46 +240,6 @@ input.btn.btn-default {
   background-color: rgba(255, 255, 255, 0.6);
 }*/
 
-/*MODAL */
-/*#myModal {
-  top:5%;
-  right:50%;
-  outline: none;
-}
-
-.modal-body {
-  background-color: #F2F2F2;
-  width: 725px;
-}
-
-.product-title-modal {
-  text-transform: uppercase;
-  font-weight: bold;
-  color: black !important;
-  margin-bottom: 50px;
-}
-
-.eavest-list-modal {
-  background-color: white;
-  text-transform: uppercase;
-  margin-top: 15px;
-  height: 32px;
-  padding-left: 100px;
-}
-
-.basic-list-modal {
-  background-color: white;
-  text-transform: uppercase;
-  margin-top: 15px;
-  height: 32px;
-}*/
-
-/*modal produits à rappeler*/
-/*#myModal2 {
-    top:5%;
-    left:50%;
-    outline: none;
-}*/
 
 /*SEARCH-PRODUCT*/
 
@@ -279,7 +253,7 @@ input.btn.btn-default {
 
 .search {
   background-color: white;
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
   padding: 40px 15px 39px 15px;
 }
@@ -483,7 +457,7 @@ table {
   background-color: #E5E5E5;
   margin-left: 30px;
   padding-top: 11px;
-  padding-bottom: 20px;
+  padding-bottom: 23px;
   padding-left: 22px;
   margin-right: auto;
   right: 15px;
@@ -583,10 +557,11 @@ table {
   top: 112px;
   left: 13px;
   text-align: left;
+  margin-right: 7px;
 }
 
 .grey-block-2 {
-  font-size: 12px;
+  font-size: 14px;
   background-color: #E5E5E5;
   padding-top: 10px;
   padding-bottom: 20px;
@@ -603,8 +578,7 @@ table {
 .black-block-partner {
   background-color: black;
   color: white;
-  /*height: 230px;*/
-  padding-top: 20px;
+  padding-top: 14px;
   padding-left: 20px;
 }
 
@@ -625,7 +599,7 @@ table {
   background-color: #E5E5E5;
   margin-left: 22px;
   padding-left: 18px;
-  height: 230px;
+  height: 237px;
 }
 
 .grey-block-3 p {
@@ -830,6 +804,12 @@ footer * {
   font-weight: lighter;
 }
 
+.footer-arrow {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;  
+}
+
 /*MEDIA QUERIES*/
 
 /*1- Small devices (landscape phones, 576px and up)*/
@@ -873,6 +853,8 @@ footer * {
   }
   .black-block-partner {
     height: auto;
+  }
+  .black-block-partner p {
     padding-bottom: 15px;
   }
   .white-block-style {
@@ -950,7 +932,7 @@ footer * {
     .white-block-blog {
       padding: 0px;
       margin: 0 10px 10px 10px;
-      margin-left: 12px;
+      margin-left: 15px;
     }
     .green-line {
       width: 120px;
@@ -997,7 +979,7 @@ footer * {
      padding-bottom: 0;
     }
     .black-block-partner {
-      padding-bottom: 24px;
+      padding-bottom: 7px;
     }
     .methodologie {
       margin: 5px;
@@ -1026,7 +1008,7 @@ footer * {
     width: 133px;
     }
     .black-block-partner {
-      padding-bottom: 41px;
+      padding-bottom: 16px;
     }
     .grey-block-3 {
     margin-left: 23px;
@@ -1045,7 +1027,7 @@ footer * {
       width: 72%;
     }
     .black-block-partner {
-      padding-bottom: 41px;
+      padding-bottom: 23px;
     }
     .wallet-black-block {
       width: 71%;
