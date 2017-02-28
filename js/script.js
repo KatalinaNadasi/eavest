@@ -1,5 +1,6 @@
 $(function() {
 
+// navbar
   $(document).on('scroll', function(){
     var scrollPos = $(window).scrollTop();
     if (scrollPos <= 0) {
@@ -8,6 +9,7 @@ $(function() {
       $('.slider').show();
     }
   });
+// footer-arrow hide show on scroll
   $(document).on('scroll', function(){
     var scrollPos = $(window).scrollTop();
     if (scrollPos <= 0) {
@@ -16,6 +18,8 @@ $(function() {
       $('.footer-arrow').fadeIn(1000);
     }
   });
+
+  // Stop the arrow before footer
   $(window).scroll(function() {
   if ($(document).height() <= ($(window).height() + $(window).scrollTop()))
   {
@@ -23,32 +27,18 @@ $(function() {
       position: 'fixed',
       bottom: 150
       });
-    } else {
+    } else
+    {
     $('.footer-arrow').css({
       position: 'fixed',
       bottom: 20
-    });
-  }
-  var doc = $(document);
-
-  doc.scroll(function () {
-      // make sure to wrap yours entire footer in some css selector
-      var footer = $('#wholeFooter');
-      var arrow = $('.footer-arrow');
-      var s = $('#product-summary-position');
-
-      var top = doc.scrollTop() + s.offset().top * 2 + p.height();
-      var footerTop = footer.offset().top;
-
-      var offset = footerTop - top;
-
-      if (offset < 0) {
-          p.css({'margin-top': '' + offset + 'px'});
-      } else {
-          p.css({'margin-top': 0});
-      }
-    });
+      });
+    }
   })
+  // scroll up on click
+  $('.footer-arrow').click(function(){
+  $('html, body').animate({scrollTop:0}, 'slow');
+  });
 });
 
 
