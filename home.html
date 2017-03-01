@@ -38,6 +38,7 @@
 			<h1><img src="img/eavest-logo.png" alt="Eavest" class="center-block img-responsive logo" id="header"/></h1>
 			<div class="language-switcher">
 				<a th:unless="${#authorization.expression('isAuthenticated()')}" href="http://localhost:8080/login" class="italicized grey-letters">Connexion</a>
+				<a href="#" th:text="${authUserName}" class="italicized">Nom de l'utilisateur</a>
 				<a href="https://twitter.com/EAVEST_" id="twitter" target="_blank"><i class="fa fa-twitter"></i></a>
 				<a href="http://eavest.com/" class="language">fr</a>/<a href="http://eavest.com/en/" class="language">en</a>
 
@@ -81,7 +82,7 @@
         <img src="img/bell.png" alt="bell" class="img-responsive img-bell"/>
         <h1 class="product-title">produits remboursés<span class="min"> depuis 30 jours</span></h1>
 
-        <ul class="list-unstyled product-content-1">
+        <ul class="list-unstyled product-content-1 overlay-1">
           <li class="eavest-list"><span class="margin grey-letters">resonance 1 / FR00196847</span>
             <span><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" /></span>
           </li>
@@ -93,14 +94,14 @@
           <li class="basic-list"><span class="margin grey-letters">resonance 5 / FR00196847</span></li>
         </ul>
 				<a class="over">
-					<span><img id="more-1" src="img/more-hover.png" alt="voir-plus"></span>
+					<span><img id="more-1" src="img/more-hover.png" alt="voir-plus" /></span>
 				</a>
 
       </div>
       <div class="col-sm-6 col-md-6 wrapper padding-left">
         <img src="img/bell.png" alt="bell" class="img-responsive img-bell"/>
         <h1 class="product-title"><b>produits à rappeler</b><span class="min"> dans les 30 jours</span></h1>
-        <ul class="list-unstyled product-content-2">
+        <ul class="list-unstyled product-content-2 overlay-2">
           <li class="basic-list"><span class="margin grey-letters">resonance 9 / FR00196847</span></li>
           <li class="basic-list"><span class="margin grey-letters">resonance 8 / FR00196847</span></li>
           <li class="eavest-list"><span class="margin grey-letters">resonance 7 / FR00196847</span>
@@ -109,7 +110,7 @@
           <li class="basic-list"><span class="margin grey-letters">resonance 5 / FR00196847</span></li>
         </ul>
 				<a class="over">
-					<span><img id="more-2" src="img/more-hover.png" alt="voir-plus"></span>
+					<span><img id="more-2" src="img/more-hover.png" alt="voir-plus" /></span>
 				</a>
       </div>
 		<!-- end row products -->
@@ -326,13 +327,13 @@
 					<div class="col-xs-3 col-md-3 methodologie">
 						<span class="number">2</span>
 						<p class="grey-letters p-width-2">Une aide <span>à la décision</span></p>
-					</br>
+					<br />
 						<img src="img/aide.png" alt="aide" class="methodo-img2" />
 					</div>
 					<div class="col-xs-3 col-md-3 methodologie">
 						<span class="number">3</span>
 						<p class="grey-letters p-width-3">Le suivi exclusif EAVEST</p>
-						</br>
+						<br />
 						<img src="img/suivi.png" alt="suivi" class="methodo-img3" />
 					</div>
 				</div>
@@ -373,7 +374,7 @@
 				<span><a href="http://eavest.com/mentions-legales/">mentions légales</a></span>
 			</small>
 			<small class="always-right col-sm-12 col-md-5">
-				Immatriculé à l’Orias n° 14001795 <a href="http://www.orias.fr">(www.orias.fr)</a></br>Conseiller en Investissements Financiers </br>enregistré sous le n° E003753,</br>Membre de l’ANACOFI - Association agréée par l’AMF
+				Immatriculé à l’Orias n° 14001795 <a href="http://www.orias.fr">(www.orias.fr)</a><br />Conseiller en Investissements Financiers <br />enregistré sous le n° E003753,<br />Membre de l’ANACOFI - Association agréée par l’AMF
 			</small>
     </div>
   </div>

@@ -45,27 +45,51 @@ $(function() {
   });
 });
 
-// Mouse Over
-$(function() {
-  $('#more-1').hide();
-  $(".product-content-1").hover(function(){
-      $(this).css("opacity", 0.5);
-      $(this).css("background-color", "white");
-      $("#more-1").show();
-      }, function(){
-      $(this).css("opacity", 1);
-      $(this).css("background-color", "transparent");
-      $("#more-1").hide();
-  });
+// ex hover
+// $('.overlay').mouseover(function(){
+//     $(this).fadeOut("fast");
+// });
+//
+// $('.underlay').mouseout(function(){
+//     $('.overlay').fadeIn("fast");
+// });
 
-  $('#more-2').hide();
-  $(".product-content-2").hover(function(){
-    $(this).css("opacity", 0.5);
-    $(this).css("background-color", "white");
-    $("#more-2").show();
-    }, function(){
-    $(this).css("opacity", 1);
-    $(this).css("background-color", "transparent");
-    $("#more-2").hide();
+// Mouse Over
+  $(function() {
+
+// block produits remboursés
+    $('#more-1').hide();
+    $('#more-2').hide();
+
+    $('.overlay-1').mouseover(function(){
+      $('.overlay-1').css({'background':'white','opacity':'0.5'});
+      $(this).fadeIn("slow");
+      $('#more-1').show();
+        $('#more-1').mouseover(function(){
+          $('.overlay-1').css({'background':'white','opacity':'0.5'});
+          $('#more-1').show();
+          $('#more-1').stop(true);
+        })
+    });
+    $('.overlay-1').mouseout(function(){
+      $('#more-1').hide();
+      $('.overlay-1').css({'background':'transparent','opacity':'1'});
+    });
+
+// block produits à rappeler
+    $('.overlay-2').mouseover(function(){
+      $('.overlay-2').css({'background':'white','opacity':'0.5'});
+      $(this).fadeIn("slow");
+      $('#more-2').show();
+        $('#more-2').mouseover(function(){
+          $('.overlay-2').css({'background':'white','opacity':'0.5'});
+          $('#more-2').show();
+          $('#more-2').stop(true);
+        })
+    });
+
+    $('.overlay-2').mouseout(function(){
+      $('#more-2').hide();
+      $('.overlay-2').css({'background':'transparent','opacity':'1'});
+    });
   });
-});
