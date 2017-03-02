@@ -45,14 +45,6 @@ $(function() {
   });
 });
 
-// ex hover
-// $('.overlay').mouseover(function(){
-//     $(this).fadeOut("fast");
-// });
-//
-// $('.underlay').mouseout(function(){
-//     $('.overlay').fadeIn("fast");
-// });
 
 // Mouse Over
   $(function() {

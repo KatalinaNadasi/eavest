@@ -834,6 +834,10 @@ footer * {
   bottom: 20px;
 }
 
+a#arrow-position {
+    cursor: pointer;
+}
+
 #scroll-back-to-top {
   text-align: center;
 }
