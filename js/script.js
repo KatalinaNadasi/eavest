@@ -62,11 +62,11 @@ $(function() {
     $('#more-2').hide();
 
     $('.overlay-1').mouseover(function(){
-      $('.overlay-1').css({'background':'white','opacity':'0.5'});
+      $('.overlay-1').css({'background':'rgba(255, 255, 255, 0.92)','opacity':'0.6'});
       $(this).fadeIn("slow");
       $('#more-1').show();
         $('#more-1').mouseover(function(){
-          $('.overlay-1').css({'background':'white','opacity':'0.5'});
+          $('.overlay-1').css({'background':'rgba(255, 255, 255, 0.92)','opacity':'0.6'});
           $('#more-1').show();
           $('#more-1').stop(true);
         })
@@ -78,11 +78,11 @@ $(function() {
 
 // block produits à rappeler
     $('.overlay-2').mouseover(function(){
-      $('.overlay-2').css({'background':'white','opacity':'0.5'});
+      $('.overlay-2').css({'background':'rgba(255, 255, 255, 0.92)','opacity':'0.6'});
       $(this).fadeIn("slow");
       $('#more-2').show();
         $('#more-2').mouseover(function(){
-          $('.overlay-2').css({'background':'white','opacity':'0.5'});
+          $('.overlay-2').css({'background':'rgba(255, 255, 255, 0.92)','opacity':'0.6'});
           $('#more-2').show();
           $('#more-2').stop(true);
         })
