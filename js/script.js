@@ -20,21 +20,22 @@ $(function() {
   });
 
   // Stop the arrow before footer
+  var footerTop = $('.footer-arrow').css({ position: 'fixed', bottom: 140 });
+  // Position of fixed element from top of the document
   $(window).scroll(function() {
-  if ($(document).height() <= ($(window).height() + $(window).scrollTop()))
+  var footerTop =
+  $('#wholeFooter').offset().top;
+  $('.footer-arrow').css();
+
+  if ($(document).height() <= ($(window).height() + $(window).scrollTop() + footerTop))
   {
-    $('.footer-arrow').css({
-      position: 'fixed',
-      bottom: 130
-      });
+    $('.footer-arrow').css({ position: 'fixed', bottom: 10 });
     } else
     {
-    $('.footer-arrow').css({
-      position: 'fixed',
-      bottom: 20
-      });
+    $('.footer-arrow').css({ position: 'fixed', bottom: 11 });
     }
   })
+
   // scroll up on click arrow big
   $('.footer-arrow').click(function(){
   $('html, body').animate({scrollTop:0}, 'speed');
@@ -54,11 +55,13 @@ $(function() {
     $('#more-2').hide();
 
     $('.overlay-1').mouseover(function(){
-      $('.overlay-1').css({'background':'rgba(255, 255, 255, 0.92)','opacity':'0.6'});
+      $('.overlay-1').css({'background':'white', 'opacity':'0.6'});
+      $('.overlay-item').css({'background':'white', 'opacity':'0.6'});
       $(this).fadeIn("slow");
       $('#more-1').show();
         $('#more-1').mouseover(function(){
-          $('.overlay-1').css({'background':'rgba(255, 255, 255, 0.92)','opacity':'0.6'});
+          $('.overlay-1').css({'background':'white', 'opacity':'0.6'});
+          $('.overlay-item').css({'background':'white', 'opacity':'0.6'});
           $('#more-1').show();
           $('#more-1').stop(true);
         })
@@ -66,22 +69,25 @@ $(function() {
     $('.overlay-1').mouseout(function(){
       $('#more-1').hide();
       $('.overlay-1').css({'background':'transparent','opacity':'1'});
+      $('.overlay-item').css({'background':'white','opacity':'1'});
     });
 
 // block produits à rappeler
-    $('.overlay-2').mouseover(function(){
-      $('.overlay-2').css({'background':'rgba(255, 255, 255, 0.92)','opacity':'0.6'});
-      $(this).fadeIn("slow");
-      $('#more-2').show();
-        $('#more-2').mouseover(function(){
-          $('.overlay-2').css({'background':'rgba(255, 255, 255, 0.92)','opacity':'0.6'});
-          $('#more-2').show();
-          $('#more-2').stop(true);
-        })
+  $('.overlay-2').mouseover(function(){
+    $('.overlay-2').css({'background':'white', 'opacity':'0.6'});
+    $('.overlay-item').css({'background':'white', 'opacity':'0.6'});
+    $(this).fadeIn("slow");
+    $('#more-2').show();
+      $('#more-2').mouseover(function(){
+        $('.overlay-2').css({'background':'white', 'opacity':'0.6'});
+        $('.overlay-item').css({'background':'white', 'opacity':'0.6'});
+        $('#more-2').show();
+        $('#more-2').stop(true);
+      })
     });
-
     $('.overlay-2').mouseout(function(){
       $('#more-2').hide();
       $('.overlay-2').css({'background':'transparent','opacity':'1'});
+      $('.overlay-item').css({'background':'white','opacity':'1'});
     });
   });

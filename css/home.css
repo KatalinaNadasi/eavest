@@ -260,6 +260,7 @@ input.btn.btn-default {
   transition: all 0.4s ease;
 }
 
+
 /*.product-content-1 {
   transition-property: background-color;
   transition-duration: 6s;
@@ -832,6 +833,12 @@ footer * {
   position: fixed;
   right: 20px;
   bottom: 20px;
+}
+
+.bottom {
+  position: fixed;
+  position: absolute;
+  bottom: 140px;
 }
 
 a#arrow-position {
