@@ -1,3 +1,5 @@
+$('.footer-arrow').hide();
+
 $(function() {
 
 // navbar

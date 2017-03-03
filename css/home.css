@@ -122,17 +122,17 @@ h5 {
   float: right;
 }
 
-.padding-left {
+.padding_left {
   padding-left: 30px;
   padding-right: 15px;
 }
 
-.padding-right {
+.padding_right {
   padding-right: 18px !important;
   padding-left: 7px !important;
 }
 
-.padding-bottom {
+.padding_bottom {
   padding-bottom: 30px;
 }
 
@@ -546,18 +546,15 @@ table {
   margin-top: 15px;
 }
 
-.blog-width {
-  width: 85%;
-}
-
 .grey-block {
   background-color: #E5E5E5;
   margin-left: 30px;
   padding-top: 11px;
-  padding-bottom: 23px;
+  padding-bottom: 55px;
   padding-left: 22px;
   margin-right: auto;
   right: 15px;
+  margin-bottom: 15px;
 }
 
 .blue-feature-1 {
@@ -588,7 +585,7 @@ table {
 
 .grey-block-2 p{
   margin-top: 17px;
-  width: 85%;
+  width: 99%;
 }
 
 .p1-width {
@@ -607,6 +604,7 @@ table {
 .article p {
   font-size: 12px;
   text-align: justify;
+  margin-right: 30px;
 }
 
 .article p span {
@@ -660,8 +658,8 @@ table {
   font-size: 14px;
   background-color: #E5E5E5;
   padding-top: 10px;
-  padding-bottom: 20px;
-  padding-left: 22px;
+  padding-bottom: 33px;
+  padding-left: 30px;
   float: right;
   right: 15px;
 }
@@ -953,7 +951,7 @@ a#arrow-position {
     padding-top: 16px;
     margin-left: 20px;
   }
-  .padding-left {
+  .padding_left {
     padding-left: 15px;
   }
   input[type=search] {
@@ -963,8 +961,7 @@ a#arrow-position {
     text-align: center;
   }
   .grey-block {
-    text-align: -webkit-center;
-    margin-bottom: 15px;
+    padding-left: 50px;
   }
   .wallet-black-block {
     margin-left: 15px;
@@ -982,6 +979,9 @@ a#arrow-position {
   }
   .white-block-blog {
     height: 219px;
+  }
+  .white-block-blog p {
+    left: 23px;
   }
   .black-block-partner {
     height: auto;
@@ -1006,6 +1006,9 @@ a#arrow-position {
   }
   .grey-block-3 .list-inline {
     text-align: -webkit-center;
+  }
+  .green-line {
+    left: 16px;
   }
   .agreement-block {
     padding-bottom: 0;
@@ -1055,11 +1058,6 @@ a#arrow-position {
     }
     .white-block-partner {
       margin-top: 15px;
-    }
-    .blog-img {
-      padding: 15px;
-      transform: translateY(-10px);
-      text-align: center;
     }
     .white-block-blog {
       padding: 0px;
@@ -1128,6 +1126,22 @@ a#arrow-position {
   @media(max-width:850px) {
     .language-switcher {
       font-size: 1rem;
+    }
+  }
+
+  @media(max-width:992px) {
+    .white-block-blog h2 {
+      text-align: -webkit-center;
+    }
+    .white-block-blog p {
+      left: 43px;
+    }
+    .figure-month {
+      text-align: -webkit-center;
+      position: inherit;
+    }
+    .green-line {
+      left: 89px;
     }
   }
 
