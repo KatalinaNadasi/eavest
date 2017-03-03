@@ -20,21 +20,28 @@ $(function() {
   });
 
   // Stop the arrow before footer
-  var footerTop = $('.footer-arrow').css({ position: 'fixed', bottom: 140 });
-  // Position of fixed element from top of the document
   $(window).scroll(function() {
-  var footerTop =
-  $('#wholeFooter').offset().top;
-  $('.footer-arrow').css();
+    var elementOffset = $('#footer').offset().top;
+    var footerTop = (elementOffset - $(window).scrollTop());
+    var imageBottom = footerTop + $('.footer-arrow').height() + 20;
+// 20 is the fixed bottom
+    // alert(footHeight); 2561
 
-  if ($(document).height() <= ($(window).height() + $(window).scrollTop() + footerTop))
+// if ($(document).height() - footHeight <= ($(window).height() + $(window).scrollTop()))
+if(imageBottom > footerTop ) {
+  $('.footer-arrow').css({
+    position: 'fixed',
+    bottom: 20
+    });
+  } else
   {
-    $('.footer-arrow').css({ position: 'fixed', bottom: 10 });
-    } else
-    {
-    $('.footer-arrow').css({ position: 'fixed', bottom: 11 });
-    }
-  })
+    $('.footer-arrow').addClass('fixed');
+  $('.footer-arrow').css({
+    position: 'fixed',
+    bottom: 140,
+    });
+  }
+})
 
   // scroll up on click arrow big
   $('.footer-arrow').click(function(){
