@@ -191,12 +191,15 @@ h5 {
 
 .navbar {
   font-weight: bold;
-  font-size: 12px;
-  text-transform: uppercase;
+  font-size: 12px;;
   background-color: white;
   text-align: center;
   margin-top: 15px;
   padding-bottom: 20px;
+}
+
+#menu-home, #menu-method, #menu-mesure, #menu-products, #menu-blog, #menu-faq, #menu-contact {
+    text-transform: uppercase;
 }
 
 .navbar a {
@@ -308,34 +311,32 @@ img#eavest {
 /*hover*/
 
 #more-1, #more-2 {
-  display: block;
+  display: none;
   position: absolute;
   left: 42%;
   top: 49%;
-  width: 100px;
-  height: 96px;
+  width: 70px;
+  height: 70px;
   cursor: auto;
-  /*-webkit-transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;*/
-}
-
-#more-1:hover, #more-2:hover {
-  width: 100px;
-  height: 96px;
-  /*backface-visibility: hidden;*/
-}
-
-.overlay-1, .overlay-2 {
   transition: all 0.4s ease;
 }
 
-
-/*.product-content-1 {
-  transition-property: background-color;
-  transition-duration: 6s;
-}*/
+#more-3 {
+  display: none;
+  position: absolute;
+  left: 37%;
+  top: 41%;
+  width: 70px;
+  height: 70px;
+  cursor: auto;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
 
 /*end hover*/
 
@@ -867,6 +868,7 @@ footer * {
   color: white;
   padding: 18px 70px 32px 66px;
   margin-bottom: 0;
+  border-radius: 0px;
 }
 
 .always-left {
@@ -875,6 +877,7 @@ footer * {
   line-height: 11px;
   margin-left: 10px;
   text-align: left;
+  margin-top: 11px;
 }
 
 .always-left a,.always-right a {
@@ -888,7 +891,7 @@ footer * {
 
 .always-right {
   font-size: 11px;
-  line-height: 11px;
+  line-height: 13px;
   float: right;
   text-align: right;
 }
@@ -1192,6 +1195,6 @@ a#arrow-position {
       width: 71%;
     }
     .footer-main {
-      padding: 18px 196px 32px 197px;
+      padding: 18px 179px 16px 179px;
     }
   }
