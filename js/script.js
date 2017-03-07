@@ -64,7 +64,6 @@ $(window).scroll(function() {
           $('.overlay-1').css({'background':'white', 'opacity':'0.6'});
           $('.overlay-item-1').css({'background':'white', 'opacity':'0.6'});
           $('#more-1').show();
-          $('#more-1').stop(true);
         })
     });
     $('.overlay-1').mouseout(function(){
@@ -82,7 +81,6 @@ $(window).scroll(function() {
         $('.overlay-2').css({'background':'white', 'opacity':'0.6'});
         $('.overlay-item-2').css({'background':'white', 'opacity':'0.6'});
         $('#more-2').show();
-        $('#more-2').stop(true);
       })
     });
     $('.overlay-2').mouseout(function(){
@@ -93,20 +91,22 @@ $(window).scroll(function() {
 
   // block produit du mois
   $('.white-block').mouseover(function(){
-    $('.white-block').css({'background':'white', 'opacity':'0.6'});
-    $('.img-product').css({'background':'white', 'opacity':'0.6'});
+    $('.white-block').css({'background':'rgba(255, 255, 255, 0.92)', 'opacity':'1'});
+    $('.img-product').css({'background':'rgba(255, 255, 255, 0.92)', 'opacity':'0.6'});
+    $('#month-product-title').css({'background':'rgba(255, 255, 255, 0.92)', 'opacity':'0.6'});
     $('#more-3').show();
+    $('#more-3').css({'opacity':'none'});
       $('#more-3').mouseover(function(){
         $('.white-block').css({'background':'white', 'opacity':'0.6'});
         $('.img-product').css({'background':'white', 'opacity':'0.6'});
         $('#more-3').show();
-        $('#more-3').stop(true);
       })
     });
     $('.white-block').mouseout(function(){
       $('#more-3').hide();
       $('.white-block').css({'background':'white','opacity':'1'});
       $('.img-product').css({'background':'white','opacity':'1'});
+      $('#month-product-title').css({'background':'white', 'opacity':'1'});
     });
 
   });

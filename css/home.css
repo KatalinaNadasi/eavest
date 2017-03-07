@@ -339,10 +339,17 @@ img#eavest {
   width: 70px;
   height: 70px;
   cursor: auto;
+  opacity: 1;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
+}
+
+#more: hover {
+  opacity: 1;
+  color: blue;
+  background: transparent;
 }
 
 /*end hover*/
@@ -521,6 +528,17 @@ table {
   right: 28px;
 }
 
+.wallet-black-block a {
+  color: #4A4A4A !important;
+}
+
+.wallet-button:hover {
+  color: #333; 
+}
+
+.wallet-black-block a:visited {
+  color: #4A4A4A !important;
+}
 
 .wallet-black-block span {
   display: block;
