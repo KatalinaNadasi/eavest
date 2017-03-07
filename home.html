@@ -132,9 +132,15 @@
 			</div>
 			<!-- end div container (products) -->
 		</div>
+	</section>
+
+	<!-- SECTION PERFREVIEW -->
+
+	<section class="perf-review">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-3 col-md-3">
+
+				<div class="hidden-sm col-md-3">
 					<h2 class="black-block">cherchez un produit<br /> parmis nos<br /> <span th:text="${nbProducts}">2000</span> références</h2>
 
 					<div class="search">
@@ -151,7 +157,9 @@
 					</div>
 					<div class="clear"></div>
 				</div>
-				<div class="col-sm-6 col-md-6">
+
+				<!--PERFREVIEW -->
+				<div class="col-sm-12 col-md-6">
 					<div>
 						<ul class="list-inline list-unstyled numbers ">
 							<li class="square-1">10</li>
@@ -199,7 +207,7 @@
 						</tfoot>
 					</table>
 				</div>
-				<div class="col-xs-5 col-md-3">
+				<div class="hidden-xs hidden-sm col-md-3">
 					<div class="white-block">
 						<h2 id="month-product-title">LE PRODUIT DU MOIS</h2>
 						<div class="month-product">
@@ -210,15 +218,52 @@
 						</a>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</section>
+
+				<!-- VERSION XS RESPONSIVE ONLY -->
+				<div class="container resp-sm">
+					<div class="col-xs-12 col-sm-7 hidden-md hidden-lg" id="black-block">
+						<h2 class="black-block">cherchez un produit<br /> parmis nos<br /> <span th:text="${nbProducts}">2000</span> références</h2>
+
+						<div class="search">
+							<p class="grey-letters">Émetteur, Code ISIN,</p>
+							<p class="grey-letters">Nom du produit, Sous-jacent</p>
+							<div class="search-bar">
+								<span>
+									<form>
+										<input type="search" id="find-product" autocomplete="off"/>
+										<button type="submit"><i class="fa fa-2x fa-search"></i></button>
+									</form>
+								</span>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="col-xs-12 col-sm-5 hidden-md hidden-lg" id="white-block">
+						<div class="white-block">
+							<h2 id="month-product-title">LE PRODUIT DU MOIS</h2>
+								<div class="month-product">
+									<img src="img/month-product.jpg" class="img-responsive img-product" alt="produit-du-mois" />
+								</div>
+								<a>
+									<span><img id="more-3-sm" src="img/more-hover.png" alt="voir-plus" /></span>
+								</a>
+						</div>
+					</div>
+				<!-- end row -->
+				</div>
+
+				<!-- FIN VERSION XS RESPONSIVE ONLY -->
+
 	<div class="container">
-		<div class="col-md-12 black-line"></div>
+		<div class="col-md-12 black-line-1"></div>
 	</div>
 
 	<!-- SECTION PORTEFEUILLE -->
-	<section>
+	<section class="portefeuille">
 		<div class="container text-center wrap">
 			<div class="row">
 				<div class="hidden-xs col-sm-3 col-md-3 wallet-white-block">
@@ -265,7 +310,7 @@
 						<p class="grey-letters">des produits structurés blablabla</p>
 					</div>
 				</div>
-				<div class="col-xs-6 col-sm-6 col-md-3 grey-block-2">
+				<div class="col-xs-7 col-sm-6 col-md-3 grey-block-2">
 					<ul class="list-inline list-unstyled">
 						<li class="blue-feature-2"></li>
 						<li class="blue-title">Mardi 18 octobre 2016</li>
@@ -313,48 +358,48 @@
 	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 white-block-style">
+				<div class="col-md-5 white-block-style">
 					<h4><b>Nos valeurs</b></h4>
 					<div class="row values">
 						<ul class="list-inline list-unstyled grey-letters">
 							<li class="padding_right">
 								<h5>indépendance</h5>
-								<img src="img/independance.png" alt="independance" class="value-img1" />
+								<img src="img/independance.png" alt="independance" id="value-img1" />
 							</li>
 							<li class="padding_right">
 								<h5>expertise</h5>
-								<img src="img/expertise.png" alt="expertise" class="value-img2" />
+								<img src="img/expertise.png" alt="expertise" id="value-img2" />
 							</li>
 							<li class="padding_right">
 								<h5>ouverture</h5>
-								<img src="img/ouverture.png" alt="ouverture" class="value-img3" />
+								<img src="img/ouverture.png" alt="ouverture" id="value-img3" />
 							</li>
 							<li class="padding_right">
 								<h5 id="proximity">proximité</h5>
-								<img src="img/proximite.png" alt="proximité" class="value-img4" />
+								<img src="img/proximite.png" alt="proximité" id="value-img4" />
 							</li>
 						</ul>
 					</div>
 				</div>
-				<div class="col-md-5 white-block-style-2" id="methodo">
+				<div class="col-md-6 white-block-style-2" id="methodo">
 					<h4><b>Notre méthodologie</b></h4>
 					<div class="row our-methodologie">
 						<div class="col-xs-3 col-md-3 methodologie">
 							<span class="number">1</span>
 							<p class="grey-letters">L'élaboration d'investissement sur mesure </p>
-							<img src="img/elaboration.png" alt="methodologie-1" class="methodo-img1" />
+							<img src="img/elaboration.png" alt="methodologie-1" id="methodo-img1" />
 						</div>
-						<div class="col-xs-3 col-md-3 methodologie">
+						<div class="col-xs-3 col-md-3 methodologie" id="methodo-2-block">
 							<span class="number">2</span>
 							<p class="grey-letters p-width-2">Une aide <span>à la décision</span></p>
 							<br />
-							<img src="img/aide.png" alt="aide" class="methodo-img2" />
+							<img src="img/aide.png" alt="aide" id="methodo-img2" />
 						</div>
 						<div class="col-xs-3 col-md-3 methodologie">
 							<span class="number">3</span>
 							<p class="grey-letters p-width-3">Le suivi exclusif EAVEST</p>
 							<br />
-							<img src="img/suivi.png" alt="suivi" class="methodo-img3" />
+							<img src="img/suivi.png" alt="suivi" id="methodo-img3" />
 						</div>
 					</div>
 				</div>
@@ -420,18 +465,18 @@
 	<script src="js/libs/jquery.mCustomScrollbar.min.js"></script>
 
 	<!-- Script for autocompleting the filter text box for searching products -->
-	<!-- Script for autocompleting the filter text box for searching products -->
+
 	<script th:inline="javascript">
 	/*<![CDATA[*/
 	$(document).ready(function(){
 		// à décommenter KNA avant commit
-		// var productTags = [[${productNames}]];
-		var maListe = [];
+		var productTags = [[${productNames}]];
+		// var maListe = [];
 		/*console.log(productTags);*/
 		$('#find-product').autocomplete({
 		// à décommenter KNA avant commit
-		// source: productTags
-		source: maListe
+		source: productTags
+		// source: maListe
 		});
 	});
 	/*]]>*/

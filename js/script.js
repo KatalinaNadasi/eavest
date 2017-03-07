@@ -89,11 +89,12 @@ $(window).scroll(function() {
       $('.overlay-item-2').css({'background':'white','opacity':'1'});
     });
 
-  // block produit du mois
+// block produit du mois overlay
   $('.white-block').mouseover(function(){
     $('.white-block').css({'background':'rgba(255, 255, 255, 0.92)', 'opacity':'1'});
     $('.img-product').css({'background':'rgba(255, 255, 255, 0.92)', 'opacity':'0.6'});
     $('#month-product-title').css({'background':'rgba(255, 255, 255, 0.92)', 'opacity':'0.6'});
+    $('#more-3').show();
     $('#more-3').show();
     $('#more-3').css({'opacity':'none'});
       $('#more-3').mouseover(function(){
@@ -108,5 +109,26 @@ $(window).scroll(function() {
       $('.img-product').css({'background':'white','opacity':'1'});
       $('#month-product-title').css({'background':'white', 'opacity':'1'});
     });
+
+// block produit du mois affichage sm only overlay
+    $('.white-block').mouseover(function(){
+      $('.white-block').css({'background':'rgba(255, 255, 255, 0.92)', 'opacity':'1'});
+      $('.img-product').css({'background':'rgba(255, 255, 255, 0.92)', 'opacity':'0.6'});
+      $('#month-product-title').css({'background':'rgba(255, 255, 255, 0.92)', 'opacity':'0.6'});
+      $('#more-3-sm').show();
+      $('#more-3-sm').show();
+      $('#more-3-sm').css({'opacity':'none'});
+        $('#more-3-sm').mouseover(function(){
+          $('.white-block').css({'background':'white', 'opacity':'0.6'});
+          $('.img-product').css({'background':'white', 'opacity':'0.6'});
+          $('#more-3-sm').show();
+        })
+      });
+      $('.white-block').mouseout(function(){
+        $('#more-3-sm').hide();
+        $('.white-block').css({'background':'white','opacity':'1'});
+        $('.img-product').css({'background':'white','opacity':'1'});
+        $('#month-product-title').css({'background':'white', 'opacity':'1'});
+      });
 
   });
