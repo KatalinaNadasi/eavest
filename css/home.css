@@ -378,11 +378,10 @@ input[type=search] {
   margin-top: 15px;
   margin: 0;
   padding: 0;
-  transform: translateY(-3px);
   position: absolute;
   width: 55%;
   right: 70px;
-  transform: translateY(4px);
+  transform: translateY(2px);
 }
 
 .search p {
@@ -392,7 +391,7 @@ input[type=search] {
 .fa-search {
   color: blue;
   border-left: none;
-  margin-top: 5px;
+  margin-top: -3px;
   height: 37px;
   padding-right: 5px;
   transform: translateX(-3px);
