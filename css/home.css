@@ -226,7 +226,7 @@ h5 {
 }
 
 ul>li>a:hover {
-	color: blue !important;
+	color: #0251FB !important;
 	background-color: white !important;
   text-decoration: none !important;
 }
@@ -250,7 +250,7 @@ ul>li>a:hover {
 }
 
 #menu-home a {
-  color: blue !important;
+  color: #0251FB !important;
 }
 
 .logo {
@@ -320,7 +320,7 @@ img#eavest {
   vertical-align: -webkit-baseline-middle;
 }
 
-/*hover*/
+/*Over*/
 
 #more-1, #more-2 {
   display: none;
@@ -366,10 +366,22 @@ img#eavest {
   transition: all 0.4s ease;
 }
 
-#more: hover {
-  opacity: 1;
-  color: blue;
+#more-grey-block {
+  display: none;
+  text-transform: uppercase;
   background: transparent;
+  padding: 9px 25px;
+  color: white;
+  border: 3px solid white;
+  font-size: 19px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -20px 0 0 -88px;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 /*end hover*/
@@ -398,7 +410,7 @@ img#eavest {
 
 .search-bar {
   height: 48px;
-  border: solid 2px blue;
+  border: solid 2px #0251FB;
   margin-top: 15px;
 }
 
@@ -421,7 +433,7 @@ input[type=search] {
 }
 
 .fa-search {
-  color: blue;
+  color: #0251FB;
   border-left: none;
   margin-top: -3px;
   height: 37px;
@@ -439,7 +451,7 @@ input[type=search] {
 .square-1 {
   border: solid 2px #30FD30;
   border-right: none;
-  color: blue;
+  color: #0251FB;
   height: 50px;
   width: 50px;
   margin-top: 20px;
@@ -451,7 +463,7 @@ input[type=search] {
 
 .square-2 {
   border: solid 2px #30FD30;
-  color: blue;
+  color: #0251FB;
   height: 50px;
   width: 50px;
   margin-top: 20px;
@@ -626,19 +638,19 @@ table {
 
 .blue-feature-1 {
   width: 30px;
-  border-bottom: solid 1px blue;
+  border-bottom: solid 1px #0251FB;
   margin-left: 5px;
 }
 
 .blue-feature-2 {
   width: 30px;
-  border-bottom: solid 1px blue;
+  border-bottom: solid 1px #0251FB;
 }
 
-.blue-title {
+.blue-title, .blue-title-1 {
   font-size: 13px;
   text-transform: uppercase;
-  color: blue;
+  color: #0251FB;
   transform: translateY(6px);
 }
 
