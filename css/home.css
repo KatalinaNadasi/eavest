@@ -907,10 +907,6 @@ table {
   margin: 10px 20px 0 20px;
 }
 
-.team {
-  margin-right: 38px;
-}
-
 .img-circle {
   width: 100px;
   height: 100px;
@@ -1095,6 +1091,14 @@ a#arrow-position {
   }
 }
 
+/*responsive team*/
+
+@media only screen and (min-device-width : 760px) and (max-device-width : 990px) {
+  .team {
+    padding-left: 0px !important;
+  }
+}
+
 /*green-line*/
 @media (max-device-width : 462px) {
   .green-line {
@@ -1102,14 +1106,12 @@ a#arrow-position {
     width: 100px;
   }
 }
-
 @media only screen and (min-device-width : 462px) and (max-device-width : 656px) {
   .green-line {
     transform: translateX(10px);
     width: 60%;
   }
 }
-
 @media only screen and (min-device-width : 656px) and (max-device-width : 710px) {
   .green-line {
     transform: translateX(22px);
@@ -1131,8 +1133,6 @@ a#arrow-position {
     transform: translateX(41px);
   }
 }
-
-
 
 @media only screen and (min-device-width : 767px) and (max-device-width : 992px){
   #methodo-2-block {
@@ -1362,6 +1362,10 @@ a#arrow-position {
     }
     .zone-transit {
       transform: translateY(-29px);
+    }
+    .img-circle {
+      width: 80px !important;
+      height: 80px !important;
     }
   }
 
