@@ -47,60 +47,60 @@
     });
 
 // block produit du mois affichage sm only overlay
-    $('.white-block').mouseover(function(){
-      $('.white-block, .img-product, #month-product-title').css({'background':'rgba(255, 255, 255, 0.92)', 'opacity':'0.6'});
+    $('#white-block').mouseover(function(){
+      $('#white-block, .white-block, #month-product-title, .month-product, .img-product').css({'background':'rgba(255, 255, 255, 0.92)', 'opacity':'0.6'});
       $('#more-3-sm').show().css({'opacity':'1'});
         $('#more-3-sm').mouseover(function(){
-          $('.white-block, .img-product').css({'background':'white', 'opacity':'0.6'});
+          $('#white-block, .white-block, #month-product-title, .month-product, .img-product').css({'background':'white', 'opacity':'0.6'});
           $('#more-3-sm').show();
         })
       });
-      $('.white-block').mouseout(function(){
+      $('#white-block').mouseout(function(){
         $('#more-3-sm').hide();
-        $('.white-block, .img-product, #month-product-title').css({'background':'white','opacity':'1'});
+        $('#white-block, .white-block, #month-product-title, .month-product, .img-product').css({'background':'white','opacity':'1'});
       });
 
     // SECTION BLOG grey-block overlay
     $('.grey-block').mouseover(function(){
-      $('.grey-block, .blog-img, .blue-title-1, .blog-title-1').css({'background':'#0251FB', 'opacity':'0.6'});
+      $('.grey-block, .blue-feature-1, .blue-title-1, .blog-title-1, .blog-img, .article, #blog-1-p').css({'background':'#0251FB', 'opacity':'0.6'});
       $('#more-grey-block').show();
         $('#more-grey-block').mouseover(function(){
-          $('.grey-block, .blue-title-1, .blog-img, .blog-title-1').css({'background':'#0251FB', 'opacity':'0.6'});
+          $('.grey-block, .blue-feature-1, .blue-title-1, .blog-title-1, .blog-img, .article, #blog-1-p').css({'background':'#0251FB', 'opacity':'0.6'});
           $('#more-grey-block').show();
         })
     });
     $('.grey-block').mouseout(function(){
       $('#more-grey-block').hide();
-      $('.grey-block, .blue-title-1, .blog-img, .blog-title-1').css({'background':'#E5E5E5','opacity':'1'});
+      $('.grey-block, .blue-feature-1, .blue-title-1, .blog-title-1, .blog-img, .article, #blog-1-p').css({'background':'#E5E5E5','opacity':'1'});
 
     });
 
     // chiffre du mois
     $('.white-block-blog').mouseover(function(){
-      $('.figure-margin, .figure-month, .green-line, #figure-month-title').css({'background':'white', 'opacity':'0.6'});
+      $('white-block-blog, .figure-margin, #figure-month-title, .figure-month, .green-line, #figure-p').css({'background':'white', 'opacity':'0.6'});
       $('#more-figure-month').show();
         $('#more-figure-month').mouseover(function(){
-          $('.figure-margin, .figure-month, .green-line, #figure-month-title').css({'background':'white', 'opacity':'0.6'});
+          $('white-block-blog, .figure-margin, .figure-month, .green-line, #figure-month-title').css({'background':'white', 'opacity':'0.6'});
           $('#more-figure-month').show();
         })
     });
     $('.white-block-blog').mouseout(function(){
       $('#more-figure-month').hide();
-      $('.figure-margin, .figure-month, .green-line, #figure-month-title').css({'background':'transparent','opacity':'1'});
+      $('white-block-blog, .figure-margin, .figure-month, .green-line, #figure-month-title').css({'background':'transparent','opacity':'1'});
     });
 
     // grey-block-2
     $('.grey-block-2').mouseover(function(){
-      $('.grey-block-2, .blue-title, .blog-title-2').css({'background':'#0251FB', 'opacity':'0.6'});
+      $('.grey-block-2, .blue-title, .blog-title-2, #blog-2-p').css({'background':'#0251FB', 'opacity':'0.6'});
       $('#more-grey-block-2').show();
         $('#more-grey-block-2').mouseover(function(){
-          $('.grey-block-2, .blue-title, .blog-title-2').css({'background':'#0251FB', 'opacity':'0.6'});
+          $('.grey-block-2, .blue-title, .blog-title-2, #blog-2-p').css({'background':'#0251FB', 'opacity':'0.6'});
           $('#more-grey-block-2').show();
         })
     });
     $('.grey-block-2').mouseout(function(){
       $('#more-grey-block-2').hide();
-      $('.grey-block-2, .blue-title, .blog-title-2').css({'background':'#E5E5E5','opacity':'1'});
+      $('.grey-block-2, .blue-title, .blog-title-2, #blog-2-p').css({'background':'#E5E5E5','opacity':'1'});
 
     });
 
@@ -120,37 +120,37 @@
 
     // notre agrément
     $('.grey-block-3').mouseover(function(){
-      $('.grey-block-3, .img-agreement').css({'background':'white', 'opacity':'0.6'});
+      $('.grey-block-3, #agrement-title, #agrement-p, .img-agreement').css({'background':'white', 'opacity':'0.6'});
       $('#more-our-agrement').show();
         $('#more-our-agrement').mouseover(function(){
-          $('.grey-block-3, .img-agreement').css({'background':'white', 'opacity':'0.6'});
+          $('.grey-block-3, #agrement-title, #agrement-p, .img-agreement').css({'background':'white', 'opacity':'0.6'});
           $('#more-our-agrement').show();
         })
     });
     $('.grey-block-3').mouseout(function(){
       $('#more-our-agrement').hide();
-      $('.grey-block-3, .img-agreement').css({'background':'#E5E5E5','opacity':'1'});
+      $('.grey-block-3, #agrement-title, #agrement-p, .img-agreement').css({'background':'#E5E5E5','opacity':'1'});
     });
 
     // partenaires
     $('.white-block-partner').mouseover(function(){
-      $('.white-block-partner').css({'background':'white', 'opacity':'0.6'});
+      $('.white-block-partner, #partner-title, #partner-p').css({'background':'white', 'opacity':'0.6'});
       $('#more-partner').show();
         $('#more-partner').mouseover(function(){
-          $('.white-block-partner').css({'background':'white', 'opacity':'0.6'});
+          $('.white-block-partner, #partner-title, #partner-p').css({'background':'white', 'opacity':'0.6'});
           $('#more-partner').show();
         })
     });
     $('.white-block-partner').mouseout(function(){
       $('#more-partner').hide();
-      $('.white-block-partner').css({'background':'white','opacity':'1'});
+      $('.white-block-partner, #partner-title').css({'background':'white','opacity':'1'});
     });
     // values
     $('.white-block-style').mouseover(function(){
-      $('.white-block-style, .values').css({'background':'white', 'opacity':'0.6'});
+      $('.white-block-style, .values, .padding_right, #value-img1, #value-img2, #value-img3, #value-img4').css({'background':'white', 'opacity':'0.6'});
       $('#more-values').show();
         $('#more-values').mouseover(function(){
-          $('.white-block-style, .values').css({'background':'white', 'opacity':'0.6'});
+          $('.white-block-style, .values, .padding_right, #value-img1, #value-img2, #value-img3, #value-img4').css({'background':'white', 'opacity':'0.6'});
           $('#more-values').show();
         })
     });
@@ -160,16 +160,16 @@
     });
     // methodologie
     $('.white-block-style-2').mouseover(function(){
-      $('.white-block-style-2, .our-methodologie, #methodo-2-block, .number, #methodo-p, #methodo-img1').css({'background':'white', 'opacity':'0.6'});
+      $('.white-block-style-2, #methodo, .our-methodologie, .methodologie, #methodo-numbers, #methodo-2-block, #methodo-p, #methodo-img1, .p-width-2, methodo-img2, .p-width-3, #methodo-img3').css({'background':'white', 'opacity':'0.6'});
       $('#more-methodologie').show();
         $('.white-block-style-2').mouseover(function(){
-          $('.white-block-style-2, .our-methodologie, #methodo-2-block, .number, #methodo-p, #methodo-img1').css({'background':'white', 'opacity':'0.6'});
+          $('.white-block-style-2, #methodo, .our-methodologie, .methodologie, #methodo-numbers, #methodo-2-block, #methodo-p, #methodo-img1, .p-width-2, methodo-img2, .p-width-3, #methodo-img3').css({'background':'white', 'opacity':'0.6'});
           $('#more-methodologie').show();
         })
     });
     $('.white-block-style-2').mouseout(function(){
       $('#more-methodologie').hide();
-      $('.white-block-style-2, .our-methodologie, #methodo-2-block, .number, #methodo-p, #methodo-img1').css({'background':'white','opacity':'1'});
+      $('.white-block-style-2, #methodo, .our-methodologie, .methodologie, #methodo-numbers, #methodo-2-block, #methodo-p, #methodo-img1, .p-width-2, methodo-img2, .p-width-3, #methodo-img3').css({'background':'white','opacity':'1'});
     });
     // team
     $('.grey-block-4').mouseover(function(){
