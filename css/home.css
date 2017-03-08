@@ -161,6 +161,10 @@ h5 {
   margin: 25px 0;
 }
 
+.block {
+  display: block;
+}
+
 
 /*NAVBAR*/
 .language-switcher {
@@ -1253,28 +1257,6 @@ a#arrow-position {
   #methodo-img1 {
     transform: translateY(4px);
   }
-  .footer-main span a, always-right {
-    text-align: center;
-    margin: 22px;
-  }
-  .always-left {
-    float: none;
-    margin-left: 0px;
-    text-align: -webkit-center;
-    display: -webkit-box;
-  }
-  .always-right {
-    display: inline-block;
-    text-align: center;
-    margin: 15px;
-  }
-  .footer-main {
-    padding: 18px 190px 17px 145px;
-  }
-  .footer-main span a, always-right {
-    display: inline-block;
-    text-align: -webkit-center;
-  }
 }
 
 /*Medium devices (tablets, 768px and up)*/
@@ -1396,6 +1378,38 @@ a#arrow-position {
     .agreement-block {
       padding-bottom: 15px;
     }
+  }
+
+  @media (max-device-width : 400px) {
+      .always-left, .always-right {
+        margin: 0;
+        padding: 0;
+        text-align: -webkit-center;
+      }
+    }
+
+  @media only screen and (min-device-width : 400px) and (max-device-width : 538px){
+    .always-left, .always-right {
+      margin: 0;
+      padding: 0;
+      text-align: -webkit-center;
+    }
+  }
+
+  @media only screen and (min-device-width : 538px) and (max-device-width : 1050px){
+      .always-left, .always-right {
+        text-align:  -webkit-center;
+    }
+      .always-left {
+        padding-bottom: 15px;
+        line-height: 13px;
+      }
+      #footer>.block {
+        display: block;
+      }
+      #footer {
+        line-height: 0px;
+      }
   }
 
 /*3- very large screen*/
