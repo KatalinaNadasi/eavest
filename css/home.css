@@ -706,7 +706,7 @@ table {
   border: 1px solid #30FD30;
   position: absolute;
   top: 123px;
-  left: 5px;
+  left: 18px;
   margin-left: 8px;
 }
 
@@ -1094,23 +1094,37 @@ a#arrow-position {
 }
 
 /*green-line*/
-@media (max-width: 600px) {
+@media (max-device-width : 462px) {
   .green-line {
-    left: 28px !important;
+    top: 133px;
+    width: 100px;
   }
 }
-@media only screen and (min-device-width : 600px) and (max-device-width : 724px) {
+
+@media only screen and (min-device-width : 462px) and (max-device-width : 656px) {
   .green-line {
-    left: 38px !important;
+    transform: translateX(10px);
+    width: 60%;
   }
 }
-@media (min-width : 724px ) {
+
+@media only screen and (min-device-width : 656px) and (max-device-width : 710px) {
   .green-line {
-    width: 120px;
-    left: 51px !important;
+    transform: translateX(22px);
   }
 }
-@media only screen and (min-device-width : 768px) and (max-device-width : 992px) {
+@media only screen and (min-device-width : 710px) and (max-device-width : 767px) {
+  .green-line {
+    transform: translateX(31px);
+  }
+}
+@media only screen and (min-device-width : 767px) and (max-device-width : 990px)  {
+  .green-line {
+    transform: translateX(82px);
+    width: 100px;
+  }
+}
+@media (min-device-width : 992) {
   .green-line {
     transform: translateX(41px);
   }
@@ -1359,9 +1373,6 @@ a#arrow-position {
     }
     .figure-month {
       font-size: 7rem;
-    }
-    .green-line {
-    width: 133px;
     }
     .black-block-partner {
       padding-bottom: 22px;
