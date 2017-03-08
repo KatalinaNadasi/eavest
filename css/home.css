@@ -132,10 +132,6 @@ h5 {
   padding-left: 7px !important;
 }
 
-.padding_bottom {
-  padding-bottom: 30px;
-}
-
 .container-fluid {
   margin: 0;
   padding: 0px;
@@ -366,7 +362,7 @@ img#eavest {
   transition: all 0.4s ease;
 }
 
-#more-grey-block {
+#more-grey-block, #more-grey-block-2 {
   display: none;
   text-transform: uppercase;
   background: transparent;
@@ -383,6 +379,101 @@ img#eavest {
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
+
+#more-figure-month {
+  display: none;
+  position: absolute;
+  left: 29%;
+  top: 29%;
+  width: 70px;
+  height: 70px;
+  cursor: auto;
+  opacity: 1;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+#figure-month-title {
+  padding-bottom: 30px;
+}
+
+#more-eavest-block {
+  display: none;
+  position: absolute;
+  left: 35%;
+  top: 29%;
+  width: 70px;
+  height: 70px;
+  cursor: auto;
+  opacity: 1;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+#more-our-agrement {
+  display: none;
+  position: absolute;
+  left: 41%;
+  top: 29%;
+  width: 70px;
+  height: 70px;
+  cursor: auto;
+  opacity: 1;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+#more-partner {
+  display: none;
+  position: absolute;
+  left: 36%;
+  top: 29%;
+  width: 70px;
+  height: 70px;
+  cursor: auto;
+  opacity: 1;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+#more-values, #more-methodologie {
+  display: none;
+  position: absolute;
+  left: 42%;
+  top: 29%;
+  width: 70px;
+  height: 70px;
+  cursor: auto;
+  opacity: 1;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+#more-team  {
+  display: none;
+  position: absolute;
+  left: 45%;
+  top: 37%;
+  width: 70px;
+  height: 70px;
+  cursor: auto;
+  opacity: 1;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
 
 /*end hover*/
 
@@ -1437,6 +1528,9 @@ a#arrow-position {
     }
     .footer-main {
       padding: 18px 179px 16px 179px;
+    }
+    .team-img {
+      margin-right: 30px;
     }
   }
 
