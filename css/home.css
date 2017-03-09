@@ -381,6 +381,10 @@ img#eavest {
   transition: all 0.4s ease;
 }
 
+.more:hover {
+  opacity: 0.92;
+}
+
 .more-product {
   display: block;
   position: absolute;
@@ -398,12 +402,12 @@ img#eavest {
 .more-3 {
   display: block;
   position: absolute;
-  left: 38%;
+  left: 36%;
   top: 41%;
   width: 70px;
   height: 70px;
   cursor: auto;
-  opacity: 0.92;
+  opacity: 1;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
@@ -501,7 +505,6 @@ img#eavest {
 }
 
 .more-blue {
-  opacity: 0
   text-transform: uppercase;
   background: rgba(0, 0, 255, 0.92);
   padding: 9px 25px;
