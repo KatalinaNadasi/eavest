@@ -89,44 +89,74 @@
 				<div class="col-sm-6 col-md-6 wrapper">
 					<img src="img/bell.png" alt="bell" class="img-responsive img-bell" />
 					<h1 class="product-title">produits remboursés<span class="min"> depuis 30 jours</span></h1>
-					<ul class="list-unstyled product-content-1 overlay-1">
-						<li class="prod-list overlay-item-1" th:each="refund : ${refundProducts}" th:if="${refundStat.count} le 5">
-							<span class="margin grey-letters" th:text="${refund.label + ' / ' + refund.isin}">resonance 2 / FR00196847</span>
-							<span th:if="${refund.isEavest}"><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" id="eavest" /></span>
-						</li>
-					</ul>
 
-<!-- KNA à garder pour test overlay
-					<ul class="list-unstyled product-content-1 overlay-1">
-						<li class="prod-list overlay-item"><span class="margin grey-letters">resonance 1 / FR00196847</span>
-							<span><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" id="eavest"/></span>
-						</li>
-						<li class="prod-list overlay-item"><span class="margin grey-letters prod-list-p">resonance 2 / FR00196847</span></li>
-						<li class="prod-list overlay-item"><span class="margin grey-letters">resonance 3 / FR00196847</span></li>
-						<li class="prod-list overlay-item"><span class="margin grey-letters">resonance 4 / FR00196847</span>
-							<span><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" id="eavest" /></span>
-						</li>
-						<li class="prod-list overlay-item"><span class="margin grey-letters">resonance 5 / FR00196847</span></li>
-					</ul>
-					 -->
+						<div class="sous-container">
+							<ul class="list-unstyled product-content-1">
+								<li class="prod-list overlay-item-1" th:each="refund : ${refundProducts}" th:if="${refundStat.count} le 5">
+									<span class="margin grey-letters" th:text="${refund.label + ' / ' + refund.isin}">resonance 2 / FR00196847</span>
+									<span th:if="${refund.isEavest}"><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" id="eavest" /></span>
+								</li>
+							</ul>
+							<a class="over">
+								<span><img class="more-product" src="img/more-hover.png" alt="voir-plus" /></span>
+							</a>
+						</div>
 
-					<a class="over">
-						<span><img id="more-1" src="img/more-hover.png" alt="voir-plus" /></span>
-					</a>
+
+
+<!-- KNA à garder pour test overlay à commenter -->
+					<!-- <div class="sous-container">
+						<ul class="list-unstyled product-content-1">
+							<li class="prod-list overlay-item"><span class="margin grey-letters">resonance 1 / FR00196847</span>
+								<span><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" id="eavest"/></span>
+							</li>
+							<li class="prod-list overlay-item"><span class="margin grey-letters prod-list-p">resonance 2 / FR00196847</span></li>
+							<li class="prod-list overlay-item"><span class="margin grey-letters">resonance 3 / FR00196847</span></li>
+							<li class="prod-list overlay-item"><span class="margin grey-letters">resonance 4 / FR00196847</span>
+								<span><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" id="eavest" /></span>
+							</li>
+							<li class="prod-list overlay-item"><span class="margin grey-letters">resonance 5 / FR00196847</span></li>
+						</ul>
+						<a class="over">
+							<span><img class="more-product" src="img/more-hover.png" alt="voir-plus" /></span>
+						</a>
+					</div> -->
+
 				</div>
 
 				<div class="col-sm-6 col-md-6 wrapper padding_left">
 					<img src="img/bell.png" alt="bell" class="img-responsive img-bell" />
 					<h1 class="product-title"><b>produits à rappeler</b><span class="min"> dans les 30 jours</span></h1>
-					<ul class="list-unstyled product-content-2 overlay-2">
-						<li class="prod-list overlay-item-2" th:each="tocall : ${tocallProducts}" th:if="${tocallStat.count} le 5">
-							<span class="margin grey-letters" th:text="${tocall.label + ' / ' + tocall.isin}">resonance 2 / FR00196847</span>
-							<span th:if="${tocall.isEavest}"><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" id="eavest" /></span>
-						</li>
-					</ul>
-					<a class="over">
-						<span><img id="more-2" src="img/more-hover.png" alt="voir-plus" /></span>
-					</a>
+
+					<!-- <div class="sous-container">
+						<ul class="list-unstyled product-content-1">
+							<li class="prod-list overlay-item"><span class="margin grey-letters">resonance 1 / FR00196847</span>
+								<span><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" id="eavest"/></span>
+							</li>
+							<li class="prod-list overlay-item"><span class="margin grey-letters prod-list-p">resonance 2 / FR00196847</span></li>
+							<li class="prod-list overlay-item"><span class="margin grey-letters">resonance 3 / FR00196847</span></li>
+							<li class="prod-list overlay-item"><span class="margin grey-letters">resonance 4 / FR00196847</span>
+								<span><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" id="eavest" /></span>
+							</li>
+							<li class="prod-list overlay-item"><span class="margin grey-letters">resonance 5 / FR00196847</span></li>
+						</ul>
+						<a class="over">
+							<span><img class="more-product" src="img/more-hover.png" alt="voir-plus" /></span>
+						</a>
+					</div> -->
+
+					<div class="sous-container">
+						<ul class="list-unstyled product-content-2">
+							<li class="prod-list overlay-item-2" th:each="tocall : ${tocallProducts}" th:if="${tocallStat.count} le 5">
+								<span class="margin grey-letters" th:text="${tocall.label + ' / ' + tocall.isin}">resonance 2 / FR00196847</span>
+								<span th:if="${tocall.isEavest}"><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" id="eavest" /></span>
+							</li>
+						</ul>
+						<a class="over">
+							<span><img class="more-product" src="img/more-hover.png" alt="voir-plus" /></span>
+						</a>
+					</div>
+
 				</div>
 				<!-- end row products -->
 			</div>
@@ -209,13 +239,15 @@
 				</div>
 				<div class="hidden-xs hidden-sm col-md-3">
 					<div class="white-block">
-						<h2 id="month-product-title">LE PRODUIT DU MOIS</h2>
+						<h2>LE PRODUIT DU MOIS</h2>
 						<div class="month-product">
 							<img src="img/month-product.jpg" class="img-responsive img-product" alt="produit-du-mois" />
 						</div>
-						<a>
-							<span><img id="more-3" src="img/more-hover.png" alt="voir-plus" /></span>
-						</a>
+						<div class="over">
+							<a>
+								<span><img class="more-3" src="img/more-hover.png" alt="voir-plus" /></span>
+							</a>
+						</div>
 					</div>
 				</div>
 
@@ -248,9 +280,11 @@
 								<div class="month-product">
 									<img src="img/month-product.jpg" class="img-responsive img-product" alt="produit-du-mois" />
 								</div>
-								<a>
-									<span><img id="more-3-sm" src="img/more-hover.png" alt="voir-plus" /></span>
-								</a>
+								<div class="over">
+									<a>
+										<span><img class="more" src="img/more-hover.png" alt="voir-plus" /></span>
+									</a>
+								</div>
 						</div>
 					</div>
 				<!-- end row -->
@@ -302,21 +336,23 @@
 						</div>
 					</div>
 					<!-- overlay grey-block -->
-					<div class="over">
+					<div class="over-blue">
 						<a>
-							<span id="more-grey-block">Lire la suite</span>
+							<span class="more-blue">Lire la suite</span>
 						</a>
 					</div>
 				</div>
 				<div class="col-xs-4 col-sm-5 col-md-2 white-block-blog">
 					<div class="figure-margin">
-						<h2 id="figure-month-title">chiffre du mois</h2>
+						<h2>chiffre du mois</h2>
 						<span class="figure-month">18%</span>
 						<span class="green-line"></span>
 						<p class="grey-letters" id="figure-p">des produits structurés blablabla</p>
-						<a>
-							<span><img id="more-figure-month" src="img/more-hover.png" alt="voir-plus" /></span>
-						</a>
+						<div class="over">
+							<a>
+								<span><img id="more-figure-month" src="img/more-hover.png" alt="voir-plus" /></span>
+							</a>
+						</div>
 					</div>
 				</div>
 				<div class="col-xs-7 col-sm-6 col-md-3 grey-block-2">
@@ -326,9 +362,9 @@
 					</ul>
 					<h3 class="blog-title-2">étude UFF :<span> que veulent les épargnants français ?</span></h3>
 					<p class="grey-letters" id="blog-2-p">Article de Frédéric Lorenzini <span>N3D - 18 octobre 2016</span><span>"En ce qui concerne la "compréhension des produits" [...] "</span></p>
-					<div class="over">
+					<div class="over-blue">
 						<a>
-							<span id="more-grey-block-2">Lire la suite</span>
+							<span class="more-blue">Lire la suite</span>
 						</a>
 					</div>
 				</div>
@@ -347,13 +383,15 @@
 					<p class="grey-letters-light">
 						<span class="main-title">eavest </span>est un cabinet de conseil indépendant spécialisé dans la construction, le suivi et l'analyse de produits structurés et alternatifs sur-mesure à destination de clients professionnels européens.
 					</p>
-					<a>
-						<span><img id="more-eavest-block" src="img/more-hover.png" alt="voir-plus" /></span>
-					</a>
+					<div class="over">
+						<a>
+							<span><img id="more-eavest-block" src="img/more-hover.png" alt="voir-plus" /></span>
+						</a>
+					</div>
 				</div>
 				<div class="col-sm-7 col-md-5 grey-block-3">
-					<h4 id="agrement-title"><b>Notre agrément</b></h4>
-					<p class="grey-letters" id="agrement-p">EAVEST a obtenu le statut de Conseil en Investissements Financiers auprès de l'ANACOFI, association agréée par l'Autorité des Marchés Financiers (AMF). EAVEST est également immatriculé à l'ORIAS.</p>
+					<h4><b>Notre agrément</b></h4>
+					<p class="grey-letters">EAVEST a obtenu le statut de Conseil en Investissements Financiers auprès de l'ANACOFI, association agréée par l'Autorité des Marchés Financiers (AMF). EAVEST est également immatriculé à l'ORIAS.</p>
 					<img id="ok" src="img/ok.png" alt="ok" class="hidden-xs hidden-sm" />
 					<div class="row">
 						<ul class="list-inline list-unstyled">
@@ -362,16 +400,18 @@
 							<li><img src="img/anacofi.png" alt="anacofi-logo" class="img-agreement img-responsive" /></li>
 						</ul>
 					</div>
-					<a>
-						<span><img id="more-our-agrement" src="img/more-hover.png" alt="voir-plus" /></span>
-					</a>
+						<a class="over">
+							<span><img id="more-our-agrement" src="img/more-hover.png" alt="voir-plus" /></span>
+						</a>
 				</div>
 				<div class="col-md-3 white-block-partner">
 					<h4 id="partner-title"><b>Partenaires</b></h4>
 					<p class="grey-letters" id="partner-p">En collaborations avec plus de 15 banques d'investissement partenaires, les stratégies sont pensées et conçues grâce à nos équipes d'ingénierie financière cross asset dédiées à Paris, Genève et Luxembourg.</p>
-					<a>
-						<span><img id="more-partner" src="img/more-hover.png" alt="voir-plus" /></span>
-					</a>
+					<div class="over">
+						<a>
+							<span><img id="more-partner" src="img/more-hover.png" alt="voir-plus" /></span>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -382,7 +422,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-5 white-block-style">
-					<h4 id="values-title"><b>Nos valeurs</b></h4>
+					<h4><b>Nos valeurs</b></h4>
 					<div class="row values">
 						<ul class="list-inline list-unstyled grey-letters">
 							<li class="padding_right">
@@ -403,12 +443,14 @@
 							</li>
 						</ul>
 					</div>
-					<a>
-						<span><img id="more-values" src="img/more-hover.png" alt="voir-plus" /></span>
-					</a>
+					<div class="over">
+						<a>
+							<span><img id="more-values" src="img/more-hover.png" alt="voir-plus" /></span>
+						</a>
+					</div>
 				</div>
 				<div class="col-md-6 white-block-style-2" id="methodo">
-					<h4 id="methodo-title"><b>Notre méthodologie</b></h4>
+					<h4><b>Notre méthodologie</b></h4>
 					<div class="row our-methodologie">
 						<div class="col-xs-3 col-md-3 methodologie">
 							<span class="number" id="methodo-numbers">1</span>
@@ -428,9 +470,11 @@
 							<img src="img/suivi.png" alt="suivi" id="methodo-img3" />
 						</div>
 					</div>
-					<a>
-						<span><img id="more-methodologie" src="img/more-hover.png" alt="voir-plus" /></span>
-					</a>
+					<div class="over">
+						<a>
+							<span><img id="more-methodologie" src="img/more-hover.png" alt="voir-plus" /></span>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -441,7 +485,7 @@
 	<div class="container">
 		<div class="col-sm-12 col-md-12 grey-block-4">
 			<div>
-				<h3 id="team-title"><b>L'équipe</b></h3>
+				<h3><b>L'équipe</b></h3>
 			</div>
 			<div class="row list-inline list-unstyled col-md-12 team">
 				<div class="col-xs-4 col-sm-3 col-md-2 team-img">
@@ -465,9 +509,11 @@
 					<span class="team-p grey-letters">Franck Magne <br />Président Fondateur</span></li>
 				</div>
 			</div>
-			<a>
-				<span><img id="more-team" src="img/more-hover.png" alt="voir-plus" /></span>
-			</a>
+			<div class="over">
+				<a>
+					<span><img id="more-team" src="img/more-hover.png" alt="voir-plus" /></span>
+				</a>
+			</div>
 		</div>
 	</div>
 
@@ -504,7 +550,7 @@
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="js/script.js"></script>
-	<script src="js/overlay.js"></script>
+	<!-- <script src="js/overlay.js"></script> -->
 	<script src="js/extra.js"></script>
 	<script src="js/libs/jquery-ui-slider-1.10.4.custom.min.js"></script>
 	<script src="js/libs/jquery.mCustomScrollbar.min.js"></script>
@@ -515,13 +561,13 @@
 	/*<![CDATA[*/
 	$(document).ready(function(){
 		// à décommenter KNA avant commit
-		var productTags = [[${productNames}]];
-		// var maListe = [];
+		// var productTags = [[${productNames}]];
+		var maListe = [];
 		/*console.log(productTags);*/
 		$('#find-product').autocomplete({
 		// à décommenter KNA avant commit
-		source: productTags
-		// source: maListe
+		// source: productTags
+		source: maListe
 		});
 	});
 	/*]]>*/

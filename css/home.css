@@ -318,11 +318,74 @@ img#eavest {
 
 /*Over*/
 
-#more-1, #more-2 {
-  display: none;
+.sous-container {
+  position: relative;
+}
+
+.over {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: center;
+  border: 0;
+  text-decoration: none;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.over:hover {
+  opacity: 0.92;
+}
+
+.over-blue {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-transform: uppercase;
+  background-color: blue;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: center;
+  border: 0;
+  text-decoration: none;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.over-blue:hover {
+  opacity: 0.92;
+}
+
+.more {
+  display: block;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 9px 25px;
+  color: white;
+  font-size: 19px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  opacity: 1;
+  margin: -20px 0 0 -88px;
+  transition: all 0.4s ease;
+}
+
+.more-product {
+  display: block;
   position: absolute;
   left: 42%;
-  top: 49%;
+  top: 31%;
   width: 70px;
   height: 70px;
   cursor: auto;
@@ -332,48 +395,15 @@ img#eavest {
   transition: all 0.4s ease;
 }
 
-#more-3 {
-  display: none;
+.more-3 {
+  display: block;
   position: absolute;
   left: 38%;
   top: 41%;
   width: 70px;
   height: 70px;
   cursor: auto;
-  opacity: 1;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-
-#more-3-sm {
-  display: none;
-  position: absolute;
-  left: 42%;
-  top: 36%;
-  width: 70px;
-  height: 70px;
-  cursor: auto;
-  opacity: 1;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-
-#more-grey-block, #more-grey-block-2 {
-  display: none;
-  text-transform: uppercase;
-  background: transparent;
-  padding: 9px 25px;
-  color: white;
-  border: 3px solid white;
-  font-size: 19px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin: -20px 0 0 -88px;
+  opacity: 0.92;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
@@ -381,7 +411,7 @@ img#eavest {
 }
 
 #more-figure-month {
-  display: none;
+  display: block;
   position: absolute;
   left: 29%;
   top: 29%;
@@ -395,12 +425,8 @@ img#eavest {
   transition: all 0.4s ease;
 }
 
-#figure-month-title {
-  padding-bottom: 30px;
-}
-
 #more-eavest-block {
-  display: none;
+  display: block;
   position: absolute;
   left: 35%;
   top: 29%;
@@ -415,7 +441,7 @@ img#eavest {
 }
 
 #more-our-agrement {
-  display: none;
+  display: block;
   position: absolute;
   left: 41%;
   top: 29%;
@@ -430,7 +456,7 @@ img#eavest {
 }
 
 #more-partner {
-  display: none;
+  display: block;
   position: absolute;
   left: 36%;
   top: 29%;
@@ -445,7 +471,7 @@ img#eavest {
 }
 
 #more-values, #more-methodologie {
-  display: none;
+  display: block;
   position: absolute;
   left: 42%;
   top: 29%;
@@ -460,7 +486,7 @@ img#eavest {
 }
 
 #more-team  {
-  display: none;
+  display: block;
   position: absolute;
   left: 45%;
   top: 37%;
@@ -474,6 +500,31 @@ img#eavest {
   transition: all 0.4s ease;
 }
 
+.more-blue {
+  opacity: 0
+  text-transform: uppercase;
+  background: rgba(0, 0, 255, 0.92);
+  padding: 9px 25px;
+  color: white;
+  border: 3px solid white;
+  font-size: 19px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  opacity: 0.92;
+  margin: -20px 0 0 -88px;
+  transition: all 0.4s ease;
+}
+
+.more-blue:hover {
+  color: blue;
+  background-color: white;
+  opacity: 1;
+}
+
+#figure-month-title {
+  padding-bottom: 30px;
+}
 
 /*end hover*/
 
@@ -725,6 +776,7 @@ table {
   margin-right: auto;
   right: 15px;
   margin-bottom: 15px;
+  transition: opacity 1s ease 0s;
 }
 
 .blue-feature-1 {

@@ -62,6 +62,19 @@
 
     // SECTION BLOG grey-block overlay
     $('.grey-block').mouseover(function(){
+      $('.over').show();
+      $('.over').css({'transition':'all 0.4s ease','opacity': '0.92'});
+      $('#more-grey-block').show();
+      $('#more-grey-block').mouseover(function(){
+        $('.over').show();
+      })
+    });
+    $('.grey-block').mouseout(function(){
+      $('#more-grey-block').hide();
+      $('.over').hide();
+    });
+
+    $('.grey-block').mouseover(function(){
       $('.grey-block, .blue-feature-1, .blue-title-1, .blog-title-1, .blog-img, .article, #blog-1-p').css({'background':'#0251FB', 'opacity':'0.6'});
       $('#more-grey-block').show();
         $('#more-grey-block').mouseover(function(){
@@ -197,7 +210,7 @@
     });
     $('.grey-block-4').mouseout(function(){
       $('#more-team').hide();
-      $('.grey-block-4, .team, .team-img, .team-p, #team-title').css({'background':'white','opacity':'1'});
+      $('.grey-block-4, .team, .team-img, .team-p').css({'background':'white','opacity':'1'});
       $('#team-title').css({'color':'black'});
     });
 
