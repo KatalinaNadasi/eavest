@@ -416,6 +416,24 @@ img#eavest {
   transition: all 0.4s ease;
 }
 
+.more-product-sm {
+  display: block;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 9px 25px;
+  color: white;
+  font-size: 19px;
+  position: absolute;
+  left: 60%;
+  top: 39%;
+  opacity: 1;
+  margin: -20px 0 0 -88px;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+
 .more-3 {
   display: block;
   position: absolute;
