@@ -90,64 +90,207 @@
 					<img src="img/bell.png" alt="bell" class="img-responsive img-bell" />
 					<h1 class="product-title">produits remboursés<span class="min"> depuis 30 jours</span></h1>
 
-						<div class="sous-container">
-							<ul class="list-unstyled product-content-1">
-								<li class="prod-list overlay-item-1" th:each="refund : ${refundProducts}" th:if="${refundStat.count} le 5">
-									<span class="margin grey-letters" th:text="${refund.label + ' / ' + refund.isin}">resonance 2 / FR00196847</span>
-									<span th:if="${refund.isEavest}"><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" id="eavest" /></span>
-								</li>
-							</ul>
-							<a class="over">
-								<span><img class="more-product" src="img/more-hover.png" alt="voir-plus" /></span>
-							</a>
-						</div>
-
-
-
-<!-- KNA à garder pour test overlay à commenter -->
+					<!-- TCO A décommenter -->
 					<!-- <div class="sous-container">
 						<ul class="list-unstyled product-content-1">
-							<li class="prod-list overlay-item"><span class="margin grey-letters">resonance 1 / FR00196847</span>
-								<span><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" id="eavest"/></span>
+							<li class="prod-list" th:each="refund : ${refundProducts}" th:if="${refundStat.count} le 5">
+								<span class="margin grey-letters" th:text="${refund.label + ' / ' + refund.isin}">resonance 2 / FR00196847</span>
+								<span th:if="${refund.isEavest}"><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" id="eavest" /></span>
 							</li>
-							<li class="prod-list overlay-item"><span class="margin grey-letters prod-list-p">resonance 2 / FR00196847</span></li>
-							<li class="prod-list overlay-item"><span class="margin grey-letters">resonance 3 / FR00196847</span></li>
-							<li class="prod-list overlay-item"><span class="margin grey-letters">resonance 4 / FR00196847</span>
-								<span><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" id="eavest" /></span>
-							</li>
-							<li class="prod-list overlay-item"><span class="margin grey-letters">resonance 5 / FR00196847</span></li>
 						</ul>
 						<a class="over">
 							<span><img class="more-product" src="img/more-hover.png" alt="voir-plus" /></span>
 						</a>
 					</div> -->
 
+<!--ACCORDION -->
+
+<!-- KNA à garder à commenter -->
+					<div class="sous-container">
+						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+							<!-- collapse product 1 -->
+						  <div class="panel panel-default">
+						    <div class="list-unstyled product-content-1" role="tab" id="headingOne">
+						      <h4 class="prod-list">
+										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+										<span class="margin grey-letters">resonance 1 / FR00196847</span>
+										<span><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" id="eavest"/></span>
+										</a>
+									</h4>
+								</div>
+								<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+									<div class="panel-body">
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+									</div>
+								</div>
+							</div>
+							<!-- collapse product 2 -->
+							<div class="panel panel-default">
+							 <div class="list-unstyled product-content-1" role="tab" id="headingTwo">
+								 <h4 class="prod-list">
+									 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+									 <span class="margin grey-letters">resonance 2 / FR00196847</span>
+									 <span><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" id="eavest"/></span>
+									 </a>
+								 </h4>
+							 </div>
+							 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+								 <div class="panel-body">
+									 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								 </div>
+							 </div>
+						 </div>
+						<!-- product 3 -->
+						<div class="panel panel-default">
+							<div class="list-unstyled product-content-1" role="tab" id="headingThree">
+						  	<h4 class="prod-list">
+						    	<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						      	<span class="margin grey-letters">resonance 3 / FR00196847</span>
+						       </a>
+						     </h4>
+						   </div>
+						   <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+						     <div class="panel-body">
+						       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+						     </div>
+						   </div>
+						 </div>
+						<!-- product 4 -->
+						 <div class="panel panel-default">
+							 <div class="list-unstyled product-content-1" role="tab" id="headingFour">
+								 <h4 class="prod-list">
+									 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+										 <span class="margin grey-letters">resonance 4 / FR00196847</span>
+										</a>
+									</h4>
+								</div>
+								<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+									<div class="panel-body">
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+									</div>
+								</div>
+							</div>
+							<!-- product 5 -->
+							<div class="panel panel-default">
+								<div class="list-unstyled product-content-1" role="tab" id="headingFive">
+									<h4 class="prod-list">
+										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+											<span class="margin grey-letters">resonance 5 / FR00196847</span>
+										 </a>
+									 </h4>
+								 </div>
+								 <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+									 <div class="panel-body">
+										 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+									 </div>
+								 </div>
+							 </div>
+						 	<!-- <a class="over">
+								<span><img class="more-product" src="img/more-hover.png" alt="voir-plus" /></span>
+							</a> -->
+					</div>
+				</div>
+				<!-- END ACCORDION -->
+
+	<!-- FIN KNA à décommenter -->
 				</div>
 
 				<div class="col-sm-6 col-md-6 wrapper padding_left">
 					<img src="img/bell.png" alt="bell" class="img-responsive img-bell" />
 					<h1 class="product-title"><b>produits à rappeler</b><span class="min"> dans les 30 jours</span></h1>
 
-					<!-- <div class="sous-container">
-						<ul class="list-unstyled product-content-1">
-							<li class="prod-list overlay-item"><span class="margin grey-letters">resonance 1 / FR00196847</span>
-								<span><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" id="eavest"/></span>
-							</li>
-							<li class="prod-list overlay-item"><span class="margin grey-letters prod-list-p">resonance 2 / FR00196847</span></li>
-							<li class="prod-list overlay-item"><span class="margin grey-letters">resonance 3 / FR00196847</span></li>
-							<li class="prod-list overlay-item"><span class="margin grey-letters">resonance 4 / FR00196847</span>
-								<span><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" id="eavest" /></span>
-							</li>
-							<li class="prod-list overlay-item"><span class="margin grey-letters">resonance 5 / FR00196847</span></li>
-						</ul>
-						<a class="over">
-							<span><img class="more-product" src="img/more-hover.png" alt="voir-plus" /></span>
-						</a>
-					</div> -->
+					<!-- ACCORDION 2 -->
+										<!-- KNA à garder et à commenter -->
+										<div class="sous-container">
+											<div class="panel-group" id="accordion-2" role="tablist" aria-multiselectable="true">
 
-					<div class="sous-container">
+											<!-- collapse product 1 -->
+											<div class="panel panel-default">
+												<div class="list-unstyled product-content-2" role="tab" id="heading2One">
+													<h4 class="prod-list">
+														<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2One" aria-expanded="true" aria-controls="collapse2One">
+														<span class="margin grey-letters">resonance 1 / FR00196847</span>
+														<span><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" id="eavest"/></span>
+														</a>
+													</h4>
+												</div>
+												<div id="collapse2One" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2One">
+													<div class="panel-body">
+														Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+													</div>
+												</div>
+											</div>
+											<!-- collapse product 2 -->
+											<div class="panel panel-default">
+												<div class="list-unstyled product-content-2" role="tab" id="heading2Two">
+													<h4 class="prod-list">
+														<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2Two" aria-expanded="true" aria-controls="collapse2Two">
+														<span class="margin grey-letters">resonance 2 / FR00196847</span>
+													</a>
+													</h4>
+												</div>
+												<div id="collapse2Two" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2Two">
+													<div class="panel-body">
+														Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+													</div>
+												</div>
+											</div>
+											<!-- product 3 -->
+											<div class="panel panel-default">
+												<div class="list-unstyled product-content-2" role="tab" id="heading2Three">
+													<h4 class="prod-list">
+														<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2Three" aria-expanded="false" aria-controls="collapse2Three">
+														<span class="margin grey-letters">resonance 3 / FR00196847</span>
+													</a>
+													</h4>
+												</div>
+											<div id="collapse2Three" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2Three">
+												<div class="panel-body">
+													Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+												</div>
+											</div>
+										</div>
+										<!-- product 4 -->
+										<div class="panel panel-default">
+											<div class="list-unstyled product-content-2" role="tab" id="heading2Four">
+												<h4 class="prod-list">
+													<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2Four" aria-expanded="false" aria-controls="collapse2Four">
+													<span class="margin grey-letters">resonance 4 / FR00196847</span>
+													</a>
+												</h4>
+											</div>
+											<div id="collapse2Four" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2Four">
+												<div class="panel-body">
+													Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+												</div>
+											</div>
+										</div>
+										<!-- product 5 -->
+										<div class="panel panel-default">
+											<div class="list-unstyled product-content-2" role="tab" id="heading2Five">
+												<h4 class="prod-list">
+													<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2Five" aria-expanded="false" aria-controls="collapse2Five">
+													<span class="margin grey-letters">resonance 5 / FR00196847</span>
+													</a>
+												</h4>
+											</div>
+											<div id="collapse2Five" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2Five">
+												<div class="panel-body">
+													Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+												</div>
+											</div>
+										</div>
+										<!-- <a class="over">
+										<span><img class="more-product" src="img/more-hover.png" alt="voir-plus" /></span>
+										</a> -->
+									</div>
+								</div>
+<!-- END ACCORDION -->
+
+					<!-- <div class="sous-container">
 						<ul class="list-unstyled product-content-2">
-							<li class="prod-list overlay-item-2" th:each="tocall : ${tocallProducts}" th:if="${tocallStat.count} le 5">
+							<li class="prod-list" th:each="tocall : ${tocallProducts}" th:if="${tocallStat.count} le 5">
 								<span class="margin grey-letters" th:text="${tocall.label + ' / ' + tocall.isin}">resonance 2 / FR00196847</span>
 								<span th:if="${tocall.isEavest}"><img class="float-right img-responsive" src="img/black-logo.png" alt="black-logo" id="eavest" /></span>
 							</li>
@@ -155,7 +298,7 @@
 						<a class="over">
 							<span><img class="more-product" src="img/more-hover.png" alt="voir-plus" /></span>
 						</a>
-					</div>
+					</div> -->
 
 				</div>
 				<!-- end row products -->

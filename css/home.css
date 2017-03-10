@@ -107,6 +107,7 @@ h5 {
 
 .grey-letters {
   color: #4A4A4A;
+  font-weight: 100;
 }
 
 .grey-letters-light {
@@ -227,10 +228,6 @@ ul>li>a:hover {
   text-decoration: none !important;
 }
 
-/*#twitter {
-  padding: 10px;
-}*/
-
 #socials {
   display: block;
   transform: translateY(-20px);
@@ -316,7 +313,27 @@ img#eavest {
   vertical-align: -webkit-baseline-middle;
 }
 
-/*Over*/
+/*Accordion*/
+.panel-group .panel {
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.panel a {
+  text-decoration: none;
+}
+
+.panel-default {
+  /*border-color: #F2F2F2 !important;*/
+}
+
+.panel {
+  border: none !important;
+}
+
+
+/*Hover*/
 
 .sous-container {
   position: relative;
