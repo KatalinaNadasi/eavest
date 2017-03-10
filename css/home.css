@@ -298,18 +298,18 @@ input.btn.btn-default {
   text-transform: uppercase;
   display: block;
   margin-top: 15px;
-  height: 33px;
+  height: 31px;
   font-size: 16px;
   padding-top: 2px;
 }
 
 img#eavest {
-    transform: translateY(-2px);
+  transform: translate(15px, -2px);
 }
 
 
 .margin {
-  margin-left: 8px;
+  /*margin-left: 8px;*/
   vertical-align: -webkit-baseline-middle;
 }
 
@@ -319,6 +319,42 @@ img#eavest {
   padding: 0 !important;
   border-radius: 0 !important;
 }
+
+.panel-title {
+  color: #4A4A4A;
+  font-weight: 100;
+}
+
+.panel-body {
+  background-color: #F2F2F2 !important;
+}
+
+.active {
+  background: red;
+}
+
+/*.panel-heading[aria-expanded="true"] {
+	background-color: #286090;
+}
+
+.panel-heading[aria-expanded="false"] {
+	background-color: white;
+}*/
+
+/*.grey-letters.collapsed {
+  font-weight: bold !important;
+  color: black !important;;
+}*/
+
+/*.heading [data-toggle="collapse"] > span{
+  font-weight: bold;
+  color: black;
+}
+
+.heading [data-toggle="collapsed"]:collapsed > span{
+  font-weight: 100;
+  color: grey;
+}*/
 
 .panel a {
   text-decoration: none;

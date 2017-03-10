@@ -1,5 +1,3 @@
-$('.footer-arrow').hide();
-
 $(function() {
 
 // navbar
@@ -49,4 +47,30 @@ $(window).scroll(function() {
   $('#scroll-back-to-top').click(function(){
   $('html, body').animate({scrollTop:0}, 'speed');
   });
+
+// collapsed style
+
+  // $('#headingOne, #headingTwo, #headingThree, #headingFour, #headingFive, #heading2One, #heading2Two, #heading2Three, #heading2Four, #heading2Five').click(function(){
+  //   $('.grey-letters').css({'font-weight':'bold', 'color':'black'});
+  // });
+  // if ($('.panel-heading ').attr('aria-expanded') == "true") {
+  //   $('.grey-letters').css({'font-weight':'100', 'color':'grey'});
+  // } else {
+  //   $('.grey-letters').css({'font-weight':'100', 'color':'black'});
+  // }
+// -----
+
+  // $('#accordion > .panel').on('show.bs.collapse', function (e) {
+  // $('#accordion-header').css({'font-weight':'bold', 'color':'black'});
+  // });
+// --------
+
+  // $('#accordion > .panel').on('show.bs.collapse', function (e) {
+  // $('.grey-letters').css({'font-weight':'bold', 'color':'black'});
+  // });
+
+
+
+
+// end window load
 });
