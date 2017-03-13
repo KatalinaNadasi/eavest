@@ -106,7 +106,7 @@ h5 {
 }
 
 .grey-letters {
-  color: #4A4A4A;
+  color: #585858;
   font-weight: 100;
 }
 
@@ -146,7 +146,7 @@ h5 {
   font-size: 15px;
   font-weight: normal;
   text-transform: none;
-  color: #4A4A4A;
+  color: #585858;
 }
 
 .italicized {
@@ -309,10 +309,36 @@ input.btn.btn-default {
 }
 
 /*Accordion*/
+
+.panel a {
+  text-decoration: none;
+}
+
+
+.panel {
+  border: none !important;
+}
+
 .panel-group .panel {
   margin: 0 !important;
   padding: 0 !important;
   border-radius: 0 !important;
+}
+
+a,
+a:hover,
+a:active,
+.accordion-title a:focus {
+  color: color: #585858 !important;
+  text-decoration: none !important;
+}
+.panel-heading:hover,
+.panel-heading:focus,
+.panel-heading:hover a,
+.panel-heading:focus a {
+  color: #585858;
+  font-weight: 100;
+  text-decoration: none !important;
 }
 
 a.panel-heading {
@@ -335,83 +361,41 @@ a.panel-heading {
   margin-bottom: 25px;
 }
 
-/*Accordion*/
-
-/*.accordion-title {
-  color: #4A4A4A;
-  font-weight: 100;
-}*/
-
-a,
-a:hover,
-a:active,
-.accordion-title a:focus {
-  color: color: #4A4A4A !important;
-  text-decoration: none !important;
-}
-.panel-heading:hover,
-.panel-heading:focus,
-.panel-heading:hover a,
-.panel-heading:focus a {
-  color: #4A4A4A;
-  font-weight: 100;
-  text-decoration: none !important;
-}
 .activestate {
   font-weight: bold !important;
   color: black !important;
   display: block;
 }
+.activestate h4 {
+  margin-bottom: 4px;
+}
+
 .activestate:hover a {
-  color: #4A4A4A;
+  color: #585858;
   font-weight: 100;
 }
 .panel-heading {
   display: block
 }
 
-/*.panel-title {
-  color: #4A4A4A;
-  font-weight: 100;
-}*/
-
-/*end test*/
-
-/*.panel-heading[aria-expanded="true"] {
-	background-color: #286090;
+.light-blue {
+  color: blue;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
-.panel-heading[aria-expanded="false"] {
-	background-color: white;
-}*/
-
-/*.panel-title.collapsed {
-  font-weight: bold !important;
-  color: black !important;
-}*/
-
-/*.panel-heading [data-toggle="collapse"] > span{
+.bold-blue {
   font-weight: bold;
-  color: black;
+  font-size: 16px;
 }
 
-.panel-heading [data-toggle="collapsed"]:collapsed > span{
-  font-weight: 100;
-  color: grey;
-}*/
-
-.panel a {
-  text-decoration: none;
+.grey-uppercase {
+  text-transform: uppercase;
 }
 
-.panel-default {
-  /*border-color: #F2F2F2 !important;*/
+.display-b {
+  display: block;
 }
-
-.panel {
-  border: none !important;
-}
-
 
 /*Hover*/
 
@@ -840,11 +824,11 @@ table {
 }
 
 .wallet-button:hover {
-  color: #4A4A4A;
+  color: #585858;
 }
 
 .wallet-black-block a:visited {
-  color: #4A4A4A !important;
+  color: #585858 !important;
 }
 
 .wallet-black-block span {
