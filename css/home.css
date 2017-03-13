@@ -325,11 +325,6 @@ a.panel-heading {
   padding: 0;
 }
 
-/*.panel-title {
-  color: #4A4A4A;
-  font-weight: 100;
-}*/
-
 .panel-body {
   background-color: #F2F2F2 !important;
 }
@@ -340,14 +335,19 @@ a.panel-heading {
   margin-bottom: 25px;
 }
 
+/*Accordion*/
 
+/*.accordion-title {
+  color: #4A4A4A;
+  font-weight: 100;
+}*/
 
-/*test*/
 a,
 a:hover,
 a:active,
-a:focus {
-  text-decoration: none !important
+.accordion-title a:focus {
+  color: color: #4A4A4A !important;
+  text-decoration: none !important;
 }
 .panel-heading:hover,
 .panel-heading:focus,
@@ -363,12 +363,17 @@ a:focus {
   display: block;
 }
 .activestate:hover a {
-  color: grey;
+  color: #4A4A4A;
   font-weight: 100;
 }
 .panel-heading {
   display: block
 }
+
+/*.panel-title {
+  color: #4A4A4A;
+  font-weight: 100;
+}*/
 
 /*end test*/
 
