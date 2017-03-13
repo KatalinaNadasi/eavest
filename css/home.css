@@ -310,6 +310,15 @@ input.btn.btn-default {
 
 /*Accordion*/
 
+/*hide accordion*/
+/*#panel-body-1, #panel-body-2, .panel-body  {
+  display: none;
+}*/
+
+#short-accordion-1, #short-accordion-2, #long-accordion-1,  #long-accordion-2 {
+  display: none;
+}
+
 .panel a {
   text-decoration: none;
 }
@@ -362,8 +371,8 @@ a.panel-heading {
 }
 
 .activestate {
-  font-weight: bold !important;
-  color: black !important;
+  /*font-weight: bold !important;
+  color: black !important;*/
   display: block;
 }
 .activestate h4 {

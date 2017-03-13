@@ -48,59 +48,42 @@ $(window).scroll(function() {
   $('html, body').animate({scrollTop:0}, 'speed');
   });
 
-// collapsed style
-
-  $('.panel-heading').click(function() {
-    if ($(this).hasClass('activestate')) {
-      $(this).removeClass('activestate');
-    } else {
-      $('.panel-heading').removeClass('activestate');
-      $(this).addClass('activestate');
-    }
-  });
+// redirection accordion au hover
 
 
-// $('.panel-group .panel-collapse.in').prev().addClass('active');
-// $('.panel-group')
-//   .on('show.bs.collapse', function(e) {
-//     $(e.target).prev('.panel-heading').addClass('active');
-//   })
-//   .on('hide.bs.collapse', function(e) {
-//     $(e.target).prev('.panel-heading').removeClass('active');
-//   });
+
+// afficher l'accordion total au click qui est en display none avant
+      // $( "#more-product-2" ).click(function(){
+      //    $( "#panel-body" ).show();
+      //    $( "#over" ).hide();
+      //    $('.activestate').css({'font-weight': 'bold', 'color': 'black'});
+      // });
 
 
-// $('#headingOne, #headingTwo, #headingThree, #headingFour, #headingFive, #heading2One, #heading2Two, #heading2Three, #heading2Four, #heading2Five').click(function(){
-//   $('.panel-title').css({'font-weight':'bold', 'color':'black'});
-// if($(this)==="collapse"){
-//   $('.panel-title').css({'font-weight':'100', 'color':'grey'});
-// }else {
-//   $('.panel-title').css({'font-weight':'bold', 'color':'black'});
-// }
-// });
-
-
-  // $('#headingOne, #headingTwo, #headingThree, #headingFour, #headingFive, #heading2One, #heading2Two, #heading2Three, #heading2Four, #heading2Five').click(function(){
-  //   $('.grey-letters').css({'font-weight':'bold', 'color':'black'});
+  // $('#more-product-2').click(function(){
+  //   $('.panel-body').show();
+  //   $('.activestate').css({'font-weight': 'bold', 'color': 'black'});
   // });
-  // if ($('.panel-heading ').attr('aria-expanded') == "true") {
-  //   $('.grey-letters').css({'font-weight':'100', 'color':'grey'});
-  // } else {
-  //   $('.grey-letters').css({'font-weight':'100', 'color':'black'});
-  // }
-// -----
-
-  // $('#accordion > .panel').on('show.bs.collapse', function (e) {
-  // $('#accordion-header').css({'font-weight':'bold', 'color':'black'});
-  // });
-// --------
-
-  // $('#accordion > .panel').on('show.bs.collapse', function (e) {
-  // $('.grey-letters').css({'font-weight':'bold', 'color':'black'});
-  // });
-
-
 
 
 // end window load
+});
+
+// ACCORDION redirection selon nombre de produits
+var refundProducts = 2
+var tocallProducts = 6
+$(function() {
+
+  if (refundProducts <= 5) {
+    $('#short-accordion-1').show();
+  } else {
+    $('#long-accordion-1').show();
+  };
+
+  if (tocallProducts > 5) {
+    $('#long-accordion-2').show();
+  } else {
+    $('#short-accordion-2').show();
+  };
+
 });
