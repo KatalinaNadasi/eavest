@@ -319,6 +319,30 @@ input.btn.btn-default {
   display: none;
 }
 
+
+/*show only 5 products */
+/*produits remboursés*/
+/*short*/
+#headingSix, #headingSeven, #headingEight {
+  display: none;
+}
+/*long*/
+#heading2Six, #heading2Seven, #heading2Eight {
+  display: none;
+}
+
+/*produits à rappeler*/
+/*short*/
+#heading3Six, #heading3Seven, #heading3Eight {
+  display: none;
+}
+
+/*long*/
+#heading4Six, #heading4Seven, #heading4Eight {
+  display: none;
+}
+
+
 .panel a {
   text-decoration: none;
 }

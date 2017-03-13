@@ -48,30 +48,13 @@ $(window).scroll(function() {
   $('html, body').animate({scrollTop:0}, 'speed');
   });
 
-// redirection accordion au hover
-
-
-
-// afficher l'accordion total au click qui est en display none avant
-      // $( "#more-product-2" ).click(function(){
-      //    $( "#panel-body" ).show();
-      //    $( "#over" ).hide();
-      //    $('.activestate').css({'font-weight': 'bold', 'color': 'black'});
-      // });
-
-
-  // $('#more-product-2').click(function(){
-  //   $('.panel-body').show();
-  //   $('.activestate').css({'font-weight': 'bold', 'color': 'black'});
-  // });
-
-
 // end window load
 });
 
 // ACCORDION redirection selon nombre de produits
-var refundProducts = 2
+var refundProducts = 6
 var tocallProducts = 6
+
 $(function() {
 
   if (refundProducts <= 5) {
@@ -85,5 +68,21 @@ $(function() {
   } else {
     $('#short-accordion-2').show();
   };
+
+  // redirection accordion au hover
+  // afficher l'accordion total au click qui est en display none avant
+  $( 'a #more-product-1' ).click(function(){
+    $('#headingSix, #headingSeven, #headingEight').show();
+    $( '.over' ).hide();
+    $('.activestate').css({'font-weight': 'bold', 'color': 'black'});
+  });
+
+  $( 'a #more-product-2' ).click(function(){
+
+    $('#heading2Six, #heading2Seven, #heading2Eight').show();
+    $( '.over' ).hide();
+    $('.activestate').css({'font-weight': 'bold', 'color': 'black'});
+  });
+
 
 });
