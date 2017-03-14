@@ -53,34 +53,36 @@ $(window).scroll(function() {
 
 // ACCORDION redirection selon nombre de produits
 var refundProducts = 6
-var tocallProducts = 6
+var tocallProducts = 7
 
 $(function() {
 
   if (refundProducts <= 5) {
-    $('#short-accordion-1').show();
+    $( '#more-product-1, .more-product-1' ).hide();
   } else {
-    $('#long-accordion-1').show();
+    $( '#more-product-1, .more-product-1' ).show();
+    $('#headingSix, #headingSeven, #headingEight').hide();
   };
 
-  if (tocallProducts > 5) {
-    $('#long-accordion-2').show();
+  if (tocallProducts <= 5) {
+    $( '#more-product-2, .more-product-2' ).hide();
   } else {
-    $('#short-accordion-2').show();
+    $( '#more-product-1, .more-product-1' ).show();
+    $('#heading2Six, #heading2Seven, #heading2Eight').hide();
   };
 
   // redirection accordion au hover
   // afficher l'accordion total au click qui est en display none avant
   $( 'a #more-product-1' ).click(function(){
     $('#headingSix, #headingSeven, #headingEight').show();
-    $( '.over' ).hide();
+    $( '#more-product-1, .more-product-1' ).hide();
     $('.activestate').css({'font-weight': 'bold', 'color': 'black'});
   });
 
   $( 'a #more-product-2' ).click(function(){
 
     $('#heading2Six, #heading2Seven, #heading2Eight').show();
-    $( '.over' ).hide();
+    $( '#more-product-2, .more-product-2' ).hide();
     $('.activestate').css({'font-weight': 'bold', 'color': 'black'});
   });
 
