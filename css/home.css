@@ -133,6 +133,10 @@ h5 {
   padding-left: 7px !important;
 }
 
+.padding_bottom {
+  padding-bottom: 30px;
+}
+
 .container-fluid {
   margin: 0;
   padding: 0px;
@@ -201,12 +205,13 @@ h5 {
   margin-top: 18px;
 }
 
-#menu-home, #menu-method, #menu-mesure, #menu-products, #menu-blog, #menu-faq, #menu-contact {
+#menu-home, #menu-method, #menu-mesure, #menu-products, #menu-blog, #menu-faq, #menu-contact, #menu-wallet {
     text-transform: uppercase;
 }
 
 .navbar a {
   color: black;
+  font-weight: bold;
 }
 
 
@@ -404,8 +409,8 @@ a.panel-heading {
 }
 
 .activestate:hover a {
-  color: #585858;
-  font-weight: 100;
+  color: black;
+  font-weight: 700;
 }
 .panel-heading {
   display: block
@@ -867,6 +872,10 @@ table {
   width: 100px;
 }
 
+.display-on-click {
+  display:none;
+}
+
 /*PRODUIT MOIS*/
 .white-block {
   background-color: white;
@@ -1048,12 +1057,7 @@ table {
 }
 
 .figure-month {
-  text-align: left;
   font-weight: bolder;
-  position: absolute;
-  left: 11px;
-  top: 67px;
-  font-size: 6rem;
 }
 
 .green-line {
@@ -1481,9 +1485,9 @@ a#arrow-position {
     width: 100px;
   }
 }
-@media (min-device-width : 992) {
+@media (min-device-width : 992px) {
   .green-line {
-    transform: translateX(41px);
+    transform: translateX(-8px);
   }
 }
 
