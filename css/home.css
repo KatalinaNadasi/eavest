@@ -1051,7 +1051,8 @@ table {
   text-align: left;
   font-weight: bolder;
   position: absolute;
-  left: 13px;
+  left: 11px;
+  top: 67px;
   font-size: 6rem;
 }
 
