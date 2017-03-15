@@ -465,6 +465,7 @@ a.panel-heading {
   height: 100%;
   background-color: white;
   position: absolute;
+  cursor: pointer;
   left: 0;
   top: 0;
   border: 0;
@@ -485,6 +486,7 @@ a.panel-heading {
   left: 0;
   top: 0;
   border: 0;
+  cursor: pointer;
   text-decoration: none;
   opacity: 0;
   -webkit-transition: all 0.4s ease;
@@ -497,6 +499,7 @@ a.panel-heading {
   position: absolute;
   top: 68px;
   left: 206px;
+  cursor: pointer;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
@@ -507,6 +510,7 @@ a.panel-heading {
   position: absolute;
   left: 43%;
   top: 33%;
+  cursor: pointer;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
@@ -887,12 +891,12 @@ table {
 }
 
 #more-perfReview {
-  margin: 5px;
+  margin: 3px;
   width: 35px;
 }
 
 #more-perfReview:hover {
-  margin: 5px;
+  margin: 3px;
   width: 38px;
   cursor: pointer;
 }
@@ -957,8 +961,13 @@ button#close {
   background-color: white;
   text-align: center;
   width: 22%;
-  padding: 35px;
+  padding: 47px;
   margin-left: 15px;
+}
+
+#wallet {
+  width: 80px;
+  height: 69px;
 }
 
 .wallet-black-block {
@@ -1020,11 +1029,16 @@ button#close {
   margin-top: 15px;
 }
 
+#question-img {
+  width: 121px;
+  height: 113px;
+}
+
 .grey-block {
   background-color: #E5E5E5;
   margin-left: 30px;
   padding-top: 11px;
-  padding-bottom: 55px;
+  padding-bottom: 41px;
   padding-left: 22px;
   margin-right: auto;
   right: 15px;
@@ -1084,6 +1098,7 @@ button#close {
   font-size: 12px;
   text-align: justify;
   margin-right: 30px;
+  padding-left: 30px;
 }
 
 .article p span {
@@ -1093,7 +1108,7 @@ button#close {
 .white-block-blog {
   background-color: white;
   text-align: center;
-  height: 203px;
+  height: 220px;
   padding: 0px;
   margin: 0 10px 10px 10px;
   margin-left: 15px;
@@ -1109,24 +1124,18 @@ button#close {
 
 .figure-month {
   font-weight: bolder;
-}
-
-.green-line {
-  width: 127px;
-  border: 1px solid #30FD30;
-  position: absolute;
-  top: 123px;
-  left: 18px;
-  margin-left: 8px;
+  font-size: 6rem;
+  border-bottom: 2px solid #30FD30;
+  height: 60px;
+  margin: 0 15px;
 }
 
 .white-block-blog p {
   margin-top: 25px;
-  position: absolute;
-  top: 112px;
-  left: 13px;
   text-align: left;
-  margin-right: 7px;
+  margin-right: 5px;
+  margin-left: 15px;
+  padding-bottom: 15px;
 }
 
 .grey-block-2 {
@@ -1193,9 +1202,21 @@ button#close {
 
 #ok {
   position: absolute;
-  top: 5%;
-  left: 85%;
+  top: 7%;
+  left: 82%;
+  width: 146px;
+  height: 125px;
 }
+
+/*#ok:hover {
+  background-color: white;
+  position: absolute;
+  opacity: 0.92;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}*/
 
 /* SECTION OUR values*/
 
@@ -1401,6 +1422,13 @@ a#arrow-position {
 /*MEDIA QUERIES*/
 
 /*1- Small devices (landscape phones, 576px and up)*/
+
+@media(max-width:560px){
+  .figure-month {
+    font-size: 4rem;
+  }
+}
+
 @media(max-width:506px){
   .logo {
     width: 100px;
@@ -1648,6 +1676,9 @@ a#arrow-position {
 }
 
 @media (max-width : 722px ) {
+  .figure-month {
+    margin: 0 51px;
+  }
   .white-block-blog {
     height: 235px;
   }
@@ -1679,42 +1710,12 @@ a#arrow-position {
   }
 }
 
-/*green-line*/
-@media (max-device-width : 462px) {
-  .green-line {
-    top: 133px;
-    width: 100px;
+@media only screen and (min-device-width : 762px) and (max-device-width : 992px){
+  .figure-month {
+    text-align: -webkit-center;
+    position: inherit;
+    margin: 0 94px;
   }
-}
-@media only screen and (min-device-width : 462px) and (max-device-width : 656px) {
-  .green-line {
-    transform: translateX(10px);
-    width: 60%;
-  }
-}
-@media only screen and (min-device-width : 656px) and (max-device-width : 710px) {
-  .green-line {
-    transform: translateX(22px);
-  }
-}
-@media only screen and (min-device-width : 710px) and (max-device-width : 767px) {
-  .green-line {
-    transform: translateX(31px);
-  }
-}
-@media only screen and (min-device-width : 767px) and (max-device-width : 990px)  {
-  .green-line {
-    transform: translateX(82px);
-    width: 100px;
-  }
-}
-@media (min-device-width : 992px) {
-  .green-line {
-    transform: translateX(-8px);
-  }
-}
-
-@media only screen and (min-device-width : 767px) and (max-device-width : 992px){
   #methodo-2-block {
     transform: translateX(27px);
   }
@@ -1746,7 +1747,7 @@ a#arrow-position {
     width: 96%;
   }
   .white-block-blog p {
-    left: 43px;
+    text-align: -webkit-center;
   }
 }
 
@@ -1807,7 +1808,6 @@ a#arrow-position {
     width: 81%;
   }
   .white-block-blog p {
-    left: 23px;
     text-align: -webkit-center;
   }
   .black-block-partner {
@@ -1840,10 +1840,28 @@ a#arrow-position {
 
 /*Medium devices (tablets, 768px and up)*/
 
-  @media(min-width:768px) {
+
+  @media only screen and (min-device-width : 760px) and (max-device-width : 987px){
     input[type=search] {
-      width: 45%;
+      width: 78%;
     }
+  }
+
+  @media only screen and (min-device-width : 774px) and (max-device-width : 990px){
+    #question-img {
+    width: 168px;
+    height: 118px;
+    padding-left: 41px;
+    }
+  }
+
+  @media(max-width: 712px){
+    .article p {
+      margin-left: 111px;
+    }
+  }
+
+  @media(min-width:768px) {
     .grey-block {
       margin-bottom: 15px;
     }
@@ -1857,6 +1875,7 @@ a#arrow-position {
       padding: 0px;
       margin: 0 10px 10px 10px;
       margin-left: 15px;
+      height: 235px;
     }
     #value-img3 {
       transform: translateX(17px);
@@ -1875,7 +1894,7 @@ a#arrow-position {
     }
     .article p {
       font-size: 14px;
-      padding-left: 21px;
+      padding-left: 30px;
       text-align: -webkit-auto;
     }
     .white-block-style {
@@ -1914,10 +1933,6 @@ a#arrow-position {
     .numbers, .perf-review {
       text-align: center;
     }
-    .figure-month {
-      text-align: -webkit-center;
-      position: inherit;
-    }
     .language-switcher {
       margin-top: 0;
     }
@@ -1936,7 +1951,7 @@ a#arrow-position {
 /*2- Desktops and laptops*/
     @media(min-width:992px){
     input[type=search] {
-      width: 55%;
+      width: 59%;
     }
     .container {
       width: 1030px;
