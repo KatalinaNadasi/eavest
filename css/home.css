@@ -840,7 +840,7 @@ input[type=search] {
   transform: translateX(-6px);
 }
 
-/*TABLEAU*/
+/*TABLEAU PERFREVIEW*/
 
 
 .table>thead>tr>th {
@@ -884,6 +884,33 @@ table.table.table-bordered {
 
 table {
     border-bottom: 0px !important;
+}
+
+#more-perfReview {
+  margin: 5px;
+  width: 35px;
+}
+
+#more-perfReview:hover {
+  margin: 5px;
+  width: 38px;
+  cursor: pointer;
+}
+
+#close {
+  display: none;
+}
+
+button#close {
+  float: left;
+  color: #0251FB;
+  font-size: 10px;
+  background-color: #F2F2F2;
+  padding: 0;
+}
+
+#close:hover {
+  font-size: 15px;
 }
 
 .left-align{
@@ -1541,7 +1568,7 @@ a#arrow-position {
   }
 }
 
-@media only screen and (min-device-width : 642px) and (max-device-width : 657px){
+@media only screen and (min-device-width : 642px) and (max-device-width : 667px){
   .over-product {
     width: 36%;
     left: 210px;
@@ -1564,7 +1591,7 @@ a#arrow-position {
     width: 30%;
     height: 267px;
     position: absolute;
-    left: 231px;
+    left: 229px;
     top: 0;
     transform: translateY(38px);
   }
