@@ -798,7 +798,7 @@
 								<td class="grey-letters"><span>1,37</span>%</td>
 								<td class="grey-letters"><span>-7,93</span>%</td>
 							</tr>
-							<!-- TCO: The following block might be uncommented if no connexion with the server
+							<!-- TCO: The following block might be uncommented if no connexion with the server -->
 							<tr>
 								<td class="left-align">Cac 40</td>
 								<td class="grey-letters">4509,26</td>
@@ -817,9 +817,15 @@
 								<td class="grey-letters">3,10%</td>
 								<td class="grey-letters">-135%</td>
 							</tr>
-						-->
+							<tr>
+								<td class="left-align">Produit de Laurent</td>
+								<td class="grey-letters">1864,51</td>
+								<td class="grey-letters">3,10%</td>
+								<td class="grey-letters">-135%</td>
+							</tr>
+
 						</tbody>
-						<thead class="display-on-click">
+						<!-- <thead class="display-on-click">
 							<tr>
 								<th class="col-sm-6 col-md-6 grey-letters">Nouveaux indices</th>
 								<th class="col-sm-1 col-md-1 special-width"><span th:text="${oneYearPast}">31.10.15</span></th>
@@ -833,10 +839,10 @@
 								<td class="grey-letters">1780,53</td>
 								<td class="grey-letters"><span>-1,18</span>%</td>
 								<td class="grey-letters"><span>7,07</span>%</td>
-							</tr>
+							</tr> -->
 							<!-- TCO: Add static rows here if no connexion with the server
 						-->
-						</tbody>
+						<!-- </tbody> -->
 						<tfoot>
 							<tr>
 								<td><img src="/img/show-more.png" class="img-responsive" alt="voir-plus" /></td>
@@ -892,12 +898,12 @@
 						<div class="white-block">
 							<h2 id="month-product-title">LE PRODUIT DU MOIS</h2>
 								<div class="month-product">
-									<img src="img/month-product.jpg" th:src="@{${imgBestSeller}}" class="img-responsive img-product" alt="produit-du-mois" />
-								</div>
-								<div class="over">
-									<a>
-										<span><img class="more-product-sm" src="img/more-hover.png" alt="voir-plus" /></span>
-									</a>
+										<img src="img/month-product.jpg" th:src="@{${imgBestSeller}}" class="img-responsive img-product" alt="produit-du-mois" />
+									<span  class="over-product">
+										<a>
+											<span><img class="more-product-sm" src="img/more-hover.png" alt="voir-plus" /></span>
+										</a>
+									</span>
 								</div>
 						</div>
 					</div>
