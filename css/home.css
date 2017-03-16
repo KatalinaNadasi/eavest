@@ -69,14 +69,14 @@ body {
 
 h1 {
   font-size: 17px;
-  font-weight: bolder;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
 h2 {
   font-size: 16px;
   line-height: 20px;
-  font-weight: bolder;
+  font-weight: 700;
   text-transform: uppercase;
   padding-top: 18px;
   text-align: center;
@@ -95,7 +95,7 @@ h4 {
   line-height: 20px;
   text-transform: uppercase;
   margin-top: 15px;
-  font-weight: 900;
+  font-weight: 800;
 }
 
 h5 {
@@ -168,6 +168,11 @@ h5 {
 
 
 /*NAVBAR*/
+
+.selected a {
+  color: #0251FB !important;
+}
+
 .language-switcher {
 	color: black;
 	cursor: pointer;
@@ -247,9 +252,6 @@ ul>li>a:hover {
   transform: translateY(-31px);
 }
 
-#menu-home a {
-  color: #0251FB !important;
-}
 
 .logo {
 	padding-top: 15px;
@@ -324,10 +326,6 @@ input.btn.btn-default {
   display: none;
 }
 
-
-/*show only 5 products */
-/*produits remboursés*/
-/*short*/
 #headingSix, #headingSeven, #headingEight {
   display: none;
 }
@@ -335,18 +333,6 @@ input.btn.btn-default {
 #heading2Six, #heading2Seven, #heading2Eight {
   display: none;
 }
-
-/*produits à rappeler*/
-/*short*/
-#heading3Six, #heading3Seven, #heading3Eight {
-  display: none;
-}
-
-/*long*/
-#heading4Six, #heading4Seven, #heading4Eight {
-  display: none;
-}
-
 
 .panel a {
   text-decoration: none;

@@ -40,13 +40,13 @@
 		<div class="container-fluid">
 			<div class="nav">
 				<div class="col-md-12 center-block">
-					<h1><img src="/img/eavest-logo.png" alt="Eavest" class="center-block img-responsive logo" id="header"/></h1>
+					<h1><img src="/img/eavest-logo.png" alt="Eavest" class="center-block img-responsive logo"/></h1>
 				</div>
 				<div class="language-switcher navbar-right">
 					<a th:unless="${#authorization.expression('isAuthenticated()')}" href="http://localhost:8080/login" class="italicized grey-letters auth">Connexion</a>
-					<a href="#" th:text="${authUserName}" class="italicized auth" id="auth">Nom de l'utilisateur</a>
+					<a href="#" th:text="${authUserName}" class="italicized auth">Nom de l'utilisateur</a>
 					<span id="socials">
-						<a href="https://twitter.com/EAVEST_" id="twitter"><i class="fa fa-twitter"></i></a>
+						<a href="https://twitter.com/EAVEST_"><i class="fa fa-twitter"></i></a>
 						<a href="http://eavest.com/" class="language">fr</a>/<a href="http://eavest.com/en/" class="language">en</a>
 					</span>
 					<div class="zone-transit">
@@ -67,7 +67,7 @@
 
 			<div class="col-md-12 container-fluid navbar">
 				<ul class="navbar list-inline list-unstyled">
-					<li id="menu-home"><a href="/home">Home</a></li>
+					<li id="menu-home" class="selected"><a href="/home">Home</a></li>
 					<li id="menu-wallet"><a href="/wallet">Mon portefeuille</a></li>
 					<li id="menu-method"><a href="http://eavest.com/methodologie-2/">Methodologie</a></li>
 					<li id="menu-mesure"><a href="http://eavest.com/sur-mesure/">sur-mesure</a></li>
@@ -414,7 +414,7 @@
 			<!-- PRODUITS A RAPPELER -->
 			<div class="col-sm-6 col-md-6 wrapper padding_left">
 				<img src="/img/bell.png" alt="bell" class="img-responsive img-bell" />
-				<h1 class="product-title"><b>produits à rappeler</b><span class="min"> dans les 30 jours</span></h1>
+				<h1 class="product-title">produits à rappeler<span class="min"> dans les 30 jours</span></h1>
 				<div class="sous-container">
 
 					<div class="panel-group" id="accordion-2" role="tablist" aria-multiselectable="true">
@@ -970,8 +970,8 @@
 				</div>
 				<div class="col-xs-4 col-sm-5 col-md-2 white-block-blog">
 					<div>
-						<h2 class="padding_bottom">chiffre du mois</h2>
-						<div class="figure-month">18%</div>
+						<h1 class="padding_bottom">chiffre du mois</h1>
+						<div class="figure-month">18000%</div>
 						<span></span>
 						<p class="grey-letters" id="figure-p">des produits structurés blablabla</p>
 						<!-- <div class="over">
@@ -1014,7 +1014,7 @@
 					</a>
 				</div>
 				<div class="col-sm-7 col-md-5 grey-block-3">
-					<h4><b>Notre agrément</b></h4>
+					<h4>Notre agrément</h4>
 					<p class="grey-letters">EAVEST a obtenu le statut de Conseil en Investissements Financiers auprès de l'ANACOFI, association agréée par l'Autorité des Marchés Financiers (AMF). EAVEST est également immatriculé à l'ORIAS.</p>
 					<img id="ok" src="/img/ok.png" alt="ok" class="hidden-xs hidden-sm" />
 					<div class="row">
@@ -1029,7 +1029,7 @@
 						</a>
 				</div>
 				<div class="col-md-3 white-block-partner">
-					<h4 id="partner-title"><b>Partenaires</b></h4>
+					<h4 id="partner-title">Partenaires</h4>
 					<p class="grey-letters" id="partner-p">En collaborations avec plus de 15 banques d'investissement partenaires, les stratégies sont pensées et conçues grâce à nos équipes d'ingénierie financière cross asset dédiées à Paris, Genève et Luxembourg.</p>
 					<a href="http://eavest.com/" class="over">
 						<span><img id="more-partner" src="/img/more-hover.png" alt="voir-plus" /></span>
@@ -1044,7 +1044,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-5 white-block-style">
-					<h4><b>Nos valeurs</b></h4>
+					<h4>Nos valeurs</h4>
 					<div class="row values">
 						<ul class="list-inline list-unstyled grey-letters">
 							<li class="padding_right">
@@ -1070,7 +1070,7 @@
 					</a>
 				</div>
 				<div class="col-md-6 white-block-style-2" id="methodo">
-					<h4><b>Notre méthodologie</b></h4>
+					<h4>Notre méthodologie</h4>
 					<div class="row our-methodologie">
 						<div class="col-xs-3 col-md-3 methodologie">
 							<span class="number" id="methodo-numbers">1</span>
@@ -1103,7 +1103,7 @@
 	<div class="container">
 		<div class="col-sm-12 col-md-12 grey-block-4">
 			<div>
-				<h3><b>L'équipe</b></h3>
+				<h4>L'équipe</h4>
 			</div>
 			<div class="row list-inline list-unstyled col-md-12 team">
 				<div class="col-xs-4 col-sm-3 col-md-2 team-img">
