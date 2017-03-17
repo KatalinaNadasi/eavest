@@ -1,0 +1,10 @@
+.wallet-wrapper {
+  padding: 0;
+}
+
+.fa-trash-o {
+  position: relative;
+  top: 44px;
+  right: 44px;
+  height: 15px;
+}
