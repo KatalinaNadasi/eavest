@@ -30,7 +30,12 @@
   background-color: white;
 }
 
+.form-area {
+  padding-bottom: 15px;
+}
+
 .suscribe-area {
+  padding-top: 15px;
   padding-bottom: 150px;
   margin-bottom: 5px;
 }
@@ -63,7 +68,7 @@ input {
   border: none;
 }
 
-#uid, #pwd {
+#uid, #pwd, #lname, #fname, #company, #usremail, #pwrd, #confpwd {
   border-bottom: solid 1px grey;
   width: 250px;
 }
@@ -77,6 +82,18 @@ input {
   text-transform: uppercase;
   font-size: 14px;
   padding: 3px 15px;
+}
+
+/*SUSCRIBE PAGE*/
+
+#subscribe {
+  font-size: 14px;
+  padding: 3px 15px;
+}
+
+#subs-submit {
+  margin-top: 35px;
+  padding-bottom: 45px;
 }
 
 /*footer*/
