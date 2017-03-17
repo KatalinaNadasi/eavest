@@ -50,7 +50,7 @@
 						<a href="https://twitter.com/EAVEST_"><i class="fa fa-twitter"></i></a>
 						<a href="http://eavest.com/" class="language">fr</a>/<a href="http://eavest.com/en/" class="language">en</a>
 					</span>
-					<div class="zone-transit">
+					<!-- <div class="zone-transit">
 						<span sec:authorize="isAuthenticated()">
 							<form th:action="@{/logout}" method="post">
 								<input type="submit" value="Sign Out" class="btn btn-default log" />
@@ -61,14 +61,14 @@
 								<input type="submit" value="Back Office" class="btn btn-default log" />
 							</form>
 						</span>
-					</div>
+					</div> -->
 				</div>
 
 			</div>
 
 			<div class="col-md-12 container-fluid navbar">
 				<ul class="navbar list-inline list-unstyled">
-					<li id="menu-home" class="selected"><a href="/home">Home</a></li>
+					<li id="menu-home"><a href="/home">Home</a></li>
 					<li id="menu-wallet"><a href="/wallet">Mon portefeuille</a></li>
 					<li id="menu-method"><a href="http://eavest.com/methodologie-2/">Methodologie</a></li>
 					<li id="menu-mesure"><a href="http://eavest.com/sur-mesure/">sur-mesure</a></li>
@@ -90,41 +90,16 @@
     <div class="container" id="login-page">
 
       <div class="login-area col-md-offset-2 col-md-8">
-        <p th:if="${param.logout}" class="alert"><em>Vous avez été déconnecté</em>
-        <span th:if="${param.error}" class="alert alert-error block"><em>Une erreur s'est produite, veuillez réessayer</em></span></p>
-        <h1>Se connecter à son compte EAVEST</h1>
-      </div>
-      <div class="form-area col-md-offset-2 col-md-8">
-        <div class="form-area">
-          <form name="loginForm" th:action="@{/login}" action="http://localhost:8080/home" method="POST">
-            <div class="row inline_block">
-              <span class="col-md-6">
-                <label class="label-title" for="uid" id="id">IDENTIFIANT</label>
-                <span class="block"></span>
-              	<input class="input-line" id="uid" type="text" name="username" placeholder="" />
-                <span class="block"></span>
-              </span>
-              <span class="col-md-6">
-                <label class="label-title" for="pwd" id="mdp">MOT DE PASSE</label>
-                <span class="block"></span>
-                <input class="input-line" id="pwd" type="password" name="password" placeholder="" />
-                <span class="block"></span>
-              </span>
-            </div>
-            <div class="col-md-12" id="submit">
-              <input type="submit" id="login" value="je me connecte" class="btn btn-default log" />
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <div class="subscribe-area col-md-offset-2 col-md-8">
-        <div class="inline_block">
-          <a href="/subscribe" id="create_count">Créer mon compte</a>
-        </div>
-        <div class="inline_block">
-          <a href="/forgotPassword" id="pwd_forgotten">Mot de passe oublié</a>
-        </div>
+        <h1 class="padding_b">Compte utilisateur créé</h1>
+        <p><em>Un email de vérification vous a été envoyé.<span class="display-b">Veuillez cliquer sur le lien présent dans l'e-mail pour valider la création de votre compte.</em></span></p>
+        <p>
+  	    <p th:text="'id: ' + ${eavAccount.id}" />
+  	    <p th:text="'first name: ' + ${eavAccount.firstName}" />
+  	    <p th:text="'last name: ' + ${eavAccount.lastName}" />
+  	    <p th:text="'e-mail address: ' + ${eavAccount.email}" />
+  	    <p th:text="'company: ' + ${eavAccount.company}" />
+  	    <p th:text="'password: ' + ${eavAccount.password}" />
+        </p>
       </div>
     <!-- end container -->
     </div>

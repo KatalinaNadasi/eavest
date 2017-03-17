@@ -44,7 +44,7 @@
 					<h1><img src="/img/eavest-logo.png" alt="Eavest" class="center-block img-responsive logo"/></h1>
 				</div>
 				<div class="language-switcher navbar-right">
-					<a th:unless="${#authorization.expression('isAuthenticated()')}" href="http://localhost:8080/home.html" class="italicized grey-letters auth">Connexion</a>
+					<a th:unless="${#authorization.expression('isAuthenticated()')}" href="http://localhost:8080/login" class="italicized grey-letters auth">Connexion</a>
 					<a href="#" th:text="${authUserName}" class="italicized auth">Nom de l'utilisateur</a>
 					<span id="socials">
 						<a href="https://twitter.com/EAVEST_"><i class="fa fa-twitter"></i></a>
@@ -90,20 +90,20 @@
   <section class="login-main-content">
     <div class="container" id="login-page">
 
-      <div class="login-area col-md-12 center-block">
-        <h1>Inscription</h1>
+      <div class="login-area col-md-offset-2 col-md-8">
+        <h1 class="login-main-title">Inscription</h1>
       </div>
-      <div class="form-area col-md-12">
+      <div class="form-area col-md-offset-2 col-md-8">
         <div class="form-area">
           <form name="form" th:action="@{/subscribe}" action="/subscribe" method="POST">
             <div class="row inline_block">
               <div  class="col-md-6">
-                <label class="light-title" for="lname">Nom</label>
+                <label class="label-title" for="lname">Nom</label>
                 <input class="input-line" id="lname" type="text" name="lastName" th:valuetype="${eavAccount.lastName}" />
                 <span class="block"></span>
               </div>
               <span class="col-md-6">
-                <label class="light-title" for="fname">Prénom</label>
+                <label class="label-title" for="fname">Prénom</label>
                 <input class="input-line" id="fname" type="text" name="firstName" th:valuetype="${eavAccount.firstName}" />
                 <span class="block"></span>
               </span>
@@ -111,16 +111,16 @@
           </form>
         </div>
       </div>
-      <div class="form-area col-md-12">
+      <div class="form-area col-md-offset-2 col-md-8">
         <div class="form-area">
             <div class="row inline_block">
               <div class="col-md-6">
-                <label class="light-title" for="company">Société</label>
+                <label class="label-title" for="company">Société</label>
                 <input class="input-line" id="company" type="text" name="company" th:valuetype="${eavAccount.company}" />
                 <span class="block"></span>
               </div>
               <div class="col-md-6">
-                <label class="light-title" for="usremail">E-mail</label>
+                <label class="label-title" for="usremail">E-mail</label>
                 <input id="usremail" type="email" name="email" th:valuetype="${eavAccount.email}" placeholder="" required="required" />
                 <span class="block"></span>
               </div>
@@ -128,21 +128,21 @@
           </form>
         </div>
       </div>
-      <div class="form-area col-md-12">
+      <div class="form-area col-md-offset-2 col-md-8">
         <div class="form-area">
             <div class="row inline_block">
               <span class="col-md-6">
-                <label class="light-title" for="pwrd">Mot de passe</label>
+                <label class="label-title" for="pwrd">Mot de passe</label>
                 <input id="pwrd" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="password" onchange="form.confpwd.pattern = this.value;" th:valuetype="${eavAccount.password}" required="required" title="Le mot de passe doit comporter au moins 6 caractèrers (un chiffre, une lettre minuscule et une lettre majuscule)"/>
                 <span class="block"></span>
               </span>
               <span class="col-md-6">
-                <label class="light-title" for="confpwd">Confirmer le mot de passe</label>
+                <label class="label-title" for="confpwd">Confirmer le mot de passe</label>
                 <input id="confpwd" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="confpwd" required="required" title="Le mot de passe est différent de la 1ère saisie" />
                 <span class="block"></span>
               </span>
             </div>
-            <div class="col-md-12" id="subs-submit">
+            <div class="col-md-offset-2 col-md-8" id="subs-submit">
               <input type="submit" id="subscribe" value="Inscription" class="btn btn-default log" />
             </div>
           </form>

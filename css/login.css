@@ -1,5 +1,10 @@
 /*GENERAL*/
 
+.main-title{
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
 
 .inline_block {
   display: inline-block;
@@ -21,12 +26,7 @@
   padding: 40px;
 }
 
-#login:hover {
-  background-color: black;
-  color: white;
-}
-
-.form-area, .suscribe-area {
+.form-area, .subscribe-area {
   background-color: white;
 }
 
@@ -34,10 +34,15 @@
   padding-bottom: 15px;
 }
 
-.suscribe-area {
+.subscribe-area {
   padding-top: 15px;
   padding-bottom: 150px;
   margin-bottom: 5px;
+  color: black;
+}
+
+#create_count:hover, #pwd_forgotten:hover {
+  font-size: 16px;
 }
 
 #create_count {
@@ -56,11 +61,11 @@
   line-height: 25px;
 }
 
-.light-title {
-  font-size: 16px;
+.label-title {
+  font-size: 14px;
   font-weight: lighter;
   display: block;
-  color: #585858;
+  color: black;
   text-transform: uppercase;
 }
 
@@ -68,8 +73,8 @@ input {
   border: none;
 }
 
-#uid, #pwd, #lname, #fname, #company, #usremail, #pwrd, #confpwd {
-  border-bottom: solid 1px grey;
+input[type=text], [type=password], [type=email] {
+  border-bottom: solid 1px #888;
   width: 250px;
 }
 
@@ -84,7 +89,7 @@ input {
   padding: 3px 15px;
 }
 
-/*SUSCRIBE PAGE*/
+/*SUBSCRIBE PAGE*/
 
 #subscribe {
   font-size: 14px;
@@ -94,6 +99,11 @@ input {
 #subs-submit {
   margin-top: 35px;
   padding-bottom: 45px;
+}
+
+/*ACCOUNT CREATED PAGE*/
+.padding_b {
+  padding-bottom: 20px;
 }
 
 /*footer*/
