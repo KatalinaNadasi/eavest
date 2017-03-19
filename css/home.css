@@ -879,6 +879,7 @@ table {
 #more-perfReview {
   margin: 3px;
   width: 35px;
+  display: inline-block;
 }
 
 #more-perfReview:hover {
@@ -893,7 +894,7 @@ table {
 
 button#close {
   float: left;
-  color: #0251FB;
+  color: #1044FF;
   font-size: 10px;
   background-color: #F2F2F2;
   padding: 0;
