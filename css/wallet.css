@@ -25,3 +25,21 @@
   left: 47px;
   padding-bottom: 5px;
 }
+
+@media only screen and (min-device-width : 767px) and (max-device-width : 990px){
+  .fa-trash-o {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  #marketing {
+    position: absolute;
+    bottom: 14px;
+    left: 16px;
+  }
+  #term-sheet {
+    position: absolute;
+    bottom: 82px;
+    left: 15px;
+  }
+}
