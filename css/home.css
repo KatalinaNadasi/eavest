@@ -279,6 +279,7 @@ input.btn.btn-default {
 	line-height: 60px;
 	padding: 0px 0;
   height: 55px;
+  display: none;
 }
 
 /*SECTION PRODUCT*/
@@ -317,14 +318,6 @@ input.btn.btn-default {
 
 /*Accordion*/
 
-/*hide accordion*/
-/*#panel-body-1, #panel-body-2, .panel-body  {
-  display: none;
-}*/
-
-/*#short-accordion-1, #short-accordion-2, #long-accordion-1,  #long-accordion-2 {
-  display: none;
-}*/
 
 #headingSix, #headingSeven, #headingEight {
   display: none;
@@ -879,7 +872,6 @@ table {
 #more-perfReview {
   margin: 3px;
   width: 35px;
-  display: inline-block;
 }
 
 #more-perfReview:hover {
@@ -1044,7 +1036,7 @@ button#close {
   border-bottom: solid 1px #0251FB;
 }
 
-.blue-title, .blue-title-1 {
+.blue-title {
   font-size: 13px;
   text-transform: uppercase;
   color: #0251FB;
@@ -1055,7 +1047,7 @@ button#close {
     margin-bottom: 0;
 }
 
-.grey-block-2 h3 span, p span {
+.new-line {
   display: block;
 }
 
@@ -1068,14 +1060,6 @@ button#close {
   padding-bottom: 10px;
 }
 
-.blog-title-1  span {
-  display: block;
-}
-
-.blog-title-2 {
-  width: 66%;
-}
-
 .blog-img {
   padding: 15px;
   transform: translateY(-10px);
@@ -1086,10 +1070,6 @@ button#close {
   text-align: justify;
   margin-right: 30px;
   padding-left: 30px;
-}
-
-.article p span {
-  display: block;
 }
 
 .white-block-blog {
@@ -1111,10 +1091,10 @@ button#close {
 
 .figure-month {
   font-weight: bolder;
-  font-size: 5vw;
   border-bottom: 2px solid #30FD30;
   height: 60px;
   margin: 0 7px;
+  font-size: 60px;
 }
 
 .white-block-blog p {
@@ -1385,6 +1365,7 @@ footer * {
   right: 20px;
   bottom: 20px;
   width: 50px;
+  display: none;
 }
 
 .footer-main span a:hover, .always-right a:hover {
@@ -1410,11 +1391,6 @@ a#arrow-position {
 
 /*1- Small devices (landscape phones, 576px and up)*/
 
-/*@media(max-width:560px){
-  .figure-month {
-    font-size: 4vw;
-  }
-}*/
 
 @media(max-width:506px){
   .logo {
@@ -1701,7 +1677,6 @@ a#arrow-position {
   .figure-month {
     text-align: -webkit-center;
     position: inherit;
-    font-size: 4vw;
     margin: 0 83px;
   }
   #methodo-2-block {
@@ -1944,9 +1919,6 @@ a#arrow-position {
     .container {
       width: 1030px;
     }
-    /*.figure-month {
-      font-size: 3vw;
-    }*/
     .black-block-partner {
       padding-bottom: 22px;
     }

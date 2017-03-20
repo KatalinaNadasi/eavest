@@ -20,8 +20,6 @@
 
 	<link rel="stylesheet" type="text/css" href="/css/home.css" />
 		<link rel="stylesheet" type="text/css" href="/css/wallet.css" />
-	<!-- <link rel="stylesheet" type="text/css" href="/css/login.css" /> -->
-
 
 	<!-- COMPATIBILITE IE8 -->
 	<!--[if lt IE 9]>
@@ -254,7 +252,6 @@
 	</div>
 		<!-- SECTION PRODUCTS-->
 	<section class="products">
-		<div class="container">
 			<div class="row">
 				<!-- PRODUITS REMBOURSES -->
 				<div class="col-sm-6 col-md-6 wrapper">
@@ -265,7 +262,7 @@
 						<div class="panel-group" id="accordion-1" role="tablist" aria-multiselectable="true">
 							<!-- collapse product -->
 						  <div class="panel panel-default" th:each="refund : ${refundProducts}" th:with="nbRefundProducts=${refundStat.count}">
-						    <div class="accordion-row" role="tab" th:if="${refundStat.index} le 4">
+						    <div class="activestate" role="tab" th:if="${refundStat.index} le 4">
 						      <h4 class="accordion-title">
 										<a class="panel-heading prod-list" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseOne" th:href="'#collapse' + ${refundStat.index}" aria-expanded="true">
 										<span class="margin panel-title" th:text="${refund.label + ' / ' + refund.isin}">resonance 1 / FR00196847</span>
@@ -321,7 +318,7 @@
 						<div class="panel-group" id="accordion-2" role="tablist" aria-multiselectable="true">
 							<!-- collapse product -->
 							<div class="panel panel-default" th:each="tocall : ${tocallProducts}"  th:with="nbTocallProducts=${tocallStat.count}">
-								<div class="accordion-row" role="tab" th:if="${tocallStat.index} le 4">
+								<div class="activestate" role="tab" th:if="${tocallStat.index} le 4">
 									<h4 class="accordion-title">
 										<a class="prod-list panel-heading" role="button" data-toggle="collapse" data-parent="#accordion-2" href="#collapse2One"  th:href="'#collapse2' + ${tocallStat.index}" aria-expanded="true">
 										<span class="margin panel-title" th:text="${tocall.label + ' / ' + tocall.isin}">resonance 1 / FR00196847</span>
@@ -368,8 +365,6 @@
 					</div>
 				</div>
 			</div>
-		<!-- end div container (products) -->
-		</div>
 	</section>
 	<!-- END SECTION PRODUCTS  -->
 	<!--PERFREVIEW -->
