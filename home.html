@@ -252,20 +252,6 @@
 								<td class="grey-letters"><span>1,37</span>%</td>
 								<td class="grey-letters"><span>-7,93</span>%</td>
 							</tr>
-							<!-- TCO: The following block might be uncommented if no connexion with the server
-							<tr>
-								<td class="left-align">Cac 40</td>
-								<td class="grey-letters">4509,26</td>
-								<td class="grey-letters">1,37%</td>
-								<td class="grey-letters">-7,93%</td>
-							</tr>
-							<tr>
-								<td class="left-align">Produit de Katalina</td>
-								<td class="grey-letters">3055,25</td>
-								<td class="grey-letters">1,77%</td>
-								<td class="grey-letters">-10,62%</td>
-							</tr>
-						-->
 						</tbody>
 						<thead class="display-on-click">
 							<tr>
@@ -295,6 +281,7 @@
 						</tfoot>
 					</table>
 				</div>
+
 				<div class="hidden-xs hidden-sm col-md-3">
 					<div class="sous-container">
 						<div class="white-block">
@@ -319,6 +306,8 @@
 
 
 				<!-- VERSION XS RESPONSIVE ONLY -->
+
+
 				<div class="container resp-sm">
 					<div class="col-xs-12 col-sm-6 hidden-md hidden-lg" id="black-block">
 						<h2 class="black-block">cherchez un produit<br /> parmis nos<br /> <span th:text="${nbProducts}">2000</span> références</h2>
@@ -337,22 +326,24 @@
 						</div>
 						<div class="clear"></div>
 					</div>
-					<div class="col-xs-12 col-sm-5 hidden-md hidden-lg" id="white-block">
-						<div class="white-block">
-							<h2 id="month-product-title">LE PRODUIT DU MOIS</h2>
-								<div class="month-product">
-									<img src="/img/month-product.jpg" th:src="@{${imgBestSeller}}" class="img-responsive img-product" alt="produit du mois" />
-								</div>
-								<div class="over">
-									<a>
-										<span><img class="more-product-sm" src="/img/more-hover.png" alt="voir-plus" /></span>
-									</a>
-								</div>
+
+					<div class="col-xs-6 col-sm-offset-1 col-sm-5 hidden-md hidden-lg" id="white-block">
+						<div class="sous-container">
+							<div class="white-block">
+								<h2 id="month-product-title">LE PRODUIT DU MOIS</h2>
+									<div class="month-product">
+										<img src="/img/month-product.jpg" th:src="@{${imgBestSeller}}" class="img-responsive img-product" alt="produit du mois" />
+									</div>
+									<div class="over-product">
+										<a>
+											<span><img class="more-product-sm" src="/img/more-hover.png" alt="voir-plus" /></span>
+										</a>
+									</div>
+							</div>
 						</div>
 					</div>
 				<!-- end row -->
 				</div>
-
 				<!-- FIN VERSION XS RESPONSIVE ONLY -->
 
 	<div class="container">
@@ -396,7 +387,7 @@
 					</div>
 					<div class="row">
 						<div class="col-xs-3 col-sm-4 col-md-3 blog-img">
-							<img src="/img/question-mark.png" id="question-img" alt="question" />
+							<img src="/img/question-mark.png" id="question-img" alt="question" class="img-responsive" />
 						</div>
 						<div class="col-md-8 article">
 							<p class="grey-letters" id="blog-1-p">
