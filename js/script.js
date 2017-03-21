@@ -110,15 +110,15 @@ $(function() {
     var $numWords = $quote.text().length;
 
     if (($numWords >= 1) && ($numWords <= 2)) {
-        $quote.css("font-size", "5vw");
+        $quote.css("font-size", "72px");
     }
     else if (($numWords > 2) && ($numWords <= 4)) {
-        $quote.css("font-size", "4.3vw");
+        $quote.css("font-size", "60px");
     }
     else if (($numWords > 4) && ($numWords <= 5))  {
-        $quote.css("font-size", "3.5vw");
+        $quote.css("font-size", "50px");
     }
     else {
-        $quote.css("font-size", "3vw");
+        $quote.css("font-size", "40px");
     }
 });
