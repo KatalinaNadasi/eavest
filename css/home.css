@@ -1099,7 +1099,7 @@ p#blog-1-p, p#blog-2-p {
   border-bottom: 2px solid #30FD30;
   height: 60px;
   margin: 0 7px;
-  font-size: 60px;
+  /*font-size: 60px;*/
 }
 
 .white-block-blog p {
