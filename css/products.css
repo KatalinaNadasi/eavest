@@ -67,8 +67,16 @@ body {
   text-decoration: none!important;
 }
 
+.prod-list {
+  margin: 25px 0;
+}
+
 .product-1 {
   padding-left: 0;
+}
+
+.product-3-sheets {
+  padding-left: 9px;
 }
 
 .product-img {
@@ -109,5 +117,17 @@ body {
   display: block;
   font-size: 11px;
   font-weight: 600;
+  text-transform: uppercase;
+}
+
+.term-sheet-row, .padding_zero {
+  padding: 0;
+}
+
+.term-sheet-img {
+  height: 24px;
+}
+
+.term-sheet-prod {
   text-transform: uppercase;
 }
