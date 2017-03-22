@@ -1,6 +1,6 @@
-body {
+/*body {
   background-color: white;
-}
+}*/
 
 .filters label {
   display: block;
@@ -46,7 +46,7 @@ body {
 
 .black-line-products {
   padding-bottom: 5px;
-  margin-bottom: 30px;
+  margin-bottom: 70px;
   border-bottom: 3px solid black;
 }
 
@@ -69,14 +69,6 @@ body {
 
 .prod-list {
   margin: 25px 0;
-}
-
-.product-1 {
-  padding-left: 0;
-}
-
-.product-3-sheets {
-  padding-left: 9px;
 }
 
 .product-img {
@@ -130,4 +122,24 @@ body {
 
 .term-sheet-prod {
   text-transform: uppercase;
+  margin-left: 8px;
+  display: block;
+}
+
+.pagination {
+  float: right;
+}
+
+.pagination > .active {
+  background-color: color: #1044FF;
+}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
 }
