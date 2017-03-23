@@ -19,7 +19,15 @@
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
 
 	<link rel="stylesheet" type="text/css" href="/css/home.css" />
+	<link rel="stylesheet" href="https://unpkg.com/simplebar@2.1.0/dist/simplebar.css" />
 
+	<noscript>
+  	<style>
+    	[data-simplebar] {
+      	overflow: auto;
+    	}
+  	</style>
+	</noscript>
 
 	<!-- COMPATIBILITE IE8 -->
 	<!--[if lt IE 9]>
@@ -62,7 +70,6 @@
 						</span>
 					</div>
 				</div>
-
 			</div>
 
 			<div class="col-md-12 container-fluid navbar">
@@ -393,7 +400,7 @@
 							<p class="grey-letters" id="blog-1-p">
 							Article de <span th:text="${highlightArticles.leftArticle.author}">Frédéric Lorenzini</span>
 							<span class="new-line">N3D - <span th:text="${highlightArticles.leftArticle.releaseDateAsShortFormatString}">18 octobre 2016</span></span>
-							<span class="new-line" th:text="${highlightArticles.leftArticle.content}">"En ce qui concerne la "compréhension des produits", il apparait que seulement 18% des personnes interrogées comprennent "bien" le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré le fonctionnement d'un produit structuré le fonctionnement d'un produit structuré le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré [...] "</span>
+							<span class="new-line" th:text="${highlightArticles.leftArticle.content}" data-simplebar>"En ce qui concerne la "compréhension des produits", il apparait que seulement 18% des personnes interrogées comprennent "bien" le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré le fonctionnement d'un produit structuré le fonctionnement d'un produit structuré le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré [...] "</span>
 							</p>
 						</div>
 					</div>
@@ -409,7 +416,7 @@
 						<h1 class="padding_bottom">chiffre du mois</h1>
 						<div class="figure-month" id="numberOfTheMonth" th:text="${newsOfMonth.numberOfTheMonth}">10000%</div>
               <span></span>
-              <p class="grey-letters" id="figure-p" th:text="${newsOfMonth.textOfTheMonth}">des produits structurés blablablades produits structurés blablablades produits des produits structurés blablablades produits des produits structurés blablablades produits</p>
+              <p class="grey-letters" id="figure-p" th:text="${newsOfMonth.textOfTheMonth}" data-simplebar>des produits structurés blablablades produits structurés blablablades produits des produits structurés blablablades produits des produits structurés blablablades produits</p>
 						<!-- <div class="over">
 							<a>
 								<span><img id="more-figure-month" src="/img/more-hover.png" alt="voir-plus" /></span>
@@ -432,7 +439,7 @@
 					<p class="grey-letters" id="blog-2-p">
 						Article de <span th:text="${highlightArticles.rightArticle.author}">Frédéric Lorenzini</span>
 						<span class="new-line">N3D - <span th:text="${highlightArticles.rightArticle.releaseDateAsShortFormatString}">18 octobre 2016</span></span>
-						<span class="new-line" th:text="${highlightArticles.rightArticle.content}">"En ce qui concerne la "compréhension des produits" [...] En ce qui concerne la "compréhension des produits" [...] En ce qui concerne la "compréhension des produits" [...] En ce qui concerne la "compréhension des produits" [...] En ce qui concerne la "compréhension des produits" [...] "</span>
+						<span class="new-line" th:text="${highlightArticles.rightArticle.content}" data-simplebar>"En ce qui concerne la "compréhension des produits" [...] En ce qui concerne la "compréhension des produits" [...] En ce qui concerne la "compréhension des produits" [...] En ce qui concerne la "compréhension des produits" [...] En ce qui concerne la "compréhension des produits" [...] "</span>
 					</p>
 					<div class="over-blue">
 						<a href="http://eavest.com/le-sous-jacent-un-possible-mecanisme-supplementaire-pour-un-produit-structure/"  th:href="${highlightArticles.rightArticle.urlAsString}">
@@ -610,6 +617,7 @@
  	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://unpkg.com/simplebar@2.1.0/dist/simplebar.js"></script>
  	<script src="/js/script.js"></script>
  	<!-- <script src="js/overlay.js"></script> -->
  	<script src="/js/extra.js"></script>

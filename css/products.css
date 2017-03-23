@@ -2,11 +2,29 @@
   background-color: white;
 }*/
 
+.col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12,
+.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12{
+  padding: 0;
+}
+
+.container {
+  padding: 0;
+}
+
 .filters label {
   display: block;
   font-weight: 600;
   font-size: 13px;
   padding-bottom: 2px;
+}
+.radio label, .checkbox label {
+  padding-left: 0 !important;
+}
+
+#product-trash {
+    position: absolute;
+    top: -30px;
+    right: 0px;
 }
 
 .filters {
@@ -119,6 +137,22 @@
   text-transform: uppercase;
 }
 
+.prod-black-separator {
+  padding-bottom: 40px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid black;
+}
+
+.btn {
+  text-decoration: none;
+  background-color: #F2F2F2;
+  padding: 5px;
+}
+
+.grey-uppercase {
+  padding-left: 0;
+}
+
 .term-sheet-row, .padding_zero {
   padding: 0;
 }
@@ -153,4 +187,52 @@
 .pagination > li:last-child > a, .pagination > li:last-child > span {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
+}
+
+/*MY PRODUCT*/
+
+.my-product-title {
+  padding-left: 15px;
+}
+
+.product-wrapper {
+  padding: 0;
+}
+
+.panel-group {
+  margin-bottom: 5px;
+}
+
+.product-body, .product-row {
+  padding: 0;
+}
+
+.add-to-wallet {
+  padding-right: 0;
+  float: right;
+  transform: translateX(67px);
+}
+
+.hovered {
+  display: block;
+}
+
+.product-detail-title a:focus  {
+  color: color: #585858;
+  text-decoration: none;
+}
+
+.product-detail-title:hover {
+  color: black;
+  font-weight: 800;
+}
+
+/*QUERIES*/
+
+@media only screen and (max-width:760px){
+    #product-trash {
+      position: absolute;
+      top: -34px;
+      right: 0px;
+    }
 }
