@@ -39,6 +39,11 @@ img#document {
   display: inline-block;
 }
 
+#empty {
+  font-size: 14px;
+  font-style: italic;
+}
+
 
 @media only screen and (min-device-width : 767px) and (max-device-width : 990px){
   #wallet-trash {

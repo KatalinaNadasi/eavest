@@ -19,7 +19,7 @@
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
 
 	<link rel="stylesheet" type="text/css" href="/css/home.css" />
-	<link rel="stylesheet" href="https://unpkg.com/simplebar@2.1.0/dist/simplebar.css" />
+
 
 	<!-- COMPATIBILITE IE8 -->
 	<!--[if lt IE 9]>
@@ -62,6 +62,7 @@
 						</span>
 					</div>
 				</div>
+
 			</div>
 
 			<div class="col-md-12 container-fluid navbar">
@@ -118,7 +119,7 @@
 											<h3><span th:text="${refund.deliver}">Société générale</span></h3>
 										</div>
 										<div class="col-md-3">
-											<img src="/img/product.png" th:src="@{${refund.imageShortcut}}" alt="produit" id="accor-product"/>
+											<img src="/img/product.png" th:src="@{/products/{id}/image(id=${refund.id})}" alt="produit" id="accor-product"/>
 										</div>
 										<div class="col-md-9">
 											<span class="light-blue" id="cours"><span th:text="#{prd.value}">cours</span> <span class="bold-blue">4.254</span></span>
@@ -142,7 +143,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- PRODUITS A RAPPELER -->
+				<!-- PRODUITS A OBSERVER -->
 				<div class="col-sm-6 col-md-6 wrapper padding_left">
 					<img src="/img/bell.png" alt="bell" class="img-responsive img-bell" />
 					<h1 class="product-title"><b th:text="#{to.call.prd}">produits à rappeler</b> <span class="min" th:text="#{home.from.days}">dans les 30 jours</span></h1>
@@ -173,7 +174,7 @@
 											<h3><span th:text="${tocall.deliver}">Société générale</span></h3>
 										</div>
 										<div class="col-md-3">
-											<img src="/img/product.png" th:src="@{${tocall.imageShortcut}}" alt="produit" id="accor-product"/>
+											<img src="/img/product.png" th:src="@{/products/{id}/image(id=${tocall.id})}" alt="produit" id="accor-product"/>
 										</div>
 										<div class="col-md-9">
 											<span class="light-blue" id="cours"><span th:text="#{prd.value}">cours</span> <span class="bold-blue">4.254</span></span>
@@ -286,7 +287,8 @@
 						<div class="white-block">
 							<h2>LE PRODUIT DU MOIS</h2>
 							<div class="month-product">
-                <img src="/img/month-product.jpg" th:src="@{${imgBestSeller}}" class="img-responsive img-product" alt="produit du mois" />
+                <img th:if="${bestSeller}" src="/img/month-product.jpg" th:src="@{/products/{id}/image(id=${bestSeller.id})}" class="img-responsive img-product" alt="produit du mois" />
+								<img th:unless="${bestSeller}" class="img-responsive img-product" alt="produit du mois" />
               </div>
               <div class="over-product">
                 <a>
@@ -431,7 +433,7 @@
 					<p class="grey-letters" id="blog-2-p">
 						Article de <span th:text="${highlightArticles.rightArticle.author}">Frédéric Lorenzini</span>
 						<span class="new-line">N3D - <span th:text="${highlightArticles.rightArticle.releaseDateAsShortFormatString}">18 octobre 2016</span></span>
-						<span class="new-line" th:text="${highlightArticles.rightArticle.content}" >"En ce qui concerne la "compréhension des produits" [...] En ce qui concerne la "compréhension des produits" [...] En ce qui concerne la "compréhension des produits" [...] En ce qui concerne la "compréhension des produits" [...] En ce qui concerne la "compréhension des produits" [...] "</span>
+						<span class="new-line" th:text="${highlightArticles.rightArticle.content}">"En ce qui concerne la "compréhension des produits" [...] En ce qui concerne la "compréhension des produits" [...] En ce qui concerne la "compréhension des produits" [...] En ce qui concerne la "compréhension des produits" [...] En ce qui concerne la "compréhension des produits" [...] "</span>
 					</p>
 					<div class="over-blue">
 						<a href="http://eavest.com/le-sous-jacent-un-possible-mecanisme-supplementaire-pour-un-produit-structure/"  th:href="${highlightArticles.rightArticle.urlAsString}">
@@ -609,7 +611,6 @@
  	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="https://unpkg.com/simplebar@2.1.0/dist/simplebar.js"></script>
  	<script src="/js/script.js"></script>
  	<!-- <script src="js/overlay.js"></script> -->
  	<script src="/js/extra.js"></script>
