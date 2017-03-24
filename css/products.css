@@ -41,12 +41,23 @@
 
 .filter-1 {
   float: left;
+  padding: 15px;
+}
+
+.filter-2 {
+  padding-right: 0;
+  padding: 15px;
+}
+
+.filter-3 {
   padding-left: 0;
+  padding: 15px;
 }
 
 .filter-4 {
   float: right;
   padding-right: 0;
+  padding: 15px;
 }
 
 #filter-search {
