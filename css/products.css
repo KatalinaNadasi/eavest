@@ -91,15 +91,11 @@
   margin-top: 60px;
 }
 
-/*.product-list .container {
-  background-color: white;
-}*/
-
 .product-img {
   border: 1px solid #000;
   width: 127px;
   height: 176px;
-  margin-bottom: 25px;
+  margin-bottom: 14px;
 }
 
 .product-title {
@@ -169,7 +165,7 @@
 }
 
 #pagination-section {
-  margin-top: 70px;
+  margin-top: 20px;
 }
 
 .pagination {
@@ -188,6 +184,10 @@
 .pagination > li:last-child > a, .pagination > li:last-child > span {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 /*MY PRODUCT*/
@@ -209,9 +209,7 @@
 }
 
 .add-to-wallet {
-  /*padding-right: 0;*/
   float: right;
-  /*transform: translateX(30px);*/
 }
 
 .hovered {
@@ -228,8 +226,8 @@
   font-weight: 800;
 }
 
-.term-sheet-list {
-  float: left;
+.product-item {
+  padding-bottom: 45px;
 }
 
 /*QUERIES*/
