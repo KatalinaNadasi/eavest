@@ -100,7 +100,7 @@
 			</div>
 		</div>
 		<div class="col-sm-12 col-md-5 product-wrapper">
-				<div class="panel-group">
+				<div class="panel-group" id="md-width">
 					<div class="panel panel-default prod-list panel-heading" th:each="tocall : ${tocallProducts}" th:if="${tocallStat.count} le 5">
 						<div>
 							<h5 class="product-detail-title">
@@ -116,7 +116,7 @@
 				<h3><span th:text="${product.deliver}">société générale</span></h3>
 			</div>
 			<div class="row product-row">
-				<div class="col-sm-2 col-md-2" id="img-product">
+				<div class="col-sm-2 col-md-3" id="img-product">
 					<img src="/img/product.png" th:src="@{/products/{id}/image(id=${product.id})}" alt="produit" id="accor-product"/>
 				</div>
 				<span class="col-xs-offset-3 hidden-lg hidden-md hidden-sm">
@@ -127,7 +127,7 @@
 
 				<div class="col-sm-3 col-md-3">
 					<ul class="list-unstyled">
-						<li class="light-blue" th:text="#{undrl.asset}">sous-jacent</span></li>
+						<li class="light-blue" th:text="#{undrl.asset}">sous-jacent</li>
 						<li class="blue-uppercase" th:text="${product.prdSousJacent.label}">euro istoxx&reg; ewc 50</li>
 					</ul>
 					<ul class="list-unstyled">
