@@ -10,6 +10,10 @@
   margin: 0;
 }
 
+.glyphicon {
+  font-size: 32px;
+}
+
 .blue-uppercase {
   color: blue;
   text-transform: uppercase;
