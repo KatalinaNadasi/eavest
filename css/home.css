@@ -252,7 +252,7 @@ ul>li>a:hover {
 	padding-top: 15px;
 }
 
-input.btn.btn-default {
+.zone-transit input.btn.btn-default {
   border-radius: 0;
   border: 2px solid black;
   margin: 5px 4px;
@@ -933,6 +933,7 @@ button#close {
   margin-top: 20px;
   width: auto;
   margin-right: 0;
+  cursor: pointer;
 }
 
 .resp-sm {
