@@ -6,8 +6,24 @@
   padding: 0;
 }
 
+#user-img {
+  border: 1px solid black;
+  background-color: #F2F2F2;
+}
+
 .panel-body {
   margin: 0;
+}
+
+.modal-body input {
+  border: 2px solid blue;
+  border-radius: 0;
+}
+
+.form-group button, .modal-footer button  {
+  border-radius: 0;
+  background-color: white;
+  padding: 5px 15px;
 }
 
 .glyphicon {

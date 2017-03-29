@@ -354,6 +354,10 @@ a:active,
   text-decoration: none !important;
 }
 
+.panel.panel-default {
+  background-color: #F2F2F2;
+}
+
 a.panel-heading {
     margin: 0;
     padding: 0;
@@ -1091,6 +1095,7 @@ p#blog-1-p, p#blog-2-p {
   overflow: hidden;
   word-wrap: break-word;
   height: 118px;
+  text-align: justify;
 }
 
 .white-block-blog {
@@ -1108,7 +1113,7 @@ p#figure-p {
 }
 
 #figure-p {
-  overflow: hidden;
+  overflow: auto;
   word-wrap: break-word;
   height: 86px;
 }
