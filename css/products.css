@@ -266,6 +266,34 @@ input.btn.btn-default {
   padding-bottom: 45px;
 }
 
+/*CHART PRODUCT PAGE*/
+
+#chartdiv {
+  height:400px;
+  width:700px;
+}
+
+section.chart {
+    text-align: -webkit-center;
+    padding: 15px 0 45px 15px;
+}
+
+.jqplot-title {
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 15px;
+}
+
+.jqplot-target {
+    color: black !important;
+    font-family: 'Open Sans' !important;
+    font-size: 1em;
+}
+
+.legend {
+  padding: 25px;
+}
+
 /*QUERIES*/
 
 @media only screen and (max-width:760px){
