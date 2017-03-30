@@ -84,7 +84,6 @@
 			</div>
 		</div>
 	</nav>
-
 	<!-- PERSONNAL AREA -->
 	<section>
 		<div class="container">
@@ -188,14 +187,14 @@
 									<div class="col-md-12 product-wallet-title">
 										<h3><span th:text="${product.deliver}">société générale</span></h3>
 									</div>
-									<!-- <span class="col-xs-offset-3 hidden-lg hidden-md hidden-sm">
-										<a href="#" th:href="@{/user/{id}/removeProduct/?prd={idPrd}(id=${prdUser.id}, idPrd=${product.id})}"><i class="fa fa-trash-o fa-2x" id="product-trash-wallet" aria-hidden="true"></i></a>
-									</span> -->
+									<span class="col-xs-offset-3 hidden-lg hidden-md hidden-sm">
+										<a href="#" th:href="@{/user/{id}/removeProduct/?prd={idPrd}(id=${prdUser.id}, idPrd=${product.id})}"><i class="fa fa-trash-o fa-2x" id="product-trash-xs" aria-hidden="true"></i></a>
+									</span>
 									<div class="row product-wallet-row">
 										<div class="col-xs-5 col-sm-2 col-md-2" id="img-wallet-product">
 											<img src="/img/product.png" th:src="@{/products/{id}/image(id=${product.id})}" alt="produit" th:alt="#{prd.image}" id="accor-product"/>
 										</div>
-										<div class="col-xs-6 col-sm-3 col-md-3 wallet-xs-position">
+										<div class="col-xs-6 col-sm-3 col-md-3">
 											<ul class="list-unstyled">
 												<li class="light-blue" th:text="#{undrl.asset}">sous-jacent</li>
 												<li class="blue-uppercase" th:text="${product.prdSousJacent.label}">euro istoxx&reg; ewc 50</li>
@@ -209,7 +208,7 @@
 												<li class="grey-uppercase" th:text="${product.prdStatus.description}">en cours</li>
 											</ul>
 										</div>
-										<div class="col-xs-6 col-sm-4 col-md-4 wallet-xs-position">
+										<div class="col-xs-6 col-sm-4 col-md-4">
 											<ul class="list-unstyled">
 												<li class="light-blue" th:text="#{prd.strike}">strike</li>
 												<li class="blue-uppercase">
@@ -246,7 +245,7 @@
 												</li>
 											</ul>
 										</div>
-										<div class="col-xs-6 col-sm-3 col-md-3 wallet-xs-position">
+										<div class="hidden-xs col-sm-3 col-md-3">
 											<ul class="list-unstyled">
 												<li class="light-blue" th:text="#{prd.maturity}">maturité</li>
 												<li class="grey-uppercase" th:text="${product.dueDateAsLongFormatString}">20 septembre 2024</li>
@@ -262,10 +261,31 @@
 												<li class="light-blue" th:text="#{prd.obs.fqcy}">fréquence d'observation</li>
 												<li class="grey-uppercase" th:text="${product.observationFrequency}">annuelle les années 1 à 8</li>
 											</ul>
-											<a href="#" th:href="@{/user/{id}/removeProduct/?prd={idPrd}(id=${prdUser.id}, idPrd=${product.id})}"><i class="fa fa-trash-o fa-2x" id="product-wallet-trash" aria-hidden="true"></i></a>
+											<span class="col-md-offset-3 hidden-xs">
+												<a href="#" th:href="@{/user/{id}/removeProduct/?prd={idPrd}(id=${prdUser.id}, idPrd=${product.id})}"><i class="fa fa-trash-o fa-2x" id="product-wallet-trash" aria-hidden="true"></i></a>
+											</span>
 										</div>
+										<!-- RESPONSIVE XS VERSION FOR CENTER ALIGNMENT  -->
+										<div class="col-xs-offset-5 col-xs-6 hidden-sm hidden-md hidden-lg">
+											<ul class="list-unstyled">
+												<li class="light-blue" th:text="#{prd.maturity}">maturité</li>
+												<li class="grey-uppercase" th:text="${product.dueDateAsLongFormatString}">20 septembre 2024</li>
+											</ul>
+											<ul class="list-unstyled">
+												<li class="light-blue" th:text="#{prd.coupon}">coupon</li>
+												<li class="grey-uppercase">
+													<span th:text="${product.couponValue}">7.00
+													</span>%
+												</li>
+											</ul>
+											<ul class="list-unstyled">
+												<li class="light-blue" th:text="#{prd.obs.fqcy}">fréquence d'observation</li>
+												<li class="grey-uppercase" th:text="${product.observationFrequency}">annuelle les années 1 à 8</li>
+											</ul>
+										</div>
+										<!-- END XS VERSION -->
 									</div>
-									<div class="col-xs-6 col-md-7 term-sheet-list wallet-xs-position">
+									<div class="hidden-xs col-md-7 term-sheet-list">
 										<span class="term-sheet" th:if="${product.hasTermSheet}">
 											<a href="#" th:href="@{/products/{id}/tsheet(id=${product.id})}" target="_blank">
 												<img src="/img/files.png" alt="document" id="document"/>
@@ -285,6 +305,28 @@
 											<span th:text="#{doc.fease}">fease</span>
 										</span>
 									</div>
+									<!-- REPONSIVE XS VERSION FOR CENTER ALIGNMENT -->
+									<div class="col-xs-offset-5 col-xs-6 hidden-sm hidden-md hidden-lg term-sheet-list">
+										<span class="term-sheet" th:if="${product.hasTermSheet}">
+											<a href="#" th:href="@{/products/{id}/tsheet(id=${product.id})}" target="_blank">
+												<img src="/img/files.png" alt="document" id="document"/>
+											</a>
+											<span th:text="#{term.sheet}">term sheet</span>
+										</span>
+										<span class="term-sheet" th:if="${product.hasMarketingDoc}">
+											<a href="#" th:href="@{/products/{id}/market(id=${product.id})}" target="_blank">
+												<img src="/img/files.png" alt="document" id="document"/>
+											</a>
+											<span th:text="#{doc.market}">document marketing</span>
+										</span>
+										<span class="term-sheet" th:if="${product.hasFease}">
+											<a href="#" th:href="@{/products/{id}/fease(id=${product.id})}" target="_blank">
+												<img src="/img/files.png" alt="document" id="document"/>
+											</a>
+											<span th:text="#{doc.fease}">fease</span>
+										</span>
+									</div>
+									<!-- END RESPONSIVE VERSION -->
 								</div>
 							<!-- hover -->
 							<!-- <a class="more-product-2">

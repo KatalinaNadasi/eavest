@@ -78,8 +78,15 @@ img#document {
 
 #product-wallet-trash {
   position: absolute;
-  top: 50px;
+  top: -28px;
   right: 14px;
+  color: black;
+}
+
+#product-trash-xs {
+  position: absolute;
+  top: 48px;
+  right: 0px;
   color: black;
 }
 
@@ -101,18 +108,16 @@ img#document {
   }
   .product-wallet-title {
     text-align: center;
+    padding-bottom: 15px;
   }
   #img-wallet-product {
     text-align: center;
   }
-}
-
-@media (max-device-width : 600px){
-  #product-wallet-trash {
-    top: -300px;
-    right: -114px;
+  .term-sheet-list {
+    padding-left: 9px;
   }
 }
+
 
 @media only screen and (min-device-width : 767px) and (max-device-width : 990px){
   #term-sheet {
