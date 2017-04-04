@@ -78,7 +78,7 @@
 					<li id="menu-faq"><a href="http://eavest.com/f-a-q/" th:text="#{eav.menu.faq}">FAQ</a></li>
 					<li id="menu-contact"><a href="mailto:contact@eavest.com" th:text="#{eav.menu.contacts}">Contact</a></li>
         </ul>
-				<div class="slider_jquery slider">
+				<div class="slider_jquery slider hidden-xs">
 					<div class="slider-container"></div>
 				</div>
 			</div>
@@ -140,7 +140,7 @@
 									<div class="form-group">
 											<label class="col-xs-3 control-label" for="pwrd">Mot de passe</label>
 											<div class="col-xs-5">
-													<input id="pwrd" class="form-control" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="password" onchange="form.confpwd.pattern = this.value;" th:valuetype="${eavAccount.password}" required="required" title="Le mot de passe doit comporter au moins 6 caractères (un chiffre, une lettre minuscule et une lettre majuscule)" />
+													<input id="pwrd" class="form-control" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="password" onchange="form.confpwd.pattern = this.value;" required="required" title="Le mot de passe doit comporter au moins 6 caractères (un chiffre, une lettre minuscule et une lettre majuscule)" />
 											</div>
 									</div>
 							    <div class="form-group">
@@ -287,7 +287,7 @@
 										</div>
 										<!-- END XS VERSION -->
 									</div>
-									<div class="hidden-xs col-md-7 term-sheet-list">
+									<div class="hidden-xs col-md-7 term-sheet-list grey-uppercase">
 										<span class="term-sheet" th:if="${product.hasTermSheet}">
 											<a href="#" th:href="@{/products/{id}/tsheet(id=${product.id})}" target="_blank">
 												<img src="/img/files.png" alt="document" id="document"/>
@@ -337,7 +337,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="add-product">
+				<div class="add-product" sec:authorize="hasRole('ROLE_ADMIN')">
 					<span class="big-blue-letters">
 						<a th:if="${prdUser}" href="/products" th:href="@{/admin/users/{id}(id=${prdUser.id})}">
 							<img id="add-product" src="/img/show-more.png" class="img-responsive" alt="voir-plus" />
@@ -520,18 +520,21 @@
 	<footer id="footer">
 		<div class="container-fluid">
 			<div class="footer-main navbar fixed-bottom">
-				<small class="always-left col-xs-12 col-sm-12 col-md-6">
-				<span><a href="mailto:contact@eavest.com">contact@eavest.com</a></span><span class="block hidden-sm hidden-md hidden-lg"></span>
-				<span><a href="tel:+33142802199">+33 (1) 42 80 21 99</a></span><span class="block hidden-sm hidden-md hidden-lg"></span>
-				<span><a href="http://eavest.com/mentions-legales/" class="text-decoration-on"><span th:text="#{eav.legal.mention}">mentions légales</span></a></span>
-				<span class="block"></span>
-				</small>
-				<small class="always-right col-xs-12 col-sm-12 col-md-5">
-					<span th:text="#{eav.orias.number}">Immatriculé à l’Orias n° 14001795 <a href="http://www.orias.fr">(www.orias.fr)</a></span>
-					<span class="new-line"><span th:text="#{eav.company.number}">Conseiller en Investissements Financiers enregistré sous le n° E003753</span></span>
-					<span class="new-line"><span th:text="#{eav.anacofi}">Membre de l’ANACOFI</span> - <span th:text="#{eav.amf}">Association agréée par l’AMF</span></span>
-				</small>
-				<span class="clear"></span>
+				<div class="row">
+					<small class="col-xs-12 col-sm-12 col-md-6 push-left">
+						<ul class="list-inline list-unstyled">
+							<li><a href="mailto:contact@eavest.com">contact@eavest.com</a></li>
+							<li><a href="tel:+33142802199">+33 (1) 42 80 21 99</a></li>
+							<li><a href="http://eavest.com/mentions-legales/"><span th:text="#{eav.legal.mention}">mentions légales</span></a></li>
+						</ul>
+					</small>
+					<small class="col-xs-12 col-sm-12 col-md-5 always-right">
+							<span th:text="#{eav.orias.number}">Immatriculé à l’Orias n° 14001795</span>
+								<a href="http://www.orias.fr">(www.orias.fr)</a>
+							<span class="new-line"><span th:text="#{eav.company.number}">Conseiller en Investissements Financiers enregistré sous le n° E003753</span></span>
+							<span class="new-line"><span th:text="#{eav.anacofi}">Membre de l’ANACOFI</span> - <span th:text="#{eav.amf}">Association agréée par l’AMF</span></span>
+					</small>
+				</div>
 			</div>
 		</div>
 	</footer>
@@ -546,10 +549,10 @@
 
 	<!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<script src="/js/script.js"></script>
 	<script src="/js/extra.js"></script>
 	<script src="/js/libs/jquery-ui-slider-1.10.4.custom.min.js"></script>

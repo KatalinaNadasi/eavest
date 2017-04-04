@@ -266,6 +266,12 @@ ul>li>a:hover {
   font-size: 12px;
 }
 
+.btn-default:hover {
+    color: #333333;
+    background-color: #e6e6e6 !important;
+    border-color: #adadad;
+}
+
 .slider_jquery {
 	position: absolute;
 	left: 0;
@@ -316,16 +322,15 @@ ul>li>a:hover {
   vertical-align: -webkit-baseline-middle;
 }
 
+#eavest {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 /*Accordion*/
 
-
-#headingSix, #headingSeven, #headingEight {
-  display: none;
-}
 /*long*/
-#heading2Six, #heading2Seven, #heading2Eight {
-  display: none;
-}
 
 .panel a {
   text-decoration: none;
@@ -650,6 +655,98 @@ a.panel-heading {
   -moz-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
+}
+
+.simplebar, [data-simplebar-direction] {
+    position: relative;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch; /* Trigger native scrolling for mobile, if not supported, plugin is used. */
+}
+
+.simplebar .simplebar-scroll-content,
+[data-simplebar-direction] .simplebar-scroll-content {
+    overflow-y: scroll;
+    overflow-x: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -ms-overflow-style: none; /* hide browser scrollbar on IE10+ */
+}
+
+/* hide browser scrollbar on Webkit (Safari & Chrome) */
+.simplebar-scroll-content::-webkit-scrollbar {
+    display: none;
+}
+
+[data-simplebar-direction="horizontal"] .simplebar-scroll-content,
+.simplebar.horizontal .simplebar-scroll-content {
+    overflow-x: scroll;
+    overflow-y: auto;
+}
+
+.simplebar-track {
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 11px;
+}
+
+.simplebar-track .simplebar-scrollbar {
+    position: absolute;
+    right: 2px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    min-height: 10px;
+    width: 7px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    opacity: 0;
+    -webkit-transition: opacity 0.2s linear;
+    -moz-transition: opacity 0.2s linear;
+    -o-transition: opacity 0.2s linear;
+    -ms-transition: opacity 0.2s linear;
+    transition: opacity 0.2s linear;
+    background: #6c6e71;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+}
+
+.simplebar-track:hover .simplebar-scrollbar {
+    /* When hovered, remove all transitions from drag handle */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    opacity: 0.7;
+    -webkit-transition: opacity 0 linear;
+    -moz-transition: opacity 0 linear;
+    -o-transition: opacity 0 linear;
+    -ms-transition: opacity 0 linear;
+    transition: opacity 0 linear;
+}
+
+.simplebar-track .simplebar-scrollbar.visible {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    opacity: 0.7;
+}
+
+[data-simplebar-direction="horizontal"] .simplebar-track,
+.simplebar.horizontal .simplebar-track {
+    top: auto;
+    left: 0;
+    width: auto;
+    height: 11px;
+}
+
+[data-simplebar-direction="horizontal"] .simplebar-track .simplebar-scrollbar,
+.simplebar.horizontal .simplebar-track .simplebar-scrollbar {
+    right: auto;
+    top: 2px;
+    height: 7px;
+    min-height: 0;
+    min-width: 10px;
+    width: auto;
 }
 
 #more-eavest-block {
@@ -1090,13 +1187,12 @@ button#close {
 }
 
 .article p {
-  font-size: 12px;
   text-align: justify;
   margin-right: 30px;
   padding-left: 30px;
   overflow: hidden;
 }
-
+ 
 p#blog-1-p, p#blog-2-p {
   overflow: hidden;
   word-wrap: break-word;
@@ -1364,6 +1460,19 @@ p#figure-p {
 /*FOOTER*/
 footer * {
   font-weight: lighter;
+  color: white;
+}
+
+#footer li a {
+  font-weight: 100;
+  text-decoration: underline;
+  color: white;
+}
+
+#footer li a:hover {
+  background-color: black !important;
+  color: white !important;
+  text-decoration: underline !important;
 }
 
 .footer-main {
@@ -1374,29 +1483,16 @@ footer * {
   border-radius: 0px;
 }
 
-.always-left {
-  float: left;
-  font-size: 11px;
-  line-height: 11px;
-  margin-left: 10px;
-  text-align: left;
-  margin-top: 11px;
-}
-
-.always-left a,.always-right a {
+.always-right a {
   color: white;
   text-decoration: none;
-}
-
-.always-left span a {
-  margin-right: 30px;
+  font-weight: 100;
 }
 
 .always-right {
-  font-size: 11px;
-  line-height: 13px;
   float: right;
   text-align: right;
+  line-height: 12px;
 }
 
 .immatriculation-p {
@@ -1413,7 +1509,7 @@ footer * {
 
 .footer-main span a:hover, .always-right a:hover {
   color: white;
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 
@@ -1429,11 +1525,22 @@ a#arrow-position {
   text-align: center;
 }
 
+/*MODAL */
+.modal-content  {
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important;
+}
+
 
 /*MEDIA QUERIES*/
 
 /*1- Small devices (landscape phones, 576px and up)*/
-
+@media(max-width:300px){
+  .panel-title {
+    font-size: 12px;
+  }
+}
 
 @media(max-width:506px){
   .logo {
@@ -1493,13 +1600,6 @@ a#arrow-position {
   }
 }
 
-@media (max-device-width : 733px){
-  #question-img {
-    width: 80px;
-    height: 69px;
-  }
-}
-
 @media (max-device-width : 732px) {
   #white-block {
   margin-top: 20px;
@@ -1554,7 +1654,7 @@ a#arrow-position {
 
 @media (max-width : 742px ){
   .more-product-sm {
-      left: 60%;
+    left: 58%;
   }
 }
 
@@ -1715,14 +1815,6 @@ a#arrow-position {
     }
   }
 
-  @media only screen and (min-device-width : 774px) and (max-device-width : 990px){
-    #question-img {
-    width: 168px;
-    height: 118px;
-    padding-left: 41px;
-    }
-  }
-
   @media(min-width:768px) {
     .grey-block {
       margin-bottom: 15px;
@@ -1836,7 +1928,7 @@ a#arrow-position {
   }
 
   @media (max-device-width : 400px) {
-      .always-left, .always-right {
+      .always-right {
         margin: 0;
         padding: 0;
         text-align: -webkit-center;
@@ -1844,7 +1936,7 @@ a#arrow-position {
     }
 
   @media only screen and (min-device-width : 400px) and (max-device-width : 538px){
-    .always-left, .always-right {
+    .always-right {
       margin: 0;
       padding: 0;
       text-align: -webkit-center;
@@ -1852,19 +1944,15 @@ a#arrow-position {
   }
 
   @media only screen and (min-device-width : 538px) and (max-device-width : 1050px){
-      .always-left, .always-right {
+    .always-right {
         text-align:  -webkit-center;
     }
-      .always-left {
-        padding-bottom: 15px;
-        line-height: 13px;
-      }
-      #footer>.block {
-        display: block;
-      }
-      #footer {
-        line-height: 0px;
-      }
+    #footer>.block {
+      display: block;
+    }
+    #footer {
+      line-height: 0px;
+    }
   }
 
 /*3- very large screen*/
