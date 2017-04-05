@@ -1058,8 +1058,9 @@ button#close {
   background-color: white;
   text-align: center;
   width: 22%;
-  padding: 47px;
-  margin-left: 15px;
+  padding: 40px;
+  height: 190px;
+  padding-top: 58px;;
 }
 
 #wallet {
@@ -1073,7 +1074,8 @@ button#close {
   padding-bottom: 36px;
   width: 71%;
   float: right;
-  right: 28px;
+  right: 16px;
+  height: 190px;
 }
 
 .wallet-black-block a {
@@ -1192,7 +1194,7 @@ button#close {
   padding-left: 30px;
   overflow: hidden;
 }
- 
+
 p#blog-1-p, p#blog-2-p {
   overflow: hidden;
   word-wrap: break-word;
@@ -1252,6 +1254,7 @@ p#figure-p {
   float: right;
   right: 15px;
   height: 273px;
+  width: 24%;
 }
 
 /*SECTION OUR AGREEMENT*/
@@ -1572,7 +1575,21 @@ a#arrow-position {
   .p-width-2 {
     margin-bottom: 8px;
   }
+  .white-block-blog {
+    width: 90%;
+    margin-left: 18px;
+  }
+  .grey-block-2 {
+    width: 94%;
+  }
+  .wallet-black-block {
+    width: 98%;
+  }
+  .white-block-blog {
+    width: 93%;
+  }
 }
+
 
 @media (max-device-width : 464px) {
   .methodologie {
@@ -1605,6 +1622,18 @@ a#arrow-position {
   margin-top: 20px;
   padding: 0;
   }
+  .grey-block {
+    margin-left: 32px;
+  }
+}
+
+@media (max-width : 770px) {
+  .wallet-black-block {
+    margin-left: 15px;
+    padding-bottom: 43px;
+    right: 14px;
+    float: right;
+  }
 }
 
 @media only screen and (min-device-width : 462px) and (max-device-width : 765px) {
@@ -1613,11 +1642,11 @@ a#arrow-position {
   }
 }
 
-@media only screen and (min-device-width : 450px) and (max-device-width : 768px){
+/*@media only screen and (min-device-width : 450px) and (max-device-width : 768px){
   .white-block-style {
     width: 57%;
   }
-}
+}*/
 
 @media only screen and (min-device-width : 500px) and (max-device-width : 768px){
   input[type=search] {
@@ -1632,6 +1661,21 @@ a#arrow-position {
   }
   #methodo-img2 {
     transform: translateY(O);
+  }
+  .more-product-sm {
+    left: 55%;
+  }
+  .white-block-blog {
+    width: 94%;
+  }
+  .grey-block-2 {
+    width: 96%;
+  }
+  .wallet-black-block {
+    width: 98%;
+  }
+  .white-block-blog {
+    width: 96%;
   }
 }
 
@@ -1649,18 +1693,6 @@ a#arrow-position {
     height: 316px;
     padding: 0;
     padding-left: 0 !important;
-  }
-}
-
-@media (max-width : 742px ){
-  .more-product-sm {
-    left: 58%;
-  }
-}
-
-@media only screen and (min-device-width : 616px) and (max-device-width : 766px){
-  .grey-block-2 {
-      width: 60%;
   }
 }
 
@@ -1728,6 +1760,8 @@ a#arrow-position {
   }
   .grey-block-2 {
     padding-left: 35px;
+    margin-top: 15px;
+    right: 19px;
   }
   #value-img1 {
     width: 53px;
@@ -1748,16 +1782,17 @@ a#arrow-position {
   .month-product {
     height: 238px;
   }
+  .white-block-blog {
+    margin-top: 15px;
+  }
 }
 
 @media(max-width:767px){
   .grey-block {
     padding-left: 50px;
   }
-  .wallet-black-block {
-    margin-left: 15px;
-    padding-bottom: 43px;
-    width: 94%;
+  .article p {
+    padding-left: 0;
   }
   .wrap {
     padding: 0px 1px 0px 17px;
@@ -1804,6 +1839,9 @@ a#arrow-position {
   #methodo-img1 {
     transform: translateY(4px);
   }
+  #white-block {
+    padding: 0;
+  }
 }
 
 /*Medium devices (tablets, 768px and up)*/
@@ -1840,7 +1878,7 @@ a#arrow-position {
       font-size: 15px;
     }
     .wallet-black-block {
-      width: 68%;
+      width: 72%;
     }
     .article {
       padding-left: 0;
@@ -1957,14 +1995,8 @@ a#arrow-position {
 
 /*3- very large screen*/
   @media (min-width : 1200px) {
-    .wallet-black-block {
-      width: 72%;
-    }
     .black-block-partner {
       padding-bottom: 23px;
-    }
-    .wallet-black-block {
-      width: 71%;
     }
     .footer-main {
       padding: 18px 179px 16px 179px;

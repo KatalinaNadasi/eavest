@@ -339,7 +339,7 @@
 			<h2 id="month-product-title"><span th:text="#{home.best.seller}">LE PRODUIT DU MOIS</span></h2>
 				<div class="month-product">
 					<img th:if="${bestSeller}" src="/img/month-product.jpg" th:src="@{/products/{id}/image(id=${bestSeller.id})}" class="img-responsive img-product" alt="produit du mois" th:alt="#{home.best.seller}"/>
-					<img th:unless="${bestSeller}" class="img-responsive img-product" alt="produit du mois" th:alt="#{home.best.seller}" />
+					<!-- <img th:unless="${bestSeller}" class="img-responsive img-product" alt="produit du mois" th:alt="#{home.best.seller}" /> -->
 				</div>
 				<div class="over-product">
 					<a th:if="${bestSeller}" href="#" th:href="@{/products/{id}(id=${bestSeller.id})}">
@@ -495,7 +495,7 @@
 	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-5 white-block-style">
+				<div class="col-xs-12 col-md-5 white-block-style">
 					<h4 th:text="#{home.values}">Nos valeurs</h4>
 					<div class="row values">
 						<ul class="list-inline list-unstyled grey-letters">
