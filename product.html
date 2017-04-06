@@ -120,21 +120,29 @@
 								</div>
 							</div>
 					</div>
-
-
 				</div>
 			</div>
 		</div>
 		<div class="col-md-12 product-body">
-			<div>
-				<h3><span th:text="${product.deliver}" id="product-main-title">société générale</span></h3>
-			</div>
 			<div class="row product-row">
-				<div class="col-sm-2 col-md-2" id="img-product">
+				<div class="hidden-xs col-sm-12 col-md-12">
+					<h3><span th:text="${product.deliver}" id="product-main-title">société générale</span></h3>
+				</div>
+				<!-- version responsive only -->
+				<div class="col-xs-offset-2 hidden-sm hidden-md hidden-lg">
+					<h3><span th:text="${product.deliver}" id="product-main-title">société générale</span></h3>
+				</div>
+				<!-- end version responsive only -->
+				<div class="hidden-xs col-sm-2 col-md-2" id="img-product">
 					<img src="/img/product.png" th:src="@{/products/{id}/image(id=${product.id})}" alt="produit" id="accor-product"/>
 				</div>
+				<!-- version responsive only -->
+				<div class="col-xs-6 hidden-sm hidden-md hidden-lg" id="img-product">
+					<img src="/img/product.png" th:src="@{/products/{id}/image(id=${product.id})}" alt="produit" id="accor-product"/>
+				</div>
+				<!-- end version responsive only -->
 
-				<div class="col-sm-3 col-md-3">
+				<div class="col-xs-6 col-sm-3 col-md-3">
 					<ul class="list-unstyled">
 						<li class="light-blue" th:text="#{undrl.asset}">sous-jacent</li>
 						<li class="blue-uppercase" th:text="${product.prdSousJacent.label}">euro istoxx&reg; ewc 50</li>
@@ -148,7 +156,7 @@
 						<li class="grey-uppercase" th:text="${product.prdStatus.description}">en cours</li>
 					</ul>
 				</div>
-				<div class="col-sm-4 col-md-4">
+				<div class="col-xs-6 col-sm-4 col-md-4">
 					<ul class="list-unstyled">
 						<li class="light-blue" th:text="#{prd.strike}">strike</li>
 						<li class="blue-uppercase">
@@ -185,7 +193,7 @@
 						</li>
 					</ul>
 				</div>
-				<div class="col-sm-3 col-md-3">
+				<div class="hidden-xs col-sm-3 col-md-3">
 					<ul class="list-unstyled">
 						<li class="light-blue" th:text="#{prd.maturity}">maturité</li>
 						<li class="grey-uppercase" th:text="${product.dueDateAsLongFormatString}">20 septembre 2024</li>
@@ -203,7 +211,26 @@
 					</ul>
 				</div>
 			</div>
-			<div class="col-md-7 term-sheet-list grey-uppercase">
+			<!-- RESPONSIVE XS VERSION FOR CENTER ALIGNMENT  -->
+			<div class="col-xs-offset-6 col-xs-6 hidden-sm hidden-md hidden-lg">
+				<ul class="list-unstyled">
+					<li class="light-blue" th:text="#{prd.maturity}">maturité</li>
+					<li class="grey-uppercase" th:text="${product.dueDateAsLongFormatString}">20 septembre 2024</li>
+				</ul>
+				<ul class="list-unstyled">
+					<li class="light-blue" th:text="#{prd.coupon}">coupon</li>
+					<li class="grey-uppercase">
+						<span th:text="${product.couponValue}">7.00
+						</span>%
+					</li>
+				</ul>
+				<ul class="list-unstyled">
+					<li class="light-blue" th:text="#{prd.obs.fqcy}">fréquence d'observation</li>
+					<li class="grey-uppercase" th:text="${product.observationFrequency}">annuelle les années 1 à 8</li>
+				</ul>
+			</div>
+			<!-- END XS VERSION -->
+			<div class="hidden-xs col-md-7 term-sheet-list grey-uppercase">
 				<span class="term-sheet" th:if="${product.hasTermSheet}">
 					<a href="#" th:href="@{/products/{id}/tsheet(id=${product.id})}" target="_blank">
 						<img src="/img/files.png" alt="document" id="document"/>
@@ -223,14 +250,36 @@
 					<span th:text="#{doc.fease}">fease</span>
 				</span>
 			</div>
-
-			<div class="col-sm-12 col-md-12 prod-black-separator">
+			<!-- REPONSIVE XS VERSION FOR CENTER ALIGNMENT -->
+			<div class="col-xs-offset-6 col-xs-6 hidden-sm hidden-md hidden-lg term-sheet-list">
+				<span class="term-sheet" th:if="${product.hasTermSheet}">
+					<a href="#" th:href="@{/products/{id}/tsheet(id=${product.id})}" target="_blank">
+						<img src="/img/files.png" alt="document" id="document"/>
+					</a>
+					<span th:text="#{term.sheet}">term sheet</span>
+				</span>
+				<span class="term-sheet" th:if="${product.hasMarketingDoc}">
+					<a href="#" th:href="@{/products/{id}/market(id=${product.id})}" target="_blank">
+						<img src="/img/files.png" alt="document" id="document"/>
+					</a>
+					<span th:text="#{doc.market}">document marketing</span>
+				</span>
+				<span class="term-sheet" th:if="${product.hasFease}">
+					<a href="#" th:href="@{/products/{id}/fease(id=${product.id})}" target="_blank">
+						<img src="/img/files.png" alt="document" id="document"/>
+					</a>
+					<span th:text="#{doc.fease}">fease</span>
+				</span>
 			</div>
+			<!-- END RESPONSIVE VERSION -->
 			<!-- end container -->
 		</div>
 	</div>
 	</section>
+	<div class="col-sm-12 col-md-12 prod-black-separator">
+	</div>
 
+<!-- SECTION CHART -->
 	<section class="chart">
 
 		<div class="container">

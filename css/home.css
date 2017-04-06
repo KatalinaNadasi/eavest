@@ -1623,7 +1623,7 @@ a#arrow-position {
     margin-top: 10px;
   }
   input[type=search] {
-    width: 62%;
+    width: 68%;
   }
   .agreement-block {
     padding-bottom: 1px;
@@ -1664,7 +1664,7 @@ a#arrow-position {
   }
 }
 
-@media (max-width : 520px) {
+@media (max-width : 770px) {
   .navbar-list {
     display: inline-block;
     text-align: center;
@@ -1715,7 +1715,7 @@ a#arrow-position {
 
 @media only screen and (min-device-width : 500px) and (max-device-width : 768px){
   input[type=search] {
-    width: 62%;
+    width: 81%;
   }
   #methodo-img2 {
     transform: translateY(O);
@@ -1945,7 +1945,7 @@ a#arrow-position {
 
   @media only screen and (min-device-width : 760px) and (max-device-width : 987px){
     input[type=search] {
-      width: 71%;
+      width: 75%;
     }
   }
 
