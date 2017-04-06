@@ -1505,6 +1505,10 @@ footer * {
   border-radius: 0px;
 }
 
+small.col-xs-12.col-sm-12.col-md-6.push-left {
+    padding-bottom: 15px;
+}
+
 .always-right a {
   color: white;
   text-decoration: none;
@@ -1574,7 +1578,35 @@ a#arrow-position {
   .white-block-style {
       width: 90%;
   }
+  #more-our-agrement {
+    left: 39%;
+    top: 44%;
+  }
 }
+
+@media (max-device-width: 500px){
+  #more-partner {
+    left: 39%;
+  }
+  #more-eavest-block {
+    left: 39%;
+    top: 23%;
+  }
+}
+
+@media only screen and (min-device-width : 500px) and (max-device-width : 714px){
+  #more-eavest-block {
+    left: 41%;
+    top: 5%;
+  }
+}
+
+@media only screen and (min-device-width : 300px) and (max-device-width : 770px){
+  .wallet-black-block {
+    height: auto;
+  }
+}
+
 
 @media (max-device-width: 412px){
   .methodologie {
@@ -1597,6 +1629,12 @@ a#arrow-position {
   }
   #methodo-3-block {
     transform: translateX(0);
+  }
+  #more-team {
+    left: 41%;
+  }
+  #more-values {
+    left: 39%;
   }
 }
 
