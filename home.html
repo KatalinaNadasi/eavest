@@ -154,6 +154,9 @@
 						</div>
 					</div>
 				</div>
+
+
+
 				<!-- PRODUITS A OBSERVER -->
 				<div class="col-sm-6 col-md-6 wrapper padding_left">
 					<img src="/img/bell.png" alt="bell" class="img-responsive img-bell" th:alt="#{home.bell}"/>
@@ -225,7 +228,9 @@
 			<div class="row">
 
 				<div class="hidden-xs hidden-sm col-md-3">
-					<h2 class="black-block"><span th:text="#{prd.find}">cherchez un produit</span> <span class="new-line" th:text="#{prd.find.in}">parmis nos</span> <span th:text="${nbProducts}">2000</span> <span th:text="#{prd.ref}">références</span></h2>
+					<div>
+						<h2 class="black-block"><span th:text="#{prd.find}">cherchez un produit</span> <span class="new-line" th:text="#{prd.find.in}">parmis nos</span> <span th:text="${nbProducts}">2000</span> <span th:text="#{prd.ref}">références</span></h2>						
+					</div>
 
 					<div class="search">
 						<p class="grey-letters"><span th:text="#{prd.bank.name}">Émetteur</span>, <span th:text="#{prd.isin.code}">Code ISIN</span>,</p>

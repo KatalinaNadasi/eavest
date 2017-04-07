@@ -1001,12 +1001,12 @@ table {
 
 #more-perfReview {
   margin: 3px;
-  width: 35px;
+  width: 30px;
 }
 
 #more-perfReview:hover {
   margin: 3px;
-  width: 38px;
+  width: 33px;
   cursor: pointer;
 }
 
@@ -1229,7 +1229,7 @@ p#figure-p {
 
 #figure-p {
   word-wrap: break-word;
-  height: 86px;
+  height: 70px;
 }
 
 .white-block-blog h2 {
@@ -1277,6 +1277,7 @@ p#figure-p {
   color: white;
   padding-top: 14px;
   padding-left: 20px;
+  height: 255px;
 }
 
 .black-block-partner p {
@@ -1296,7 +1297,7 @@ p#figure-p {
   background-color: #E5E5E5;
   margin-left: 22px;
   padding-left: 18px;
-  height: 237px;
+  height: 255px;
 }
 
 .grey-block-3 p {
@@ -1428,19 +1429,19 @@ p#figure-p {
 #methodo-img1 {
   width: 60px;
   height: 53px;
-  margin-top: 7px;
+  margin-top: 25px;
 }
 
 #methodo-img2 {
   width: 75px;
   height: 47px;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 #methodo-img3 {
   width: 66px;
   height: 52px;
-  margin-top: 7px;
+  margin-top: 26px;
 }
 
 /*SECTION TEAM*/
@@ -1607,6 +1608,12 @@ a#arrow-position {
   }
 }
 
+@media only screen and (min-device-width : 616px) and (max-device-width : 770px){
+  #more-our-agrement {
+    left: 44%;
+  }
+}
+
 
 @media (max-device-width: 412px){
   .methodologie {
@@ -1733,6 +1740,9 @@ a#arrow-position {
   }
   .grey-block {
     margin-left: 32px;
+  }
+  .black-block-partner {
+    height: auto;
   }
 }
 
