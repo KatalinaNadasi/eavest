@@ -17,6 +17,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet" />
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+	<link rel="stylesheet" href="https://unpkg.com/simplebar@2.2.1/dist/simplebar.css" />
+	<!--
+	<link rel="stylesheet" href="/css/easy-autocomplete.min.css" />
+-->
 
 	<link rel="stylesheet" type="text/css" href="/css/home.css" />
 
@@ -41,51 +45,44 @@
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="nav">
-				<div class="col-xs-12 col-sm-8 col-md-7 logo-area">
-					<h1><img src="/img/eavest-logo.png" alt="Eavest" class="img-responsive logo"/></h1>
+				<div class="col-md-12 center-block">
+					<h1><img src="/img/eavest-logo.png" alt="Eavest" class="center-block img-responsive logo"/></h1>
 				</div>
-				<div class="col-xs-12 col-sm-5 col-md-4 connexion-area">
-					<div class="col-md-12">
-						<a th:unless="${#authorization.expression('isAuthenticated()')}" href="http://localhost:8080/login" th:href="@{/login}" class="italicized grey-letters auth" th:text="#{eav.login}">Connexion</a>
-						<span th:if="${session.authUserName}" th:text="${session.authUserName}" class="italicized auth">Nom de l'utilisateur</span>
-					</div>
-					<div class="col-md-12">
-						<span>
-							<a href="https://twitter.com/EAVEST_"><i class="fa fa-twitter"></i></a>
-							<a href="?lang=fr" class="language">fr</a>/<a href="?lang=en" class="language">en</a>
+				<div class="language-switcher navbar-right">
+					<a th:unless="${#authorization.expression('isAuthenticated()')}" href="http://localhost:8080/login" th:href="@{/login}" class="italicized grey-letters auth" th:text="#{eav.login}">Connexion</a>
+					<span th:if="${session.authUserName}" th:text="${session.authUserName}" class="italicized auth">Nom de l'utilisateur</span>
+					<span id="socials">
+						<a href="https://twitter.com/EAVEST_"><i class="fa fa-twitter"></i></a>
+						<a href="?lang=fr_FR" class="language">fr</a>/<a href="?lang=en_EN" class="language">en</a><a sec:authorize="hasRole('ROLE_ADMIN')" th:unless="${appInit}" href="/home/init">/Init</a>
+
+					</span>
+					<div class="zone-transit">
+						<span sec:authorize="isAuthenticated()">
+							<form th:action="@{/logout}" method="post">
+								<input type="submit" value="Sign Out" th:value="#{eav.sign.out}" class="btn btn-default log" />
+							</form>
+						</span>
+
+						<span sec:authorize="hasRole('ROLE_ADMIN')">
+							<form th:action="@{/admin}" method="get">
+								<input type="submit" value="Back Office" class="btn btn-default log" />
+							</form>
 						</span>
 					</div>
-					<div class="col-md-12 zone-transit">
-							<span sec:authorize="isAuthenticated()">
-								<ul class="list-inline list-unstyled log-button">
-									<li class="btn-sign-out">
-										<form th:action="@{/logout}" method="post">
-											<input type="submit" value="Sign Out" th:value="#{eav.sign.out}" class="btn btn-default log" />
-										</form>
-									</li>
-									<li class="btn-back">
-										<span sec:authorize="hasRole('ROLE_ADMIN')">
-										<form th:action="@{/admin}" method="get">
-											<input type="submit" value="Back Office" class="btn btn-default log" />
-										</form>
-									</li>
-								</ul>
-						</div>
-					</div>
-			<!-- end nav -->
+				</div>
 			</div>
 
 			<div class="col-md-12 container-fluid navbar">
-				<ul class="navbar-list navbar list-inline list-unstyled">
-        	<li id="menu-home" class="selected"><a href="/home" th:text="#{eav.menu.home}">Home</a></li>
-          <li id="menu-wallet"><a href="/wallet" th:text="#{eav.menu.wallet}">Mon Portefeuille</a></li>
-          <li id="menu-method"><a href="http://eavest.com/methodologie-2/" th:text="#{eav.menu.methodology}">Methodologie</a></li>
-          <li id="menu-mesure"><a href="http://eavest.com/sur-mesure/" th:text="#{eav.menu.handmade}">sur-mesure</a></li>
-          <li id="menu-products"><a href="/products" th:text="#{eav.menu.products}">Produits</a></li>
+				<ul class="navbar list-inline list-unstyled">
+					<li id="menu-home" class="selected"><a href="/home" th:text="#{eav.menu.home}">Home</a></li>
+					<li id="menu-wallet"><a href="/wallet" th:text="#{eav.menu.wallet}">Mon Portefeuille</a></li>
+					<li id="menu-method"><a href="http://eavest.com/methodologie-2/" th:text="#{eav.menu.methodology}">Methodologie</a></li>
+					<li id="menu-mesure"><a href="http://eavest.com/sur-mesure/" th:text="#{eav.menu.handmade}">sur-mesure</a></li>
+					<li id="menu-products"><a href="/products" th:text="#{eav.menu.products}">Produits</a></li>
 					<li id="menu-blog"><a href="http://eavest.com/category/blog/" th:text="#{eav.menu.blog}">Le Blog</a></li>
 					<li id="menu-faq"><a href="http://eavest.com/f-a-q/" th:text="#{eav.menu.faq}">FAQ</a></li>
 					<li id="menu-contact"><a href="mailto:contact@eavest.com" th:text="#{eav.menu.contacts}">Contact</a></li>
-        </ul>
+				</ul>
 				<div class="slider_jquery slider hidden-xs">
 					<div class="slider-container"></div>
 				</div>
@@ -108,7 +105,9 @@
                 <div class="activestate" role="tab" th:if="${refundStat.index} le 4">
 						      <h4 class="accordion-title">
 										<a class="panel-heading prod-list" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseOne" th:href="'#collapse' + ${refundStat.index}" aria-expanded="true">
-										<span class="margin panel-title" th:text="${refund.label + ' / ' + refund.isin}">resonance 1 / FR00196847</span>
+										<span class="margin panel-title"></span>
+										<span class="label" th:text="${refund.label}">resonance 1</span>
+										<span class="isin" th:text="${refund.isin}"> / FR00196847</span>
 										<span th:if="${refund.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" th:alt="#{prd.eavest}" alt="black-logo" id="eavest"/></span>
 										</a>
 									</h4>
@@ -116,21 +115,26 @@
 								<div class="hidden-refund-product" role="tab" th:if="${refundStat.index} gt 4" style="display:none;">
 									<h4 class="accordion-title">
 										<a class="panel-heading prod-list" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseOne" th:href="'#collapse' + ${refundStat.index}" aria-expanded="true">
-											<span class="margin panel-title" th:text="${refund.label + ' / ' + refund.isin}">resonance 1 / FR00196847</span>
-											<span th:if="${refund.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" th:alt="#{prd.eavest}" alt="black-logo" id="eavest"/></span>
+										<span class="margin panel-title"></span>
+										<span class="label" th:text="${refund.label}">resonance 2</span>
+										<span class="isin" th:text="${refund.isin}"> / FR00196847</span>
+										<span th:if="${refund.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" th:alt="#{prd.eavest}" alt="black-logo" id="eavest"/></span>
 										</a>
 									</h4>
 								</div>
 								<div th:id="'collapse' + ${refundStat.index}" id="collapseOne" class="panel-collapse collapse collapsed" role="tabpanel" aria-labelledby="headingOne">
 									<div class="panel-body">
 										<div class="col-md-12 product-accor-title">
-											<h3><span th:text="${refund.deliver}" >Société générale</span></h3>
+											<!-- <h3><span th:text="${refund.deliver}" >Société générale</span></h3> -->
+											<img src="img/clock-black.png" alt="reveil" class="clock-img">
+											<span>25/12/ 2017</span>
 										</div>
 										<div class="row prod-accor-row">
 											<div class="col-xs-5 col-sm-4 col-md-3">
 												<a href="#" th:href="@{/products/{id}(id=${refund.id})}">
 													<img src="/img/product.png" th:src="@{/products/{id}/image(id=${refund.id})}" th:alt="#{prd.image}" alt="produit" id="accor-product"/>
 												</a>
+												<span><img src="img/black-logo-min.png" alt="logo eavest"></span>
 											</div>
 											<div class="col-xs-7 col-sm-7 col-md-9">
 												<ul class="list-unstyled">
@@ -171,7 +175,9 @@
 								<div class="activestate" role="tab" th:if="${tocallStat.index} le 4">
 									<h4 class="accordion-title">
 										<a class="prod-list panel-heading" role="button" data-toggle="collapse" data-parent="#accordion-2" href="#collapse2One"  th:href="'#collapse2' + ${tocallStat.index}" aria-expanded="true">
-										<span class="margin panel-title" th:text="${tocall.label + ' / ' + tocall.isin}">resonance 1 / FR00196847</span>
+										<span class="margin panel-title"></span>
+										<span class="label" th:text="${refund.label}">resonance 3</span>
+										<span class="isin" th:text="${refund.isin}"> / FR00196847</span>
 										<span th:if="${tocall.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" alt="black-logo" th:alt="#{prd.eavest}" id="eavest"/></span>
 										</a>
 									</h4>
@@ -179,7 +185,9 @@
 								<div class="hidden-tocall-product" role="tab" th:if="${tocallStat.index} gt 4" style="display:none;">
 									<h4 class="accordion-title">
 										<a class="prod-list panel-heading" role="button" data-toggle="collapse" data-parent="#accordion-2" href="#collapse2One"  th:href="'#collapse2' + ${tocallStat.index}" aria-expanded="true">
-										<span class="margin panel-title" th:text="${tocall.label + ' / ' + tocall.isin}">resonance 1 / FR00196847</span>
+										<span class="margin panel-title"></span>
+										<span class="label" th:text="${refund.label}">resonance 4</span>
+										<span class="isin" th:text="${refund.isin}"> / FR00196847</span>
 										<span th:if="${tocall.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" alt="black-logo" th:alt="#{prd.eavest}" id="eavest"/></span>
 										</a>
 									</h4>
@@ -187,7 +195,9 @@
 								<div th:id="'collapse2' + ${tocallStat.index}" id="collapse2One" class="panel-collapse collapse collapsed" role="tabpanel" aria-labelledby="heading2One">
 									<div class="panel-body">
 										<div class="col-md-12 product-accor-title">
-											<h3><span th:text="${tocall.deliver}">Société générale</span></h3>
+											<!-- <h3><span th:text="${tocall.deliver}">Société générale</span></h3> -->
+											<img src="img/clock-color.png" alt="reveil" class="clock-img">
+											<span class="grey-uppercase">25 / 12 / 2017</span>
 										</div>
 										<div class="row prod-accor-row">
 											<div class="col-xs-5 col-sm-4 col-md-3">
@@ -234,6 +244,7 @@
 						<h2 class="black-block"><span th:text="#{prd.find}">cherchez un produit</span> <span class="new-line" th:text="#{prd.find.in}">parmis nos</span> <span th:text="${nbProducts}">2000</span> <span th:text="#{prd.ref}">références</span></h2>
 					</div>
 
+<!--
 					<div class="search">
 						<p class="grey-letters"><span th:text="#{prd.bank.name}">Émetteur</span>, <span th:text="#{prd.isin.code}">Code ISIN</span>,</p>
 						<p class="grey-letters"><span th:text="#{prd.name}">Nom du produit</span>, <span th:text="#{prd.undrl.asset}">Sous-jacent</span></p>
@@ -242,6 +253,20 @@
 
 								<form th:object="${search}" action="#" th:action="@{/home/find}" method="post">
 									<input type="search" id="find-product" autocomplete="off" th:field="*{text}"/>
+									<button type="submit"><i class="fa fa-2x fa-search"></i></button>
+								</form>
+							</span>
+						</div>
+					</div>
+ -->
+					<!-- TEST DU SUPER FILTRE -->
+					<div class="search">
+						<p class="grey-letters"><span th:text="#{prd.bank.name}">Émetteur</span>, <span th:text="#{prd.isin.code}">Code ISIN</span>,</p>
+						<p class="grey-letters"><span th:text="#{prd.name}">Nom du produit</span>, <span th:text="#{prd.undrl.asset}">Sous-jacent</span></p>
+						<div class="search-bar">
+							<span>
+								<form th:object="${search}" action="#" th:action="@{/home/super-find}" method="post">
+									<input type="search" id="super-find-product" autocomplete="off" th:field="*{text}"/>
 									<button type="submit"><i class="fa fa-2x fa-search"></i></button>
 								</form>
 							</span>
@@ -272,9 +297,9 @@
 						<tbody>
 							<tr th:each="base : ${classicBases}">
 								<td class="left-align" th:text="${base.label}">Cac 40</td>
-								<td class="grey-letters" th:text="${#numbers.formatDecimal(base.monthValue, 0, 2, 'POINT')}">4509,26</td>
-								<td class="grey-letters"><span th:text="${#numbers.formatDecimal(base.perfOnAMonth, 0, 2, 'POINT')}">1,37</span>%</td>
-								<td class="grey-letters"><span th:text="${#numbers.formatDecimal(base.perfOnAYear, 0, 2, 'POINT')}">-7,93</span>%</td>
+								<td class="grey-letters"><span th:if="${base.monthValue}" th:text="${#numbers.formatDecimal(base.monthValue, 0, 2, 'POINT')}">4509,26</span></td>
+								<td class="grey-letters"><span th:if="${base.monthValue}" th:text="${#numbers.formatDecimal(base.perfOnAMonth, 0, 2, 'POINT')}">1,37</span>%</td>
+								<td class="grey-letters"><span th:if="${base.monthValue}" th:text="${#numbers.formatDecimal(base.perfOnAYear, 0, 2, 'POINT')}">-7,93</span>%</td>
 							</tr>
 						</tbody>
 						<thead class="display-on-click">
@@ -288,9 +313,9 @@
 						<tbody class="display-on-click">
 							<tr th:each="base : ${newBases}">
 								<td class="left-align" th:text="${base.label}">Cac Large 60 EWER</td>
-								<td class="grey-letters" th:text="${#numbers.formatDecimal(base.monthValue, 0, 2, 'POINT')}">1780,53</td>
-								<td class="grey-letters"><span th:text="${#numbers.formatDecimal(base.perfOnAMonth, 0, 2, 'POINT')}">-1,18</span>%</td>
-								<td class="grey-letters"><span th:text="${#numbers.formatDecimal(base.perfOnAYear, 0, 2, 'POINT')}">7,07</span>%</td>
+								<td class="grey-letters"><span th:if="${base.monthValue}" th:text="${#numbers.formatDecimal(base.monthValue, 0, 2, 'POINT')}">1780,53</span></td>
+								<td class="grey-letters"><span th:if="${base.monthValue}" th:text="${#numbers.formatDecimal(base.perfOnAMonth, 0, 2, 'POINT')}">-1,18</span>%</td>
+								<td class="grey-letters"><span th:if="${base.monthValue}" th:text="${#numbers.formatDecimal(base.perfOnAYear, 0, 2, 'POINT')}">7,07</span>%</td>
 							</tr>
 						</tbody>
 						<tfoot>
@@ -319,6 +344,7 @@
                   <span><img class="more-product-sm" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}" /></span>
                 </a>
 							</div>
+							<span><img src="img/black-logo.png" alt="logo eavest" class="img-responsive macaron-eav-mp"></span>
 						</div>
 					</div>
 				</div>
@@ -402,7 +428,9 @@
 					<div>
 						<ul class="list-inline list-unstyled">
 							<li class="blue-feature-1"></li>
-							<li class="blue-title"><span th:text="${highlightArticles.leftArticle.releaseDateAsLongFormatString}">Mardi 18 octobre 2016</span></li>
+							<li class="blue-title">
+								<span th:if="${highlightArticles.leftArticle.releaseDate}" th:text="${highlightArticles.leftArticle.releaseDateAsLongFormatString}">Mardi 18 octobre 2016</span>
+							</li>
 						</ul>
 					</div>
 					<div>
@@ -410,19 +438,19 @@
 					</div>
 					<div class="row">
 						<div class="hidden-xs col-sm-4 col-md-3 blog-img">
-							<img src="/img/question-mark.png" id="question-img" alt="question" class="img-responsive" />
+							<img th:src="@{/params/left/thumbnail}" src="/img/question-mark.png" id="question-img" alt="thumbnail" class="img-responsive" />
 						</div>
 						<div class="col-md-8 article">
 							<p class="grey-letters" id="blog-1-p">
 								<span th:text="#{article.from}">Article de</span> <span th:text="${highlightArticles.leftArticle.author}">Frédéric Lorenzini</span>
-								<span class="new-line"> - <span th:text="${highlightArticles.leftArticle.releaseDateAsShortFormatString}">18 octobre 2016</span></span>
+								<span class="new-line"> - <span th:if="${highlightArticles.leftArticle.releaseDate}" th:text="${highlightArticles.leftArticle.releaseDateAsShortFormatString}">18 octobre 2016</span></span>
 								<span class="new-line" th:text="${highlightArticles.leftArticle.content}">"En ce qui concerne la "compréhension des produits", il apparait que seulement 18% des personnes interrogées comprennent "bien" le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré le fonctionnement d'un produit structuré le fonctionnement d'un produit structuré le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré [...]le fonctionnement d'un produit structuré [...] "</span>
 							</p>
 						</div>
 					</div>
 					<!-- overlay grey-block -->
 					<div class="over-blue">
-						<a href="http://eavest.com/le-sous-jacent-un-possible-mecanisme-supplementaire-pour-un-produit-structure/" th:href="${highlightArticles.leftArticle.urlAsString}">
+						<a th:if="${highlightArticles.leftArticle.url}" href="http://eavest.com/le-sous-jacent-un-possible-mecanisme-supplementaire-pour-un-produit-structure/" th:href="${highlightArticles.leftArticle.urlAsString}">
 							<span class="more-blue" th:text="#{article.read.more}">Lire la suite</span>
 						</a>
 					</div>
@@ -439,7 +467,9 @@
 					<div>
 						<ul class="list-inline list-unstyled">
 							<li class="blue-feature-2"></li>
-							<li class="blue-title"><span th:text="${highlightArticles.rightArticle.releaseDateAsLongFormatString}">Mardi 18 octobre 2016</span></li>
+							<li class="blue-title">
+								<span th:if="${highlightArticles.rightArticle.releaseDate}" th:text="${highlightArticles.rightArticle.releaseDateAsLongFormatString}">Mardi 18 octobre 2016</span>
+							</li>
 						</ul>
 					</div>
 					<div>
@@ -447,11 +477,11 @@
 					</div>
 					<p class="grey-letters" id="blog-2-p">
 						<span th:text="#{article.from}">Article de</span> <span th:text="${highlightArticles.rightArticle.author}">Frédéric Lorenzini</span>
-						<span class="new-line"> - <span th:text="${highlightArticles.rightArticle.releaseDateAsShortFormatString}">18 octobre 2016</span></span>
+						<span class="new-line"> - <span th:if="${highlightArticles.rightArticle.releaseDate}" th:text="${highlightArticles.rightArticle.releaseDateAsShortFormatString}">18 octobre 2016</span></span>
 						<span class="new-line" th:text="${highlightArticles.rightArticle.content}">"En ce qui concerne la "compréhension des produits" [...] En ce qui concerne la "compréhension des produits" [...] En ce qui concerne la "compréhension des produits" [...] En ce qui concerne la "compréhension des produits" [...] En ce qui concerne la "compréhension des produits" [...] "</span>
 					</p>
 					<div class="over-blue">
-						<a href="http://eavest.com/le-sous-jacent-un-possible-mecanisme-supplementaire-pour-un-produit-structure/"  th:href="${highlightArticles.rightArticle.urlAsString}">
+						<a th:if="${highlightArticles.rightArticle.url}" href="http://eavest.com/le-sous-jacent-un-possible-mecanisme-supplementaire-pour-un-produit-structure/"  th:href="${highlightArticles.rightArticle.urlAsString}">
 							<span class="more-blue" th:text="#{article.read.more}">Lire la suite</span>
 						</a>
 					</div>
@@ -643,22 +673,48 @@
 	<script src="/js/libs/jquery-ui-slider-1.10.4.custom.min.js"></script>
 	<script src="/js/libs/jquery.mCustomScrollbar.min.js"></script>
 	<script src="/js/simplebar.js"></script>
-	<link rel="stylesheet" href="https://unpkg.com/simplebar@2.2.1/dist/simplebar.css" />
 	<script src="https://unpkg.com/simplebar@2.2.1/dist/simplebar.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="/js/jquery.easy-autocomplete.min.js"></script>
  	<!-- Script for autocompleting the filter text box for searching products -->
 
  	<script th:inline="javascript">
  	/*<![CDATA[*/
  	$(document).ready(function(){
- 		// à décommenter KNA avant commit
- 	// 	var productTags = [[${productNames}]];
- 		var maListe = ['tata'];
+ 	 	var productTags = [[${productNames}]];
+ 		// var maListe = ['tata'];
  		/*console.log(productTags);*/
  		$('#find-product').autocomplete({
  		// à décommenter KNA avant commit
- 	// 	source: productTags
- 		source: maListe
+ 	 	source: productTags,
+ 		});
+ 	});
+
+	$(document).ready(function(){
+ 		// à décommenter KNA avant commit
+ 		var productTags = {
+			data: [[${productNames}]],
+			list: {
+	        maxNumberOfElements: 4,
+	        match: {
+	            enabled: true
+	        },
+	        sort: {
+	            enabled: true
+	        }
+	    },
+			theme: "square"
+		};
+ 	// 	var maListe = ['tata'];
+ 		/*console.log(productTags);*/
+ 		$('#countries').easyAutocomplete(productTags);
+ 	});
+
+ 	$(document).ready(function(){
+ 	 	var productTags = [[${productNames}]];
+ 		/*console.log(productTags);*/
+ 		$('#super-find-product').autocomplete({
+	 	 	source: productTags
  		});
  	});
 

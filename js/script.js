@@ -170,6 +170,11 @@ var wordlist = [
           monkeyPatchAutocomplete();
 
           $("#find-product, #filter_1, #filter_2, #filter_3, #filter_4").autocomplete({
+              // The source option can be an array of terms.  In this case, if
+              // the typed characters appear in any position in a term, then the
+              // term is included in the autocomplete list.
+              // The source option can also be a function that performs the search,
+              // and calls a response function with the matched entries.
               source: function(req, responseFn) {
                   addMessage("search on: '" + req.term + "'<br/>");
                   var re = $.ui.autocomplete.escapeRegex(req.term);

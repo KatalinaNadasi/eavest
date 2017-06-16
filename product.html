@@ -41,42 +41,33 @@
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="nav">
-				<div class="col-xs-12 col-sm-8 col-md-7 logo-area">
-					<h1><img src="/img/eavest-logo.png" alt="Eavest" class="img-responsive logo"/></h1>
+				<div class="col-md-12 center-block">
+					<h1><img src="/img/eavest-logo.png" alt="Eavest" class="center-block img-responsive logo"/></h1>
 				</div>
-				<div class="col-xs-12 col-sm-5 col-md-4 connexion-area">
-					<div class="col-md-12">
-						<a th:unless="${#authorization.expression('isAuthenticated()')}" href="http://localhost:8080/login" th:href="@{/login}" class="italicized grey-letters auth" th:text="#{eav.login}">Connexion</a>
-						<span th:if="${session.authUserName}" th:text="${session.authUserName}" class="italicized auth">Nom de l'utilisateur</span>
-					</div>
-					<div class="col-md-12">
-						<span>
-							<a href="https://twitter.com/EAVEST_"><i class="fa fa-twitter"></i></a>
-							<a href="?lang=fr" class="language">fr</a>/<a href="?lang=en" class="language">en</a>
+				<div class="language-switcher navbar-right">
+					<a th:unless="${#authorization.expression('isAuthenticated()')}" href="http://localhost:8080/login" th:href="@{/login}" class="italicized grey-letters auth" th:text="#{eav.login}">Connexion</a>
+					<span th:if="${session.authUserName}" th:text="${session.authUserName}" class="italicized auth">Nom de l'utilisateur</span>
+					<span id="socials">
+						<a href="https://twitter.com/EAVEST_"><i class="fa fa-twitter"></i></a>
+						<a href="?lang=fr_FR" class="language">fr</a>/<a href="?lang=en_EN" class="language">en</a>
+					</span>
+					<div class="zone-transit">
+						<span sec:authorize="isAuthenticated()">
+							<form th:action="@{/logout}" method="post">
+								<input type="submit" value="Sign Out" th:value="#{eav.sign.out}" class="btn btn-default log" />
+							</form>
+						</span>
+						<span sec:authorize="hasRole('ROLE_ADMIN')">
+							<form th:action="@{/admin}" method="get">
+								<input type="submit" value="Back Office" class="btn btn-default log" />
+							</form>
 						</span>
 					</div>
-					<div class="col-md-12 zone-transit">
-							<span sec:authorize="isAuthenticated()">
-								<ul class="list-inline list-unstyled log-button">
-									<li class="btn-sign-out">
-										<form th:action="@{/logout}" method="post">
-											<input type="submit" value="Sign Out" th:value="#{eav.sign.out}" class="btn btn-default log" />
-										</form>
-									</li>
-									<li class="btn-back">
-										<span sec:authorize="hasRole('ROLE_ADMIN')">
-										<form th:action="@{/admin}" method="get">
-											<input type="submit" value="Back Office" class="btn btn-default log" />
-										</form>
-									</li>
-								</ul>
-						</div>
-					</div>
-			<!-- end nav -->
+				</div>
 			</div>
 
 			<div class="col-md-12 container-fluid navbar">
-				<ul class="navbar navbar-list list-inline list-unstyled">
+				<ul class="navbar list-inline list-unstyled">
         	<li id="menu-home"><a href="/home" th:text="#{eav.menu.home}">Home</a></li>
           <li id="menu-wallet"><a href="/wallet" th:text="#{eav.menu.wallet}">Mon Portefeuille</a></li>
           <li id="menu-method"><a href="http://eavest.com/methodologie-2/" th:text="#{eav.menu.methodology}">Methodologie</a></li>
@@ -150,7 +141,8 @@
 					</ul>
 					<ul class="list-unstyled">
 						<li class="light-blue" th:text="#{eav.currency}">devise</li>
-						<li class="grey-uppercase">eur</li>
+						<li class="grey-uppercase">
+						<span th:text="${product.prdCurrency!=null}? product.prdCurrency.code : '-'"></span></li>
 					</ul>
 					<ul class="list-unstyled">
 						<li class="light-blue" th:text="#{prd.status}">statut</li>
@@ -276,8 +268,8 @@
 			<div class="col-sm-12 col-md-12 prod-black-separator"></div>
 			<!-- end container -->
 		</div>
-		</section>
 	</div>
+</section>
 
 <!-- SECTION CHART -->
 <section class="chart">
@@ -286,17 +278,17 @@
 				<h1>Analyse du produit</h1>
 			</div>
 			<div class="chart-title col-xs-12 col-sm-12 col-md-12">
-				<h3>Euro Stoxx Select Dividend 30 <span class="block"></span>
-					et les caractéristiques du produit</h3>
+<!-- 				<h3>Euro Stoxx Select Dividend 30 <span class="block"></span>
+					et les caractéristiques du produit</h3> -->
 			</div>
 
 
-			<div id="chartdiv" class="col-xs-12 col-sm-12 col-md-offset-2 col-md-12"></div>
-
+	<!--	<div id="chartdiv" class="col-xs-12 col-sm-12 col-md-offset-2 col-md-12"></div> -->
+		 	<div id="chartdiv"  ></div>
 			<!-- end chart -->
 			<div class="col-md-12 legend">
 				<ul class="list-inline list-unstyled">
-					<li><hr id="euroStoxx"/><span>Euro Stoxx Select Dividend 30</span></li>
+					<li><hr id="euroStoxx"/><span th:text="${product.label}">EuroStoxx</span></li>
 					<li><hr id="refund-level"/><span>Niveau de remboursement anticipé</span></li>
 					<li><hr id="protection-level"/><span>Niveau de protection en capital</span></li>
 				</ul>
@@ -337,19 +329,37 @@
 	</div>
 
 
+<!--  following variable is needed for fetching data in the file productRetrieveGraphData -->
+	<script th:inline="javascript">
+		/*<![CDATA[*/
+
+		var productId = /*[[${product.id}]]*/14;
+
+		/*]]>*/
+	</script>
+
+
 	<!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	<script src="/js/script.js"></script>
+	<script th:inline="javascript">
+		/*<![CDATA[*/
+
+		var BASE_URL = /*[[${BASE_URL}]]*/;
+
+		/*]]>*/
+	</script>
+
+	
+	<script src="/js/productRetrieveGraphData.js"></script>
 	<script src="/js/extra.js"></script>
 	<script src="/js/libs/jquery-ui-slider-1.10.4.custom.min.js"></script>
 	<script src="/js/libs/jquery.mCustomScrollbar.min.js"></script>
 
 	<!-- chartContainer -->
-	<script type="text/javascript" src="/js/jqplotScript.js"></script>
 	<script type="text/javascript" src="/js/jquery.jqplot.js"></script>
 	<script type="text/javascript" src="/js/jqplot.pointLabels.js"></script>
 	<link rel="stylesheet" type="text/css" href="/css/jquery.jqplot.css" />
@@ -364,7 +374,7 @@
 	<script type="text/javascript" src="/js/jqplot.canvasTextRenderer.js"></script>
 	<script type="text/javascript" src="/js/jqplot.categoryAxisRenderer.js"></script>
 
-
+<!-- 	<script type="text/javascript" src="/js/jqplotScript.js"></script> -->
 	</body>
 
 	</html>
