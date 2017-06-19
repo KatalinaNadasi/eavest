@@ -1,0 +1,58 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+.elabo figure img {
+  width: 60px;
+}
+
+.blue-main-title {
+  color: #0251FB;
+  text-align: left;
+}
+
+ul .list-unstyled {
+  margin-top: 25px;
+}
+
+.description-liste li {
+  font-size: 15px;
+  line-height: 35px;
+}
+
+.plus-img {
+  display: inline;
+  width: 40px;
+}
+
+.les-plus {
+  margin-top: 28px;
+  padding-left: 0;
+  padding-bottom: 7px;
+}
+
+.les-plus span {
+  color: #0251FB;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-top: 18px;
+  padding-bottom: 7px;
+  margin-left: 5px;
+}
+
+.separator {
+  border-bottom: 2px solid black;
+  margin: 45px 0;
+}

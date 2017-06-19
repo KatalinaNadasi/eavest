@@ -247,6 +247,10 @@ h5 {
   margin-top: 18px;
 }
 
+.list-menu {
+  text-transform: uppercase;
+}
+
 #menu-home, #menu-method, #menu-mesure, #menu-products, #menu-blog, #menu-faq, #menu-contact, #menu-wallet {
     text-transform: uppercase;
 }
