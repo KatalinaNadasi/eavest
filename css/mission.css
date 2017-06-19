@@ -69,4 +69,33 @@ ul .list-unstyled {
   margin-top: 40px;
 }
 
+.separator-bolder {
+  border-bottom: 4px solid black;
+  margin: 45px 0;
+}
+
 /*Section Notre agrément*/
+
+.agreement .container .row {
+  margin-top: 20px;
+}
+
+.agreement .col-md-6:nth-child(2) p:nth-child(1), p:nth-child(2), p:nth-child(3) {
+  font-size: 16px;
+  padding: 5px;
+  line-height: 20px;
+}
+
+.agreement .col-md-12 {
+  padding-left: 0;
+}
+
+.agreement .col-md-12 p {
+  font-size: 16px;
+  line-height: 20px;
+  margin: 40px 0;
+}
+
+.partner-imgs {
+  text-align: center;
+}
