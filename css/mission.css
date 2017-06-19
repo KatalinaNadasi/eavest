@@ -12,7 +12,14 @@ section {
   display: block;
 }
 
-.elabo figure img {
+.separator {
+  border-bottom: 2px solid black;
+  margin: 45px 0;
+}
+
+/*Section ELABORATION*/
+
+.elaboration figure img {
   width: 60px;
 }
 
@@ -41,7 +48,7 @@ ul .list-unstyled {
   padding-bottom: 7px;
 }
 
-.les-plus span {
+.les-plus-title {
   color: #0251FB;
   font-size: 16px;
   line-height: 20px;
@@ -52,7 +59,14 @@ ul .list-unstyled {
   margin-left: 5px;
 }
 
-.separator {
-  border-bottom: 2px solid black;
-  margin: 45px 0;
+/*Section aide*/
+
+.aide figure img, .suivi figure img {
+  width: 80px;
 }
+
+.aide .col-md-6 li:nth-child(1), .suivi .col-md-6 li:nth-child(1) {
+  margin-top: 40px;
+}
+
+/*Section Notre agrément*/
