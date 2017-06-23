@@ -10,6 +10,47 @@
     <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet"> -->
 
     <style type="text/css">
+    @media only screen and (max-width: 660px) {
+      table.container { width: 480px !important; }
+      td.logo img { display: none !important; }
+      td.logo { background: #FFFFFF url('img/email/logo-small.gif') no-repeat center 10px !important;
+        height: 45px !important; }
+      /*td { background-color: pink !important; }*/
+      td.main-title { padding: 0 !important;}
+      td .main-message h2 { font-size: 26px !important; padding: 0 15px !important;}
+      td.socials h3 b {font-size: 20px !important;}
+      td.socials p {font-size: 23px !important;}
+      td.amf img {display: none !important;}
+      td.amf {background: url('img/email/amf-small.gif') no-repeat center !important; width: 100% !important;}
+      td.orias img {display: none;}
+      td.orias {background: url('img/email/orias-small.gif') no-repeat !important; width: 50% !important;}
+      td.anacofi img {display: none !important;}
+      td.anacofi {background: url('img/email/anacofi-small.gif') no-repeat !important; width: 50% !important;}
+      td.socials img {width: 20px !important;}
+      td.main-p {font-size: 25px !important;}
+      td.btn-font a {font-size: 23px !important;}
+    }
+
+    @media only screen and (max-width: 510px) {
+      table.container { width: 100% !important; }
+      td.logo { background: #FFFFFF url('img/email/logo-xs-small.gif') no-repeat center 10px !important;
+        height: 32px !important; }
+      td.main-title {padding: 15px 20px 20px 20px !important;}
+      /*td { background-color: blue !important; }*/
+      td .main-message h2 { font-size: 23px !important; }
+      td.socials h3 b {font-size: 17px !important;}
+      td.socials p {font-size: 20px !important;}
+      td.amf img {display: none !important;}
+      td.amf {background: url('img/email/amf-small.gif') no-repeat center !important; width: 100% !important;}
+      td.orias img {display: none !important;}
+      td.orias {background: url('img/email/orias-small.gif') no-repeat !important; width: 50% !important;}
+      td.anacofi img {display: none !important;}
+      td.anacofi {background: url('img/email/anacofi-small.gif') no-repeat !important; width: 50% !important;}
+      td.socials img {width: 10px !important;}
+      td.main-p {font-size: 23px !important;}
+      td.btn-font a {font-size: 20px !important;}
+    }
+
     @font-face {
       font-family: 'Open Sans';
       font-style: normal ;
@@ -50,7 +91,7 @@
                  </td>
                </tr>
                <tr>
-                 <td valign="top" bgcolor="#FFFFFF" style="padding: 0 95px 20px 95px; font-family: 'Open Sans', Arial, sans-serif; font-weight: 300; font-size: 30px; margin: auto; text-align: center;">
+                 <td class="main-p" valign="top" bgcolor="#FFFFFF" style="padding: 0 95px 20px 95px; font-family: 'Open Sans', Arial, sans-serif; font-weight: 300; font-size: 30px; margin: auto; text-align: center;">
                   Pour réinitialiser le mot de passe de votre compte Eavest, cliquez sur le lien suivant :
                  </td>
                </tr>
@@ -59,13 +100,11 @@
 
                    <table align:"center" class="button" style="margin:40px 91px 65px 91px;">
                       <tr>
-                        <td style="text-align:center; border: 3px solid black; padding: 10px 35px 10px 35px; ">
+                        <td class="btn-font" style="text-align:center; border: 3px solid black; padding: 10px 35px 10px 35px; ">
                           <a href="#" style="center; color: black; text-transform: uppercase; text-decoration: none; font-size: 23px;">Réinitialiser mon mot de passe</a>
                         </td>
                       </tr>
                    </table>
-
-                   <!-- <a href="#" style="color: black; text-transform: uppercase; text-decoration: none; font-size: 25px; border: 2px solid black; padding: 5px 15px 5px 15px; text-align: center;">Réinitialiser mon mot de passe</a> -->
                  </td>
                </tr>
                <tr>

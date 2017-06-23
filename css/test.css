@@ -1,0 +1,31 @@
+@media only screen and (max-width: 660px) {
+  table.container {
+    width: 480px !important;
+  }
+  td.logo img {
+    display: none !important;
+  }
+  td.logo {
+    background: #FFFFFF url('img/email/logo-small.gif') no-repeat center 10px !important;
+    height: 45px !important;
+  }
+  td {
+    background-color: pink !important;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  table.container {
+    width: 100% !important;
+  }
+  table.container td {
+    border: none !important;
+  }
+  td.logo {
+    background: #FFFFFF url('img/email/logo-xs-small.gif') no-repeat center 10px;
+    height: 32px;
+  }
+  td {
+    background-color: blue !important;
+  }
+}
