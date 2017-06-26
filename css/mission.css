@@ -93,6 +93,10 @@ ul .list-unstyled {
   margin: 60px 0;
 }
 
+.les-plus-2 {
+  margin-top: 28px;
+}
+
 /*Section Notre agrément*/
 
 .agrement .container .row {
@@ -162,4 +166,52 @@ ul .list-unstyled {
 
 #mission-ouvert-img, #mission-proxi-img {
   margin-top: 55px;
+}
+
+@media (max-width: 990px) {
+
+  body{
+    margin-top: 50px;
+  }
+
+  section#agrement p {
+    margin-top: 20px;
+  }
+
+  .col-md-6.agrement-text-bold {
+    margin-left: 9px;
+  }
+
+  .separator {
+    margin: 42px 0 42px 0;
+  }
+
+  .aide .col-md-6 li:nth-child(1), .suivi .col-md-6 li:nth-child(1) {
+    margin-top: 0;
+  }
+
+  .separator-bolder {
+    margin: 40px 0;
+  }
+
+  .agrement .col-md-12 p, .partenaires p {
+    font-size: 15px;
+  }
+
+}
+
+@media (max-width: 434px) {
+  body{
+    margin-top: 100px;
+  }
+  .valeurs {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 310px) {
+  body{
+    margin-top: 130px;
+  }
+
 }

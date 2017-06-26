@@ -1,5 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<html>
+<!-- Developed by Katalina Nadasi - katalinanadasi.com -->
+
 <head>
     <title>EAVEST création de compte</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -10,19 +12,24 @@
     <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet"> -->
 
     <style type="text/css">
+    body { margin: 0; padding: 0; }
 
     @media only screen and (max-width: 660px) {
       table.container { width: 480px !important; }
       td.logo img { display: none !important; }
       td.logo { background: #FFFFFF url('img/email/logo-small.gif') no-repeat center 10px !important;
-        height: 45px !important; }
+        height: 45px !important; width: 480px;}
       /*td { background-color: pink !important; }*/
-      td.main-title { padding: 0 !important;}
+      td.main-title { padding: 0 !important; width: 480px;}
+      td.main-message {width: 480px;}
       td .main-message h2 { font-size: 26px !important; padding: 0 15px !important;}
+      td.suivre{ width: 480px; }
       td.suivre span { font-size: 26px !important;}
+      td.one, td.two, td.tree, td.four { width: 480px; }
       td.one b, td.two b, td.tree b, td.four b { font-size: 27px !important;}
       .trente-jours {font-size: 24px !important;}
       td.two, td.tree {padding-right: 35px;}
+      td.socials {width: 480px;}
       td.socials h3 b {font-size: 20px !important;}
       td.socials p {font-size: 23px !important;}
       td.amf img {display: none !important;}
@@ -33,20 +40,26 @@
       td.anacofi {background: url('img/email/anacofi-small.gif') no-repeat !important; width: 50% !important;}
       td.socials img {width: 20px !important;}
       td.four {margin-bottom: 0; height: 100px !important;}
+      td.separator {width: 480px;}
+      td.footer {width: 480px;}
     }
 
     @media only screen and (max-width: 510px) {
       table.container { width: 100% !important; }
       table.container td { border: none !important; }
       td.logo { background: #FFFFFF url('img/email/logo-xs-small.gif') no-repeat center 10px !important;
-        height: 32px !important; }
-      td.main-title {padding: 15px 20px 20px 20px !important;}
+        height: 32px !important; width: 100%;}
+      td.main-title {padding: 15px 20px 20px 20px !important; width: 100%;}
       /*td { background-color: blue !important; }*/
+      td.main-message {width: 100%;}
       td .main-message h2 { font-size: 23px !important; }
+      td.suivre {width: 100%;}
       td.suivre span { font-size: 23px !important;}
       td.one b, td.two b, td.tree b, td.four b { font-size: 20px !important;}
+      td.one, td.two, td.tree, td.four {width: 100%;}
       .trente-jours {font-size: 20px !important;}
       td.two, td.tree {padding-right: 35px;}
+      td.socials {width: 100%;}
       td.socials h3 b {font-size: 17px !important;}
       td.socials p {font-size: 20px !important;}
       td.amf img {display: none !important;}
@@ -72,71 +85,76 @@
 </head>
 
 <body bgcolor="#FFFFFF" style="font-family: 'Open Sans', Arial, sans-serif;">
+  <!-- Custom inbox preview text -->
+  <div style="font-size: 1px; color: #f7f6f6; display: none">
+    Vous venez de créer votre portefeuille Eavest. Vous pourrez suivre l'évolution de vos produits, les produits remboursés, les produits à rappeler, le perf review du mois.
+  </div>
+
 <!-- Main container -->
  <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#f7f6f6">
    <tr>
-     <td>
+     <td width="640px">
              <!-- Main email container -->
              <table class="container" width="640px" align="center" border="0" cellpadding="0" cellspacing="0">
                <tr>
-                 <td valign="top" align="center" class="logo" bgcolor="#FFFFFF" style="padding: 25px 0">
+                 <td width="640px" valign="top" align="center" class="logo" bgcolor="#FFFFFF" style="padding: 25px 0">
                    <a href="#"><img src="img/email/logo-medium.gif" alt="Eavest" style="width: 350px; border=0;"></a>
                  </td>
                </tr>
                <tr>
-                 <td class="main-title" valign="top" bgcolor="#FFFFFF" style="padding: 15px 20px 65px 20px; font-family: 'Open Sans', Arial, sans-serif; font-weight: 300; font-size: 21px; margin: auto; text-align: center;">
+                 <td class="main-title" width="640px" valign="top" bgcolor="#FFFFFF" style="padding: 15px 20px 65px 20px; font-family: 'Open Sans', Arial, sans-serif; font-weight: 300; font-size: 21px; margin: auto; text-align: center;">
                    <p>STRUCTURED PRODUCTS &#38; ALTERNATIVE INVESTMENTS</p>
                  </td>
                </tr>
                <tr>
-                 <td class="separator" valign="top" bgcolor="#FFFFFF">
-                   <hr size="5" style="width: 90%; border: none; background-color: #17FF15;"></hr>
+                 <td class="separator" width="640px" valign="top" bgcolor="#FFFFFF">
+                   <hr size="5" style="width: 90%; border: none; background-color: #17FF15;" />
                  </td>
                </tr>
                <tr>
-                 <td class="main-message" valign="top" bgcolor="#FFFFFF" align="center" style="color: #0F45FF; font-family: 'Open Sans'; font-size: 25px; padding-top: 30px;" >
-                   <b><h2 style="font-weight: 700; margin-bottom: 70px;">Vous venez de créer votre portefeuille Eavest</h2></b>
+                 <td class="main-message" width="640px" valign="top" bgcolor="#FFFFFF" align="center" style="color: #0F45FF; font-family: 'Open Sans'; font-size: 25px; padding-top: 30px;" >
+                   <h2 style="font-weight: 700; margin-bottom: 70px;"><b>Vous venez de créer votre portefeuille Eavest</b></h2>
                    <img src="img/email/icon-medium.gif" alt="Portefeuille">
                  </td>
                </tr>
                <tr>
-                 <td class="suivre" bgcolor="#FFFFFF" style="font-size: 31px; padding: 20px; margin: 0; text-align: center;">
+                 <td class="suivre" width="640px" bgcolor="#FFFFFF" style="font-size: 31px; padding: 20px; margin: 0; text-align: center;">
                    <span style="font-weight: lighter;">Vous pourrez suivre :</span>
                  </td>
                </tr>
                <tr>
-                 <td class="one" valign="top" bgcolor="#FFFFFF" style="font-family: 'Open Sans'; text-align: center; margin-bottom: 35px; height: 100px;">
-                   <span><img style="transform: translateY(22px); padding-right: 35px; width: 50px;"; src="img/email/un.gif" alt="Un"></span>
+                 <td class="one" width="640px" valign="top" bgcolor="#FFFFFF" style="font-family: 'Open Sans'; text-align: center; margin-bottom: 35px; height: 100px;">
+                   <span><img style="transform: translateY(22px); padding-right: 35px; width: 50px;" src="img/email/un.gif" alt="Un"></span>
                    <span style="font-size: 30px"><b>l'évolution de vos produits</b></span>
                  </td>
                </tr>
                <tr>
-                 <td class="two" valign="top" bgcolor="#FFFFFF" style="font-family: 'Open Sans'; margin-bottom: 35px; height: 100px; text-align: center;">
-                   <span><img style="transform: translateY(48px); padding-right: 31px; margin-left: -18px; width: 55px;"; src="img/email/deux.gif" alt="Deux"></span>
+                 <td class="two" width="640px" valign="top" bgcolor="#FFFFFF" style="font-family: 'Open Sans'; margin-bottom: 35px; height: 100px; text-align: center;">
+                   <span><img style="transform: translateY(48px); padding-right: 31px; margin-left: -18px; width: 55px;" src="img/email/deux.gif" alt="Deux"></span>
                    <span style="font-size: 30px"><b>les produits remboursés</b></span>
                    <span class="trente-jours" style="font-size: 30px; padding: 0; margin: 0; display: block; transform: translateX(-40px);">depuis 30 jours</span>
                  </td>
                </tr>
                <tr>
-                 <td class="tree" valign="top" bgcolor="#FFFFFF" style="font-family: 'Open Sans'; margin-bottom: 35px; height: 140px; text-align: center;">
+                 <td class="tree" width="640px" valign="top" bgcolor="#FFFFFF" style="font-family: 'Open Sans'; margin-bottom: 35px; height: 140px; text-align: center;">
                    <span><img style="transform: translate(-37px,45px); width: 59px;" src="img/email/trois.gif" alt="Trois"></span>
                    <span style="font-size: 30px;"><b style="transform: translateX(-23px)">les produits à rappeler</b></span>
                    <span class="trente-jours" style="font-size: 30px; padding: 0; margin: 0; display: block; transform: translateX(-23px);">dans les 30 jours</span>
                  </td>
                </tr>
                <tr>
-                 <td class="four" valign="top" bgcolor="#FFFFFF" style="font-family: 'Open Sans'; text-align: center; margin-bottom: 35px; height: 170px;">
+                 <td class="four" width="640px" valign="top" bgcolor="#FFFFFF" style="font-family: 'Open Sans'; text-align: center; margin-bottom: 35px; height: 170px;">
                    <span><img style="transform: translate(-40px,25px);     width: 58px;" src="img/email/quatre.gif" alt="Quatre"></span>
                    <span style="font-size: 30px"><b>le perf review du mois</b></span>
                  </td>
                </tr>
                <tr>
-                 <td class="separator" valign="top" bgcolor="#FFFFFF">
-                   <hr size="5" style="width: 90%; border: none; background-color: #17FF15;"></hr>
+                 <td class="separator" width="640px" valign="top" bgcolor="#FFFFFF">
+                   <hr size="5" style="width: 90%; border: none; background-color: #17FF15;" />
                  </td>
                </tr>
                <tr>
-                 <td class="socials" valign="top" bgcolor="#FFFFFF" style="text-align: center;">
+                 <td class="socials" width="640px" valign="top" bgcolor="#FFFFFF" style="text-align: center;">
                    <h3 style="font-size: 25px; margin-top: 50px;     margin-bottom: 10px;"><b>follow us</b></h3>
                    <span><a href="#"><img src="img/email/twitter.gif" alt="suivez-nous sur twitter" style="width: 40px;"></a>
                          <a href="#"><img style="margin-left: 5px; width: 40px;" src="img/email/linkedin.gif" alt="suivez-nous sur linkedin"></a></span>
@@ -145,7 +163,7 @@
                  </td>
                </tr>
                <tr>
-                 <td class="footer" valign="top" bgcolor="#EEEEEE" style="padding: 25px 35px 25px 35px; font-size: 10px;">
+                 <td class="footer" width="640px" valign="top" bgcolor="#EEEEEE" style="padding: 25px 35px 25px 35px; font-size: 10px;">
                    <p>EAVEST est une société réglementée. EAVEST a obtenu le status de Conseil en Investissements Financiers auprès de l'ANACOFI, association agréée par l'Autorité des Marchés Financiers (AMF). EAVEST est également immatriculé à l'ORIAS.</p>
                    <span>
                      <img class="amf" src="img/email/amf.gif" alt="AMF" style="width: 240px; height: 49px; margin-right: 55px;">

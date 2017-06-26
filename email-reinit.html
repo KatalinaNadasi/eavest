@@ -1,5 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<html>
+<!-- Developed by Katalina Nadasi - katalinanadasi.com -->
+
 <head>
     <title>EAVEST création de compte</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -10,12 +12,18 @@
     <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet"> -->
 
     <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700');
+
+    body { margin: 0; padding: 0; }
+
+
+
     @media only screen and (max-width: 660px) {
       table.container { width: 480px !important; }
       td.logo img { display: none !important; }
       td.logo { background: #FFFFFF url('img/email/logo-small.gif') no-repeat center 10px !important;
         height: 45px !important; }
-      /*td { background-color: pink !important; }*/
+      td { background-color: pink !important; }
       td.main-title { padding: 0 !important;}
       td .main-message h2 { font-size: 26px !important; padding: 0 15px !important;}
       td.socials h3 b {font-size: 20px !important;}
@@ -28,7 +36,7 @@
       td.anacofi {background: url('img/email/anacofi-small.gif') no-repeat !important; width: 50% !important;}
       td.socials img {width: 20px !important;}
       td.main-p {font-size: 25px !important;}
-      td.btn-font a {font-size: 23px !important;}
+      td.btn-font a {font-size: 23px !important; width: auto;}
     }
 
     @media only screen and (max-width: 510px) {
@@ -36,7 +44,7 @@
       td.logo { background: #FFFFFF url('img/email/logo-xs-small.gif') no-repeat center 10px !important;
         height: 32px !important; }
       td.main-title {padding: 15px 20px 20px 20px !important;}
-      /*td { background-color: blue !important; }*/
+      td { background-color: blue !important; }
       td .main-message h2 { font-size: 23px !important; }
       td.socials h3 b {font-size: 17px !important;}
       td.socials p {font-size: 20px !important;}
@@ -48,7 +56,8 @@
       td.anacofi {background: url('img/email/anacofi-small.gif') no-repeat !important; width: 50% !important;}
       td.socials img {width: 10px !important;}
       td.main-p {font-size: 23px !important;}
-      td.btn-font a {font-size: 20px !important;}
+      td.btn-font a {font-size: 20px !important; width: auto;}
+      td.footer {padding: 20px 30px !important;}
     }
 
     @font-face {
@@ -56,7 +65,7 @@
       font-style: normal ;
       font-weight: 300;
       src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
-}
+    }
 
     </style>
 
@@ -64,41 +73,46 @@
 </head>
 
 <body bgcolor="#FFFFFF" style="font-family: 'Open Sans', Arial, sans-serif;">
+
+  <!-- Custom inbox preview text -->
+  <div style="font-size: 1px; color: #f7f6f6; display: none">
+    Vous souhaitez réinitialiser le mot de passe sur votre compte Eavest.
+  </div>
+
 <!-- Main container -->
  <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#f7f6f6">
    <tr>
-     <td>
+     <td width="640px">
              <!-- Main email container -->
              <table class="container" width="640px" align="center" border="0" cellpadding="0" cellspacing="0">
                <tr>
-                 <td valign="top" align="center" class="logo" bgcolor="#FFFFFF" style="padding: 25px 0">
+                 <td class="logo-area" width="640px" valign="top" align="center" bgcolor="#FFFFFF" style="padding: 25px 0">
                    <a href="#"><img src="img/email/logo-medium.gif" alt="Eavest" style="width: 350px; border=0;"></a>
                  </td>
                </tr>
                <tr>
-                 <td class="main-title" valign="top" bgcolor="#FFFFFF" style="padding: 15px 20px 65px 20px; font-family: 'Open Sans', Arial, sans-serif; font-weight: 300; font-size: 21px; margin: auto; text-align: center;">
+                 <td class="main-title" width="640px" valign="top" bgcolor="#FFFFFF" style="padding: 15px 20px 65px 20px; font-family: 'Open Sans', Arial, sans-serif; font-weight: 300; font-size: 21px; margin: auto; text-align: center;">
                    <p>STRUCTURED PRODUCTS &#38; ALTERNATIVE INVESTMENTS</p>
                  </td>
                </tr>
                <tr>
-                 <td class="separator" valign="top" bgcolor="#FFFFFF">
-                   <hr size="5" style="width: 90%; border: none; background-color: #17FF15;"></hr>
+                 <td class="separator" width="640px" valign="top" bgcolor="#FFFFFF">
+                   <hr size="5" style="width: 90%; border: none; background-color: #17FF15;" />
                  </td>
                </tr>
                <tr>
-                 <td class="main-message" valign="top" bgcolor="#FFFFFF" align="center" style="color: #0F45FF; font-family: 'Open Sans'; font-size: 25px; padding: 30px 30px 0 30px;" >
-                   <b><h2 style="font-weight: 700; margin-bottom: 70px;">Vous souhaitez réinitialiser votre mot de passe</h2></b>
+                 <td class="main-message" width="640px" valign="top" bgcolor="#FFFFFF" align="center" style="color: #0F45FF; font-family: 'Open Sans'; font-size: 25px; padding: 30px 30px 0 30px;" >
+                   <h2 style="font-weight: 700; margin-bottom: 70px;"><b>Vous souhaitez réinitialiser votre mot de passe</b></h2>
                  </td>
                </tr>
                <tr>
-                 <td class="main-p" valign="top" bgcolor="#FFFFFF" style="padding: 0 95px 20px 95px; font-family: 'Open Sans', Arial, sans-serif; font-weight: 300; font-size: 30px; margin: auto; text-align: center;">
+                 <td class="main-p" width="640px" valign="top" bgcolor="#FFFFFF" style="padding: 0 95px 20px 95px; font-family: 'Open Sans', Arial, sans-serif; font-weight: 300; font-size: 30px; margin: auto; text-align: center;">
                   Pour réinitialiser le mot de passe de votre compte Eavest, cliquez sur le lien suivant :
                  </td>
                </tr>
                <tr>
-                 <td class="reinit-btn" style="background-color: #FFFFFF; text-align: center;">
-
-                   <table align:"center" class="button" style="margin:40px 91px 65px 91px;">
+                 <td class="reinit-btn" width="640px" style="background-color: #FFFFFF; text-align: center;">
+                   <table align="center" class="button" style="margin:40px 91px 65px 91px;">
                       <tr>
                         <td class="btn-font" style="text-align:center; border: 3px solid black; padding: 10px 35px 10px 35px; ">
                           <a href="#" style="center; color: black; text-transform: uppercase; text-decoration: none; font-size: 23px;">Réinitialiser mon mot de passe</a>
@@ -108,21 +122,21 @@
                  </td>
                </tr>
                <tr>
-                 <td class="separator" valign="top" bgcolor="#FFFFFF">
-                   <hr size="5" style="width: 90%; border: none; background-color: #17FF15;"></hr>
+                 <td class="separator" width="640px" valign="top" bgcolor="#FFFFFF">
+                   <hr size="5" style="width: 90%; border: none; background-color: #17FF15;" />
                  </td>
                </tr>
                <tr>
-                 <td class="socials" valign="top" bgcolor="#FFFFFF" style="text-align: center;">
+                 <td class="socials" width="640px" valign="top" bgcolor="#FFFFFF" style="text-align: center;">
                    <h3 style="font-size: 25px; margin-top: 50px;     margin-bottom: 10px;"><b>follow us</b></h3>
                    <span><a href="#"><img src="img/email/twitter.gif" alt="suivez-nous sur twitter" style="width: 40px;"></a>
                          <a href="#"><img style="margin-left: 5px; width: 40px;" src="img/email/linkedin.gif" alt="suivez-nous sur linkedin"></a></span>
                     <h3 style="font-size: 25px; margin-top: 40px; margin-bottom: 20px;"><b>contact</b></h3>
-                    <p style="font-family: 'Open Sans', Arial, sans-serif; font-weight: 300; font-size: 30px; margin: auto; text-align: center; padding-bottom: 60px; color: #0F45FF; text-decoration: underline; margin-bottom: 5px;">INFO@EAVEST.COM</p>
+                    <a class="eavest-link" href="http://eavest.com/" style="font-family: 'Open Sans', Arial, sans-serif; font-weight: 300; font-size: 30px; margin: auto; text-align: center; padding-bottom: 60px; color: #0F45FF; text-decoration: underline; margin-bottom: 5px;">INFO@EAVEST.COM</a>
                  </td>
                </tr>
                <tr>
-                 <td class="footer" valign="top" bgcolor="#EEEEEE" style="padding: 25px 35px 25px 35px; font-size: 10px;">
+                 <td class="footer" width="640px" valign="top" bgcolor="#EEEEEE" style="padding: 25px 35px 25px 35px; font-size: 10px;">
                    <p>EAVEST est une société réglementée. EAVEST a obtenu le status de Conseil en Investissements Financiers auprès de l'ANACOFI, association agréée par l'Autorité des Marchés Financiers (AMF). EAVEST est également immatriculé à l'ORIAS.</p>
                    <span>
                      <img src="img/email/amf.gif" alt="AMF" style="width: 240px; height: 49px; margin-right: 55px;">
