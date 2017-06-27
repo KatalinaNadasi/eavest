@@ -265,7 +265,6 @@
 				</span>
 			</div>
 			<!-- END RESPONSIVE VERSION -->
-			<div class="col-sm-12 col-md-12 prod-black-separator"></div>
 			<!-- end container -->
 		</div>
 	</div>
@@ -274,25 +273,23 @@
 <!-- SECTION CHART -->
 <section class="chart">
 		<div class="container">
-			<div class="col-md-12 padding_bottom">
-				<h1>Analyse du produit</h1>
+			<div class="col-md-12 chart-title">
+				<h1>Euro stoxx 50 et niveau de rappel du produit</h1>
 			</div>
-			<div class="chart-title col-xs-12 col-sm-12 col-md-12">
-<!-- 				<h3>Euro Stoxx Select Dividend 30 <span class="block"></span>
-					et les caractéristiques du produit</h3> -->
-			</div>
+		</div>
 
-
+		<div class="container">
 	<!--	<div id="chartdiv" class="col-xs-12 col-sm-12 col-md-offset-2 col-md-12"></div> -->
 		 	<div id="chartdiv"  ></div>
 			<!-- end chart -->
 			<div class="col-md-12 legend">
-					<span th:text="${product.label}"><hr id="euroStoxx"/>Euro Stoxx 50</span>
-					<br/><br/>
-					<span><hr id="protection-level"/>Niveau de rappel du produit</span>
-					<span class="clears"></span>
+				<span th:text="${product.label}"><hr id="euroStoxx"/>Euro Stoxx 50</span>
 			</div>
-			<br/><br/>
+			<div class="col-md-12 legend">
+				<span><hr id="protection-level"/>Niveau de rappel du produit</span>
+			</div>
+
+			<br/><br/><br/><br/>
 			<button class="button-reset">reset</button>
 		</div>
 	</div>
@@ -352,7 +349,6 @@
 
 		/*]]>*/
 	</script>
-
 
 	<script src="/js/productRetrieveGraphData.js"></script>
 	<script src="/js/extra.js"></script>

@@ -1,6 +1,7 @@
 $(document).ready(
 		function() {
 
+// custom canvas : https://stackoverflow.com/questions/14152409/jqplot-dont-want-to-display-show-the-y-axis
 
 			/*
 			 * { horizontalLine : { name : 'line3', y : 1255, lineWidth : 3,
@@ -21,7 +22,7 @@ $(document).ready(
       //fin à decommenter KNA
       // var datagrph = JSON.parse('{"label":"DAYSTOXX Mai 2027","isin":"FR0013222676","uptoDate":"2018-06-08","fromDate":"2017-06-15","protectionBarrier":0.0,"couponBarrier":null,"reimbursementBarrier":0.0,"airbagBarrier":null,"dateValues":[["2000-12-29",1523.76],["2001-01-02",1505.75],["2001-01-03",1502.37]}');
 
-      var datagrph = $.parseJSON('{"label":"DAYSTOXX Mai 2027","isin":"FR0013222676","uptoDate":"2018-06-08","fromDate":"2015-06-05","protectionBarrier":1000.0, "protectionDate":"2016-07-01", "protectionEnd": "2018-01-02", "couponBarrier":null,"reimbursementBarrier":0.0,"airbagBarrier":null,"dateValues":[["2015-06-05",1723.76], ["2015-12-29",1523.76], ["2016-12-29",523.76], ["2017-12-29",1523.76],["2018-01-02",1505.75]]}');
+      var datagrph = $.parseJSON('{"label":"DAYSTOXX Mai 2027","isin":"FR0013222676","uptoDate":"2018-06-08","fromDate":"2015-06-05", "launchDate":"2016-08-15", "endLaunchDate":"2016-08-16", "protectionBarrier":1000.0, "protectionDate":"2016-07-01", "todayDate": "2017-06-21", "reimburseRate": "2017-10-21", "couponBarrier":null,"reimbursementBarrier":0.0,"airbagBarrier":null,"dateValues":[["2015-06-05",1723.76], ["2015-12-29",1523.76], ["2016-12-29",523.76], ["2017-12-29",1523.76],["2018-01-02",1505.75]]}');
 
 
 
@@ -36,17 +37,32 @@ $(document).ready(
 			var protec;
 			if (datagrph.protectionBarrier != null) {
 				protec = [ [ datagrph.protectionDate, datagrph.protectionBarrier ],
-						[ datagrph.protectionEnd, datagrph.protectionBarrier ] ];
+						[ datagrph.uptoDate, datagrph.protectionBarrier ] ];
 				graphsList.push(protec);
 			}
 
       //Prochaine date d'observation
 			var reimburse;
 			if (datagrph.reimbursementBarrier != null) {
-				reimburse = [ [ datagrph.protectionEnd, datagrph.protectionBarrier],
-						[ datagrph.uptoDate, datagrph.protectionBarrier ] ];
+				reimburse = [ [ datagrph.todayDate, datagrph.protectionBarrier],
+						[ datagrph.reimburseRate, datagrph.protectionBarrier ] ];
 				graphsList.push(reimburse);
 			}
+
+			//Date de lancement d'un produit
+			var launch;
+			if (datagrph.reimbursementBarrier != null) {
+				launch = [ [ datagrph.launchDate, datagrph.todayDate],
+						[ datagrph.endLaunchDate, datagrph.protectionBarrier ] ];
+				graphsList.push(launch);
+			}
+
+			// var distance;
+			// if (datagrph.reimbursementBarrier != null) {
+			// 	launch = [ [ datagrph.todayDate, datagrph.protectionBarrier],
+			// 			[ datagrph.dateValues[4], datagrph.protectionBarrier ] ];
+			// 	graphsList.push(distance);
+			// }
 
       // var protectInfinite;
       // if (datagrph.protectionInfinite != null) {
@@ -79,10 +95,19 @@ $(document).ready(
 
 
 			var plot1 = $.jqplot('chartdiv', graphsList, {
-				title : datagrph.label + " ( " + datagrph.isin + " )",
+				// title : datagrph.label + " ( " + datagrph.isin + " )",
+
+				seriesDefaults: {
+            showMarker:true,
+            pointLabels: { show:true } ,
+            rendererOptions: {
+                smooth: true
+            }
+        },
 				axes : {
 					xaxis : {
 						renderer : $.jqplot.DateAxisRenderer,
+						tickRenderer: $.jqplot.CanvasAxisTickRenderer,
 						max : new Date(new Date(datagrph.uptoDate).getTime()
 								+ (10 * 24 * 60 * 60 * 1000)), // right side 10
 						// day padding
@@ -91,9 +116,16 @@ $(document).ready(
 						  (10 * 24 * 60 * 60 * 1000)), // left side 10
 
 						tickOptions : {
+							angle: -40,
 							formatString : '%d/%m/%Y',
+							fontSize: '7pt'
 						}
 					},
+					yaxis : {
+						showTicks : true,
+					}
+
+
 				},
 				highlighter : {
 					show : true,
@@ -116,12 +148,18 @@ $(document).ready(
 					zoom : true,
 					showTooltip : false,
 				},
-
+				cursor: {
+				  show: true,
+				  zoom: true,
+				  showTooltip: false
+				}
 
 			});
 
 			$('.button-reset').click(function() {
 				plot1.resetZoom()
 			});
+
+
 
 		});

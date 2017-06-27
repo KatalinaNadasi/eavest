@@ -353,17 +353,26 @@ section {
 
 /*CHART PRODUCT PAGE*/
 
+.chart .container {
+  padding: 0;
+}
+
 #chartdiv {
-  height: auto;
-  width: auto;
+  height: 350px;
+  width: 100%;
 }
 
 .chart-title {
-  padding-bottom: 15px;
+  margin: 15px 0 25px 0;
+  padding-left: 0px;
 }
 
 section.chart {
   padding: 15px 0 45px 15px;
+}
+
+section.chart .container {
+  padding-left: 10px;
 }
 
 .jqplot-title {
@@ -379,14 +388,19 @@ section.chart {
 }
 
 .jqplot-grid-canvas {
-  display: none;
+  /*display: none;*/
+  color: black;
+}
+
+.legend:nth-child(2){
+  margin-top: 80px;
 }
 
 .legend {
-  padding: 25px;
   font-size: 11px;
   display: inline-block;
   text-transform: uppercase;
+  padding-left: 0;
 }
 
 .legend div {
@@ -432,9 +446,6 @@ section.chart {
   section.chart {
     text-align: -webkit-center;
     padding: 0;
-  }
-  .padding_bottom {
-    padding-bottom: 0;
   }
   .title {
     padding: 14px 15px 15px 15px;
@@ -493,8 +504,8 @@ section.chart {
     padding-bottom: 15px;
   }
   #chartdiv {
-    height: 400px;
-    width: 300px;
+    height: auto;
+    width: auto;
   }
 }
 
