@@ -392,6 +392,10 @@ section.chart .container {
   color: black;
 }
 
+.jqplot-point-label {
+  color: black;
+}
+
 .legend:nth-child(2){
   margin-top: 80px;
 }

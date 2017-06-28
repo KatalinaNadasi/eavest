@@ -25,7 +25,9 @@ $(document).ready(
       var datagrph = $.parseJSON('{"label":"DAYSTOXX Mai 2027","isin":"FR0013222676","uptoDate":"2018-06-08","fromDate":"2015-06-05", "launchDate":"2016-08-15", "endLaunchDate":"2016-08-16", "protectionBarrier":1000.0, "protectionDate":"2016-07-01", "todayDate": "2017-06-21", "reimburseRate": "2017-10-21", "couponBarrier":null,"reimbursementBarrier":0.0,"airbagBarrier":null,"dateValues":[["2015-06-05",1723.76], ["2015-12-29",1523.76], ["2016-12-29",523.76], ["2017-12-29",1523.76],["2018-01-02",1505.75]]}');
 
 
-
+			var todayDate = datagrph.todayDate;
+			var euroStoxx = datagrph.dateValues;
+			var protectionBarrier = datagrph.protectionBarrier;
 
 			var graphsList =[];
 			//We want to draw the graph even in the absence of datagrph
@@ -93,17 +95,35 @@ $(document).ready(
 
 
 
-
 			var plot1 = $.jqplot('chartdiv', graphsList, {
 				// title : datagrph.label + " ( " + datagrph.isin + " )",
 
 				seriesDefaults: {
             showMarker:true,
-            pointLabels: { show:true } ,
             rendererOptions: {
                 smooth: true
-            }
+            },
+						pointLabels: {
+        			show: true,
+        			edgeTolerance: 5
+      			}
         },
+				canvasOverlay: {
+                    show: true,
+                    objects: [
+											{
+												verticalLine: {
+												name: 'distance',
+												x: new $.jsDate().getTime(todayDate),
+												min : new $.jsDate().getTime(euroStoxx),
+												max : new $.jsDate().getTime(protectionBarrier),
+												formatString : '%c %%',
+												lineWidth: 3,
+												color: 'pink',
+												shadow: false,
+												}
+									}          ]
+                },
 				axes : {
 					xaxis : {
 						renderer : $.jqplot.DateAxisRenderer,
@@ -118,15 +138,25 @@ $(document).ready(
 						tickOptions : {
 							angle: -40,
 							formatString : '%d/%m/%Y',
-							fontSize: '7pt'
+							fontSize: '7pt',
+							showGridline: false
 						}
 					},
 					yaxis : {
 						showTicks : true,
+						tickOptions : {
+							fontSize: '7pt',
+							showGridline: true,
+						}
 					}
-
-
 				},
+				grid: {
+	       background: 'transparent',
+				 gridLineColor : '#000',
+				 shadow: false,
+				 drawBorder: false,
+      	 drawGridlines: true,
+	     },
 				highlighter : {
 					show : true,
 					sizeAdjust : 7.5,

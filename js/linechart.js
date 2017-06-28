@@ -1,31 +1,18 @@
-var linechartdata = {
-               // Y axes
-               labels:["2010","2011","2012","2013","2014"],
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
 
-               //X axes
-               datasets: [
-                {
-                label : "Green",
-                strokeColor : "#fff",
-                pointColor : "Green",
-        data:[150,200,250,250,200,150]
-                },
-                {
-                label : "Red",
-                strokeColor : "#fff",
-                pointColor : "Red",
-        data:[170,220,270,270,220,170]
-                },
-                {
-                label : "Yellow",
-                strokeColor : "#fff",
-                pointColor : "Yellow",
-        data:[130,180,230,230,180,130]
-        }
-               ]
-           };
-
-
-
-        var linechart = document.getElementById('linechart').getContext('2d');
-        new Chart(linechart).Line(linechartdata);
+var myChart = new Chart(ctx, {
+   type: 'line',
+   data: {
+      labels: ["2010", "2011", "2012", "2013"],
+      datasets: [{
+         label: 'Dataset 1',
+         data: [150, 200, 250, 150],
+         color: "#878BB6",
+      }, {
+         label: 'Dataset 2',
+         data: [250, 100, 150, 10],
+         color: "#4ACAB4",
+      }]
+   }
+});

@@ -60,6 +60,10 @@ $(document).ready(function(){
                 min:1200,
                 max:2000
             },
+        // y2axis: {
+        //   min: 500,
+        //   max: 1500
+        // },
         cursor:{
           show: true,
           zoom:true,
@@ -84,7 +88,7 @@ $(document).ready(function(){
                   shadow: false,
                }},
                {verticalLine: {
-                 name: 'line4',
+                 name: 'distance',
                  x: new $.jsDate( '2016-12-31 16:10:00.000').getTime(),
                  lineWidth: 3,
                  color: 'pink',

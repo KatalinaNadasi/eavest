@@ -7,36 +7,13 @@
 </head>
 <body>
 
-
-   <canvas id="canvas" width="600" height="400"></canvas>
-
-   <script>
-
-
-   var canvas = document.getElementById('canvas');
-   var ctx = canvas.getContext('2d');
-
-   var datas = {
-     labels: ["2010", "2011", "2012", "2013"],
-     datasets: [
-       {
-         type: "line",
-         data : [150,200,250,150],
-         color:"#878BB6",
-       },
-       {
-         type: "line",
-         data : [250,100,150,10],
-         color : "#4ACAB4",
-       }
-     ]
-   }
-
-   </script>
+  <div id="center">
+     <canvas id="canvas" width="300" height="250"></canvas>
+  </div>
 
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
-<script src="line-chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+<script src="js/linechart.js"></script>
 
 </body>
 <script src="js/linechart.js"></script>
