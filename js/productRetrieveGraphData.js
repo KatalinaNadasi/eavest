@@ -22,11 +22,13 @@ $(document).ready(
       //fin à decommenter KNA
       // var datagrph = JSON.parse('{"label":"DAYSTOXX Mai 2027","isin":"FR0013222676","uptoDate":"2018-06-08","fromDate":"2017-06-15","protectionBarrier":0.0,"couponBarrier":null,"reimbursementBarrier":0.0,"airbagBarrier":null,"dateValues":[["2000-12-29",1523.76],["2001-01-02",1505.75],["2001-01-03",1502.37]}');
 
-      var datagrph = $.parseJSON('{"label":"DAYSTOXX Mai 2027","isin":"FR0013222676","uptoDate":"2018-06-08","fromDate":"2015-06-05", "launchDate":"2016-08-15", "endLaunchDate":"2016-08-16", "protectionBarrier":1000.0, "protectionDate":"2016-07-01", "todayDate": "2017-06-21", "reimburseRate": "2017-10-21", "couponBarrier":null,"reimbursementBarrier":0.0,"airbagBarrier":null,"dateValues":[["2015-06-05",1723.76], ["2015-12-29",1523.76], ["2016-12-29",523.76], ["2017-12-29",1523.76],["2018-01-02",1505.75]]}');
+      var datagrph = $.parseJSON('{"label":"DAYSTOXX Mai 2027","isin":"FR0013222676","uptoDate":"2018-06-08","fromDate":"2015-06-05", "launchDate":"2016-08-15", "protectionBarrier":1000.0, "protectionDate":"2016-07-01", "todayDate": "2017-06-21", "reimburseRate": "2017-10-21", "couponBarrier":null,"reimbursementBarrier":0.0,"airbagBarrier":null,"dateValues":[["2015-06-05",1723.76], ["2015-06-29",1523.76], ["2015-12-29",1023.76], ["2017-01-29",523.76], ["2017-02-22",1523.76], ["2017-03-29",523.76], ["2017-04-29",1523.76], ["2017-05-29",23.76], ["2017-06-21",523.76] ]}');
 
 
 			var todayDate = datagrph.todayDate;
-			var euroStoxx = datagrph.dateValues;
+			var euroStoxx = datagrph.dateValues.slice([-1]);
+
+
 			var protectionBarrier = datagrph.protectionBarrier;
 
 			var graphsList =[];
@@ -52,26 +54,14 @@ $(document).ready(
 			}
 
 			//Date de lancement d'un produit
-			var launch;
-			if (datagrph.reimbursementBarrier != null) {
-				launch = [ [ datagrph.launchDate, datagrph.todayDate],
-						[ datagrph.endLaunchDate, datagrph.protectionBarrier ] ];
-				graphsList.push(launch);
-			}
-
-			// var distance;
-			// if (datagrph.reimbursementBarrier != null) {
-			// 	launch = [ [ datagrph.todayDate, datagrph.protectionBarrier],
-			// 			[ datagrph.dateValues[4], datagrph.protectionBarrier ] ];
-			// 	graphsList.push(distance);
+			// var launch;
+			// if (datagrph.launchBarrier != null) {
+			// 	launch = [ [ datagrph.launchDate, datagrph.endLaunchDate],
+			// 			[ datagrph.launchDate, datagrph.endLaunchDate ] ];
+			// 	graphsList.push(launch);
+			// 	alert(euroStoxx);
 			// }
 
-      // var protectInfinite;
-      // if (datagrph.protectionInfinite != null) {
-      //   protectInfinite = [ [ datagrph.uptoDate, datagrph.protectionBarrier ],
-      //       [ datagrph.protectionEnd, datagrph.protectionBarrier ] ];
-      //   graphsList.push(protec);
-      // }
 
 			var coupon;
 			if (datagrph.couponBarrier != null) {
@@ -114,13 +104,17 @@ $(document).ready(
 											{
 												verticalLine: {
 												name: 'distance',
-												x: new $.jsDate().getTime(todayDate),
-												min : new $.jsDate().getTime(euroStoxx),
-												max : new $.jsDate().getTime(protectionBarrier),
+												// x: new $.jsDate().getTime(todayDate),
+												x: new $.jsDate('2017-06-21').getTime(),
+
+												// min : new $.jsDate().getTime(euroStoxx),
+												// max : new $.jsDate().getTime(protectionBarrier),
 												formatString : '%c %%',
-												lineWidth: 3,
-												color: 'pink',
+												lineWidth: 1,
+												color: 'black',
 												shadow: false,
+												ymin: 524,
+                    		ymax: 1000
 												}
 									}          ]
                 },
@@ -172,24 +166,16 @@ $(document).ready(
 						show : false,
 					}
 				},
-				seriesColors: ["#1044FF", "#7FFF00", "black", "#027997", "#CF3501", "#027997"],
+				seriesColors: ["#1044FF", "#7FFF00", "black", "#027997", "#878BB6", "#4ACAB4"],
 				cursor : {
 					show : true,
 					zoom : true,
 					showTooltip : false,
 				},
-				cursor: {
-				  show: true,
-				  zoom: true,
-				  showTooltip: false
-				}
 
 			});
 
 			$('.button-reset').click(function() {
 				plot1.resetZoom()
 			});
-
-
-
 		});
