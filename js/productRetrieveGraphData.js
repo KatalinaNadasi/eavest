@@ -22,12 +22,10 @@ $(document).ready(
       //fin à decommenter KNA
       // var datagrph = JSON.parse('{"label":"DAYSTOXX Mai 2027","isin":"FR0013222676","uptoDate":"2018-06-08","fromDate":"2017-06-15","protectionBarrier":0.0,"couponBarrier":null,"reimbursementBarrier":0.0,"airbagBarrier":null,"dateValues":[["2000-12-29",1523.76],["2001-01-02",1505.75],["2001-01-03",1502.37]}');
 
-      var datagrph = $.parseJSON('{"label":"DAYSTOXX Mai 2027","isin":"FR0013222676","uptoDate":"2018-06-08","fromDate":"2015-06-05", "launchDate":"2016-08-15", "protectionBarrier":1000.0, "protectionDate":"2016-07-01", "todayDate": "2017-06-21", "reimburseRate": "2017-10-21", "couponBarrier":null,"reimbursementBarrier":0.0,"airbagBarrier":null,"dateValues":[["2015-06-05",1723.76], ["2015-06-29",1523.76], ["2015-12-29",1023.76], ["2017-01-29",523.76], ["2017-02-22",1523.76], ["2017-03-29",523.76], ["2017-04-29",1523.76], ["2017-05-29",23.76], ["2017-06-21",523.76] ]}');
-
+      var datagrph = $.parseJSON('{"label":"DAYSTOXX Mai 2027", "testYline": "23.76", "testDate": "2015-06-08", "isin":"FR0013222676","uptoDate":"2018-06-08","fromDate":"2015-06-05", "launchDate":"2016-08-15", "protectionBarrier":1000.0, "protectionDate":"2016-07-01", "todayDate": "2017-06-21", "reimburseRate": "2017-10-21", "couponBarrier":null,"reimbursementBarrier":0.0,"airbagBarrier":null,"dateValues":[["2015-06-05",1723.76], ["2015-06-29",1523.76], ["2015-12-29",1023.76], ["2017-01-29",523.76], ["2017-02-22",1523.76], ["2017-03-29",523.76], ["2017-04-29",1523.76], ["2017-05-29",23.76], ["2017-06-21",523.76] ]}');
 
 			var todayDate = datagrph.todayDate;
 			var euroStoxx = datagrph.dateValues.slice([-1]);
-
 
 			var protectionBarrier = datagrph.protectionBarrier;
 
@@ -37,7 +35,7 @@ $(document).ready(
 				graphsList.push(datagrph.dateValues);
 			}
 
-      //Barrière de protection
+      //Barrière de protection (ligne verte)
 			var protec;
 			if (datagrph.protectionBarrier != null) {
 				protec = [ [ datagrph.protectionDate, datagrph.protectionBarrier ],
@@ -45,7 +43,7 @@ $(document).ready(
 				graphsList.push(protec);
 			}
 
-      //Prochaine date d'observation
+      //Prochaine date d'observation (ligne noire)
 			var reimburse;
 			if (datagrph.reimbursementBarrier != null) {
 				reimburse = [ [ datagrph.todayDate, datagrph.protectionBarrier],
@@ -53,14 +51,17 @@ $(document).ready(
 				graphsList.push(reimburse);
 			}
 
-			//Date de lancement d'un produit
-			// var launch;
-			// if (datagrph.launchBarrier != null) {
-			// 	launch = [ [ datagrph.launchDate, datagrph.endLaunchDate],
-			// 			[ datagrph.launchDate, datagrph.endLaunchDate ] ];
-			// 	graphsList.push(launch);
-			// 	alert(euroStoxx);
-			// }
+			// Date de sortie du produit (pblm : n'affiche pas la valeur sur le graph)
+			// var launchDate = [datagrph.launchDate];
+			// 	graphsList.push(launchDate);
+
+			// date de sortie du produit
+			var testd;
+			if (datagrph.protectionBarrier != null) {
+				testd = [ [ datagrph.testDate, datagrph.testYline ],
+						[ datagrph.uptoDate, datagrph.testYline ] ];
+				graphsList.push(testd);
+			}
 
 
 			var coupon;
@@ -83,21 +84,18 @@ $(document).ready(
 				graphsList.push(dummy);
 			}
 
-
-
-			var plot1 = $.jqplot('chartdiv', graphsList, {
+			var options = {
 				// title : datagrph.label + " ( " + datagrph.isin + " )",
-
 				seriesDefaults: {
-            showMarker:true,
-            rendererOptions: {
-                smooth: true
-            },
-						pointLabels: {
-        			show: true,
-        			edgeTolerance: 5
-      			}
-        },
+					 showMarker: false,
+					 rendererOptions: {
+							smooth: false,
+							animation: { show: true  }
+					 },
+					 pointLabels: {
+						 show: false,
+					 }
+				},
 				canvasOverlay: {
                     show: true,
                     objects: [
@@ -155,25 +153,21 @@ $(document).ready(
 					show : true,
 					sizeAdjust : 7.5,
 				},
-				series : [ {
-					neighborThreshold : -1,
-					lineWidth : 4,
-				} ],
-				seriesDefaults : {
-					showMarker : false,
-          shadow : false,
-					pointLabels: {
-						show : false,
-					}
-				},
-				seriesColors: ["#1044FF", "#7FFF00", "black", "#027997", "#878BB6", "#4ACAB4"],
+				series : [ { neighborThreshold : -1, lineWidth : 4, color:'#1044FF'},
+									{ neighborThreshold : -1, lineWidth : 4, color:'#7FFF00'},
+									{ neighborThreshold : -1, lineWidth : 3, color:'black'},
+									{ neighborThreshold : -1, lineWidth : 3, showMarker: true, showLine: false, color:'red'}
+				 ],
 				cursor : {
 					show : true,
 					zoom : true,
 					showTooltip : false,
 				},
 
-			});
+			};
+
+			var plot1 = $.jqplot('chartdiv', graphsList, options);
+
 
 			$('.button-reset').click(function() {
 				plot1.resetZoom()
