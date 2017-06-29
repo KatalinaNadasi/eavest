@@ -1,16 +1,6 @@
 $(document).ready(
 		function() {
 
-// custom canvas : https://stackoverflow.com/questions/14152409/jqplot-dont-want-to-display-show-the-y-axis
-
-			/*
-			 * { horizontalLine : { name : 'line3', y : 1255, lineWidth : 3,
-			 * color : 'green', shadow : false, } }, { verticalLine : { name :
-			 * 'line4', x : new $.jsDate('2016-12-31 16:10:00.000') .getTime(),
-			 * lineWidth : 3, color : 'pink', shadow : false, } } ];
-			 */
-
-
 			//BASE_URL must be initialized from the calling HTML page
       //A decommenter KNA
 			// var req = $.ajax({
@@ -22,12 +12,25 @@ $(document).ready(
       //fin à decommenter KNA
       // var datagrph = JSON.parse('{"label":"DAYSTOXX Mai 2027","isin":"FR0013222676","uptoDate":"2018-06-08","fromDate":"2017-06-15","protectionBarrier":0.0,"couponBarrier":null,"reimbursementBarrier":0.0,"airbagBarrier":null,"dateValues":[["2000-12-29",1523.76],["2001-01-02",1505.75],["2001-01-03",1502.37]}');
 
-      var datagrph = $.parseJSON('{"label":"DAYSTOXX Mai 2027", "testYline": "23.76", "testDate": "2015-06-08", "isin":"FR0013222676","uptoDate":"2018-06-08","fromDate":"2015-06-05", "launchDate":"2016-08-15", "protectionBarrier":1000.0, "protectionDate":"2016-07-01", "todayDate": "2017-06-21", "reimburseRate": "2017-10-21", "couponBarrier":null,"reimbursementBarrier":0.0,"airbagBarrier":null,"dateValues":[["2015-06-05",1723.76], ["2015-06-29",1523.76], ["2015-12-29",1023.76], ["2017-01-29",523.76], ["2017-02-22",1523.76], ["2017-03-29",523.76], ["2017-04-29",1523.76], ["2017-05-29",23.76], ["2017-06-21",523.76] ]}');
+      var datagrph = $.parseJSON('{"label":"DAYSTOXX Mai 2027", "testYline": "23.76", "testYlineMin": "524", "testYlineMax": "1000", "isin":"FR0013222676","uptoDate":"2018-06-08","fromDate":"2015-06-05", "launchDate":"2016-08-15", "protectionBarrier":1000.0, "protectionDate":"2016-07-01", "todayDate": "2017-06-21", "reimburseRate": "2017-10-21", "couponBarrier":null,"reimbursementBarrier":0.0,"airbagBarrier":null,"dateValues":[["2015-06-05",1723.76], ["2015-06-29",1523.76], ["2015-12-29",1023.76], ["2017-01-29",523.76], ["2017-02-22",1523.76], ["2017-03-29",523.76], ["2017-04-29",1523.76], ["2017-05-29",23.76], ["2017-06-21",523.76] ]}');
 
 			var todayDate = datagrph.todayDate;
 			var euroStoxx = datagrph.dateValues.slice([-1]);
 
 			var protectionBarrier = datagrph.protectionBarrier;
+
+// essai calcul xaxis pour launchDate
+			// var val1 = [];
+			// 			function closest (launchDate, courProduct) {
+			// 								for (var val = 0; val < courProduct.length; val++) {
+			// 										if (launchDate < courProduct[val]) {
+			// 												val1.push(courProduct[val])
+			// 										}
+			// 								}
+			// 								return val1;
+			// 						}
+			            // alert (val1);
+
 
 			var graphsList =[];
 			//We want to draw the graph even in the absence of datagrph
@@ -51,19 +54,29 @@ $(document).ready(
 				graphsList.push(reimburse);
 			}
 
-			// Date de sortie du produit (pblm : n'affiche pas la valeur sur le graph)
-			// var launchDate = [datagrph.launchDate];
-			// 	graphsList.push(launchDate);
-
-			// date de sortie du produit
-			var testd;
+			//distance (verticalLine)
+			var distance;
 			if (datagrph.protectionBarrier != null) {
-				testd = [ [ datagrph.testDate, datagrph.testYline ],
-						[ datagrph.uptoDate, datagrph.testYline ] ];
-				graphsList.push(testd);
+				distance = [ [ datagrph.todayDate, datagrph.testYlineMin ],
+						[ datagrph.todayDate, datagrph.testYlineMax ] ];
+				graphsList.push(distance);
 			}
 
+			// date de conservation initiale
+			var launch;
+			if (datagrph.protectionBarrier != null) {
+				launch = [ [ datagrph.launchDate, datagrph.testYline ],
+						[ datagrph.launchDate, datagrph.testYline ] ];
+				graphsList.push(launch);
+			}
 
+			// prochaine date d'observation
+			var obsdate;
+				obsdate = [ [ datagrph.reimburseRate, datagrph.protectionBarrier ],
+						[ datagrph.reimburseRate, datagrph.protectionBarrier ] ];
+				graphsList.push(obsdate);
+
+// code de Guru
 			var coupon;
 			if (datagrph.couponBarrier != null) {
 				coupon = [ [ datagrph.fromDate, datagrph.couponBarrier],
@@ -94,27 +107,10 @@ $(document).ready(
 					 },
 					 pointLabels: {
 						 show: false,
-					 }
+					 },
 				},
 				canvasOverlay: {
                     show: true,
-                    objects: [
-											{
-												verticalLine: {
-												name: 'distance',
-												// x: new $.jsDate().getTime(todayDate),
-												x: new $.jsDate('2017-06-21').getTime(),
-
-												// min : new $.jsDate().getTime(euroStoxx),
-												// max : new $.jsDate().getTime(protectionBarrier),
-												formatString : '%c %%',
-												lineWidth: 1,
-												color: 'black',
-												shadow: false,
-												ymin: 524,
-                    		ymax: 1000
-												}
-									}          ]
                 },
 				axes : {
 					xaxis : {
@@ -153,10 +149,92 @@ $(document).ready(
 					show : true,
 					sizeAdjust : 7.5,
 				},
-				series : [ { neighborThreshold : -1, lineWidth : 4, color:'#1044FF'},
-									{ neighborThreshold : -1, lineWidth : 4, color:'#7FFF00'},
-									{ neighborThreshold : -1, lineWidth : 3, color:'black'},
-									{ neighborThreshold : -1, lineWidth : 3, showMarker: true, showLine: false, color:'red'}
+				series : [
+					{ neighborThreshold : -1,
+					lineWidth : 4,
+					color:'#1044FF',
+					highlighter: {
+						show: true,
+						sizeAdjust: 7.5,
+						showMarker: false,
+						tooltipAxes: 'xy',
+						yvalues: 4,
+						formatString:'<table class="jqplot-highlighter"> \
+													<tr><td>date:</td><td>%s&nbsp;&nbsp;&nbsp;&nbsp;</td></tr> \
+													<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;valeur:</td><td>%s</td></tr></table>'
+													},},
+									{ neighborThreshold : -1,
+										lineWidth : 4,
+										color:'#7FFF00',
+										highlighter: {
+											show: true,
+											sizeAdjust: 7.5,
+											showMarker: false,
+											tooltipAxes: 'xy',
+											yvalues: 4,
+											formatString:'<table class="jqplot-highlighter"> \
+																		<tr><td>date:</td><td>%s&nbsp;&nbsp;&nbsp;&nbsp;</td></tr> \
+																		<tr><td>   &nbsp;&nbsp;&nbsp;&nbsp;valeur:</td><td>%s</td></tr></table>'
+																		},},
+									{ neighborThreshold : -1,
+										lineWidth : 3,
+										color:'black',
+										highlighter: {
+											show: true,
+											sizeAdjust: 7.5,
+											showMarker: false,
+											tooltipAxes: 'xy',
+											yvalues: 4,
+											formatString:'<table class="jqplot-highlighter"> \
+																		<tr><td>date:</td><td>%s&nbsp;&nbsp;&nbsp;&nbsp;</td></tr> \
+																		<tr><td> &nbsp;&nbsp;&nbsp;&nbsp;valeur:</td><td>%s</td></tr></table>'
+																		},},
+									{ neighborThreshold : -1,
+										lineWidth : 3,
+										color:'black',
+										showMarker: true,
+										markerOptions: { style: 'diamond' },
+										highlighter: {
+											show: true,
+											sizeAdjust: 7.5,
+											showMarker: false,
+											tooltipAxes: 'xy',
+											yvalues: 4,
+											formatString:'<table class="jqplot-highlighter"> \
+																		<tr><td>date:</td><td>%s&nbsp;&nbsp;&nbsp;&nbsp;</td></tr> \
+																		<tr><td> &nbsp;&nbsp;&nbsp;&nbsp;valeur:</td><td>%s</td></tr></table>'
+																		},},
+									{ neighborThreshold : -1,
+										lineWidth : 3,
+										showMarker: true,
+										showLine: false,
+										color:'black',
+										highlighter: {
+									    show: true,
+									    sizeAdjust: 7.5,
+									    showMarker: false,
+									    tooltipAxes: 'xy',
+									    yvalues: 4,
+									    formatString:'<table class="jqplot-highlighter"> \
+									                  <tr><td>date:</td><td>%s&nbsp;&nbsp;&nbsp;&nbsp;</td></tr> \
+									                  <tr><td> &nbsp;&nbsp;&nbsp;&nbsp;valeur:</td><td>%s</td></tr></table>'
+																		},
+									},
+									{ neighborThreshold : -1,
+										lineWidth : 3,
+										showMarker: true,
+										showLine: false,
+										color:'black',
+										highlighter: {
+											show: true,
+											sizeAdjust: 7.5,
+											showMarker: false,
+											tooltipAxes: 'xy',
+											yvalues: 4,
+											formatString:'<table class="jqplot-highlighter"> \
+																		<tr><td>Prochaine date d obervation:&nbsp;&nbsp;</td><td>%s</td></tr> \
+																		</table>'
+																		},},
 				 ],
 				cursor : {
 					show : true,
