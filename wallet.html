@@ -187,7 +187,8 @@
 									<a class="prod-list panel-heading" role="button" data-toggle="collapse" data-parent="#accordion-wallet-1" href="#collapseWalletOne"  th:href="'#collapseWallet' + ${productStat.index}" aria-expanded="true">
 									<span class="margin panel-title"></span>
 									<span class="label" th:text="${refund.label}">resonance 1</span>
-									<span class="isin" th:text="${refund.isin}"> / FR00196847</span>
+									<span class="slash">/</span>
+									<span class="isin" th:text="${refund.isin}">FR00196847</span>
 									<span th:if="${product.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" alt="black-logo" id="eavest"/></span>
 									</a>
 								</h4>
@@ -196,8 +197,6 @@
 								<div class="panel-body">
 									<div class="col-md-12 product-wallet-title">
 										<!-- <h3><span th:text="${product.deliver}">société générale</span></h3> -->
-										<img src="img/clock-color.png" alt="reveil" class="clock-img">
-										<span>25/ 12/ 2017</span>
 									</div>
 									<span class="col-xs-offset-11 hidden-lg hidden-md hidden-sm">
 										<a href="#" th:href="@{/user/{id}/removeProduct/?prd={idPrd}(id=${prdUser.id}, idPrd=${product.id})}"><i class="fa fa-trash-o fa-2x" id="product-trash-xs" aria-hidden="true"></i></a>
@@ -380,7 +379,8 @@
 										<a class="panel-heading prod-list" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseOne" th:href="'#collapse' + ${refundStat.index}" aria-expanded="true">
 											<span class="margin panel-title"></span>
 											<span class="label" th:text="${refund.label}">resonance 2</span>
-											<span class="isin" th:text="${refund.isin}"> / FR00196847</span>										<span th:if="${refund.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" alt="black-logo" id="eavest"/></span>
+											<span class="slash">/</span>
+											<span class="isin" th:text="${refund.isin}">FR00196847</span>										<span th:if="${refund.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" alt="black-logo" id="eavest"/></span>
 										</a>
 									</h4>
 								</div>
@@ -388,8 +388,6 @@
 									<div class="panel-body">
 										<div class="col-md-12 product-accor-title">
 											<!-- <h3><span th:text="${refund.deliver}" >Société générale</span></h3> -->
-											<img src="img/clock-color.png" alt="reveil" class="clock-img">
-											<span>25/ 12/ 2017</span>
 										</div>
 										<div class="row prod-accor-row">
 											<div class="col-xs-5 col-sm-4 col-md-3">
@@ -433,7 +431,8 @@
 										<a class="prod-list panel-heading" role="button" data-toggle="collapse" data-parent="#accordion-2" href="#collapse2One"  th:href="'#collapse2' + ${tocallStat.index}" aria-expanded="true">
 											<span class="margin panel-title"></span>
 											<span class="label" th:text="${refund.label}">resonance 3</span>
-											<span class="isin" th:text="${refund.isin}"> / FR00196847</span>										<span th:if="${tocall.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" alt="black-logo" id="eavest"/></span>
+											<span class="slash">/</span>
+											<span class="isin" th:text="${refund.isin}">FR00196847</span>										<span th:if="${tocall.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" alt="black-logo" id="eavest"/></span>
 										</a>
 									</h4>
 								</div>
@@ -441,8 +440,6 @@
 									<div class="panel-body">
 										<div class="col-md-12 product-accor-title">
 											<!-- <h3><span th:text="${tocall.deliver}" >Société générale</span></h3> -->
-											<img src="img/clock-color.png" alt="reveil" class="clock-img">
-											<span>25/ 12/ 2017</span>
 										</div>
 										<div class="row prod-accor-row">
 											<div class="col-xs-5 col-sm-4 col-md-3">

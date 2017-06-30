@@ -343,6 +343,13 @@ ul>li>a:hover {
   width: 55px;
   height: 55px;
 }
+
+.img-eye {
+  width: 76px;
+  height: 48px;
+  margin-bottom: 28px;
+}
+
 .products {
   background-color: #F2F2F2;
 }
@@ -422,24 +429,59 @@ a:active,
   color: black;
   font-weight: 700;
   font-size: 16px;
+  padding-right: 0;
   display: inline-block;
   -webkit-transform: translateY(5px);
   -moz-transform: translateY(5px);
   -ms-transform: translateY(5px);
   -o-transform: translateY(5px);
   transform: translateY(5px);
+  margin-left: -3px !important;
+  overflow: hidden;
+  width: 135px;
+}
+
+.slash {
+  color: black;
+  font-weight: 100;
+  margin: 0 3px;
+  font-size: 16px;
+  display: inline-block;
+  -webkit-transform: translateY(3px);
+  -moz-transform: translateY(3px);
+  -ms-transform: translateY(3px);
+  -o-transform: translateY(3px);
+  transform: translateY(3px);
+  overflow: hidden;
 }
 
 .isin {
   color: #585858 !important;
   font-weight: 100 !important;
   font-size: 16px;
+  padding-left: 0;
   display: inline-block;
   -webkit-transform: translateY(5px);
   -moz-transform: translateY(5px);
   -ms-transform: translateY(5px);
   -o-transform: translateY(5px);
   transform: translateY(5px);
+  overflow: hidden;
+  width: 220px;
+  line-height: 23px;
+}
+
+.resize-bell {
+  width: 35px;
+  margin-right: 5px;
+}
+
+.remb-date {
+  vertical-align: super;
+}
+
+.prod-date {
+  transform: translate(37px,-17px);
 }
 
 .panel-heading:hover,
@@ -476,9 +518,8 @@ a.panel-heading {
   margin: 12px 0;
 }
 
-.product-accor-title span, .product-wallet-title span {
-  margin-left: 10px;
-  font-size: 16px;
+.product-accor-title, .product-wallet-title {
+  margin-top: 25px;
 }
 
 #wallet-trash {
@@ -1041,9 +1082,9 @@ a.panel-heading {
 }
 
 .prod-accor-row span img {
-  position: absolute;
-  top: 62%;
-  right: 9%;
+    position: absolute;
+    top: 62%;
+    right: -4%;
 }
 
 .macaron-eav-mp {
@@ -1697,6 +1738,11 @@ button#close {
 .img-product {
   height: 262px;
   width: 185px;
+}
+
+.img-prod-size {
+  padding: 0;
+  margin: 0;
 }
 
 /*SECTION PORTEFEUILLE*/
@@ -2842,6 +2888,40 @@ a#arrow-position {
       line-height: 0px;
     }
   }
+
+  @media only screen and (min-device-width : 768px) and (max-device-width : 990px){
+    	.prod-accor-row span img {
+        right: -116%;
+      }
+    }
+
+  @media only screen and (min-device-width : 731px) and (max-device-width : 768px){
+      .prod-accor-row span img {
+        right: 0%;
+        left: 18%;
+      }
+    }
+
+  @media only screen and (min-device-width : 694px) and (max-device-width : 731px){
+      .prod-accor-row span img {
+        right: 0%;
+        left: 19%;
+      }
+    }
+
+  @media only screen and (min-device-width : 602px) and (max-device-width : 694px){
+      .prod-accor-row span img {
+        right: 0%;
+        left: 21%;
+      }
+    }
+  @media only screen and (min-device-width : 602px) and (max-device-width : 694px){
+      .prod-accor-row span img {
+        right: 0%;
+        left: 21%;
+      }
+    }
+
 
 /*3- very large screen*/
 @media (min-width : 1200px) {

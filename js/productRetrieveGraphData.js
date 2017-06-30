@@ -3,16 +3,15 @@ $(document).ready(
 
 			//BASE_URL must be initialized from the calling HTML page
       //A decommenter KNA
-			// var req = $.ajax({
-			// 	url : BASE_URL +"/products/"+ productId + '.json',
-			// 	datagrphType : "json",
-			// 	async : false
-			// }).responseText;
-			// var datagrph = $.parseJSON(req);
+			var req = $.ajax({
+				url : BASE_URL +"/products/"+ productId + '.json',
+				datagrphType : "json",
+				async : false
+			}).responseText;
+			var datagrph = $.parseJSON(req);
       //fin à decommenter KNA
-      // var datagrph = JSON.parse('{"label":"DAYSTOXX Mai 2027","isin":"FR0013222676","uptoDate":"2018-06-08","fromDate":"2017-06-15","protectionBarrier":0.0,"couponBarrier":null,"reimbursementBarrier":0.0,"airbagBarrier":null,"dateValues":[["2000-12-29",1523.76],["2001-01-02",1505.75],["2001-01-03",1502.37]}');
 
-      var datagrph = $.parseJSON('{"label":"DAYSTOXX Mai 2027", "testYline": "23.76", "testYlineMin": "524", "testYlineMax": "1000", "isin":"FR0013222676","uptoDate":"2018-06-08","fromDate":"2015-06-05", "launchDate":"2016-08-15", "protectionBarrier":1000.0, "nextObsDate": 1000.0, "protectionDate":"2016-07-01", "todayDate": "2017-06-21", "reimburseRate": "2017-10-21", "couponBarrier":null,"reimbursementBarrier":0.0,"airbagBarrier":null,"dateValues":[["2014-06-05",1723.76], ["2015-06-29",1523.76], ["2015-12-29",1023.76], ["2017-01-29",523.76], ["2017-02-22",1523.76], ["2017-03-29",523.76], ["2017-04-29",1523.76], ["2017-05-29",23.76], ["2017-06-21",523.76] ]}');
+      // var datagrph = $.parseJSON('{"label":"DAYSTOXX Mai 2027", "testYline": "23.76", "testYlineMin": "524", "testYlineMax": "1000", "isin":"FR0013222676","uptoDate":"2018-06-08","fromDate":"2015-06-05", "launchDate":"2016-08-15", "protectionBarrier":1000.0, "nextObsDate": 1000.0, "protectionDate":"2016-07-01", "todayDate": "2017-06-21", "reimburseRate": "2017-10-21", "couponBarrier":null,"reimbursementBarrier":0.0,"airbagBarrier":null,"dateValues":[["2014-06-05",1723.76], ["2015-06-29",1523.76], ["2015-12-29",1023.76], ["2017-01-29",523.76], ["2017-02-22",1523.76], ["2017-03-29",523.76], ["2017-04-29",1523.76], ["2017-05-29",23.76], ["2017-06-21",523.76] ]}');
 
 			var todayDate = datagrph.todayDate;
 			var euroStoxx = datagrph.dateValues.slice([-1]);
@@ -241,10 +240,10 @@ $(document).ready(
 										showMarker: true,
 										showLine: false,
 										color:'black',
-										legend: {
-											show: true,
-      								placement: 'outside'
-    								},
+										// legend: {
+										// 	show: true,
+      							// 	placement: 'inside'
+    								// },
 										highlighter: {
 									    show: true,
 									    sizeAdjust: 7.5,

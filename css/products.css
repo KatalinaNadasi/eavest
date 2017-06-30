@@ -115,16 +115,16 @@ section {
 }
 
 #filter-search {
-  background-color: black !important;
+  background-color: black;
   color: white;
   margin-bottom: 15px;
   padding-left: 45px;
   padding-right: 45px;
-  -webkit-border-radius: 0 !important;
-  -moz-border-radius: 0 !important;
-  -ms-border-radius: 0 !important;
-  -o-border-radius: 0 !important;
-  border-radius: 0 !important;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
   text-transform: uppercase;
 }
 
@@ -412,7 +412,7 @@ section.chart .container {
   margin: 0;
 }
 
-#euroStoxx {
+span #eurostoxx {
   background-color: #1044FF;
   width: 55px;
   height: 2px;
