@@ -12,24 +12,49 @@ $(document).ready(
       //fin à decommenter KNA
       // var datagrph = JSON.parse('{"label":"DAYSTOXX Mai 2027","isin":"FR0013222676","uptoDate":"2018-06-08","fromDate":"2017-06-15","protectionBarrier":0.0,"couponBarrier":null,"reimbursementBarrier":0.0,"airbagBarrier":null,"dateValues":[["2000-12-29",1523.76],["2001-01-02",1505.75],["2001-01-03",1502.37]}');
 
-      var datagrph = $.parseJSON('{"label":"DAYSTOXX Mai 2027", "testYline": "23.76", "testYlineMin": "524", "testYlineMax": "1000", "isin":"FR0013222676","uptoDate":"2018-06-08","fromDate":"2015-06-05", "launchDate":"2016-08-15", "protectionBarrier":1000.0, "protectionDate":"2016-07-01", "todayDate": "2017-06-21", "reimburseRate": "2017-10-21", "couponBarrier":null,"reimbursementBarrier":0.0,"airbagBarrier":null,"dateValues":[["2015-06-05",1723.76], ["2015-06-29",1523.76], ["2015-12-29",1023.76], ["2017-01-29",523.76], ["2017-02-22",1523.76], ["2017-03-29",523.76], ["2017-04-29",1523.76], ["2017-05-29",23.76], ["2017-06-21",523.76] ]}');
+      var datagrph = $.parseJSON('{"label":"DAYSTOXX Mai 2027", "testYline": "23.76", "testYlineMin": "524", "testYlineMax": "1000", "isin":"FR0013222676","uptoDate":"2018-06-08","fromDate":"2015-06-05", "launchDate":"2016-08-15", "protectionBarrier":1000.0, "nextObsDate": 1000.0, "protectionDate":"2016-07-01", "todayDate": "2017-06-21", "reimburseRate": "2017-10-21", "couponBarrier":null,"reimbursementBarrier":0.0,"airbagBarrier":null,"dateValues":[["2014-06-05",1723.76], ["2015-06-29",1523.76], ["2015-12-29",1023.76], ["2017-01-29",523.76], ["2017-02-22",1523.76], ["2017-03-29",523.76], ["2017-04-29",1523.76], ["2017-05-29",23.76], ["2017-06-21",523.76] ]}');
 
 			var todayDate = datagrph.todayDate;
 			var euroStoxx = datagrph.dateValues.slice([-1]);
-
+			var productCour = datagrph.dateValues;
+			var launchDate = datagrph.launchDate;
 			var protectionBarrier = datagrph.protectionBarrier;
 
-// essai calcul xaxis pour launchDate
-			// var val1 = [];
-			// 			function closest (launchDate, courProduct) {
-			// 								for (var val = 0; val < courProduct.length; val++) {
-			// 										if (launchDate < courProduct[val]) {
-			// 												val1.push(courProduct[val])
-			// 										}
-			// 								}
-			// 								return val1;
-			// 						}
-			            // alert (val1);
+
+// ESSAI CALCUL XAXIS FOR LAUNCHDATE
+// réponse plus proche en max = 2017-06-21 (pair[0])
+// launchdate = 2016-08-15
+// valeur la plus proche en min : 2015-12-29
+// valeur la plus proche en max : 2017-01-29
+
+// var datagrph = $.parseJSON('{"label":"Yo", "fromDate":"2015-06-05", "launchDate":"2016-08-15", "dateValues":[["2014-06-05",1723.76], ["2015-06-29",1523.76], ["2015-12-29",1023.76], ["2017-01-29",523.76], ["2017-02-22",1523.76], ["2017-03-29",523.76], ["2017-04-29",1523.76], ["2017-05-29",23.76], ["2017-06-21",523.76] ]}');
+// var productCour = datagrph.dateValues;
+
+// var launchDate = +new Date(datagrph.launchDate+" T00:00");
+//
+// var before,after,diffmin,diffmax;
+//
+// productCour.forEach(function(pair){
+//
+//  var current=+(new Date(pair[0]+"T00:00"));
+//  var difference=launchDate-current;
+//
+//  if(difference>0){
+//     //launchDate not reached
+//     if(!diffmin || diffmin>difference){
+//        //weve got a new before
+//        before=pair[0];
+//        diffmin=difference;
+//     }
+//   }else{
+//     //launchDate already reached
+//     if(!diffmax || diffmax<difference){
+//        //weve got a new after
+//        after=pair[0];
+//        diffmax=difference;
+//     }
+//   }
+// });
 
 
 			var graphsList =[];
@@ -58,7 +83,7 @@ $(document).ready(
 			var distance;
 			if (datagrph.protectionBarrier != null) {
 				distance = [ [ datagrph.todayDate, datagrph.testYlineMin ],
-						[ datagrph.todayDate, datagrph.testYlineMax ] ];
+						[ datagrph.todayDate, datagrph.protectionBarrier ] ];
 				graphsList.push(distance);
 			}
 
@@ -72,8 +97,8 @@ $(document).ready(
 
 			// prochaine date d'observation
 			var obsdate;
-				obsdate = [ [ datagrph.reimburseRate, datagrph.protectionBarrier ],
-						[ datagrph.reimburseRate, datagrph.protectionBarrier ] ];
+				obsdate = [ [ datagrph.reimburseRate, datagrph.nextObsDate ],
+						[ datagrph.reimburseRate, datagrph.nextObsDate ] ];
 				graphsList.push(obsdate);
 
 // code de Guru
@@ -153,6 +178,13 @@ $(document).ready(
 					{ neighborThreshold : -1,
 					lineWidth : 4,
 					color:'#1044FF',
+					rendererOptions: {
+						 smooth: false,
+						 animation: { show: true  },
+						 showDataLabels: true,
+						 dataLabels: 'value',
+						 fill: false
+					},
 					highlighter: {
 						show: true,
 						sizeAdjust: 7.5,
@@ -190,7 +222,7 @@ $(document).ready(
 																		<tr><td> &nbsp;&nbsp;&nbsp;&nbsp;valeur:</td><td>%s</td></tr></table>'
 																		},},
 									{ neighborThreshold : -1,
-										lineWidth : 3,
+										lineWidth : 1,
 										color:'black',
 										showMarker: true,
 										markerOptions: { style: 'diamond' },
@@ -209,6 +241,10 @@ $(document).ready(
 										showMarker: true,
 										showLine: false,
 										color:'black',
+										legend: {
+											show: true,
+      								placement: 'outside'
+    								},
 										highlighter: {
 									    show: true,
 									    sizeAdjust: 7.5,
@@ -220,7 +256,8 @@ $(document).ready(
 									                  <tr><td> &nbsp;&nbsp;&nbsp;&nbsp;valeur:</td><td>%s</td></tr></table>'
 																		},
 									},
-									{ neighborThreshold : -1,
+									{ name: 'Prochaine date d\'observation',
+										neighborThreshold : -1,
 										lineWidth : 3,
 										showMarker: true,
 										showLine: false,
@@ -232,7 +269,7 @@ $(document).ready(
 											tooltipAxes: 'xy',
 											yvalues: 4,
 											formatString:'<table class="jqplot-highlighter"> \
-																		<tr><td>Prochaine date d obervation:&nbsp;&nbsp;</td><td>%s</td></tr> \
+																		<tr><td>Prochaine date d\'observation: &nbsp;&nbsp;<td><td>%s</td></tr> \
 																		</table>'
 																		},},
 				 ],
