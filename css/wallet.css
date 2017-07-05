@@ -83,6 +83,19 @@ img#document {
   text-transform: uppercase;
 }
 
+#wallet-overlay {
+  position:absolute;
+  top: 140%;
+  right: 40%;
+  max-width: 10%;
+}
+
+#wallet-pr-overlay {
+  position:absolute;
+  top: 157%;
+  right: 0%;
+}
+
 #accordion-wallet-1 {
   padding-bottom: 60px;
 }
@@ -122,7 +135,7 @@ img#document {
 /*MEDIA QUERIES*/
 
 
-@media only screen and (max-width:760px){
+@media only screen and (max-width:765px){
   .container {
     margin-top: 45px;
   }
@@ -139,6 +152,9 @@ img#document {
   .term-sheet-list {
     padding-left: 9px;
   }
+  #wallet-overlay {
+    right: 34%;
+  }
 }
 
 
@@ -147,5 +163,9 @@ img#document {
     position: absolute;
     bottom: 82px;
     left: 15px;
+  }
+  #isin-wallet {
+    width: 410px;
+    font-size: 15px;
   }
 }
