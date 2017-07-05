@@ -592,18 +592,18 @@ a.panel-heading {
   position: relative;
 }
 
-.more-logo {
+.more-logo, .value-logo {
   position: relative;
   margin: 0 auto;
 }
 
-.more-logo div a img {
+.more-logo div a img, .value-logo div a img {
   position:relative;
   height:auto;
   margin: 0 auto;
 }
 
-.more-logo div {
+.more-logo div, .grey-block-3 div, .white-block-partner div, .value-logo {
   position:absolute;
   left: 0;
   top: 0;
@@ -629,7 +629,7 @@ a.panel-heading {
   transition: all 0.4s ease;
 }
 
-.more-logo div:hover {
+.more-logo div:hover, .grey-block-3 div:hover, .value-logo:hover {
   -webkit-opacity: 0.92;
   -moz-opacity: 0.92;
   -ms-opacity: 0.92;
@@ -637,13 +637,19 @@ a.panel-heading {
   opacity: 0.92;
 }
 
-.more-logo a {
+.more-logo a, .grey-block-3-div a, .value-logo a {
   display: block;
   margin: 0 auto;
   width: 75px;
 }
 
-.plus-logo {
+#more-values {
+  position: relative;
+  cursor: auto;
+  padding: 55px 0px 55px 0px;
+}
+
+.plus-logo, #greyb3logo {
   position: relative;
   cursor: auto;
   padding: 90px 0px 90px 0px;
@@ -1172,33 +1178,12 @@ a.panel-heading {
   transition: all 0.4s ease;
 }*/
 
-#more-our-agrement {
-  display: block;
-  position: absolute;
-  left: 41%;
-  top: 29%;
-  width: 70px;
-  height: 70px;
-  cursor: auto;
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
-  -ms-opacity: 1;
-  -o-opacity: 1;
-  opacity: 1;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-
 #more-partner {
   position: relative;
   cursor: auto;
   padding: 62px 90px 62px 90px;
 }
 
-#more-values,
 #more-methodologie {
   display: block;
   position: absolute;
@@ -1807,6 +1792,8 @@ p#figure-p {
   position: absolute;
   left: 0;
   top: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
   background-color: #ffffff;
@@ -1831,12 +1818,6 @@ p#figure-p {
   position: relative;
   height: auto;
   margin: 0 auto;
-}
-
-.grey-block-3-div a {
-  display: block;
-  margin: 0 auto;
-  width: 250px;
 }
 
 .grey-block-3-div:hover {
@@ -2220,6 +2201,12 @@ a#arrow-position {
   }
 }
 
+@media (max-width : 400px){
+  #more-values {
+    padding: 95px 0px 95px 0px;
+  }
+}
+
 @media only screen and (min-device-width : 300px) and (max-device-width : 308px){
   .plus-logo {
     padding: 50px 0px 50px 0px;
@@ -2256,6 +2243,42 @@ a#arrow-position {
   }
   .plus-logo {
     padding: 12px 0px 12px 0px;
+  }
+}
+
+@media (max-width : 308px){
+  #greyb3logo {
+    padding: 75px 0px 75px 0px;
+  }
+}
+
+@media only screen and (min-device-width : 308px) and (max-device-width : 342px){
+  #greyb3logo {
+    padding: 65px 0px 65px 0px;
+  }
+}
+
+@media only screen and (min-device-width : 342px) and (max-device-width : 400px){
+  #greyb3logo {
+    padding: 57px 0px 57px 0px;
+  }
+}
+
+@media only screen and (min-device-width : 400px) and (max-device-width : 500px){
+  #greyb3logo {
+    padding: 48px 0px 48px 0px;
+  }
+}
+
+@media only screen and (min-device-width : 500px) and (max-device-width : 590px){
+  #greyb3logo {
+    padding: 40px 0px 40px 0px;
+  }
+}
+
+@media only screen and (min-device-width : 590px) and (max-device-width : 770px){
+  #greyb3logo {
+    padding: 31px 0px 31px 0px;
   }
 }
 
@@ -2301,9 +2324,9 @@ a#arrow-position {
   #more-team {
     left: 41%;
   }
-  #more-values {
+  /*#more-values {
     left: 39%;
-  }
+  }*/
 }
 
 @media only screen and (min-device-width : 401px) and (max-device-width : 420px){
@@ -2481,13 +2504,23 @@ a#arrow-position {
   }
 }
 
-@media (max-width: 330px){
+@media (max-width : 265px){
   #more-partner {
-    padding: 80px 90px 80px 90px;
+    padding: 95px 0px 95px 0px;
+  }
+  .white-block-partner div a {
+    width: 75px;
   }
 }
 
-@media only screen and (min-device-width : 300px) and (max-device-width : 438px){
+@media only screen and (min-device-width : 265px) and (max-device-width : 344px){
+  #more-partner {
+    padding: 78px 90px 78px 90px;
+  }
+}
+
+
+@media only screen and (min-device-width : 344px) and (max-device-width : 438px){
   #more-partner {
     padding: 70px 90px 70px 90px;
   }
