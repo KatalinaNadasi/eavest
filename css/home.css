@@ -2348,9 +2348,6 @@ a#arrow-position {
   #more-team {
     left: 41%;
   }
-  /*#more-values {
-    left: 39%;
-  }*/
 }
 
 @media only screen and (min-device-width : 401px) and (max-device-width : 420px){
@@ -2739,9 +2736,6 @@ a#arrow-position {
   .black-line-1 {
     margin-bottom: 32px;
     margin-top: 3px;
-  }
-  #more-3-sm {
-    left: 46%;
   }
   p .grey-letters {
     width: 81%;
