@@ -592,18 +592,18 @@ a.panel-heading {
   position: relative;
 }
 
-.more-logo, .value-logo {
+.more-logo, .value-logo, #more-methodo-div {
   position: relative;
   margin: 0 auto;
 }
 
-.more-logo div a img, .value-logo div a img {
+.more-logo div a img, .value-logo div a img, #more-methodo-div div img {
   position:relative;
   height:auto;
   margin: 0 auto;
 }
 
-.more-logo div, .grey-block-3 div, .white-block-partner div, .value-logo {
+.more-logo div, .grey-block-3 div, .white-block-partner div, .value-logo, #more-methodo-div {
   position:absolute;
   left: 0;
   top: 0;
@@ -629,7 +629,7 @@ a.panel-heading {
   transition: all 0.4s ease;
 }
 
-.more-logo div:hover, .grey-block-3 div:hover, .value-logo:hover {
+.more-logo div:hover, .grey-block-3 div:hover, .value-logo:hover, #more-methodo-div:hover {
   -webkit-opacity: 0.92;
   -moz-opacity: 0.92;
   -ms-opacity: 0.92;
@@ -637,7 +637,7 @@ a.panel-heading {
   opacity: 0.92;
 }
 
-.more-logo a, .grey-block-3-div a, .value-logo a {
+.more-logo a, .grey-block-3-div a, .value-logo a, #more-methodo-div a {
   display: block;
   margin: 0 auto;
   width: 75px;
@@ -1185,6 +1185,12 @@ a.panel-heading {
 }
 
 #more-methodologie {
+  position: relative;
+  cursor: auto;
+  padding: 97px 0px 97px 0px;
+}
+
+/*#more-methodologie {
   display: block;
   position: absolute;
   left: 42%;
@@ -1202,7 +1208,7 @@ a.panel-heading {
   -ms-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
-}
+}*/
 
 #more-team {
   display: block;
@@ -2279,6 +2285,24 @@ a#arrow-position {
 @media only screen and (min-device-width : 590px) and (max-device-width : 770px){
   #greyb3logo {
     padding: 31px 0px 31px 0px;
+  }
+}
+
+@media (max-width : 410px){
+  #more-methodologie {
+    padding: 238px 0px 238px 0px;
+  }
+}
+
+@media only screen and (min-device-width : 410px) and (max-device-width : 648px){
+  #more-methodologie {
+    padding: 100px 0px 100px 0px;
+  }
+}
+
+@media only screen and (min-device-width : 649px) and (max-device-width : 770px){
+  #more-methodologie {
+    padding: 94px 0px 94px 0px;
   }
 }
 
