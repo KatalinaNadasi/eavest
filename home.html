@@ -357,15 +357,15 @@
                                         <span class="overlay-month-p" th:if="${bestSeller.isEavest}"><img src="/img/black-logo.png" alt="logo eavest"/></span>
                                     </div>
                                 </div>
+                                <div class="over-product"><a th:if="${bestSeller}" href="#" th:href="@{/products/{id}(id=${bestSeller.id})}"><img class="more-product" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}" /></a></div>
                             </div>
-
                             <div th:unless="${bestSeller}" class="month-product">
                                 <img class="/img-responsive img-product" alt="produit du mois" th:alt="#{home.best.seller}" />
-                            </div>
-                            <div class="over-product">
-                                <a th:if="${bestSeller}" href="#" th:href="@{/products/{id}(id=${bestSeller.id})}">
-                                    <span><img class="more-product-sm" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}" /></span>
-                                </a>
+                                <div class="counter img-prod-size">
+                                    <img src="/img/month-product.jpg" th:src="@{/products/{id}/image(id=${bestSeller.id})}" class="img-product" alt="produit du mois" th:alt="#{home.best.seller}"/>
+                                    <span class="overlay-month-p" th:if="${bestSeller.isEavest}"><img src="/img/black-logo.png" alt="logo eavest"/></span>
+                                </div>
+                                <div class="over-product"><a th:if="${bestSeller}" href="#" th:href="@{/products/{id}(id=${bestSeller.id})}"><img class="more-product" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}" /></a></div>
                             </div>
                         </div>
                     </div>
@@ -408,15 +408,17 @@
                                 <span class="overlay-month-p" th:if="${bestSeller.isEavest}"><img src="/img/black-logo.png" alt="logo eavest"/></span>
                             </div>
                         </div>
+                        <div class="over-product"><a th:if="${bestSeller}" href="#" th:href="@{/products/{id}(id=${bestSeller.id})}"><img class="more-product" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}" /></a></div>
                     </div>
                     <div th:unless="${bestSeller}" class="month-product">
                         <img class="img-responsive img-product" alt="produit du mois" th:alt="#{home.best.seller}" />
                     </div>
                     <div class="over-product">
                         <a th:if="${bestSeller}" href="#" th:href="@{/products/{id}(id=${bestSeller.id})}">
-                            <span><img class="more-product-sm" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}" /></span>
+                            <span><img class="more-product" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}" /></span>
                         </a>
                     </div>
+                    <div class="over-product"><a th:if="${bestSeller}" href="#" th:href="@{/products/{id}(id=${bestSeller.id})}"><img class="more-product" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}" /></a></div>
                 </div>
             </div>
         </div>
@@ -526,11 +528,11 @@
     <section>
         <div class="container agreement-block">
             <div class="row margin-block">
-                <div class="col-sm-4 col-md-3 black-block-partner more-logo">
+                <div class="col-sm-4 col-md-3 black-block-partner">
                   <p class="grey-letters-light">
                     <span class="main-title">eavest </span><span th:text="#{home.eavest.teaser}">est un cabinet de conseil indépendant spécialisé dans la construction, le suivi et l'analyse de produits structurés et alternatifs sur-mesure à destination de clients professionnels européens.</span>
                   </p>
-                  <div><a href="http://eavest.com/" class="plus-logo"><img src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}"/></a></div>
+                  <div class="over-eavest"><a href="http://eavest.com/"><img src="/img/more-hover.png" class="more-eavest" alt="voir-plus" th:alt="#{get.more}"/></a></div>
                 </div>
 
 
@@ -551,9 +553,9 @@
                         </ul>
                     </div>
                     <div>
-                      <div class="grey-block-3-div">
-                        <a href="http://eavest.com/" id="greyb3logo">
-                          <img src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}"/>
+                      <div class="over-agreement">
+                        <a href="http://eavest.com/">
+                          <img src="/img/more-hover.png" class="more-agreement" alt="voir-plus" th:alt="#{get.more}"/>
                         </a>
                       </div>
                   </div>
@@ -566,9 +568,9 @@
  							          En collaborations avec plus de 15 banques d'investissement partenaires, les stratégies sont pensées et conçues grâce à nos équipes d'ingénierie financière cross asset dédiées à Paris, Genève et Luxembourg.
  						            </span>
                     </p>
-                    <div>
+                    <div class="over-partner">
                       <a href="http://eavest.com/">
-                        <img id="more-partner" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}"/>
+                        <img class="more-partner" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}"/>
                       </a>
                     </div>
                 </div>
@@ -601,7 +603,7 @@
                                 <img src="/img/proximite.png" alt="proximité" th:alt="#{home.val.proximity}" id="value-img4" />
                             </li>
                         </ul>
-                        <div class="value-logo"><a href="http://eavest.com/" id="more-values"><img src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}"/></a></div>
+                        <div class="over-values"><a href="http://eavest.com/" class="more-values"><img src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}"/></a></div>
                     </div>
                 </div>
                 <div class="col-md-6 white-block-style-2" id="methodo">
@@ -624,7 +626,7 @@
                             <br />
                             <img src="/img/suivi.png" alt="suivi" th:alt="#{home.method.follow}" id="methodo-img3" />
                         </div>
-                        <div id="more-methodo-div"><a href="http://eavest.com/methodologie-2/"><img id="more-methodologie" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}"/></a></div>
+                        <div class="over-methodo"><a href="http://eavest.com/methodologie-2/"><img class="more-methodologie" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}"/></a></div>
                     </div>
                 </div>
             </div>
