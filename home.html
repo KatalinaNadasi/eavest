@@ -857,6 +857,19 @@
             });
         });
 
+        // Section search open filter-row-container on click
+        $(function() {
+          $('#refine').click(function(){
+            $('#filter-row-container').toggleClass('filter-row-container-h filter-row-container');
+            $('#cross').toggleClass('cross-h cross');
+          });
+          $('#cross').click(function(){
+            $('#filter-row-container').toggleClass('filter-row-container-h filter-row-container');
+            $('#cross').toggleClass('cross-h cross');
+          });
+
+        });  
+
         // ACCORDION redirection selon nombre de produits
         $(document).ready(function() {
             var refundProducts = /*[[${nbRefundProducts}]]*/ 61;
