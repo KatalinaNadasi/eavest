@@ -118,17 +118,7 @@ $(function() {
     $('#cross').toggleClass('cross-h cross');
   });
 
-});
-
-
-// $(function() {
-//   $('#refine').click(function(){
-//     $('.filter-row-container, #cross').show();
-//   });
-//   $('#refine').click(function(){
-//     $('.filter-row-container, #cross').hide();
-//   });
-// });
+});  
 
 
 // Set a fontSize relative to a number of words (dynamic content for figure of the month)

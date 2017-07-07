@@ -125,235 +125,8 @@ h5 {
 h6 {
   font-size: 24px;
   text-transform: uppercase;
+  font-weight: 700;
 }
-
-/*SECTION SEARCH*/
-
-.search-header {
-  background-color: #0251FB;
-  color: white;
-  text-align: center;
-  vertical-align: middle;
-  margin-top: 35px;
-}
-
-.search-header h6 {
-  padding: 27px;
-}
-
-.search-body {
-  background-color: white;
-  text-align: center;
-}
-
-.search-body p:nth-child(1) {
-  padding: 40px 0 0 0;
-  font-size: 17px;
-}
-
-.search-body p::first-letter {
-  text-transform: capitalize;
-}
-
-.search-b {
-  height: 30px;
-  border: solid 2px #0251FB;
-  margin-top: 15px;
-  color: black;
-}
-
-.wrapper-search {
-  padding: 0 37px;
-}
-
-#search-style {
-  border: solid 1px white;
-  border-right: none;
-  height: auto;
-  width: 92%;
-  -webkit-transform: translateY(2px);
-  -moz-transform: translateY(2px);
-  -ms-transform: translateY(2px);
-  -o-transform: translateY(2px);
-  transform: translateY(2px);
-  color: black;
-}
-
-#search-style :focus {
-  background: transparent;
-  color: black !important;
-}
-
-section .search button[type="submit"]{
-  background: transparent;
-  border: none;
-}
-
-.fa-search {
-  position: absolute;
-  bottom: 18%;
-  right: 12%;
-  max-width: 10% !important;
-  color: blue;
-  z-index: 3;
-}
-
-.search-criterion {
-  margin: 35px 0 40px 0;
-  display: block;
-}
-
-.search-criterion span {
-  font-size: 17px;
-  font-weight: bolder;
-  text-decoration: underline;
-}
-
-.search-criterion img {
-    width: 18px;
-    transform: translateY(-3px);
-}
-
-.filters label {
-  display: block;
-  font-weight: 100;
-  font-size: 13px;
-  padding-bottom: 2px;
-  text-transform: uppercase;
-  text-align: initial;
-}
-
-.filters input[type=text] {
-    border-color: #1044FF;
-    border-style: solid;
-    width: 100%;
-}
-
-#filter-search {
-    background-color: black;
-    color: white;
-    margin-bottom: 15px;
-    padding: 3px 45px;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
-    border-radius: 0;
-    text-transform: uppercase;
-}
-
-.filter-search {
-    text-align: center;
-    margin: 35px 0 45px 0;
-    text-transform: uppercase;
-}
-
-.filter-row-container-h, .cross-h {
-  display: none !important;
-}
-
-.filter-row-container {
-  display: block;
-}
-
-.cross {
-  display: -webkit-inline-box;
-}
-
-.search-row {
-  margin-left: 73px;
-}
-
-.filter-1, .filter-2, .filter-3, .filter-4 {
-    float: left;
-    width: 21%;
-}
-
-.filters {
-    margin: 40px 0 0 0;
-    padding: 0;
-}
-
-/*END SECTION SEARCH*/
-
-/*autocomplete */
-.ui-autocomplete-input {
-  font-weight: 100;
-  color: black !important;
-}
-
-.ui-autocomplete-input:hover {
-  font-weight: 100;
-  color: black !important;
-}
-
-.ui-autocomplete {
-  max-height: 150px;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.grey-letters {
-  color: #585858;
-  font-weight: 100;
-}
-
-.grey-letters-light {
-  color: #777776;
-  font-size: 16px;
-}
-
-.clear {
-  clear: both;
-}
-
-.float-right {
-  float: right;
-}
-
-.padding_top {
-  padding-top: 16px;
-  display: block;
-}
-
-.padding_right {
-  padding-right: 4px !important;
-  padding-left: 7px !important;
-}
-
-.padding_bottom {
-  padding-bottom: 30px;
-}
-
-.container-fluid {
-  margin: 0;
-  padding: 0px;
-}
-
-.wrapper {
-  margin-top: 25px;
-}
-
-.min {
-  font-size: 15px;
-  font-weight: normal;
-  text-transform: none;
-  color: #585858;
-}
-
-.italicized {
-  font-weight: lighter;
-  font-style: italic;
-}
-
-.block-content {
-  margin: 25px 0;
-}
-
-.block {
-  display: block;
-}
-
 
 /*NAVBAR*/
 
@@ -491,7 +264,271 @@ ul>li>a:hover {
   display: none;
 }
 
+/*SECTION SEARCH*/
+
+.search-header {
+  background-color: #0251FB;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 35px;
+}
+
+.search-header h6 {
+  padding: 27px;
+}
+
+.search-body {
+  background-color: white;
+  text-align: center;
+}
+
+.search-body p:nth-child(1) {
+  padding: 40px 0 0 0;
+  font-size: 17px;
+}
+
+.search-body p::first-letter {
+  text-transform: capitalize;
+}
+
+.search-b {
+  height: 30px;
+  border: solid 2px #0251FB;
+  margin-top: 15px;
+  color: black;
+}
+
+.wrapper-search {
+  padding: 0 37px;
+}
+
+#search-style {
+  border: solid 1px white;
+  border-right: none;
+  height: auto;
+  width: 92%;
+  -webkit-transform: translateY(2px);
+  -moz-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  -o-transform: translateY(2px);
+  transform: translateY(2px);
+  color: black;
+}
+
+#search-style :focus {
+  background: transparent;
+  color: black !important;
+}
+
+section .search button[type="submit"]{
+  background: transparent;
+  border: none;
+}
+
+.fa-search {
+  position: absolute;
+  bottom: 18%;
+  right: 12%;
+  max-width: 10% !important;
+  color: blue;
+  z-index: 3;
+}
+
+.search-criterion {
+  margin: 35px 0 50px 0;
+  display: block;
+}
+
+.search-criterion span {
+  font-size: 17px;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+.search-criterion img {
+    width: 18px;
+    transform: translateY(-3px);
+}
+
+.filters label {
+  display: block;
+  font-weight: 100;
+  font-size: 13px;
+  padding-bottom: 2px;
+  text-transform: uppercase;
+  text-align: initial;
+}
+
+.filters input[type=text] {
+    border-color: #1044FF;
+    border-style: solid;
+    width: 100%;
+}
+
+#filter-search {
+    background-color: black;
+    color: white;
+    margin-bottom: 15px;
+    padding: 3px 45px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    text-transform: uppercase;
+}
+
+.filter-search {
+    text-align: center;
+    margin: 35px 0 45px 0;
+    text-transform: uppercase;
+}
+
+.filter-row-container-h, .cross-h {
+  display: none !important;
+}
+
+.filter-row-container {
+  display: block;
+}
+
+.cross {
+  display: -webkit-inline-box;
+}
+
+.search-row {
+  margin-left: 73px;
+}
+
+.filter-1, .filter-2, .filter-3, .filter-4 {
+    float: left;
+    width: 21%;
+}
+
+.filters {
+    margin: 40px 0 0 0;
+    padding: 0;
+}
+
+/*END SECTION SEARCH*/
+
+/*SECTION FOLLOW PRODUCT*/
+.follow-body{
+  background-color: black;
+  color: white;
+  margin-bottom: 15px;
+  padding-bottom: 45px;
+  padding-top: 35px;
+  margin-top: 45px;
+  text-align: center;
+}
+
+.follow-body h2 {
+  font-size: 20px;
+}
+
+.follow-body button {
+  border-radius: 0px;
+  background-color: white;
+  color: black;
+  font-size: 19px;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin: 10px 0 16px 0;
+  padding: 5px 10px
+}
+
+#container {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+/*END SECTION FOLLOW PRODUCT*/
+
+/*autocomplete */
+.ui-autocomplete-input {
+  font-weight: 100;
+  color: black !important;
+}
+
+.ui-autocomplete-input:hover {
+  font-weight: 100;
+  color: black !important;
+}
+
+.ui-autocomplete {
+  max-height: 150px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.grey-letters {
+  color: #585858;
+  font-weight: 100;
+}
+
+.grey-letters-light {
+  color: #777776;
+  font-size: 16px;
+}
+
+.clear {
+  clear: both;
+}
+
+.float-right {
+  float: right;
+}
+
+.padding_top {
+  padding-top: 16px;
+  display: block;
+}
+
+.padding_right {
+  padding-right: 4px !important;
+  padding-left: 7px !important;
+}
+
+.padding_bottom {
+  padding-bottom: 30px;
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0px;
+}
+
+.wrapper {
+  margin-top: 25px;
+}
+
+.min {
+  font-size: 15px;
+  font-weight: normal;
+  text-transform: none;
+  color: #585858;
+}
+
+.italicized {
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.block-content {
+  margin: 25px 0;
+}
+
+.block {
+  display: block;
+}
+
 /*SECTION PRODUCT*/
+
+.wrapper-prod {
+  margin-top: 15px;
+}
 
 .img-bell {
   width: 55px;
@@ -1125,13 +1162,14 @@ a.panel-heading {
 /*end hover*/
 
 /*SEARCH-PRODUCT*/
-
+/*
 .black-block{
   background-color: black;
   color: white;
   margin-bottom: 0;
   padding-bottom: 40px;
   padding-top: 40px;
+  margin-top: 45px;
 }
 
 #black-block {
@@ -1159,7 +1197,7 @@ a.panel-heading {
 
 .search p {
   margin: 0;
-}
+}*/
 
 /*.fa-search {
   color: #0251FB;

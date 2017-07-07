@@ -94,7 +94,7 @@
             <h6>cherchez un produit parmi nos 2000 références</h6>
           </div>
           <div class="col-md-12 search-body">
-            <p class="grey-letters">émetteur, Code ISIN, Nom du produit, Sous-jacent</p>
+            <p>émetteur, Code ISIN, Nom du produit, Sous-jacent</p>
             <div class="col-md-offset-3 col-md-6">
               <div class="wrapper-search">
                 <div class="search-b">
@@ -154,14 +154,28 @@
     </div>
   </section>
 
-    <!-- SECTION FOLLOW -->
+  <!-- SECTION FOLLOW -->
+  <section class="follow-products">
+    <div class="container follow-body">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>suivez au quotidien vos produits sur votre espace personnel</h2>
+          <button type="button" class="btn btn-secondary"><span th:text="#{home.create.wallet}">créer mon portefeuille</span></button>
+
+        </div>
+      </div>
+    </div>
+    <div class="container" id="container">
+      <div class="black-line"></div>
+    </div>
+  </section>
 
     <!-- SECTION PRODUCTS-->
     <section class="products">
         <div class="container">
             <div class="row">
                 <!-- PRODUITS REMBOURSES -->
-                <div class="col-sm-6 col-md-6 wrapper">
+                <div class="col-sm-6 col-md-6 wrapper-prod">
                     <img src="/img/bell.png" alt="bell" class="img-responsive img-bell" th:alt="#{home.bell}" />
                     <h1 class="product-title"><span th:text="#{refund.prd}">produits remboursés</span> <span class="min" th:text="#{home.since.days}">depuis 30 jours</span></h1>
                     <div class="sous-container">
@@ -248,7 +262,7 @@
                 </div>
 
                 <!-- PRODUITS A OBSERVER -->
-                <div class="col-sm-6 col-md-6 wrapper padding_left">
+                <div class="col-sm-6 col-md-6 wrapper-prod padding_left">
                     <img src="/img/eye.png" alt="eye" class="/img-responsive img-eye" th:alt="#{home.bell}" />
                     <h1 class="product-title"><span th:text="#{to.call.prd}">produits à surveiller</span> <span class="min" th:text="#{home.from.days}">dans les 30 jours</span></h1>
                     <div class="sous-container">
@@ -435,10 +449,6 @@
                             </div>
                             <div th:unless="${bestSeller}" class="month-product">
                                 <img class="/img-responsive img-product" alt="produit du mois" th:alt="#{home.best.seller}" />
-                                <div class="counter img-prod-size">
-                                    <img src="/img/month-product.jpg" th:src="@{/products/{id}/image(id=${bestSeller.id})}" class="img-product" alt="produit du mois" th:alt="#{home.best.seller}"/>
-                                    <span class="overlay-month-p" th:if="${bestSeller.isEavest}"><img src="/img/black-logo.png" alt="logo eavest"/></span>
-                                </div>
                                 <div class="over-product"><a th:if="${bestSeller}" href="#" th:href="@{/products/{id}(id=${bestSeller.id})}"><img class="more-product" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}" /></a></div>
                             </div>
                         </div>
@@ -474,10 +484,6 @@
                     <h2 id="month-product-title"><span th:text="#{home.best.seller}">LE PRODUIT DU MOIS</span></h2>
                     <div th:if="${bestSeller}" class="month-product">
                         <div class="img-prod-size">
-                            <div class="counter img-prod-size">
-                                <img src="/img/month-product.jpg" th:src="@{/products/{id}/image(id=${bestSeller.id})}" class="img-product" alt="produit du mois" th:alt="#{home.best.seller}"/>
-                                <span class="overlay-month-p" th:if="${bestSeller.isEavest}"><img src="/img/black-logo.png" alt="logo eavest"/></span>
-                            </div>
                         </div>
                         <div class="over-product"><a th:if="${bestSeller}" href="#" th:href="@{/products/{id}(id=${bestSeller.id})}"><img class="more-product" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}" /></a></div>
                     </div>
