@@ -12,16 +12,11 @@
 	<link href="/ico/favicon.ico" rel="icon" type="image/ico" />
 
 	<!-- SOURCES -->
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" /> -->
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet" />
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
 	<link rel="stylesheet" href="https://unpkg.com/simplebar@2.2.1/dist/simplebar.css" />
-	<!--
-	<link rel="stylesheet" href="/css/easy-autocomplete.min.css" />
--->
-
 	<link rel="stylesheet" type="text/css" href="/css/home.css" />
 	<link rel="stylesheet" type="text/css" href="/css/methodology.css" />
 
@@ -55,7 +50,7 @@
 					<span th:if="${session.authUserName}" th:text="${session.authUserName}" class="italicized auth">Nom de l'utilisateur</span>
 					<span id="socials">
 						<a href="https://twitter.com/EAVEST_"><i class="fa fa-twitter"></i></a>
-						<a href="?lang=fr_FR" class="language">fr</a>/<a href="?lang=en_EN" class="language">en</a><a sec:authorize="hasRole('ROLE_ADMIN')" th:unless="${appInit}" href="/home/init">/Init</a>
+						<a href="?lang=fr_FR" class="language">fr</a>/<a href="?lang=en_EN" class="language">en</a>
 
 					</span>
 					<div class="zone-transit">
@@ -98,39 +93,39 @@
 			<div class="row">
 				<div class="col-md-12">
 					<figure>
-						<img src="img/elaboration.png" alt="elaboration" class="img-responsive">
+						<img src="/img/elaboration.png" alt="elaboration" class="img-responsive"/>
 					</figure>
-					<h1>elaboration d'investissements sur mesure</h1>
+					<h1 th:text="#{title.handmade}">elaboration d'investissements sur mesure</h1>
 				</div>
 				<div>
 					<div class="col-md-6">
-						<h2 class="blue-main-title">Accompagnement et conception</h2>
+						<h2 class="blue-main-title" th:text="#{handmade.conception}">Accompagnement et conception</h2>
 						<ul class="list-unstyled description-liste">
-							<li>Aide à la définition de l'objectif d'investissement</li>
-							<li>Sélection de la classe d'actifs</li>
-							<li>Sélection du profil produit</li>
-							<li>Définition du cahier des charges techniques</li>
-							<li>Sélection de l'enveloppe d'accueil du produit</li>
+							<li th:text="#{invest.help}">Aide à la définition de l'objectif d'investissement</li>
+							<li th:text="#{invest.select}">Sélection de la classe d'actifs</li>
+							<li th:text="#{sel.prd.prof}">Sélection du profil produit</li>
+							<li th:text="#{tech.req}">Définition du cahier des charges techniques</li>
+							<li th:text="#{sel.prd.shp}">Sélection de l'enveloppe d'accueil du produit</li>
 						</ul>
 					</div>
 					<div class="col-md-6">
-						<h2 class="blue-main-title">prise en charge de l'environnement périphérique</h2>
+						<h2 class="blue-main-title" th:text="#{handmade.env}">prise en charge de l'environnement périphérique</h2>
 						<ul class="list-unstyled description-liste">
-							<li>Aide au référencement compte titres</li>
-							<li>Aide au référencement assurance-vie française / luxembourgeoise</li>
+							<li th:text="#{ref.titles.help}">Aide au référencement compte titres</li>
+							<li th:text="#{ref.ass.help}">Aide au référencement assurance-vie française / luxembourgeoise</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="les-plus">
-				<img src="img/lesplus.png" alt="les plus" class="plus-img" class="img-responsive">
-				<span class="les-plus-title">les plus d'eavest</span>
+				<img src="/img/lesplus.png" alt="les plus" class="plus-img img-responsive"/>
+				<span class="les-plus-title" th:text="#{eav.plus}">les plus d'eavest</span>
 			</div>
 			<ul class="list-unstyled description-liste">
-				<li>Approche cross-market des investissements</li>
-				<li>Formation de collaborateurs</li>
-				<li>Mise en place d'aide à la vente pour les collaborateurs</li>
-				<li>Accompagnement en rendez-vous chez vos clients institutionnels</li>
+				<li th:text="#{cross.mkt}">Approche cross-market des investissements</li>
+				<li th:text="#{collabs.training}">Formation de collaborateurs</li>
+				<li th:text="#{collabs.help}">Mise en place d'aide à la vente pour les collaborateurs</li>
+				<li th:text="#{customer.support}">Accompagnement en rendez-vous chez vos clients institutionnels</li>
 			</ul>
 			<div class="col-md-12 separator"></div>
 		</div>
@@ -141,23 +136,23 @@
 			<div class="row">
 				<div class="col-md-12">
 					<figure>
-						<img src="img/aide.png" alt="aide" class="img-responsive">
+						<img src="/img/aide.png" alt="aide" class="img-responsive" th:alt="#{help}"/>
 					</figure>
 				</div>
 				<div class="col-md-6">
-					<h1>Une aide à la décision</h1>
+					<h1 th:text="#{decide.help}">Une aide à la décision</h1>
 					<ul class="list-unstyled description-liste">
-						<li>Aide à la sélection des banques partenaires sur le produit</li>
-						<li>Appel d'offre auprès des banques sélectionnées</li>
-						<li>Aide à la décision lors de l'appel d'offre</li>
+						<li th:text="#{partner.help}">Aide à la sélection des banques partenaires sur le produit</li>
+						<li th:text="#{call.tender.help}">Appel d'offre auprès des banques sélectionnées</li>
+						<li th:text="#{call.tender.decide.help}">Aide à la décision lors de l'appel d'offre</li>
 					</ul>
 				</div>
 				<div class="col-md-6 les-plus-2">
-					<img src="img/lesplus.png" alt="les plus" class="plus-img img-responsive">
-					<span class="les-plus-title">les plus d'eavest</span>
+					<img src="/img/lesplus.png" alt="les plus" th:alt="#{eav.advantages}" class="plus-img img-responsive"/>
+					<span class="les-plus-title" th:text="#{eav.plus}">les plus d'eavest</span>
 					<ul class="list-unstyled description-liste">
-						<li>100% indépendant</li>
-						<li>Des relations étroites avec les banques partenaires</li>
+						<li th:text="#{eav.indep}">100% indépendant</li>
+						<li th:text="#{bank.partner}">Des relations étroites avec les banques partenaires</li>
 					</ul>
 				</div>
 			</div>
@@ -172,24 +167,24 @@
 			<div class="row">
 				<div class="col-md-12">
 					<figure>
-						<img src="img/suivi.png" alt="suivi" class="img-responsive">
+						<img src="/img/suivi.png" alt="suivi" th:alt="#{eav.follow}" class="img-responsive"/>
 					</figure>
 				</div>
 				<div class="col-md-6">
-					<h1>Le suivi exclusif eavest</h1>
+					<h1 th:text="#{eav.excl.foll}">Le suivi exclusif eavest</h1>
 					<ul class="list-unstyled description-liste">
-						<li>Reporting EAVEST de suivi</li>
-						<li>Alertes EAVEST Post Strike pour actions</li>
-						<li>Newsletter d'information marché</li>
+						<li th:text="#{eav.report.foll}">Reporting EAVEST de suivi</li>
+						<li th:text="#{eav.post.alarm}">Alertes EAVEST Post Strike pour actions</li>
+						<li th:text="#{makt.newsletter}">Newsletter d'information marché</li>
 					</ul>
 				</div>
 				<div class="col-md-6 les-plus-2">
-					<img src="img/lesplus.png" alt="les plus" class="plus-img img-responsive">
-					<span class="les-plus-title">les plus d'eavest</span>
+					<img src="/img/lesplus.png" alt="les plus" th:alt="#{eav.advantages}" class="plus-img img-responsive"/>
+					<span class="les-plus-title" th:text="#{eav.plus}">les plus d'eavest</span>
 					<ul class="list-unstyled description-liste">
-						<li>Un reporting identique quelque soit l'émetteur du produit</li>
-						<li>Un reporting par produit, par portefeuille, par porteur</li>
-						<li>Des alertes produit personnalisées</li>
+						<li th:text="#{same.report}">Un reporting identique quelque soit l'émetteur du produit</li>
+						<li th:text="#{accurate.report}">Un reporting par produit, par portefeuille, par porteur</li>
+						<li th:text="#{product.alarm}">Des alertes produit personnalisées</li>
 					</ul>
 				</div>
 			</div>
@@ -201,33 +196,33 @@
 <!-- Section Agrément -->
 <section class="agrement" id="agrement">
 	<div class="container">
-		<h1>Notre agrément</h1>
+		<h1 th:text="#{home.agreement}">Notre agrément</h1>
 		<div class="row">
 			<div class="col-md-6">
 				<div class="row">
 					<div class="col-md-3">
 						<figure>
-							<img src="img/agreement.png" alt="Notre agrément" class="img-responsive">
+							<img src="/img/agreement.png" alt="Notre agrément" class="img-responsive" th:alt="#{home.agreement}"/>
 						</figure>
 					</div>
 					<div class="col-md-9">
-						<p>Conseil en Investissement Financier (ANACOFI CIF n°497943639) indépendante de tout groupe bancaire, EAVEST conçoit les solutions d'investissement sur mesure à destination des banques privées, Family Offices et sociétés de gestion, dans le respect le plus strict des normes réglementaires.</p>
+						<p th:text="#{agrmt.teaser}">Conseil en Investissement Financier (ANACOFI CIF n°497943639) indépendante de tout groupe bancaire, EAVEST conçoit les solutions d'investissement sur mesure à destination des banques privées, Family Offices et sociétés de gestion, dans le respect le plus strict des normes réglementaires.</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-6 agrement-text-bold">
-				<p><b>EAVEST est une société réglementée.</b></p>
-				<p><b>EAVEST a obtenu le statut de Conseil en Investissements Financiers auprès de l'ANACOFI, association agréée par l'Autorité des Marchés Financiers (AMF).</b></p>
-				<p><b>EAVEST est également immatriculé à l'ORIAS.</b></p>
+				<p><b th:text="#{agrmt.arg.1}">EAVEST est une société réglementée.</b></p>
+				<p><b th:text="#{agrmt.arg.2}">EAVEST a obtenu le statut de Conseil en Investissements Financiers auprès de l'ANACOFI, association agréée par l'Autorité des Marchés Financiers (AMF).</b></p>
+				<p><b th:text="#{agrmt.arg.3}">EAVEST est également immatriculé à l'ORIAS.</b></p>
 			</div>
 		</div>
 		<div class="col-md-12">
-			<p>Instauré par la loi sécurité financière n°2003-706 du 1<sup>er</sup> août 2003, le statut de Conseiller en Investissements Financiers (CIF) vise à renforcer la protection des investisseurs par un meilleur encadrement de cet acteur de la commercialisation des produits financiers. Tout CIF est ainsi soumis à un certain nombre d'obligations et d'interdictions, contrôlées par l'AMF.</p>
+			<p th:text="#{agrmt.law}">Instauré par la loi sécurité financière n°2003-706 du 1<sup>er</sup> août 2003, le statut de Conseiller en Investissements Financiers (CIF) vise à renforcer la protection des investisseurs par un meilleur encadrement de cet acteur de la commercialisation des produits financiers. Tout CIF est ainsi soumis à un certain nombre d'obligations et d'interdictions, contrôlées par l'AMF.</p>
 		</div>
 		<div class="col-md-12 partner-imgs img-responsive">
-			<span><img src="img/amf2.png" alt="AMF"></span>
-			<span><img src="img/orias2.png" alt="Orias"></span>
-			<span><img src="img/anacofi2.png" alt="Anacofi"></span>
+			<span><img src="/img/amf2.png" alt="AMF" th:alt="#{partn.amf}"/></span>
+			<span><img src="/img/orias2.png" alt="Orias" th:alt="#{partn.orias}"/></span>
+			<span><img src="/img/anacofi2.png" alt="Anacofi" th:alt="#{partn.anacofi}"/></span>
 		</div>
 	</div>
 	<div class="container">
@@ -237,21 +232,21 @@
 <!-- Section Partenaires -->
 <section class="partenaires" id="partenaires">
 	<div class="container">
-		<h1>Nos partenaires</h1>
-		<p>En collaboration avec plus de 15 banques d'investissement partenaires, les stratégies sont pensées et conçues grâce à nos équipes d'ingénierie financière cross asset dédiées à Paris, Genève et Luxembourg.</p>
+		<h1 th:text="#{home.partners}">Nos partenaires</h1>
+		<p th:text="#{partn.teaser}">En collaboration avec plus de 15 banques d'investissement partenaires, les stratégies sont pensées et conçues grâce à nos équipes d'ingénierie financière cross asset dédiées à Paris, Genève et Luxembourg.</p>
 		<div class="partner-imgs img-responsive col-md-12">
-			<span><img src="img/partenaires/creditsuisse.png" alt="Le Crédit Suisse"></span>
-			<span><img src="img/partenaires/natixis.png" alt="Natixis"></span>
-			<span><img src="img/partenaires/jpmorgan.png" alt="J.P. Morgan"></span>
-			<span><img src="img/partenaires/bnp.png" alt="BNP Paribas"></span>
-			<span><img src="img/partenaires/morganstanley.png" alt="Morgan Stanley"></span>
+			<span><img src="/img/partenaires/creditsuisse.png" alt="Le Crédit Suisse" th:alt="#{partn.cs}"/></span>
+			<span><img src="/img/partenaires/natixis.png" alt="Natixis" th:alt="#{partn.natixis}"/></span>
+			<span><img src="/img/partenaires/jpmorgan.png" alt="J.P. Morgan" th:alt="#{partn.jpm}"/></span>
+			<span><img src="/img/partenaires/bnp.png" alt="BNP Paribas" th:alt="#{partn.bnp}"/></span>
+			<span><img src="/img/partenaires/morganstanley.png" alt="Morgan Stanley" th:alt="#{partn.ms}"/></span>
 		</div>
 		<div class="partner-imgs col-md-12">
-			<span><img src="img/partenaires/societegenerale.png" alt="Société Générale"></span>
-			<span><img src="img/partenaires/rbc.png" alt="RBC"></span>
-			<span><img src="img/partenaires/ubs.png" alt="UBS"></span>
-			<span><img src="img/partenaires/commerzbank.png" alt="Commerzbank"></span>
-			<span><img src="img/partenaires/leonteq.png" alt="Leonteq"></span>
+			<span><img src="/img/partenaires/societegenerale.png" alt="Société Générale" th:alt="#{partn.sg}"/></span>
+			<span><img src="/img/partenaires/rbc.png" alt="RBC" th:alt="#{partn.rbc}"/></span>
+			<span><img src="/img/partenaires/ubs.png" alt="UBS" th:alt="#{partn.ubs}"/></span>
+			<span><img src="/img/partenaires/commerzbank.png" alt="Commerzbank" th:alt="#{partn.commerz}"/></span>
+			<span><img src="/img/partenaires/leonteq.png" alt="Leonteq" th:alt="#{partn.leon}"/></span>
 		</div>
 	</div>
 	<div class="container">
@@ -261,34 +256,34 @@
 <!-- Section valeurs -->
 <section class="valeurs" id="valeurs">
 	<div class="container">
-		<h1>Nos valeurs</h1>
+		<h1 th:text="#{home.values}">Nos valeurs</h1>
 		<div class="row">
 			<div class="col-md-6">
 				<figure>
-					<img src="img/independance.png" alt="indépendance" class="img-responsive" id="mission-inde-img">
+					<img src="/img/independance.png" alt="indépendance" class="img-responsive" id="mission-inde-img" th:alt="#{home.val.independancy}"/>
 				</figure>
-				<h2 class="blue-main-title">indépendance</h2>
-				<p>La création de EAVEST est partie d'un besoin exprimé par un nombre croissant de clients pour un conseil indépendant sur les produits structurés.</p>
-				<p><b>Indépendant de tout groupe bancaire, EAVEST est détenu à 100% par son fondateur.</b></p>
+				<h2 class="blue-main-title" th:text="#{home.val.independancy}">indépendance</h2>
+				<p th:text="#{val.creation}">La création de EAVEST est partie d'un besoin exprimé par un nombre croissant de clients pour un conseil indépendant sur les produits structurés.</p>
+				<p><b th:text="#{val.teaser}">Indépendant de tout groupe bancaire, EAVEST est détenu à 100% par son fondateur.</b></p>
 				<figure>
-					<img src="img/ouverture.png" alt="ouverture" class="img-responsive" id="mission-ouvert-img">
+					<img src="/img/ouverture.png" alt="ouverture" class="img-responsive" id="mission-ouvert-img" th:alt="#{home.val.open}"/>
 				</figure>
-				<h2 class="blue-main-title">ouverture</h2>
-				<p>EAVEST travaille en partenariat avec les plus grandes banques d'investissement mondiales pour donner les meilleures idées et les meilleurs produits à ses clients.</p>
+				<h2 class="blue-main-title" th:text="#{home.val.open}">ouverture</h2>
+				<p th:text="#{val.the.best}">EAVEST travaille en partenariat avec les plus grandes banques d'investissement mondiales pour donner les meilleures idées et les meilleurs produits à ses clients.</p>
 
 			</div>
 			<div class="col-md-6">
 				<figure>
-					<img src="img/expertise.png" alt="expertise" class="img-responsive" id="mission-exper-img">
+					<img src="/img/expertise.png" alt="expertise" class="img-responsive" id="mission-exper-img" th:alt="#{home.val.knowledge}"/>
 				</figure>
-				<h2 class="blue-main-title">Expertise</h2>
-				<p>Une compétence de 18 ans en salles de marchés pour 4 établissements bancaires prestigieux sur les produits structurés au service de clients institutionnels gérants de fortune.</p>
+				<h2 class="blue-main-title" th:text="#{home.val.knowledge}">Expertise</h2>
+				<p th:text="#{knwl.history}">Une compétence de 18 ans en salles de marchés pour 4 établissements bancaires prestigieux sur les produits structurés au service de clients institutionnels gérants de fortune.</p>
 				<figure>
-					<img src="img/proximite.png" alt="proximité" class="img-responsive" id="mission-proxi-img">
+					<img src="/img/proximite.png" alt="proximité" class="img-responsive" id="mission-proxi-img" th:alt="#{home.val.proximity}"/>
 				</figure>
-				<h2 class="blue-main-title">proximité</h2>
-				<p>EAVEST s'engage à assurer un service sur-mesure pour ses clients à travers des outils de suivi et de reporting.</p>
-				<p><b>La disponibilité et la rapidité de réponse constituent également des engagements forts de la société.</b></p>
+				<h2 class="blue-main-title" th:text="#{home.val.proximity}">proximité</h2>
+				<p th:text="#{prox.promiss}">EAVEST s'engage à assurer un service sur-mesure pour ses clients à travers des outils de suivi et de reporting.</p>
+				<p><b th:text="#{prox.fast}">La disponibilité et la rapidité de réponse constituent également des engagements forts de la société.</b></p>
 			</div>
 		</div>
 	</div>
@@ -334,7 +329,6 @@
 	<script src="/js/simplebar.js"></script>
 	<script src="https://unpkg.com/simplebar@2.2.1/dist/simplebar.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
- 	<!-- Script for autocompleting the filter text box for searching products -->
 
  </body>
 

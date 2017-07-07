@@ -32,6 +32,10 @@ b {
 
 /*Section ELABORATION*/
 
+section#elaboration {
+    margin-top: 35px;
+}
+
 .elaboration figure img {
   width: 60px;
 }

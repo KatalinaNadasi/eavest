@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="https://unpkg.com/simplebar@2.2.1/dist/simplebar.css" />
 
     <link rel="stylesheet" type="text/css" href="/css/home.css" />
-        <link rel="stylesheet" type="text/css" href="/css/products.css" />
 
     <!-- COMPATIBILITE IE8 -->
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -72,10 +71,10 @@
             <div class="col-md-12 container-fluid navbar">
                 <ul class="navbar list-inline list-unstyled list-menu">
                     <li id="menu-home" class="selected"><a href="/home" th:text="#{eav.menu.home}">Home</a></li>
-                    <li id="menu-wallet"><a href="/wallet" th:text="#{eav.menu.wallet}">Mon Portefeuille</a></li>
-                    <li id="menu-method"><a href="http://eavest.com/methodologie-2/" th:text="#{eav.menu.methodology}">Methodologie</a></li>
+                    <li id="menu-method"><a href="/methodology" th:text="#{eav.menu.methodology}">Methodologie</a></li>
                     <li id="menu-mesure"><a href="http://eavest.com/sur-mesure/" th:text="#{eav.menu.handmade}">sur-mesure</a></li>
                     <li id="menu-products"><a href="/products" th:text="#{eav.menu.products}">Produits</a></li>
+                    <li id="menu-wallet"><a href="/wallet" th:text="#{eav.menu.wallet}">Mon Portefeuille</a></li>
                     <li id="menu-blog"><a href="http://eavest.com/category/blog/" th:text="#{eav.menu.blog}">Le Blog</a></li>
                     <li id="menu-faq"><a href="http://eavest.com/f-a-q/" th:text="#{eav.menu.faq}">FAQ</a></li>
                     <li id="menu-contact"><a href="mailto:contact@eavest.com" th:text="#{eav.menu.contacts}">Contact</a></li>
@@ -95,7 +94,7 @@
             <h6>cherchez un produit parmi nos 2000 références</h6>
           </div>
           <div class="col-md-12 search-body">
-            <p class="grey-letters">émetteur, code ISIN, nom du produit, sous-jacent</p>
+            <p class="grey-letters">émetteur, Code ISIN, Nom du produit, Sous-jacent</p>
             <div class="col-md-offset-3 col-md-6">
               <div class="wrapper-search">
                 <div class="search-b">
@@ -118,31 +117,33 @@
             </div>
             <div th:unless="${filteredProducts}" class="row filters">
               <div class="sous-container">
-                <form action="#" th:object="${filter}"
-                  th:action="@{/products/filter}" method="POST">
-                  <div class="col-xs-12 col-sm-6 col-md-3 filter-1">
-                    <label for="filter_1" th:text="#{prd.bank.name}">émetteur</label>
-                    <input type="text" class="text" name="bank_name" id="filter_1"
+                <div class="col-md-12 search-row">
+                    <form action="#" th:object="${filter}"
+                    th:action="@{/products/filter}" method="POST">
+                    <div class="col-xs-12 col-sm-6 col-md-3 filter-1">
+                      <label for="filter_1" th:text="#{prd.bank.name}">émetteur</label>
+                      <input type="text" class="text" name="bank_name" id="filter_1"
                       autocomplete="off" th:field="*{deliver}" />
-                  </div>
-                  <div class="col-xs-12 col-sm-6 col-md-3 filter-2">
-                    <label for="filter_2" th:text="#{prd.isin.code}">code isin</label> <input type="text" class="text" name="code_isin"
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 filter-2">
+                      <label for="filter_2" th:text="#{prd.isin.code}">code isin</label> <input type="text" class="text" name="code_isin"
                       id="filter_2" autocomplete="off" th:field="*{isin}" />
-                  </div>
-                  <div class="col-xs-12 col-sm-6 col-md-3 filter-3">
-                    <label for="filter_3" th:text="#{prd.name}">nom du produit</label> <input type="text" class="text" name="product_name"
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 filter-3">
+                      <label for="filter_3" th:text="#{prd.name}">nom du produit</label> <input type="text" class="text" name="product_name"
                       id="filter_3" autocomplete="off" th:field="*{label}" />
-                  </div>
-                  <div class="col-xs-12 col-sm-6 col-md-3 filter-4">
-                    <label for="filter_4" th:text="#{prd.undrl.asset}">sous-jacent</label>
-                    <input type="text" class="text" name="base" id="filter_4"
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 filter-4">
+                      <label for="filter_4" th:text="#{prd.undrl.asset}">sous-jacent</label>
+                      <input type="text" class="text" name="base" id="filter_4"
                       autocomplete="off" th:field="*{labelSousJacent}" />
-                  </div>
-                  <div class="col-md-12 filter-search">
-                    <input type="submit" value="Rechercher" th:value="#{prd.find}"
-                      id="filter-search" class="btn btn-default log" />
-                  </div>
-                </form>
+                    </div>
+                </div>
+                <div class="col-md-12 filter-search">
+                  <input type="submit" value="Rechercher" th:value="#{prd.find}"
+                  id="filter-search" class="btn btn-default log" />
+                </div>
+              </form>
               </div>
             </div>
           </div>
@@ -224,6 +225,8 @@
                                                     </li>
                                                 </ul>
                                                 <ul class="list-unstyled">
+                                                    <li class="light-blue" th:text="#{prd.distance}">distance</li>
+                                                    <li class="grey-uppercase" th:text="${refund.distance}">XXX</li>
                                                     <li class="light-blue" th:text="#{undrl.asset}">sous-jacent</li>
                                                     <li class="grey-uppercase" th:text="${refund.prdSousJacent.label}">euro istoxx&reg; ewc 50</li>
                                                     <li class="light-blue" th:text="#{prd.status}">statut</li>
@@ -307,7 +310,8 @@
                                                         <span class="light-blue" id="cours">
 															<span class="light-blue" th:text="#{prd.strike}">niveau initial</span>
                                                         </span>
-                                                        <span class="bold-blue" th:text="${tocall.strike}">4.254</span>
+                                                        <span th:if="${tocall.strike}" class="bold-blue" th:text="${tocall.strike}">4.254</span>
+                                                        <span th:unless="${tocall.strike}" class="bold-blue" th:text="#{contact.us}">Compose mon phone-tel</span>
                                                     </li>
                                                 </ul>
                                                 <ul class="list-unstyled">
@@ -599,9 +603,6 @@
                   </p>
                   <div class="over-eavest"><a href="http://eavest.com/"><img src="/img/more-hover.png" class="more-eavest" alt="voir-plus" th:alt="#{get.more}"/></a></div>
                 </div>
-
-
-
                 <div class="col-sm-7 col-md-5 grey-block-3">
                     <h4 th:text="#{home.agreement}">Notre agrément</h4>
                     <p class="grey-letters">
@@ -625,7 +626,6 @@
                       </div>
                   </div>
                 </div>
-
                 <div class="col-md-3 white-block-partner">
                     <h4 id="partner-title" th:text="#{home.partners}">Partenaires</h4>
                     <p class="grey-letters" id="partner-p">
