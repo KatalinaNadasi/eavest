@@ -15,7 +15,7 @@ section {
 }
 
 body {
-  padding-top: 250px;
+  padding-top: 225px;
   background: #F2F2F2;
   color: #020202;
   font-family: 'Open Sans', 'Quicksand', Arial, sans-serif;
@@ -121,6 +121,106 @@ h5 {
   text-transform: uppercase;
   margin-top: 15px;
 }
+
+h6 {
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+/*SECTION SEARCH*/
+
+.search-header {
+  background-color: #0251FB;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.search-header h6 {
+  padding: 25px;
+}
+
+.search-body {
+  background-color: white;
+  text-align: center;
+}
+
+.search-body p:nth-child(1) {
+  padding: 31px 0 0 0;
+  font-size: 17px;
+}
+
+.search-b {
+  height: 30px;
+  border: solid 2px #0251FB;
+  margin-top: 15px;
+  color: black;
+}
+
+.search-body p {
+  text-transform: capitalize;
+}
+
+.wrapper-search {
+  padding: 0 37px;
+}
+
+#search-style {
+  border: solid 1px white;
+  border-right: none;
+  height: auto;
+  -webkit-transform: translateY(2px);
+  -moz-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  -o-transform: translateY(2px);
+  transform: translateY(2px);
+  color: black;
+}
+
+#search-style :focus {
+  background: transparent;
+  color: black !important;
+}
+
+section .search button[type="submit"]{
+  background: transparent;
+  border: none;
+}
+
+.fa-search {
+  position: absolute;
+  bottom: 18%;
+  right: 12%;
+  max-width: 10% !important;
+  color: blue;
+}
+
+.search-criterion {
+  margin: 25px 0 35px;
+  display: block;
+}
+
+.search-criterion span {
+  font-size: 16px;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+.search-criterion img {
+  width: 17px;
+  transform: translateY(-2px);
+}
+
+.filters label {
+  display: block;
+  font-weight: 100;
+  font-size: 13px;
+  padding-bottom: 2px;
+  text-transform: uppercase;
+}
+
+
+/*END SECTION SEARCH*/
 
 /*autocomplete */
 .ui-autocomplete-input {
@@ -1060,7 +1160,7 @@ a.panel-heading {
   margin: 0;
 }
 
-.fa-search {
+/*.fa-search {
   color: #0251FB;
   border-left: none;
   margin-top: -3px;
@@ -1074,9 +1174,9 @@ a.panel-heading {
   padding: 3px;
   position: absolute;
   right: 36px;
-}
+}*/
 
-input[type=search] {
+/*section .search-product input[type=search] {
   border: solid 1px white;
   border-right: none;
   height: 37px;
@@ -1095,7 +1195,7 @@ input[type=search] {
   color: black;
 }
 
-input[type="search" i]:focus {
+section .search-product input[type="search" i]:focus {
   background: transparent;
   color: black !important;
 }
@@ -1103,7 +1203,7 @@ input[type="search" i]:focus {
 button[type="submit"]{
   background: transparent;
   border: none;
-}
+}*/
 
 .ui-menu .ui-menu-item a{
     background: transparent;
@@ -2084,7 +2184,7 @@ a#arrow-position {
   .auth {
     margin-top: 10px;
   }
-  input[type=search] {
+  section .search-product input[type=search] {
     width: 68%;
   }
   .agreement-block {
@@ -2170,7 +2270,7 @@ a#arrow-position {
 }
 
 @media only screen and (min-device-width : 500px) and (max-device-width : 768px){
-  input[type=search] {
+  section .search-product input[type=search] {
     width: 81%;
   }
 	#methodo-img2 {
@@ -2487,7 +2587,7 @@ a#arrow-position {
 }
 
 @media only screen and (min-device-width : 760px) and (max-device-width : 987px){
-  input[type=search] {
+  section .search-product input[type=search] {
     width: 75%;
   }
 }
@@ -2610,7 +2710,7 @@ a#arrow-position {
 
 /*2- Desktops and laptops*/
   @media(min-width:992px){
-  input[type=search] {
+  section .search-product input[type=search] {
     width: 59%;
   }
   .container {

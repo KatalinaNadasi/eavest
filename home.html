@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://unpkg.com/simplebar@2.2.1/dist/simplebar.css" />
 
     <link rel="stylesheet" type="text/css" href="/css/home.css" />
+        <link rel="stylesheet" type="text/css" href="/css/products.css" />
 
     <!-- COMPATIBILITE IE8 -->
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -85,6 +86,72 @@
             </div>
         </div>
     </nav>
+
+    <!-- SECTION SEARCH -->
+    <section class="search-product">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 search-header">
+            <h6>cherchez un produit parmi nos 2000 références</h6>
+          </div>
+          <div class="col-md-12 search-body">
+            <p class="grey-letters">émetteur, code ISIN, nom du produit, sous-jacent</p>
+            <div class="col-md-offset-3 col-md-6">
+              <div class="wrapper-search">
+                <div class="search-b">
+                  <span>
+                    <form th:object="${search}" action="#" th:action="@{/home/super-find}" method="post">
+                      <input type="search" id="search-style">
+                      <!-- <input type="search" id="super-find-product" autocomplete="off" th:field="*{text}"/> -->
+                      <button type="submit"><i class="fa fa-1x fa-search"></i>
+                      </button>
+                    </form>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="search-criterion">
+                <img src="/img/cross-bold.png" alt="croix"/>
+                <span>affiner les critères de recherche</span>
+              </div>
+            </div>
+            <div th:unless="${filteredProducts}" class="row filters">
+              <div class="sous-container">
+                <form action="#" th:object="${filter}"
+                  th:action="@{/products/filter}" method="POST">
+                  <div class="col-xs-12 col-sm-6 col-md-3 filter-1">
+                    <label for="filter_1" th:text="#{prd.bank.name}">émetteur</label>
+                    <input type="text" class="text" name="bank_name" id="filter_1"
+                      autocomplete="off" th:field="*{deliver}" />
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-3 filter-2">
+                    <label for="filter_2" th:text="#{prd.isin.code}">code isin</label> <input type="text" class="text" name="code_isin"
+                      id="filter_2" autocomplete="off" th:field="*{isin}" />
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-3 filter-3">
+                    <label for="filter_3" th:text="#{prd.name}">nom du produit</label> <input type="text" class="text" name="product_name"
+                      id="filter_3" autocomplete="off" th:field="*{label}" />
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-3 filter-4">
+                    <label for="filter_4" th:text="#{prd.undrl.asset}">sous-jacent</label>
+                    <input type="text" class="text" name="base" id="filter_4"
+                      autocomplete="off" th:field="*{labelSousJacent}" />
+                  </div>
+                  <div class="col-md-12 filter-search">
+                    <input type="submit" value="Rechercher" th:value="#{prd.find}"
+                      id="filter-search" class="btn btn-default log" />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION FOLLOW -->
 
     <!-- SECTION PRODUCTS-->
     <section class="products">
@@ -280,12 +347,12 @@
                         <p class="grey-letters"><span th:text="#{prd.bank.name}">Émetteur</span>, <span th:text="#{prd.isin.code}">Code ISIN</span>,</p>
                         <p class="grey-letters"><span th:text="#{prd.name}">Nom du produit</span>, <span th:text="#{prd.undrl.asset}">Sous-jacent</span></p>
                         <div class="search-bar">
-                            <span>
- 								<form th:object="${search}" action="#" th:action="@{/home/super-find}" method="post">
- 									<input type="search" id="super-find-product" autocomplete="off" th:field="*{text}"/>
- 									<button type="submit"><i class="fa fa-2x fa-search"></i></button>
- 								</form>
- 							</span>
+                          <span>
+ 								            <form th:object="${search}" action="#" th:action="@{/home/super-find}" method="post">
+ 									          <input type="search" id="super-find-product" autocomplete="off" th:field="*{text}"/>
+ 									          <button type="submit"><i class="fa fa-2x fa-search"></i></button>
+ 								            </form>
+ 							            </span>
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -386,13 +453,10 @@
             <div class="search">
                 <p class="grey-letters"><span th:text="#{prd.bank.name}">Émetteur</span>, <span th:text="#{prd.isin.code}">Code ISIN</span>,</p>
                 <p class="grey-letters"><span th:text="#{prd.name}">Nom du produit</span>, <span th:text="#{prd.undrl.asset}">Sous-jacent</span></p>
-                <div class="search-bar">
-                    <span>
-		 				<form>
-		 					<input type="search" id="find-product" autocomplete="off"/>
-		 					<button type="submit"><i class="fa fa-2x fa-search"></i></button>
-		 				</form>
-		 			</span>
+                <div class="counter">
+                  <div class="search-bar">
+                    <form><input type="search" id="find-product" autocomplete="off"/><button type="submit"><i class="fa fa-2x fa-search"></i></button></form>
+                  </div>
                 </div>
             </div>
             <div class="clear"></div>
