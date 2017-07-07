@@ -106,6 +106,31 @@ $(function() {
   })
 });
 
+
+// Section search open filter-row-container on click
+$(function() {
+  $('#refine').click(function(){
+    $('#filter-row-container').toggleClass('filter-row-container-h filter-row-container');
+    $('#cross').toggleClass('cross-h cross');
+  });
+  $('#cross').click(function(){
+    $('#filter-row-container').toggleClass('filter-row-container-h filter-row-container');
+    $('#cross').toggleClass('cross-h cross');
+  });
+
+});
+
+
+// $(function() {
+//   $('#refine').click(function(){
+//     $('.filter-row-container, #cross').show();
+//   });
+//   $('#refine').click(function(){
+//     $('.filter-row-container, #cross').hide();
+//   });
+// });
+
+
 // Set a fontSize relative to a number of words (dynamic content for figure of the month)
 $(function() {
 

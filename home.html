@@ -111,46 +111,48 @@
             </div>
             <div class="col-md-12">
               <div class="search-criterion">
-                <img src="/img/cross-bold.png" alt="croix"/>
-                <span>affiner les critères de recherche</span>
+                <img src="/img/cross-bold.png" alt="croix" class="cross-h" id="cross"/>
+                <span id="refine">affiner les critères de recherche</span>
               </div>
             </div>
-            <div th:unless="${filteredProducts}" class="row filters">
-              <div class="sous-container">
-                <div class="col-md-12 search-row">
-                    <form action="#" th:object="${filter}"
-                    th:action="@{/products/filter}" method="POST">
-                    <div class="col-xs-12 col-sm-6 col-md-3 filter-1">
-                      <label for="filter_1" th:text="#{prd.bank.name}">émetteur</label>
-                      <input type="text" class="text" name="bank_name" id="filter_1"
-                      autocomplete="off" th:field="*{deliver}" />
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3 filter-2">
-                      <label for="filter_2" th:text="#{prd.isin.code}">code isin</label> <input type="text" class="text" name="code_isin"
-                      id="filter_2" autocomplete="off" th:field="*{isin}" />
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3 filter-3">
-                      <label for="filter_3" th:text="#{prd.name}">nom du produit</label> <input type="text" class="text" name="product_name"
-                      id="filter_3" autocomplete="off" th:field="*{label}" />
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3 filter-4">
-                      <label for="filter_4" th:text="#{prd.undrl.asset}">sous-jacent</label>
-                      <input type="text" class="text" name="base" id="filter_4"
-                      autocomplete="off" th:field="*{labelSousJacent}" />
-                    </div>
-                </div>
-                <div class="col-md-12 filter-search">
-                  <input type="submit" value="Rechercher" th:value="#{prd.find}"
-                  id="filter-search" class="btn btn-default log" />
-                </div>
-              </form>
+            <div class="col-md-12 filter-row-container-h" id="filter-row-container">
+              <div th:unless="${filteredProducts}" class="row filters">
+                <div class="sous-container">
+                  <div class="col-md-12 search-row">
+                      <form action="#" th:object="${filter}"
+                      th:action="@{/products/filter}" method="POST">
+                      <div class="col-xs-12 col-sm-6 col-md-3 filter-1">
+                        <label for="filter_1" th:text="#{prd.bank.name}">émetteur</label>
+                        <input type="text" class="text" name="bank_name" id="filter_1"
+                        autocomplete="off" th:field="*{deliver}" />
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-3 filter-2">
+                        <label for="filter_2" th:text="#{prd.isin.code}">code isin</label> <input type="text" class="text" name="code_isin"
+                        id="filter_2" autocomplete="off" th:field="*{isin}" />
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-3 filter-3">
+                        <label for="filter_3" th:text="#{prd.name}">nom du produit</label> <input type="text" class="text" name="product_name"
+                        id="filter_3" autocomplete="off" th:field="*{label}" />
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-3 filter-4">
+                        <label for="filter_4" th:text="#{prd.undrl.asset}">sous-jacent</label>
+                        <input type="text" class="text" name="base" id="filter_4"
+                        autocomplete="off" th:field="*{labelSousJacent}" />
+                      </div>
+                  </div>
+                  <div class="col-md-12 filter-search">
+                    <input type="submit" value="Rechercher" th:value="#{prd.find}"
+                    id="filter-search" class="btn btn-default log" />
+                  </div>
+                </form>
               </div>
             </div>
           </div>
+
         </div>
       </div>
-
-    </section>
+    </div>
+  </section>
 
     <!-- SECTION FOLLOW -->
 

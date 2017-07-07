@@ -248,6 +248,18 @@ section .search button[type="submit"]{
     text-transform: uppercase;
 }
 
+.filter-row-container-h, .cross-h {
+  display: none !important;
+}
+
+.filter-row-container {
+  display: block;
+}
+
+.cross {
+  display: -webkit-inline-box;
+}
+
 .search-row {
   margin-left: 73px;
 }
