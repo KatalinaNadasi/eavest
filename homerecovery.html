@@ -392,11 +392,10 @@
   					</div>
  					<!-- hover -->
           <div class="over">
-            <a href="http://eavest.com/"><img src="/img/more-hover.png" class="more-product" id="more-product-2" alt="voir-plus" th:alt="#{get.more}"/></a>
+            <div class="more-product-1">
+              <a><img src="/img/more-hover.png" class="more-product" id="more-product-1" alt="voir-plus" th:alt="#{get.more}"/></a>
+            </div>
           </div>
- 					<!-- <div class="over">
- 					<span><img class="more-product" id="more-product-2" src="img/more-hover.png" alt="voir-plus" /></span>
-        </div> -->
  				<!-- end panel -->
   				</div>
  			<!-- end sous-container -->
@@ -742,9 +741,9 @@
  					</div>
  					</div>
  					<!-- hover -->
- 					<a class="over">
- 						<span><img class="more-product" id="more-product-2" src="img/more-hover.png" alt="voir-plus" /></span>
- 					</a>
+          <div class="over more-product-2">
+            <a><img src="/img/more-hover.png" class="more-product" id="more-product-2" alt="voir-plus" th:alt="#{get.more}"/></a>
+          </div>
  					</div>
  				</div>
  <!-- END LONG PRODUITS A RAPPELER -->
@@ -1145,22 +1144,106 @@
 
  	<!-- Script for autocompleting the filter text box for searching products -->
 
- 	<script th:inline="javascript">
- 	/*<![CDATA[*/
- 	$(document).ready(function(){
- 		// à décommenter KNA avant commit
- 		// var productTags = [[${productNames}]];
- 		var maListe = [];
- 		/*console.log(productTags);*/
- 		$('#find-product').autocomplete({
- 		// à décommenter KNA avant commit
- 		// source: productTags
- 		source: maListe
- 		});
- 	});
- 	/*]]>*/
- 	</script>
+  <script th:inline="javascript">
+      /*<![CDATA[*/
+      $(document).ready(function() {
+          var productTags = [
+              [$ {
+                  productNames
+              }]
+          ];
+          // var maListe = ['tata'];
+          /*console.log(productTags);*/
+          $('#find-product').autocomplete({
+              // à décommenter KNA avant commit
+              source: productTags,
+          });
+      });
+
+      $(document).ready(function() {
+          // à décommenter KNA avant commit
+          var productTags = {
+              data: [
+                  [$ {
+                      productNames
+                  }]
+              ],
+              list: {
+                  maxNumberOfElements: 4,
+                  match: {
+                      enabled: true
+                  },
+                  sort: {
+                      enabled: true
+                  }
+              },
+              theme: "square"
+          };
+          // 	var maListe = ['tata'];
+          /*console.log(productTags);*/
+          $('#countries').easyAutocomplete(productTags);
+      });
+
+      $(document).ready(function() {
+          var productTags = [
+              [$ {
+                  productNames
+              }]
+          ];
+          /*console.log(productTags);*/
+          $('#super-find-product').autocomplete({
+              source: productTags
+          });
+      });
+
+      // Section search open filter-row-container on click
+      $(function() {
+        $('#refine').click(function(){
+          $('#filter-row-container').toggleClass('filter-row-container-h filter-row-container');
+          $('#cross').toggleClass('cross-h cross');
+        });
+        $('#cross').click(function(){
+          $('#filter-row-container').toggleClass('filter-row-container-h filter-row-container');
+          $('#cross').toggleClass('cross-h cross');
+        });
+
+      });
+
+      // ACCORDION redirection selon nombre de produits
+      $(document).ready(function() {
+          var refundProducts = /*[[${nbRefundProducts}]] 61;
+          var tocallProducts = /*[[${nbTocallProducts}]]*/ 67;
+          /*
+          console.log(refundProducts);
+          console.log(tocallProducts);
+          */
+
+          if (refundProducts <= 5) {
+              $('#more-product-1, .more-product-1').hide();
+          } else {
+              $('#more-product-1, .more-product-1').show();
+          };
+
+          if (tocallProducts <= 5) {
+              $('#more-product-2, .more-product-2').hide();
+          } else {
+              $('#more-product-2, .more-product-2').show();
+          };
+
+          // redirection accordion au hover
+          // afficher l'accordion total au click qui est en display none avant
+          $('a #more-product-1').click(function() {
+              $('.hidden-refund-product').show();
+              $('#more-product-1, .more-product-1').hide();
+          });
+
+          $('a #more-product-2').click(function() {
+              $('.hidden-tocall-product').show();
+              $('#more-product-2, .more-product-2').hide();
+          });
+      });
+      /*]]>*/
+  </script>
  </body>
 
  </html>
-View

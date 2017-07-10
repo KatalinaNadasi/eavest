@@ -193,7 +193,7 @@
                      								</h4>
                                 </div>
 
-                                <div class="hidden-refund-product" role="tab" th:if="${refundStat.index} gt 4" style="display:none;">
+                                <div class="hidden-refund-product" role="tab" th:if="${refundStat.index} gt 4">
                                     <h4 class="accordion-title">
                                       <div>
                                         <a class="panel-heading prod-list" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseOne" th:href="'#collapse' + ${refundStat.index}" aria-expanded="true">
@@ -206,6 +206,61 @@
                                       </div>
                     								</h4>
                                 </div>
+                                <!-- test -->
+                                <div class="hidden-refund-product" role="tab" th:if="${refundStat.index} gt 4">
+                                    <h4 class="accordion-title">
+                                      <div>
+                                        <a class="panel-heading prod-list" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseOne" th:href="'#collapse' + ${refundStat.index}" aria-expanded="true">
+                                          <span class="margin panel-title"></span>
+                                          <span class="label" th:text="${refund.label}">resonance 2</span>
+                                          <span class="slash">/</span>
+                                          <span class="isin" th:text="${refund.isin}">FR00196847</span>
+                                          <span th:if="${refund.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" th:alt="#{prd.eavest}" alt="black-logo" id="eavest"/></span>
+                                        </a>
+                                      </div>
+                                    </h4>
+                                </div>
+                                <div class="hidden-refund-product" role="tab" th:if="${refundStat.index} gt 4">
+                                    <h4 class="accordion-title">
+                                      <div>
+                                        <a class="panel-heading prod-list" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseOne" th:href="'#collapse' + ${refundStat.index}" aria-expanded="true">
+                                          <span class="margin panel-title"></span>
+                                          <span class="label" th:text="${refund.label}">resonance 2</span>
+                                          <span class="slash">/</span>
+                                          <span class="isin" th:text="${refund.isin}">FR00196847</span>
+                                          <span th:if="${refund.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" th:alt="#{prd.eavest}" alt="black-logo" id="eavest"/></span>
+                                        </a>
+                                      </div>
+                                    </h4>
+                                </div>
+                                <div class="hidden-refund-product" role="tab" th:if="${refundStat.index} gt 4">
+                                    <h4 class="accordion-title">
+                                      <div>
+                                        <a class="panel-heading prod-list" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseOne" th:href="'#collapse' + ${refundStat.index}" aria-expanded="true">
+                                          <span class="margin panel-title"></span>
+                                          <span class="label" th:text="${refund.label}">resonance 2</span>
+                                          <span class="slash">/</span>
+                                          <span class="isin" th:text="${refund.isin}">FR00196847</span>
+                                          <span th:if="${refund.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" th:alt="#{prd.eavest}" alt="black-logo" id="eavest"/></span>
+                                        </a>
+                                      </div>
+                                    </h4>
+                                </div>
+                                <div class="hidden-refund-product" role="tab" th:if="${refundStat.index} gt 4">
+                                    <h4 class="accordion-title">
+                                      <div>
+                                        <a class="panel-heading prod-list" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseOne" th:href="'#collapse' + ${refundStat.index}" aria-expanded="true">
+                                          <span class="margin panel-title"></span>
+                                          <span class="label" th:text="${refund.label}">resonance 2</span>
+                                          <span class="slash">/</span>
+                                          <span class="isin" th:text="${refund.isin}">FR00196847</span>
+                                          <span th:if="${refund.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" th:alt="#{prd.eavest}" alt="black-logo" id="eavest"/></span>
+                                        </a>
+                                      </div>
+                                    </h4>
+                                </div>
+                                <!-- end test -->
+
                                 <div th:id="'collapse' + ${refundStat.index}" id="collapseOne" class="panel-collapse collapse collapsed" role="tabpanel" aria-labelledby="headingOne">
                                     <div class="panel-body">
                                         <div class="col-md-12 product-accor-title">
@@ -214,14 +269,13 @@
  											<span th:text="${#dates.format(refund.endDate, 'dd/MM/yyyy')}">25/12/ 2017</span> -->
                                         </div>
                                         <div class="row prod-accor-row">
-                                            <div class="col-xs-5 col-sm-4 col-md-3 img-prod-accor">
+                                            <div class="col-xs-5 col-sm-4 col-md-3">
                                                 <a href="#" th:href="@{/products/{id}(id=${refund.id})}">
-                                                    <div class="col-xs-12 col-sm-12 col-md-12 img-prod-size">
+                                                    <div class="col-xs-6 col-md-12 img-prod-size">
                                                         <div class="counter">
                                                             <img src="/img/product.png" th:src="@{/products/{id}/image(id=${refund.id})}" th:alt="#{prd.image}" alt="produit" id="accor-product" />
                                                             <span class="overlay-product" th:if="${refund.isEavest}"><img src="/img/black-logo-min.png" alt="logo eavest"/></span>
                                                         </div>
-                                                        <div class="over-eavest"><a href="#"><img src="/img/more-hover.png" class="more-prod-accor-row" alt="voir-plus" th:alt="#{get.more}"/></a></div>
                                                     </div>
                                                 </a>
                                             </div>
@@ -251,11 +305,16 @@
                                     </div>
                                 </div>
                                 <!-- hover -->
-                                <div class="over more-product-1">
-                                  <a>
+                                <!-- <div class="over more-product-1"> -->
+                                  <a class="over more-product-1">
                                     <img src="/img/more-hover.png" id="more-product-1" alt="voir-plus" th:alt="#{get.more}"/>
                                   </a>
-                                </div>
+                                <!-- </div> -->
+
+
+                                <!-- <div class="over more-product-1">
+                                  <a><img src="/img/more-hover.png" class="more-product" id="more-product-1" alt="voir-plus" th:alt="#{get.more}"/></a>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -306,7 +365,7 @@
                                         <div class="row prod-accor-row">
                                             <div class="col-xs-5 col-sm-4 col-md-3">
                                                 <a href="#" th:href="@{/products/{id}(id=${tocall.id})}">
-                                                    <div class="col-xs-12 col-md-12 img-prod-size">
+                                                    <div class="col-xs-6 col-md-12 img-prod-size">
                                                         <div class="counter">
                                                             <img src="/img/product.png" th:src="@{/products/{id}/image(id=${tocall.id})}" alt="produit" th:alt="#{prd.image}" id="accor-product" />
                                                             <span class="overlay-product" th:if="${tocall.isEavest}"><img src="/img/black-logo-min.png" alt="logo eavest"/></span>
@@ -341,10 +400,8 @@
                                     </div>
                                 </div>
                                 <!-- hover -->
-                                <div class="over more-product-2">
-                                  <a>
-                                    <img src="/img/more-hover.png" id="more-product-2" alt="voir-plus" th:alt="#{get.more}"/>
-                                  </a>
+                                <div class="over">
+                                  <a href="http://eavest.com/"><img src="/img/more-hover.png" class="more-product" id="more-product-2" alt="voir-plus" th:alt="#{get.more}"/></a>
                                 </div>
                             </div>
                         </div>
@@ -590,7 +647,7 @@
                   <p class="grey-letters-light">
                     <span class="main-title">eavest </span><span th:text="#{home.eavest.teaser}">est un cabinet de conseil indépendant spécialisé dans la construction, le suivi et l'analyse de produits structurés et alternatifs sur-mesure à destination de clients professionnels européens.</span>
                   </p>
-                  <div class="over-eavest"><a href="methodology.html"><img src="/img/more-hover.png" class="more-eavest" alt="voir-plus" th:alt="#{get.more}"/></a></div>
+                  <div class="over-eavest"><a href="http://eavest.com/"><img src="/img/more-hover.png" class="more-eavest" alt="voir-plus" th:alt="#{get.more}"/></a></div>
                 </div>
                 <div class="col-sm-7 col-md-5 grey-block-3">
                     <h4 th:text="#{home.agreement}">Notre agrément</h4>
@@ -609,7 +666,7 @@
                     </div>
                     <div>
                       <div class="over-agreement">
-                        <a href="methodology.html#agrement">
+                        <a href="http://eavest.com/">
                           <img src="/img/more-hover.png" class="more-agreement" alt="voir-plus" th:alt="#{get.more}"/>
                         </a>
                       </div>
@@ -623,7 +680,7 @@
  						            </span>
                     </p>
                     <div class="over-partner">
-                      <a href="methodology.html#partenaires">
+                      <a href="http://eavest.com/">
                         <img class="more-partner" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}"/>
                       </a>
                     </div>
@@ -657,7 +714,7 @@
                                 <img src="/img/proximite.png" alt="proximité" th:alt="#{home.val.proximity}" id="value-img4" />
                             </li>
                         </ul>
-                        <div class="over-values"><a href="methodology.html#valeurs" class="more-values"><img src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}"/></a></div>
+                        <div class="over-values"><a href="http://eavest.com/" class="more-values"><img src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}"/></a></div>
                     </div>
                 </div>
                 <div class="col-md-6 white-block-style-2" id="methodo">
@@ -680,7 +737,7 @@
                             <br />
                             <img src="/img/suivi.png" alt="suivi" th:alt="#{home.method.follow}" id="methodo-img3" />
                         </div>
-                        <div class="over-methodo"><a href="methodology.html"><img class="more-methodologie" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}"/></a></div>
+                        <div class="over-methodo"><a href="http://eavest.com/methodologie-2/"><img class="more-methodologie" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}"/></a></div>
                     </div>
                 </div>
             </div>
@@ -772,7 +829,7 @@
     </div>
 
     <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -856,10 +913,11 @@
         $(document).ready(function() {
             var refundProducts = /*[[${nbRefundProducts}]]*/ 61;
             var tocallProducts = /*[[${nbTocallProducts}]]*/ 67;
-            /*
-            console.log(refundProducts);
-            console.log(tocallProducts);
-            */
+
+             alert(refundProducts);
+             alert(tocallProducts);
+
+
 
             if (refundProducts <= 5) {
                 $('#more-product-1, .more-product-1').hide();

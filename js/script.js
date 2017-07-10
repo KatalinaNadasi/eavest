@@ -118,7 +118,8 @@ $(function() {
     $('#cross').toggleClass('cross-h cross');
   });
 
-});  
+});
+
 
 
 // Set a fontSize relative to a number of words (dynamic content for figure of the month)

@@ -15,7 +15,7 @@ section {
 }
 
 body {
-  padding-top: 225px;
+  padding-top: 200px;
   background: #F2F2F2;
   color: #020202;
   font-family: 'Open Sans', 'Quicksand', Arial, sans-serif;
@@ -718,9 +718,8 @@ a.panel-heading {
 }
 
 #accor-product {
-  width: 102px;
-  height: 133px;
-  margin-bottom: 25px;
+  width: 120px;
+  height: 170px;
 }
 
 .product {
@@ -778,7 +777,7 @@ a.panel-heading {
   position: relative;
 }
 
-.more-product-1, .prod-accor-row, .black-block-partner, .grey-block-3, .white-block-partner, .white-block-style, .white-block-style-2, .white-bloc, .img-prod-size {
+.more-product-1, .more-product-2, .prod-accor-row, .black-block-partner, .grey-block-3, .white-block-partner, .white-block-style, .white-block-style-2, .white-bloc, .img-prod-size {
   position: relative;
   margin: 0 auto;
 }
@@ -789,7 +788,7 @@ a.panel-heading {
   margin: 0 auto;
 }
 
-.over, .over-eavest, .over-agreement, .over-partner, .over-values, .over-methodo, .over-product, .more-product-1 {
+.over, .over-eavest, .over-agreement, .over-partner, .over-values, .over-methodo, .over-product, .more-product-1, .more-product-2 {
   position: absolute !important;
   left: 0;
   top: 0;
@@ -815,7 +814,7 @@ a.panel-heading {
   transition: all 0.4s ease;
 }
 
-.over-blue:hover, .over:hover, .over-eavest:hover, .over-agreement:hover, .over-partner:hover, .over-values:hover, .over-methodo:hover, .over-product:hover, .over-blue:hover, .more:hover {
+.over:hover, .over-blue:hover, .over:hover, .over-eavest:hover, .over-agreement:hover, .over-partner:hover, .over-values:hover, .over-methodo:hover, .over-product:hover, .over-blue:hover, .more:hover {
   -webkit-opacity: 0.92;
   -moz-opacity: 0.92;
   -ms-opacity: 0.92;
@@ -827,6 +826,7 @@ a.panel-heading {
   display: block;
   margin: 0 auto;
   width: 75px;
+  text-align: -webkit-center;
 }
 
 #more-product-1, #more-product-2 {
@@ -851,6 +851,13 @@ a.panel-heading {
   position: relative;
   cursor: auto;
   padding: 90px 0px 90px 0px;
+}
+
+.more-prod-accor-row {
+  position: relative;
+  cursor: auto;
+  padding: 55px 0px 55px 0px;
+  width: 50px;
 }
 
 .over-blue {
@@ -940,7 +947,7 @@ a.panel-heading {
 
 .overlay-product {
   position: absolute;
-  top: 140%;
+  top: 250%;
   right: 0%;
 }
 
@@ -1068,7 +1075,7 @@ a.panel-heading {
 .more-partner {
   position: relative;
   cursor: auto;
-  padding: 62px 0px 62px 0px;
+  padding: 52px 0px 52px 0px;
   -webkit-opacity: 1;
   -moz-opacity: 1;
   -ms-opacity: 1;
@@ -1414,10 +1421,6 @@ button#close {
 .month-product {
   display: inline-block;
   height: 259px !important;
-}
-
-.img-prod-size{
-  padding: 0;
 }
 
 .img-prod-size{
@@ -1846,7 +1849,7 @@ section.video {
 #methodo-img3 {
   width: 66px;
   height: 52px;
-  margin-top: 26px;
+  margin-top: 44px;
 }
 
 /*SECTION TEAM*/
@@ -2155,6 +2158,11 @@ a#arrow-position {
   }
 }
 
+input, button, submit {
+  border:none;
+  background-color: transparent;
+}
+
 @media only screen and (min-device-width : 401px) and (max-device-width : 420px){
   .white-block-style {
     width: 93%;
@@ -2400,6 +2408,12 @@ a#arrow-position {
   }
 }
 
+@media only screen and (min-device-width : 992px) and (max-device-width : 1200px){
+  .more-partner {
+    padding: 70px 0px 70px 0px;
+  }
+}
+
 @media (max-width : 370px){
   .isin {
     font-size: 13px;
@@ -2487,6 +2501,9 @@ a#arrow-position {
   }
   .white-block-blog {
     height: 273px;
+  }
+  #accor-product {
+    width: 110px;
   }
 }
 
@@ -2845,6 +2862,11 @@ a#arrow-position {
     }
   }
 
+@media (max-width: 1200px){
+  .img-prod-accor {
+    padding: 2px;
+  }
+}
 
 /*3- very large screen*/
 @media (min-width : 1200px) {
