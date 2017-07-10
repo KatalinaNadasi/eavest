@@ -417,10 +417,8 @@ section .search button[type="submit"]{
 .follow-body{
   background-color: black;
   color: white;
-  margin-bottom: 15px;
+  margin: 45px 0 15px 0;
   padding-bottom: 45px;
-  padding-top: 35px;
-  margin-top: 45px;
   text-align: center;
 }
 
@@ -437,11 +435,6 @@ section .search button[type="submit"]{
   text-transform: uppercase;
   margin: 10px 0 16px 0;
   padding: 5px 10px
-}
-
-#container {
-  padding-left: 0px;
-  padding-right: 0px;
 }
 
 /*END SECTION FOLLOW PRODUCT*/
@@ -1506,8 +1499,7 @@ button#close {
 }
 
 .black-line-1 {
-  padding-bottom: 16px;
-  margin-bottom: 30px;
+  margin: 30px 0;
   border-bottom: 2px solid black;
 }
 
@@ -1658,16 +1650,9 @@ p#figure-p {
 }
 
 /*SECTION VIDEO*/
-
-section#videodiv {
-    margin-top: 15px;
+section.video {
+  margin-top: 15px;
 }
-
- .video-wrap {
-   height: 300px;
-   width: 100%;
-   background-size: cover;
- }
 
  .lightboxcontainer {
   width:100%;
@@ -1683,6 +1668,7 @@ section#videodiv {
 /*SECTION OUR AGREEMENT*/
 .agreement-block {
   padding-bottom: 25px;
+  margin-top: 30px;
 }
 
 .black-block-partner {
@@ -2623,8 +2609,7 @@ a#arrow-position {
     padding-top: 5px;
   }
   .black-line-1 {
-    margin-bottom: 32px;
-    margin-top: 3px;
+    margin-top: 15px;
   }
   p .grey-letters {
     width: 81%;
@@ -2795,9 +2780,9 @@ a#arrow-position {
   section .search-product input[type=search] {
     width: 59%;
   }
-  .container {
+  /*.container {
     width: 1030px;
-  }
+  }*/
   .black-block-partner {
     padding-bottom: 22px;
   }
@@ -2847,6 +2832,9 @@ a#arrow-position {
 
 /*3- very large screen*/
 @media (min-width : 1200px) {
+  .container {
+    width: 1245px;
+  }
   .black-block-partner {
     padding-bottom: 23px;
   }

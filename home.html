@@ -89,7 +89,7 @@
     <!-- SECTION SEARCH -->
     <section class="search-product">
       <div class="container">
-        <div class="row">
+        <!-- <div class="row"> -->
           <div class="col-md-12 search-header">
             <h6>cherchez un produit parmi nos 2000 références</h6>
           </div>
@@ -150,19 +150,21 @@
           </div>
 
         </div>
-      </div>
+      <!-- </div> -->
     </div>
   </section>
 
   <!-- SECTION FOLLOW -->
   <section class="follow-products">
-    <div class="container follow-body">
-      <div class="row">
-        <div class="col-md-12">
+    <div class="container">
+      <div class="follow-body">
+        <!-- <div class="row"> -->
+        <div class="col-md-12 follow-body">
           <h2>suivez au quotidien vos produits sur votre espace personnel</h2>
           <button type="button" class="btn btn-secondary"><span th:text="#{home.create.wallet}">créer mon portefeuille</span></button>
 
         </div>
+        <!-- </div> -->
       </div>
     </div>
     <div class="container" id="container">
@@ -568,10 +570,10 @@
     </div>
 
     <!-- SECTION VIDEO -->
-    <section class="video" id="videodiv">
+    <section class="video">
       <div class="container">
           <a href="https://player.vimeo.com/video/139675350" class="html5lightbox" title="Eavest">
-            <video loop muted poster="img/video-bgd.png" class="html5lightbox img-responsive">
+            <video loop muted poster="img/video-bgd.png" style="width: 1220px;" class="html5lightbox img-responsive">
             <source src="/video/eavest.mp4" />
             </video>
           </a>
