@@ -140,7 +140,7 @@
                         autocomplete="off" th:field="*{labelSousJacent}" />
                       </div>
                   </div>
-                  <div class="col-md-12 filter-search">
+                  <div class="col-md-12 col-xs-offset-2 col-sm-12 filter-search">
                     <input type="submit" value="Rechercher" th:value="#{prd.find}"
                     id="filter-search" class="btn btn-default log" />
                   </div>
@@ -157,15 +157,10 @@
   <!-- SECTION FOLLOW -->
   <section class="follow-products">
     <div class="container">
-      <div class="follow-body">
-        <!-- <div class="row"> -->
         <div class="col-md-12 follow-body">
           <h2>suivez au quotidien vos produits sur votre espace personnel</h2>
           <button type="button" class="btn btn-secondary"><span th:text="#{home.create.wallet}">créer mon portefeuille</span></button>
-
         </div>
-        <!-- </div> -->
-      </div>
     </div>
     <div class="container" id="container">
       <div class="black-line"></div>
@@ -571,7 +566,7 @@
 
     <!-- SECTION VIDEO -->
     <section class="video">
-      <div class="container">
+      <div class="container video-wrap">
           <a href="https://player.vimeo.com/video/139675350" class="html5lightbox" title="Eavest">
             <video loop muted poster="img/video-bgd.png" style="width: 1220px;" class="html5lightbox img-responsive">
             <source src="/video/eavest.mp4" />

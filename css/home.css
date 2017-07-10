@@ -281,6 +281,8 @@ ul>li>a:hover {
 .search-body {
   background-color: white;
   text-align: center;
+  padding-bottom: 1px;
+  margin-top: -10px;
 }
 
 .search-body p:nth-child(1) {
@@ -418,7 +420,7 @@ section .search button[type="submit"]{
   background-color: black;
   color: white;
   margin: 45px 0 15px 0;
-  padding-bottom: 45px;
+  padding: 25px 20px 45px 20px;
   text-align: center;
 }
 
@@ -1701,46 +1703,6 @@ section.video {
   margin: 0 auto;
 }
 
-/*.grey-block-3-div {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-  -webkit-text-decoration: none;
-  -moz-text-decoration: none;
-  -ms-text-decoration: none;
-  -o-text-decoration: none;
-  text-decoration: none;
-  -webkit-opacity: 0;
-  -moz-opacity: 0;
-  -ms-opacity: 0;
-  -o-opacity: 0;
-  opacity: 0;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-
-.grey-block-3-div a img{
-  position: relative;
-  height: auto;
-  margin: 0 auto;
-}
-
-.grey-block-3-div:hover {
-  opacity: 0.92;
-  -webkit-opacity: 0.92;
-  -moz-opacity: 0.92;
-  -ms-opacity: 0.92;
-  -o-opacity: 0.92;
-}*/
-
 .grey-block-3 p {
   font-weight: lighter;
   text-align: -webkit-left;
@@ -2035,25 +1997,7 @@ a#arrow-position {
   .white-block-style {
       width: 90%;
   }
-  /*#more-our-agrement {
-    left: 39%;
-    top: 44%;
-  }*/
 }
-
-/*@media (max-device-width: 500px){
-  #more-eavest-block {
-    left: 39%;
-    top: 23%;
-  }
-}*/
-
-/*@media only screen and (min-device-width : 500px) and (max-device-width : 714px){
-  #more-eavest-block {
-    left: 41%;
-    top: 5%;
-  }
-}*/
 
 @media only screen and (min-device-width : 300px) and (max-device-width : 770px){
   .wallet-black-block {
@@ -2076,6 +2020,10 @@ a#arrow-position {
 @media (max-width : 400px){
   .more-values {
     padding: 95px 0px 95px 0px;
+  }
+  body {
+    padding-top: 250px;
+    margin-top: 15px;
   }
 }
 
@@ -2108,15 +2056,6 @@ a#arrow-position {
     padding: 20px 0px 20px 0px;
   }
 }
-/*
-@media only screen and (min-device-width : 575px) and (max-device-width : 770px){
-  #more-our-agrement {
-    left: 44%;
-  }
-  .plus-logo {
-    padding: 12px 0px 12px 0px;
-  }
-}*/
 
 @media (max-width : 308px){
   .more-agreement {
@@ -2312,6 +2251,18 @@ a#arrow-position {
   }
 }
 
+@media (max-device-width : 400px) {
+  .fa-search {
+  right: 22%;
+  }
+}
+
+@media only screen and (min-device-width : 400px) and (max-device-width : 586px){
+  .fa-search {
+  right: 15%;
+  }
+}
+
 @media (max-device-width : 732px) {
   #white-block {
   margin-top: 20px;
@@ -2319,6 +2270,15 @@ a#arrow-position {
   }
   .grey-block {
     margin-left: 32px;
+  }
+  .search-header h6 {
+    font-size: 22px;
+  }
+  .search-body p:nth-child(1) {
+    font-size: 15px;
+  }
+  .search-criterion span {
+    font-size: 15px;
   }
 }
 
@@ -2479,12 +2439,27 @@ a#arrow-position {
   }
 }
 
+@media(max-width: 505px) {
+  .follow-body h2 {
+    font-size: 16px;
+  }
+  .follow-body button {
+    font-size: 15px;
+  }
+}
+
 @media only screen and (min-device-width : 505px) and (max-device-width : 766px){
   .isin {
     font-size: 15px;
   }
   .label {
     font-size: 15px;
+  }
+  .follow-body h2 {
+    font-size: 18px;
+  }
+  .follow-body button {
+    font-size: 17px;
   }
 }
 
@@ -2494,6 +2469,9 @@ a#arrow-position {
   }
   .label {
     font-size: 15px;
+  }
+  .fa-search {
+    right: 9%;
   }
 }
 
@@ -2773,6 +2751,18 @@ a#arrow-position {
     width: auto;
     margin: 0;
   }
+  .filters label {
+    margin-top: 15px;
+  }
+  #filter-search {
+    margin-top: 30px;
+  }
+  .filter-search {
+    margin-top: 10px;
+  }
+  .search-row {
+     margin-left: 0px;
+  }
 }
 
 /*2- Desktops and laptops*/
@@ -2817,6 +2807,20 @@ a#arrow-position {
     }
   }
 
+@media(max-width: 590px) {
+  .filter-1, .filter-2, .filter-3, .filter-4 {
+    float: left;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-device-width : 590px) and (max-device-width : 992px){
+  .filter-1, .filter-2, .filter-3, .filter-4 {
+    float: left;
+    width: 50%;
+    }
+  }
+
 @media only screen and (min-device-width : 538px) and (max-device-width : 1050px){
     .always-right {
       text-align:  -webkit-center;
@@ -2826,6 +2830,18 @@ a#arrow-position {
     }
     #footer {
       line-height: 0px;
+    }
+  }
+
+  @media only screen and (min-device-width : 586px) and (max-device-width : 713px) {
+    .fa-search {
+      right: 11%;
+    }
+  }
+
+  @media only screen and (min-device-width : 990px) and (max-device-width : 1200px) {
+    .fa-search {
+      right: 14%;
     }
   }
 
