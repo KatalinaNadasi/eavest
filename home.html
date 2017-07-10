@@ -358,28 +358,8 @@
         <div class="container">
             <div class="row">
 
-                <div class="hidden-xs hidden-sm col-md-3">
-                    <div>
-                        <h2 class="black-block"><span th:text="#{prd.find}">cherchez un produit</span> <span class="new-line" th:text="#{prd.find.in}">parmis nos</span> <span th:text="${nbProducts}">2000</span> <span th:text="#{prd.ref}">références</span></h2>
-                    </div>
-                    <!-- SUPER FILTRE -->
-                    <div class="search">
-                        <p class="grey-letters"><span th:text="#{prd.bank.name}">Émetteur</span>, <span th:text="#{prd.isin.code}">Code ISIN</span>,</p>
-                        <p class="grey-letters"><span th:text="#{prd.name}">Nom du produit</span>, <span th:text="#{prd.undrl.asset}">Sous-jacent</span></p>
-                        <div class="search-bar">
-                          <span>
- 								            <form th:object="${search}" action="#" th:action="@{/home/super-find}" method="post">
- 									          <input type="search" id="super-find-product" autocomplete="off" th:field="*{text}"/>
- 									          <button type="submit"><i class="fa fa-2x fa-search"></i></button>
- 								            </form>
- 							            </span>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-
                 <!--PERFREVIEW -->
-                <div class="col-sm-12 col-md-6">
+                <div class="col-sm-12 col-md-9">
                     <div>
                         <ul class="list-inline list-unstyled numbers ">
                             <li class="square-1" th:text="${month}">10</li>
@@ -463,20 +443,6 @@
 
     <!-- VERSION XS RESPONSIVE ONLY -->
     <div class="container resp-sm">
-        <div class="col-xs-12 col-sm-6 hidden-md hidden-lg" id="black-block">
-            <h2 class="black-block"><span th:text="#{prd.find}">cherchez un produit</span> <span class="new-line" th:text="#{prd.find.in}">parmis nos</span> <span th:text="${nbProducts}">2000</span> <span th:text="#{prd.ref}">références</span></h2>
-
-            <div class="search">
-                <p class="grey-letters"><span th:text="#{prd.bank.name}">Émetteur</span>, <span th:text="#{prd.isin.code}">Code ISIN</span>,</p>
-                <p class="grey-letters"><span th:text="#{prd.name}">Nom du produit</span>, <span th:text="#{prd.undrl.asset}">Sous-jacent</span></p>
-                <div class="counter">
-                  <div class="search-bar">
-                    <form><input type="search" id="find-product" autocomplete="off"/><button type="submit"><i class="fa fa-2x fa-search"></i></button></form>
-                  </div>
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
 
         <div class="col-xs-12 col-sm-offset-1 col-sm-5 hidden-md hidden-lg" id="white-block">
             <div class="sous-container">
@@ -600,6 +566,19 @@
     <div class="container">
         <div class="col-md-12 black-line"></div>
     </div>
+
+    <!-- SECTION VIDEO -->
+    <section class="video" id="videodiv">
+      <div class="container">
+          <a href="https://player.vimeo.com/video/139675350" class="html5lightbox" title="Eavest">
+            <video loop muted poster="img/video-bgd.png" class="html5lightbox img-responsive">
+            <source src="/video/eavest.mp4" />
+            </video>
+          </a>
+      </div>
+    </section>
+
+    <!-- END SECTION VIDEO -->
 
     <!-- SECTION OUR AGREEMENT -->
     <section>
@@ -803,6 +782,7 @@
     <script src="https://unpkg.com/simplebar@2.2.1/dist/simplebar.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="/js/jquery.easy-autocomplete.min.js"></script>
+    <script type="text/javascript" src="html5lightbox/html5lightbox.js"></script>
     <!-- Script for autocompleting the filter text box for searching products -->
 
     <script th:inline="javascript">
@@ -868,7 +848,7 @@
             $('#cross').toggleClass('cross-h cross');
           });
 
-        });  
+        });
 
         // ACCORDION redirection selon nombre de produits
         $(document).ready(function() {

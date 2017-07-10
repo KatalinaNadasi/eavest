@@ -1365,6 +1365,7 @@ table {
 #more-perfReview {
   margin: 3px;
   width: 30px;
+  float: left;
 }
 
 #more-perfReview:hover {
@@ -1655,6 +1656,29 @@ p#figure-p {
   height: 273px;
   width: 24%;
 }
+
+/*SECTION VIDEO*/
+
+section#videodiv {
+    margin-top: 15px;
+}
+
+ .video-wrap {
+   height: 300px;
+   width: 100%;
+   background-size: cover;
+ }
+
+ .lightboxcontainer {
+  width:100%;
+  text-align:left;
+}
+
+.divtext {
+  margin: 36px;
+}
+
+/*END SECTION VIDEO*/
 
 /*SECTION OUR AGREEMENT*/
 .agreement-block {
@@ -2277,6 +2301,21 @@ a#arrow-position {
     margin-bottom: 5px;
   }
 }
+
+/*VIDEO MEDIA QUERIES*/
+@media (max-width: 800px) {
+  .lightboxleft {
+    width: 100%;
+  }
+  .lightboxright {
+    width: 100%;
+  }
+  .divtext {
+    margin: 12px;
+  }
+}
+/*END VIDEO MEDIA QUERIES*/
+
 
 @media (max-device-width : 450px) {
   #white-block {
