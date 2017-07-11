@@ -163,6 +163,7 @@ h6 {
 	text-transform: uppercase;
 	font-weight: bold;
   font-size: 13px;
+  min-height: 95px;
 }
 
 .navbar {
@@ -301,15 +302,19 @@ ul>li>a:hover {
   color: black;
 }
 
+.margin-search {
+  margin: 0 0 40px 0;
+}
+
 .wrapper-search {
   padding: 0 37px;
 }
 
-#search-style {
+.search-b input[type="search"] {
   border: solid 1px white;
   border-right: none;
   height: auto;
-  width: 92%;
+  width: 92% !important;
   -webkit-transform: translateY(2px);
   -moz-transform: translateY(2px);
   -ms-transform: translateY(2px);
@@ -338,7 +343,7 @@ section .search button[type="submit"]{
 }
 
 .search-criterion {
-  margin: 35px 0 50px 0;
+  margin-top: 35px;
   display: block;
 }
 
@@ -351,6 +356,40 @@ section .search button[type="submit"]{
 .search-criterion img {
     width: 18px;
     transform: translateY(-3px);
+}
+
+#refine {
+  cursor: pointer;
+}
+
+.ui-menu .ui-menu-item a{
+    background: transparent;
+    height: auto;
+    border: black;
+    color: black !important;
+}
+
+.ui-autocomplete {
+    background: white;
+    border-radius: 0px;
+    cursor: none;
+}
+
+.ui-autocomplete:hover {
+  background: white;
+  cursor: none;
+}
+
+.ui-autocomplete.source:hover {
+  background: transparent;
+}
+
+.ui-menu-item a{
+  color: black;
+}
+
+.ui-menu-item a:hover{
+  background-color: transparent !important;
 }
 
 .filters label {
@@ -569,7 +608,7 @@ section .search button[type="submit"]{
   vertical-align: -o-baseline-middle !important;
 }
 
-#eavest {
+#eavest-macaron {
   position: absolute;
   top: 0;
   right: 0;
@@ -670,7 +709,7 @@ a:active,
 }
 
 .prod-date {
-  transform: translate(37px,-17px);
+  transform: translate(44px,-17px);
 }
 
 .panel-heading:hover,
@@ -760,7 +799,8 @@ a.panel-heading {
 }
 
 .prod-accor-row {
-  margin-left: -4px;
+  margin-left: -10px !important;
+  margin-top: 25px !important;
 }
 
 .grey-uppercase {
@@ -813,7 +853,6 @@ a.panel-heading {
   -ms-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
-}
 }
 
 .over, .over-eavest, .over-agreement, .over-partner, .over-values, .over-methodo, .over-product, .more-product-1, .more-product-2 {
@@ -1274,36 +1313,6 @@ button[type="submit"]{
   border: none;
 }*/
 
-.ui-menu .ui-menu-item a{
-    background: transparent;
-    height: auto;
-    border: black;
-    color: black !important;
-}
-
-.ui-autocomplete {
-    background: white;
-    border-radius: 0px;
-    cursor: none;
-}
-
-
-.ui-autocomplete:hover {
-  background: white;
-  cursor: none;
-}
-
-.ui-autocomplete.source:hover {
-  background: transparent;
-}
-
-.ui-menu-item a{
-  color: black;
-}
-
-.ui-menu-item a:hover{
-  background-color: transparent !important;
-}
 
 .numbers {
   padding-left: 5px;
@@ -2204,7 +2213,7 @@ input, button, submit {
   }
 }
 
-@media(max-width: 549px){
+@media(max-width: 680px){
   .over-product-row {
     width: 69%;
   }
@@ -2217,6 +2226,9 @@ input, button, submit {
   }
   .auth {
     margin-top: 10px;
+  }
+  .reimb-date {
+    margin-left: 45px;
   }
   section .search-product input[type=search] {
     width: 68%;
@@ -2454,10 +2466,6 @@ input, button, submit {
   .more-partner {
     padding: 70px 0px 70px 0px;
   }
-  .over-product-row {
-    right: 16px;
-    width: 106%;
-  }
 }
 
 @media (max-width : 370px){
@@ -2535,6 +2543,7 @@ input, button, submit {
   }
   .over-product-row {
     width: 97%;
+    min-width: 110px;
   }
 }
 
@@ -2544,7 +2553,7 @@ input, button, submit {
   }
 }
 
-@media only screen and (min-device-width : 760px) and (max-device-width : 990px) {
+@media only screen and (min-device-width : 766px) and (max-device-width : 990px) {
   .team {
     padding-left: 0px !important;
   }
@@ -2631,6 +2640,9 @@ input, button, submit {
   .white-block-blog {
     margin-top: 15px;
   }
+  .product-accor-title, .product-wallet-title {
+    margin-top: 0px;
+  }
 }
 
 @media(max-width:767px){
@@ -2712,13 +2724,34 @@ input, button, submit {
   }
 }
 
-@media only screen and (min-device-width : 550px) and (max-device-width : 770px) {
+@media only screen and (min-device-width : 680px) and (max-device-width : 770px) {
+  .over-product-row {
+    min-width: 155px;
+  }
+}
+
+@media only screen and (min-device-width : 683px) and (max-device-width : 742px) {
+  .over-product-row {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-device-width : 742px) and (max-device-width : 768px) {
+  .over-product-row {
+    width: 102%;
+  }
+}
+
+@media only screen and (min-device-width : 500px) and (max-device-width : 680px) {
+  #accor-product {
+    width: 120px;
+  }
+}
+
+@media only screen and (min-device-width : 680px) and (max-device-width : 770px) {
   #accor-product {
     width: 155px;
     height: 191px;
-  }
-  .over-product-row {
-    min-width: 155px;
   }
 }
 
@@ -2941,6 +2974,10 @@ input, button, submit {
   }
   .team-img {
     margin-right: 30px;
+  }
+  .over-product-row {
+    right: 16px;
+    width: 69%;
   }
 }
 

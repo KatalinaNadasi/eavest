@@ -89,7 +89,6 @@
     <!-- SECTION SEARCH -->
     <section class="search-product">
       <div class="container">
-        <!-- <div class="row"> -->
           <div class="col-md-12 search-header">
             <h6>cherchez un produit parmi nos 2000 références</h6>
           </div>
@@ -100,8 +99,7 @@
                 <div class="search-b">
                   <span>
                     <form th:object="${search}" action="#" th:action="@{/home/super-find}" method="post">
-                      <input type="search" id="search-style">
-                      <!-- <input type="search" id="super-find-product" autocomplete="off" th:field="*{text}"/> -->
+                      <input type="search" id="super-find-product" autocomplete="off" th:field="*{text}"/>
                       <button type="submit"><i class="fa fa-1x fa-search"></i>
                       </button>
                     </form>
@@ -109,7 +107,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 margin-search" id="margin-search">
               <div class="search-criterion">
                 <img src="/img/cross-bold.png" alt="croix" class="cross-h" id="cross"/>
                 <span id="refine">affiner les critères de recherche</span>
@@ -119,25 +117,24 @@
               <div th:unless="${filteredProducts}" class="row filters">
                 <div class="sous-container">
                   <div class="col-md-12 search-row">
-                      <form action="#" th:object="${filter}"
-                      th:action="@{/products/filter}" method="POST">
+                      <form action="#">
                       <div class="col-xs-12 col-sm-6 col-md-3 filter-1">
                         <label for="filter_1" th:text="#{prd.bank.name}">émetteur</label>
                         <input type="text" class="text" name="bank_name" id="filter_1"
-                        autocomplete="off" th:field="*{deliver}" />
+                        autocomplete="off"/>
                       </div>
                       <div class="col-xs-12 col-sm-6 col-md-3 filter-2">
                         <label for="filter_2" th:text="#{prd.isin.code}">code isin</label> <input type="text" class="text" name="code_isin"
-                        id="filter_2" autocomplete="off" th:field="*{isin}" />
+                        id="filter_2" autocomplete="off"/>
                       </div>
                       <div class="col-xs-12 col-sm-6 col-md-3 filter-3">
                         <label for="filter_3" th:text="#{prd.name}">nom du produit</label> <input type="text" class="text" name="product_name"
-                        id="filter_3" autocomplete="off" th:field="*{label}" />
+                        id="filter_3" autocomplete="off"/>
                       </div>
                       <div class="col-xs-12 col-sm-6 col-md-3 filter-4">
                         <label for="filter_4" th:text="#{prd.undrl.asset}">sous-jacent</label>
                         <input type="text" class="text" name="base" id="filter_4"
-                        autocomplete="off" th:field="*{labelSousJacent}" />
+                        autocomplete="off"/>
                       </div>
                   </div>
                   <div class="col-md-12 col-xs-offset-2 col-sm-12 filter-search">
@@ -150,7 +147,6 @@
           </div>
 
         </div>
-      <!-- </div> -->
     </div>
   </section>
 
@@ -167,234 +163,191 @@
     </div>
   </section>
 
-    <!-- SECTION PRODUCTS-->
-    <section class="products">
-        <div class="container">
-            <div class="row">
-                <!-- PRODUITS REMBOURSES -->
-                <div class="col-sm-6 col-md-6 wrapper-prod">
-                    <img src="/img/bell.png" alt="bell" class="img-responsive img-bell" th:alt="#{home.bell}" />
-                    <h1 class="product-title"><span th:text="#{refund.prd}">produits remboursés</span> <span class="min" th:text="#{home.since.days}">depuis 30 jours</span></h1>
-                    <div class="sous-container">
-                        <div class="panel-group" id="accordion-1" role="tablist" aria-multiselectable="true">
-                            <!-- collapse product -->
-                            <div class="panel panel-default" th:each="refund : ${refundProducts}" th:with="nbRefundProducts=${refundStat.count}">
-                                <div class="activestate" role="tab" th:if="${refundStat.index} le 4">
-                                    <h4 class="accordion-title">
-                     								    <a class="panel-heading prod-list" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseOne" th:href="'#collapse' + ${refundStat.index}" aria-expanded="true">
-                                          <div>
+  <!-- SECTION PRODUCTS-->
+      <section class="products">
+          <div class="container">
+              <div class="row">
+                  <!-- PRODUITS REMBOURSES -->
+                  <div class="col-sm-6 col-md-6 wrapper-prod">
+                      <img src="/img/bell.png" alt="bell" class="img-responsive img-bell" th:alt="#{home.bell}" />
+                      <h1 class="product-title"><span th:text="#{refund.prd}">produits remboursés</span> <span class="min" th:text="#{home.since.days}">depuis 30 jours</span></h1>
+                      <div class="sous-container">
+                          <div class="panel-group" id="accordion-1" role="tablist" aria-multiselectable="true">
+                              <!-- collapse product -->
+                              <div class="panel panel-default" th:each="refund : ${refundProducts}" th:with="nbRefundProducts=${refundStat.count}">
+                                  <div class="activestate" role="tab" th:if="${refundStat.index} le 4">
+                                      <h4 class="accordion-title">
+  										                   <a class="panel-heading prod-list" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseOne" th:href="'#collapse' + ${refundStat.index}" aria-expanded="true">
+                                            <div>
+                                              <span class="margin panel-title"></span>
+                                              <span class="label" th:text="${refund.label}">resonance 1</span>
+                                              <span class="slash">/</span>
+                                              <span class="isin" th:text="${refund.isin}">FR00196847</span>
+                                              <span th:if="${refund.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" th:alt="#{prd.eavest}" alt="black-logo" id="eavest-macaron"/></span>
+                                            </div>
+           								               </a>
+            							            </h4>
+                                  </div>
+                                  <div class="hidden-refund-product" role="tab" th:if="${refundStat.index} gt 4" style="display:none;">
+                                      <h4 class="accordion-title">
+                                        <div>
+                                          <a class="panel-heading prod-list" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseOne" th:href="'#collapse' + ${refundStat.index}" aria-expanded="true">
                                             <span class="margin panel-title"></span>
-                                            <span class="label" th:text="${refund.label}">resonance 1</span>
+                                            <span class="label" th:text="${refund.label}">resonance 2</span>
                                             <span class="slash">/</span>
                                             <span class="isin" th:text="${refund.isin}">FR00196847</span>
                                             <span th:if="${refund.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" th:alt="#{prd.eavest}" alt="black-logo" id="eavest"/></span>
+                                          </a>
+                                        </div>
+                      				        </h4>
+                                  </div>
+                                  <div th:id="'collapse' + ${refundStat.index}" id="collapseOne" class="panel-collapse collapse collapsed" role="tabpanel" aria-labelledby="headingOne">
+                                      <div class="panel-body">
+                                          <div class="col-md-12 product-accor-title">
                                           </div>
-                     										</a>
-                     								</h4>
-                                </div>
+                                          <div class="row prod-accor-row">
+                                              <div class="col-xs-3 col-sm-4 col-md-3">
+                                                  <a href="#" th:href="@{/products/{id}(id=${refund.id})}">
+                                                      <div class="col-sm-12 col-md-8 img-prod-size">
+                                                          <div class="counter">
+                                                              <img src="/img/product.png" th:src="@{/products/{id}/image(id=${refund.id})}" th:alt="#{prd.image}" alt="produit" id="accor-product" />
+                                                              <span class="overlay-product" th:if="${refund.isEavest}"><img src="/img/black-logo-min.png" alt="logo eavest"/></span>
+                                                          </div>
+                                                          <div class="over-product-row"><a href="#"><img src="/img/more-hover.png" class="more-prod-accor-row" alt="voir-plus" th:alt="#{get.more}"/></a></div>
+                                                      </div>
+                                                  </a>
+                                              </div>
+                                              <div class="col-xs-7 col-sm-8 col-md-8 reimb-date">
+                                                  <ul class="list-unstyled">
+                                                      <li>
+                                                      	<img src="/img/bell.png" alt="cloche" class="resize-bell" />
+                                                      	<span class="light-blue remb-date">date de remboursement</span>
+                                                          <div class="prod-date" th:text="${#dates.format(refund.endDate, 'dd/MM/yyyy')}">15.04.2017</div>
+                                                      </li>
+                                                      <li>
+                                                          <span class="light-blue" id="cours"><span th:text="#{prd.perf}">performance</span></span>
+                                                          <span class="bold-blue" th:text="${refund.performance}!=null? ${refund.performance} : #{prd.perf.teaser}">4.254</span>
 
-                                <div class="hidden-refund-product" role="tab" th:if="${refundStat.index} gt 4" style="display:none;">
-                                    <h4 class="accordion-title">
-                                      <div>
-                                        <a class="panel-heading prod-list" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapseOne" th:href="'#collapse' + ${refundStat.index}" aria-expanded="true">
-                                          <span class="margin panel-title"></span>
-                                          <span class="label" th:text="${refund.label}">resonance 2</span>
-                                          <span class="slash">/</span>
-                                          <span class="isin" th:text="${refund.isin}">FR00196847</span>
-                                          <span th:if="${refund.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" th:alt="#{prd.eavest}" alt="black-logo" id="eavest"/></span>
-                                        </a>
-                                      </div>
-                    								</h4>
-                                </div>
-                                <div th:id="'collapse' + ${refundStat.index}" id="collapseOne" class="panel-collapse collapse collapsed" role="tabpanel" aria-labelledby="headingOne">
-                                    <div class="panel-body">
-                                        <div class="col-md-12 product-accor-title">
-                                            <!-- <h3><span th:text="${refund.deliver}" >Société générale</span></h3> -->
-                                            <!-- <img src="img/clock-black.png" alt="reveil" class="clock-img"/>
- 											<span th:text="${#dates.format(refund.endDate, 'dd/MM/yyyy')}">25/12/ 2017</span> -->
-                                        </div>
-
-                                        <!-- ACCORDEON DES PRODUITS REMBOURSES -->
-                                        <!-- VERSION MIN -->
-                                        <div class="row prod-accor-row">
-                                            <div class="col-xs-4 hidden-sm hidden-md img-prod-accor">
-                                                <a href="#" th:href="@{/products/{id}(id=${refund.id})}">
-                                                    <div class="col-xs-10 hidden-sm hidden-md img-prod-size">
-                                                        <div class="counter">
-                                                            <img src="/img/product.png" th:src="@{/products/{id}/image(id=${refund.id})}" th:alt="#{prd.image}" alt="produit" id="accor-product" />
-                                                            <span class="overlay-product" th:if="${refund.isEavest}"><img src="/img/black-logo-min.png" alt="logo eavest"/></span>
-                                                        </div>
-                                                        <div class="over-product-row"><a href="#"><img src="/img/more-hover.png" class="more-prod-accor-row" alt="voir-plus" th:alt="#{get.more}"/></a></div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col-xs-offset-2 col-xs-6 hidden-sm hidden-md">
-                                                <ul class="list-unstyled">
-                                                    <li>
-                                                    	<img src="/img/bell.png" alt="cloche" class="resize-bell" />
-                                                    	<span class="light-blue remb-date">date de remboursement</span>
-                                                        <div class="prod-date" th:text="${#dates.format(refund.endDate, 'dd/MM/yyyy')}">15.04.2017</div>
-                                                    </li>
-                                                    <li>
-                                                        <span class="light-blue" id="cours"><span th:text="#{prd.perf}">performance</span></span>
-                                                        <span th:if="${refund.performance}" class="bold-blue" th:text="${refund.performance}">4.254</span>
-                                                        <span th:unless="${refund.performance}" class="bold-blue" th:text="#{prd.perf.teaser}"></span>
-                                                    </li>
-                                                </ul>
-                                                <ul class="list-unstyled">
+                                                      </li>
+                                                  </ul>
+                                                  <ul class="list-unstyled">
                                                     <li class="light-blue" th:text="#{prd.distance}">distance</li>
-                                                    <li class="grey-uppercase" th:text="${refund.distance}">XXX</li>
+                          													<li class="grey-uppercase">
+                          														<span th:text="${refund.distance!=null}? ${#numbers.formatDecimal(refund.distance, 0, 2, 'POINT')} : 'XXX'"></span>
+                          														<span>%</span>
+                          													</li>
                                                     <li class="light-blue" th:text="#{undrl.asset}">sous-jacent</li>
                                                     <li class="grey-uppercase" th:text="${refund.prdSousJacent.label}">euro istoxx&reg; ewc 50</li>
                                                     <li class="light-blue" th:text="#{prd.status}">statut</li>
                                                     <li class="grey-uppercase" th:text="#{${refund.prdStatus.description}}">en cours</li>
                                                 </ul>
-                                            </div>
-                                        </div>
-                                        <!-- END VERSION MIN -->
-                                        <!-- VERSION MEDIUM ET LARGE -->
-                                        <div class="row prod-accor-row">
-                                            <div class="hidden-xs col-sm-4 col-md-3 img-prod-accor">
-                                                <a href="#" th:href="@{/products/{id}(id=${refund.id})}">
-                                                    <div class="col-xs-12 col-sm-12 col-md-12 img-prod-size">
-                                                        <div class="counter">
-                                                            <img src="/img/product.png" th:src="@{/products/{id}/image(id=${refund.id})}" th:alt="#{prd.image}" alt="produit" id="accor-product" />
-                                                            <span class="overlay-product" th:if="${refund.isEavest}"><img src="/img/black-logo-min.png" alt="logo eavest"/></span>
-                                                        </div>
-                                                        <div class="over-product-row"><a href="#"><img src="/img/more-hover.png" class="more-prod-accor-row" alt="voir-plus" th:alt="#{get.more}"/></a></div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="hidden-xs col-sm-7 col-md-9">
-                                                <ul class="list-unstyled">
-                                                    <li>
-                                                    	<img src="/img/bell.png" alt="cloche" class="resize-bell" />
-                                                    	<span class="light-blue remb-date">date de remboursement</span>
-                                                        <div class="prod-date" th:text="${#dates.format(refund.endDate, 'dd/MM/yyyy')}">15.04.2017</div>
-                                                    </li>
-                                                    <li>
-                                                        <span class="light-blue" id="cours"><span th:text="#{prd.perf}">performance</span></span>
-                                                        <span th:if="${refund.performance}" class="bold-blue" th:text="${refund.performance}">4.254</span>
-                                                        <span th:unless="${refund.performance}" class="bold-blue" th:text="#{prd.perf.teaser}"></span>
-                                                    </li>
-                                                </ul>
-                                                <ul class="list-unstyled">
-                                                    <li class="light-blue" th:text="#{prd.distance}">distance</li>
-                                                    <li class="grey-uppercase" th:text="${refund.distance}">XXX</li>
-                                                    <li class="light-blue" th:text="#{undrl.asset}">sous-jacent</li>
-                                                    <li class="grey-uppercase" th:text="${refund.prdSousJacent.label}">euro istoxx&reg; ewc 50</li>
-                                                    <li class="light-blue" th:text="#{prd.status}">statut</li>
-                                                    <li class="grey-uppercase" th:text="#{${refund.prdStatus.description}}">en cours</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <!-- END VERSION MEDIUM ET LARGE -->
-                                    </div>
-                                </div>
-                                <!-- hover -->
-                                <div class="over more-product-1">
-                                  <a>
-                                    <img src="/img/more-hover.png" id="more-product-1" alt="voir-plus" th:alt="#{get.more}"/>
-                                  </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PRODUITS A OBSERVER -->
-                <div class="col-sm-6 col-md-6 wrapper-prod padding_left">
-                    <img src="/img/eye.png" alt="eye" class="/img-responsive img-eye" th:alt="#{home.bell}" />
-                    <h1 class="product-title"><span th:text="#{to.call.prd}">produits à surveiller</span> <span class="min" th:text="#{home.from.days}">dans les 30 jours</span></h1>
-                    <div class="sous-container">
-
-                        <div class="panel-group" id="accordion-2" role="tablist" aria-multiselectable="true">
-                            <!-- collapse product -->
-                            <div class="panel panel-default" th:each="tocall : ${tocallProducts}" th:with="nbTocallProducts=${tocallStat.count}">
-                                <div class="activestate" role="tab" th:if="${tocallStat.index} le 4">
-                                    <h4 class="accordion-title">
-                                      <div>
-                                        <a class="prod-list panel-heading" role="button" data-toggle="collapse" data-parent="#accordion-2" href="#collapse2One"  th:href="'#collapse2' + ${tocallStat.index}" aria-expanded="true">
-                                          <span class="margin panel-title"></span>
-                                          <span class="label" th:text="${tocall.label}">resonance 3</span>
-                                          <span class="slash">/</span>
-                                          <span class="isin" th:text="${tocall.isin}"> FR00196847</span>
-                                          <span th:if="${tocall.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" alt="black-logo" th:alt="#{prd.eavest}" id="eavest"/></span>
-                                        </a>
+                                              </div>
+                                          </div>
                                       </div>
-  									                </h4>
-                                </div>
-                                <div class="hidden-tocall-product" role="tab" th:if="${tocallStat.index} gt 4" style="display:none;">
-                                    <h4 class="accordion-title">
-                                      <div>
-                                        <a class="prod-list panel-heading" role="button" data-toggle="collapse" data-parent="#accordion-2" href="#collapse2One"  th:href="'#collapse2' + ${tocallStat.index}" aria-expanded="true">
-                                          <span class="margin panel-title"></span>
-                                          <span class="label" th:text="${tocall.label}">resonance 4</span>
-                                          <span class="slash">/</span>
-                                          <span class="isin" th:text="${tocall.isin}"> / FR00196847</span>
-                                          <span th:if="${tocall.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" alt="black-logo" th:alt="#{prd.eavest}" id="eavest"/></span>
-                                        </a>
-                                      </div>
-  									                </h4>
-                                </div>
-                                <div th:id="'collapse2' + ${tocallStat.index}" id="collapse2One" class="panel-collapse collapse collapsed" role="tabpanel" aria-labelledby="heading2One">
-                                    <div class="panel-body">
-                                        <div class="col-md-12 product-accor-title">
-                                            <!-- <h3><span th:text="${tocall.deliver}">Société générale</span></h3> -->
-                                            <!-- <img src="/img/clock-color.png" alt="reveil" class="clock-img"/>
- 											<span class="grey-uppercase" th:text="${#dates.format(tocall.nextObsDate, 'dd/MM/yyy')}">25 / 12 / 2017</span> -->
-                                        </div>
-                                        <div class="row prod-accor-row">
-                                            <div class="col-xs-5 col-sm-4 col-md-3">
-                                                <a href="#" th:href="@{/products/{id}(id=${tocall.id})}">
-                                                    <div class="col-xs-12 col-md-12 img-prod-size">
-                                                        <div class="counter">
-                                                            <img src="/img/product.png" th:src="@{/products/{id}/image(id=${tocall.id})}" alt="produit" th:alt="#{prd.image}" id="accor-product" />
-                                                            <span class="overlay-product" th:if="${tocall.isEavest}"><img src="/img/black-logo-min.png" alt="logo eavest"/></span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
+                                  </div>
+                                  <!-- hover -->
+                                  <div class="over more-product-1">
+                                    <a>
+                                      <img src="/img/more-hover.png" id="more-product-1" alt="voir-plus" th:alt="#{get.more}"/>
+                                    </a>
+                                  </div>
 
-                                            <div class="col-xs-7 col-sm-7 col-md-9">
-                                                <ul class="list-unstyled">
-                                                    <li>
-                                                        <img src="/img/bell.png" alt="cloche" class="resize-bell" />
-                                                        <span class="light-blue remb-date">prochaine date d'observation</span>
-                                                        <div class="prod-date">15.04.2017</div>
-                                                    </li>
-                                                    <li>
-                                                        <span class="light-blue" id="cours">
-															<span class="light-blue" th:text="#{prd.strike}">niveau initial</span>
-                                                        </span>
-                                                        <span th:if="${tocall.strike}" class="bold-blue" th:text="${tocall.strike}">4.254</span>
-                                                        <span th:unless="${tocall.strike}" class="bold-blue" th:text="#{contact.us}">Compose mon phone-tel</span>
-                                                    </li>
-                                                </ul>
-                                                <ul class="list-unstyled">
-                                                    <li class="light-blue" th:text="#{undrl.asset}">sous-jacent</li>
-                                                    <li class="grey-uppercase" th:text="${tocall.prdSousJacent.label}">euro istoxx&reg; ewc 50</li>
-                                                    <li class="light-blue" th:text="#{prd.status}">statut</li>
-                                                    <li class="grey-uppercase" th:text="#{${tocall.prdStatus.description}}">en cours</li>
-                                                </ul>
-                                            </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- PRODUITS A OBSERVER -->
+                  <div class="col-sm-6 col-md-6 wrapper-prod padding_left">
+                      <img src="/img/eye.png" alt="eye" class="/img-responsive img-eye" th:alt="#{home.bell}" />
+                      <h1 class="product-title"><span th:text="#{to.call.prd}">produits à surveiller</span> <span class="min" th:text="#{home.from.days}">dans les 30 jours</span></h1>
+                      <div class="sous-container">
+
+                          <div class="panel-group" id="accordion-2" role="tablist" aria-multiselectable="true">
+                              <!-- collapse product -->
+                              <div class="panel panel-default" th:each="tocall : ${tocallProducts}" th:with="nbTocallProducts=${tocallStat.count}">
+                                  <div class="activestate" role="tab" th:if="${tocallStat.index} le 4">
+                                      <h4 class="accordion-title">
+                                        <div>
+                                          <a class="prod-list panel-heading" role="button" data-toggle="collapse" data-parent="#accordion-2" href="#collapse2One"  th:href="'#collapse2' + ${tocallStat.index}" aria-expanded="true">
+                                            <span class="margin panel-title"></span>
+                                            <span class="label" th:text="${tocall.label}">resonance 3</span>
+                                            <span class="slash">/</span>
+                                            <span class="isin" th:text="${tocall.isin}"> FR00196847</span>
+                                            <span th:if="${tocall.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" alt="black-logo" th:alt="#{prd.eavest}" id="eavest"/></span>
+                                          </a>
                                         </div>
-                                    </div>
-                                </div>
-                                <!-- hover -->
-                                <div class="over more-product-2">
-                                  <a>
-                                    <img src="/img/more-hover.png" id="more-product-2" alt="voir-plus" th:alt="#{get.more}"/>
-                                  </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end div container (products) -->
-        </div>
-    </section>
+    									                </h4>
+                                  </div>
+                                  <div class="hidden-tocall-product" role="tab" th:if="${tocallStat.index} gt 4" style="display:none;">
+                                      <h4 class="accordion-title">
+                                        <div>
+                                          <a class="prod-list panel-heading" role="button" data-toggle="collapse" data-parent="#accordion-2" href="#collapse2One"  th:href="'#collapse2' + ${tocallStat.index}" aria-expanded="true">
+                                            <span class="margin panel-title"></span>
+                                            <span class="label" th:text="${tocall.label}">resonance 4</span>
+                                            <span class="slash">/</span>
+                                            <span class="isin" th:text="${tocall.isin}"> / FR00196847</span>
+                                            <span th:if="${tocall.isEavest}"><img class="float-right img-responsive" src="/img/black-logo.png" alt="black-logo" th:alt="#{prd.eavest}" id="eavest"/></span>
+                                          </a>
+                                        </div>
+    									                </h4>
+                                  </div>
+                                  <div th:id="'collapse2' + ${tocallStat.index}" id="collapse2One" class="panel-collapse collapse collapsed" role="tabpanel" aria-labelledby="heading2One">
+                                      <div class="panel-body">
+                                          <div class="col-md-12 product-accor-title">
+                                          </div>
+                                          <div class="row prod-accor-row">
+                                              <div class="col-xs-3 col-sm-4 col-md-3">
+                                                  <a href="#" th:href="@{/products/{id}(id=${tocall.id})}">
+                                                      <div class="col-sm-12 col-md-8 img-prod-size">
+                                                          <div class="counter">
+                                                              <img src="/img/product.png" th:src="@{/products/{id}/image(id=${tocall.id})}" alt="produit" th:alt="#{prd.image}" id="accor-product" />
+                                                              <span class="overlay-product" th:if="${tocall.isEavest}"><img src="/img/black-logo-min.png" alt="logo eavest"/></span>
+                                                          </div>
+                                                          <div class="over-product-row"><a href="#"><img src="/img/more-hover.png" class="more-prod-accor-row" alt="voir-plus" th:alt="#{get.more}"/></a></div>
+                                                      </div>
+                                                  </a>
+                                              </div>
+
+                                              <div class="col-xs-7 col-sm-8 col-md-8 reimb-date">
+                                                  <ul class="list-unstyled">
+                                                      <li>
+                                                          <img src="/img/bell.png" alt="cloche" class="resize-bell" />
+                                                          <span class="light-blue remb-date">prochaine date d'observation</span>
+                                                          <div class="prod-date">15.04.2017</div>
+                                                      </li>
+                                                      <li>
+                                                          <span class="light-blue" id="cours">
+  															                          <span class="light-blue" th:text="#{prd.strike}">niveau initial</span>
+                                                          </span>
+                                                          <span class="bold-blue" th:text="${tocall.strike}!=null ? ${tocall.strike} : #{contact.us}">4.254</span>
+                                                      </li>
+                                                  </ul>
+                                                  <ul class="list-unstyled">
+                                                      <li class="light-blue" th:text="#{undrl.asset}">sous-jacent</li>
+                                                      <li class="grey-uppercase" th:text="${tocall.prdSousJacent.label}">euro istoxx&reg; ewc 50</li>
+                                                      <li class="light-blue" th:text="#{prd.status}">statut</li>
+                                                      <li class="grey-uppercase" th:text="#{${tocall.prdStatus.description}}">en cours</li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <!-- hover -->
+                                  <div class="over more-product-2">
+                                    <a>
+                                      <img src="/img/more-hover.png" id="more-product-2" alt="voir-plus" th:alt="#{get.more}"/>
+                                    </a>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- end div container (products) -->
+          </div>
+      </section>
 
     <!-- SECTION PERFREVIEW -->
     <section class="perf-review">
@@ -498,13 +451,8 @@
                     </div>
                     <div th:unless="${bestSeller}" class="month-product">
                         <img class="img-responsive img-product" alt="produit du mois" th:alt="#{home.best.seller}" />
+                        <div class="over-product"><a th:if="${bestSeller}" href="#" th:href="@{/products/{id}(id=${bestSeller.id})}"><img class="more-product" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}" /></a></div>
                     </div>
-                    <div class="over-product">
-                        <a th:if="${bestSeller}" href="#" th:href="@{/products/{id}(id=${bestSeller.id})}">
-                            <span><img class="more-product" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}" /></span>
-                        </a>
-                    </div>
-                    <div class="over-product"><a th:if="${bestSeller}" href="#" th:href="@{/products/{id}(id=${bestSeller.id})}"><img class="more-product" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}" /></a></div>
                 </div>
             </div>
         </div>
@@ -516,25 +464,6 @@
         <div class="col-md-12 black-line-1"></div>
     </div>
 
-    <!-- SECTION PORTEFEUILLE -->
-    <section class="portefeuille">
-        <div class="container text-center wrap">
-            <div class="hidden-xs col-sm-3 col-md-3 wallet-white-block">
-                <a href="/wallet"><img src="/img/wallet.png" id="wallet" alt="portefeuille" th:alt="#{wallet.title}" /></a>
-            </div>
-            <div class="col-xs-12 col-sm-9 col-md-9 wallet-black-block">
-                <h2><span class="wallet-teaser" th:text="#{home.wallet.teaser}">investisseurs, cgp, composez et suivez au quotidien
- 					votre portefeuille sur votre espace personnel</span>
- 				</h2>
-                <a href="/wallet">
-                    <button type="button" class="btn btn-secondary wallet-button"><span th:text="#{home.create.wallet}">créer mon portefeuille</span></button>
-                </a>
-            </div>
-        </div>
-    </section>
-    <div class="container">
-        <div class="col-md-12 black-line"></div>
-    </div>
 
     <!-- SECTION BLOG -->
 
@@ -880,18 +809,6 @@
             });
         });
 
-        // Section search open filter-row-container on click
-        $(function() {
-          $('#refine').click(function(){
-            $('#filter-row-container').toggleClass('filter-row-container-h filter-row-container');
-            $('#cross').toggleClass('cross-h cross');
-          });
-          $('#cross').click(function(){
-            $('#filter-row-container').toggleClass('filter-row-container-h filter-row-container');
-            $('#cross').toggleClass('cross-h cross');
-          });
-
-        });
 
         // ACCORDION redirection selon nombre de produits
         $(document).ready(function() {
