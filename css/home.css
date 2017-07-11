@@ -782,10 +782,38 @@ a.panel-heading {
   margin: 0 auto;
 }
 
-.over a img, .over-eavest a img, .over-agreement a img, .over-partner a img, .over-values div a img, .over-methodo div img, .over-product div img {
+.over a img, .over-product-row a img, .over-eavest a img, .over-agreement a img, .over-partner a img, .over-values div a img, .over-methodo div img, .over-product div img {
   position: relative;
   height: auto;
   margin: 0 auto;
+}
+
+.over-product-row {
+  position: absolute !important;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 85%;
+  min-width: 120px;
+  height: 100%;
+  background-color: #ffffff;
+  -webkit-text-decoration: none;
+  -moz-text-decoration: none;
+  -ms-text-decoration: none;
+  -o-text-decoration: none;
+  text-decoration: none;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  -ms-opacity: 0;
+  -o-opacity: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
 }
 
 .over, .over-eavest, .over-agreement, .over-partner, .over-values, .over-methodo, .over-product, .more-product-1, .more-product-2 {
@@ -814,7 +842,7 @@ a.panel-heading {
   transition: all 0.4s ease;
 }
 
-.over:hover, .over-blue:hover, .over:hover, .over-eavest:hover, .over-agreement:hover, .over-partner:hover, .over-values:hover, .over-methodo:hover, .over-product:hover, .over-blue:hover, .more:hover {
+.over:hover, .over-product-row:hover, .over-blue:hover, .over:hover, .over-eavest:hover, .over-agreement:hover, .over-partner:hover, .over-values:hover, .over-methodo:hover, .over-product:hover, .over-blue:hover, .more:hover {
   -webkit-opacity: 0.92;
   -moz-opacity: 0.92;
   -ms-opacity: 0.92;
@@ -822,7 +850,7 @@ a.panel-heading {
   opacity: 0.92;
 }
 
-.over a, .over-eavest a, .over-agreement a, .over-partner a, .over-values a, .over-methodo a, .over-product a {
+.over a, .over-product-row a, .over-eavest a, .over-agreement a, .over-partner a, .over-values a, .over-methodo a, .over-product a {
   display: block;
   margin: 0 auto;
   width: 75px;
@@ -856,7 +884,7 @@ a.panel-heading {
 .more-prod-accor-row {
   position: relative;
   cursor: auto;
-  padding: 55px 0px 55px 0px;
+  padding: 60px 0px 60px 0px;
   width: 50px;
 }
 
@@ -2176,6 +2204,12 @@ input, button, submit {
   }
 }
 
+@media(max-width: 549px){
+  .over-product-row {
+    width: 69%;
+  }
+}
+
 @media(max-width:506px){
   #log {
     margin: 2px 3px;
@@ -2218,6 +2252,14 @@ input, button, submit {
   }
   .logo-area {
     text-align: center;
+  }
+}
+
+@media (max-width : 737px) {
+  .img-prod-size {
+    padding: 0;
+    margin: 0;
+    min-width: 173px;
   }
 }
 
@@ -2412,6 +2454,10 @@ input, button, submit {
   .more-partner {
     padding: 70px 0px 70px 0px;
   }
+  .over-product-row {
+    right: 16px;
+    width: 106%;
+  }
 }
 
 @media (max-width : 370px){
@@ -2486,6 +2532,9 @@ input, button, submit {
   }
   .fa-search {
     right: 9%;
+  }
+  .over-product-row {
+    width: 97%;
   }
 }
 
@@ -2662,6 +2711,17 @@ input, button, submit {
     padding: 40px 0px 40px 0px;
   }
 }
+
+@media only screen and (min-device-width : 550px) and (max-device-width : 770px) {
+  #accor-product {
+    width: 155px;
+    height: 191px;
+  }
+  .over-product-row {
+    min-width: 155px;
+  }
+}
+
 
 @media(min-width:768px) {
   .grey-block {
