@@ -73,6 +73,11 @@ section {
   margin-bottom: 85px;
 }
 
+#accor-wallet-product {
+    width: 120px;
+    height: 170px;
+}
+
 img#document {
   height: 30px;
 }
@@ -85,8 +90,8 @@ img#document {
 
 #wallet-overlay {
   position:absolute;
-  top: 140%;
-  right: 40%;
+  top: 282%;
+  right: 32%;
   max-width: 10%;
 }
 
@@ -128,12 +133,11 @@ img#document {
 }
 
 .term-sheet-list {
-  padding-left: 0px;
+  margin-top: 10px;
   text-transform: uppercase;
 }
 
 /*MEDIA QUERIES*/
-
 
 @media only screen and (max-width:765px){
   .container {
@@ -167,5 +171,14 @@ img#document {
   #isin-wallet {
     width: 410px;
     font-size: 15px;
+  }
+}
+
+@media (max-width : 988px) {
+  #wallet-overlay {
+    position:absolute;
+    top: 282%;
+    right: 33%;
+    max-width: 10%;
   }
 }

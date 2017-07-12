@@ -207,7 +207,7 @@
 			                     <div class="col-xs-5 col-sm-2 col-md-2" id="img-wallet-product">
 			                       <a href="#" th:href="@{/products/{id}(id=${product.id})}">
 			                         <div class="counter">
-			                           <img src="/img/product.png" th:src="@{/products/{id}/image(id=${product.id})}" alt="produit" th:alt="#{prd.image}" id="accor-product"/>
+			                           <img src="/img/product.png" th:src="@{/products/{id}/image(id=${product.id})}" alt="produit" th:alt="#{prd.image}" id="accor-wallet-product"/>
 			                           <span id="wallet-overlay" th:if="${product.isEavest}"><img src="/img/black-logo-min.png" alt="logo eavest"/></span>
 			                         </div>
 			                       </a>
@@ -415,11 +415,15 @@
                                                  </li>
                                                  <li>
                                                      <span class="light-blue" id="cours"><span th:text="#{prd.perf}">performance</span></span>
-                                                     <span th:if="${refund.performance}" class="bold-blue" th:text="${refund.performance}">4.254</span>
-                                                     <span th:unless="${refund.performance}" class="bold-blue" th:text="#{prd.perf.teaser}"></span>
+                                                     <span class="bold-blue" th:text="${refund.performance}!=null? ${refund.performance} : #{prd.perf.teaser}">4.254</span>
                                                  </li>
                                              </ul>
                                              <ul class="list-unstyled">
+                                                 <li class="light-blue" th:text="#{prd.distance}">distance</li>
+												 <li class="grey-uppercase">
+													 <span th:text="${refund.distance!=null}? ${#numbers.formatDecimal(refund.distance, 0, 2, 'POINT')} : 'XXX'"></span>
+													 <span>%</span>
+												 </li>
                                                  <li class="light-blue" th:text="#{undrl.asset}">sous-jacent</li>
                                                  <li class="grey-uppercase" th:text="${refund.prdSousJacent.label}">euro istoxx&reg; ewc 50</li>
                                                  <li class="light-blue" th:text="#{prd.status}">statut</li>
@@ -482,8 +486,7 @@
                                                      <span class="light-blue" id="cours">
 														<span class="light-blue" th:text="#{prd.strike}">niveau initial</span>
                                                      </span>
-                                                     <span th:if="${tocall.strike}" class="bold-blue" th:text="${tocall.strike}">4.254</span>
-                                                     <span th:unless="${tocall.strike}" class="bold-blue" th:text="#{contact.us}">Compose mon phone-tel</span>
+                                                     <span class="bold-blue" th:text="${tocall.strike}!=null ? ${tocall.strike} : #{contact.us}">4.254</span>
                                                  </li>
                                              </ul>
                                              <ul class="list-unstyled">
