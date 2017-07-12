@@ -162,6 +162,53 @@ section {
   margin-top: 5px;
 }
 
+.overlay-chart {
+  background-color: black;
+  color: white;
+  width: 100%;
+  /*position: absolute;*/
+  bottom : 0%;
+  right: 0%;
+  left: 0;
+}
+
+.follow-product {
+  background-color: black;
+  color: white;
+  margin: 45px 0 15px 0;
+  padding: 25px 20px 45px 20px;
+  text-align: center;
+}
+
+.follow-product p {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-top: 18px;
+  text-align: center;
+  padding-bottom: 7px;
+  line-height: 15px;
+}
+
+.follow-product button {
+  border-radius: 0px;
+  background-color: white;
+  color: black;
+  font-size: 19px;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin: 10px 0 16px 0;
+  padding: 5px 10px
+}
+
+.counter-absolute {
+  position: absolute;
+  right: 82px;
+  left: 93px;
+  bottom: -699px;
+}
+
 .my-product-header {
   padding: 35px 0;
 }
