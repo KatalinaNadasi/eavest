@@ -116,31 +116,31 @@
             <div class="col-md-12 filter-row-container-h" id="filter-row-container">
               <div th:unless="${filteredProducts}" class="row filters">
                 <div class="sous-container">
-                  <div class="col-md-12 search-row">
-                      <form action="#">
-                      <div class="col-xs-12 col-sm-6 col-md-3 filter-1">
-                        <label for="filter_1" th:text="#{prd.bank.name}">émetteur</label>
-                        <input type="text" class="text" name="bank_name" id="filter_1"
-                        autocomplete="off"/>
-                      </div>
-                      <div class="col-xs-12 col-sm-6 col-md-3 filter-2">
-                        <label for="filter_2" th:text="#{prd.isin.code}">code isin</label> <input type="text" class="text" name="code_isin"
-                        id="filter_2" autocomplete="off"/>
-                      </div>
-                      <div class="col-xs-12 col-sm-6 col-md-3 filter-3">
-                        <label for="filter_3" th:text="#{prd.name}">nom du produit</label> <input type="text" class="text" name="product_name"
-                        id="filter_3" autocomplete="off"/>
-                      </div>
-                      <div class="col-xs-12 col-sm-6 col-md-3 filter-4">
-                        <label for="filter_4" th:text="#{prd.undrl.asset}">sous-jacent</label>
-                        <input type="text" class="text" name="base" id="filter_4"
-                        autocomplete="off"/>
-                      </div>
-                  </div>
-                  <div class="col-md-12 col-xs-offset-2 col-sm-12 filter-search">
-                    <input type="submit" value="Rechercher" th:value="#{prd.find}"
-                    id="filter-search" class="btn btn-default log" />
-                  </div>
+                  <form action="#">
+	                  <div class="col-md-12 search-row">
+	                      <div class="col-xs-12 col-sm-6 col-md-3 filter-1">
+	                        <label for="filter_1" th:text="#{prd.bank.name}">émetteur</label>
+	                        <input type="text" class="text" name="bank_name" id="filter_1"
+	                        autocomplete="off"/>
+	                      </div>
+	                      <div class="col-xs-12 col-sm-6 col-md-3 filter-2">
+	                        <label for="filter_2" th:text="#{prd.isin.code}">code isin</label> <input type="text" class="text" name="code_isin"
+	                        id="filter_2" autocomplete="off"/>
+	                      </div>
+	                      <div class="col-xs-12 col-sm-6 col-md-3 filter-3">
+	                        <label for="filter_3" th:text="#{prd.name}">nom du produit</label> <input type="text" class="text" name="product_name"
+	                        id="filter_3" autocomplete="off"/>
+	                      </div>
+	                      <div class="col-xs-12 col-sm-6 col-md-3 filter-4">
+	                        <label for="filter_4" th:text="#{prd.undrl.asset}">sous-jacent</label>
+	                        <input type="text" class="text" name="base" id="filter_4"
+	                        autocomplete="off"/>
+	                      </div>
+	                  </div>
+	                  <div class="col-md-12 col-xs-offset-2 col-sm-12 filter-search">
+	                    <input type="submit" value="Rechercher" th:value="#{prd.find}"
+	                    id="filter-search" class="btn btn-default log" />
+	                  </div>
                 </form>
               </div>
             </div>
@@ -543,7 +543,7 @@
     <section class="video">
       <div class="container video-wrap">
           <a href="https://player.vimeo.com/video/139675350" class="html5lightbox" title="Eavest">
-            <video loop muted poster="img/video-bgd.png" style="width: 1220px;" class="html5lightbox img-responsive">
+            <video loop="loop" muted="muted" poster="img/video-bgd.png" style="width: 1220px;" class="html5lightbox img-responsive">
             <!-- <source src="/video/eavest.mp4" /> -->
             </video>
           </a>
