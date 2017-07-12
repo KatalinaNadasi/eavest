@@ -67,16 +67,16 @@
 			</div>
 
 			<div class="col-md-12 container-fluid navbar">
-				<ul class="navbar list-inline list-unstyled">
-        	<li id="menu-home"><a href="/home" th:text="#{eav.menu.home}">Home</a></li>
-          <li id="menu-wallet"><a href="/wallet" th:text="#{eav.menu.wallet}">Mon Portefeuille</a></li>
-          <li id="menu-method"><a href="http://eavest.com/methodologie-2/" th:text="#{eav.menu.methodology}">Methodologie</a></li>
-          <li id="menu-mesure"><a href="http://eavest.com/sur-mesure/" th:text="#{eav.menu.handmade}">sur-mesure</a></li>
-          <li id="menu-products" class="selected"><a href="/products" th:text="#{eav.menu.products}">Produits</a></li>
-					<li id="menu-blog"><a href="http://eavest.com/category/blog/" th:text="#{eav.menu.blog}">Le Blog</a></li>
-					<li id="menu-faq"><a href="http://eavest.com/f-a-q/" th:text="#{eav.menu.faq}">FAQ</a></li>
-					<li id="menu-contact"><a href="mailto:contact@eavest.com" th:text="#{eav.menu.contacts}">Contact</a></li>
-        </ul>
+                <ul class="navbar list-inline list-unstyled list-menu">
+                    <li id="menu-home"><a href="/home" th:text="#{eav.menu.home}">Home</a></li>
+                    <li id="menu-method"><a href="/methodology" th:text="#{eav.menu.methodology}">Methodologie</a></li>
+                    <li id="menu-mesure"><a href="http://eavest.com/sur-mesure/" th:text="#{eav.menu.handmade}">sur-mesure</a></li>
+                    <li id="menu-products" class="selected"><a href="/products" th:text="#{eav.menu.products}">Produits</a></li>
+                    <li id="menu-wallet"><a href="/wallet" th:text="#{eav.menu.wallet}">Mon Portefeuille</a></li>
+                    <li id="menu-blog"><a href="http://eavest.com/category/blog/" th:text="#{eav.menu.blog}">Le Blog</a></li>
+                    <li id="menu-faq"><a href="http://eavest.com/f-a-q/" th:text="#{eav.menu.faq}">FAQ</a></li>
+                    <li id="menu-contact"><a href="mailto:contact@eavest.com" th:text="#{eav.menu.contacts}">Contact</a></li>
+                </ul>
 				<div class="slider_jquery slider hidden-xs">
 					<div class="slider-container"></div>
 				</div>
@@ -142,11 +142,18 @@
 					<ul class="list-unstyled">
 						<li class="light-blue" th:text="#{eav.currency}">devise</li>
 						<li class="grey-uppercase">
-						<span th:text="${product.prdCurrency!=null}? product.prdCurrency.code : '-'"></span></li>
+						<span th:text="${product.prdCurrency!=null}? ${product.prdCurrency.code} : '-'"></span></li>
+					</ul>
+					<ul class="list-unstyled">
+						<li class="light-blue" th:text="#{prd.distance}">distance</li>
+						<li class="grey-uppercase">
+							<span th:text="${product.distance!=null}? ${#numbers.formatDecimal(product.distance, 0, 2, 'POINT')} : 'XXX'"></span>
+							<span>%</span>
+						</li>
 					</ul>
 					<ul class="list-unstyled">
 						<li class="light-blue" th:text="#{prd.status}">statut</li>
-						<li class="grey-uppercase" th:text="${product.prdStatus.description}">en cours</li>
+						<li class="grey-uppercase" th:text="#{${product.prdStatus.description}}">en cours</li>
 					</ul>
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-4">
@@ -164,7 +171,7 @@
 					<ul class="list-unstyled">
 						<li class="light-blue" th:text="#{prd.remb.barrier}">barrière de rappel</li>
 						<li class="grey-uppercase">
-							<span th:text="${#numbers.formatDecimal(5555.86456765, 0, 2, 'POINT')}">2964.86
+							<span th:text="${callValue}!=null? ${#numbers.formatDecimal(callValue, 0, 2, 'POINT')} : '-'">2964.86
 							</span>
 							<span th:text="#{eav.pts}">points
 							</span>
@@ -175,7 +182,7 @@
 					<ul class="list-unstyled">
 						<li class="light-blue " th:text="#{prd.protec.barrier}">barrière de protection</li>
 						<li class="grey-uppercase">
-							<span th:text="${#numbers.formatDecimal(2356.12345, 0, 2, 'POINT')}">1778.92
+							<span th:text="${protectValue}? ${#numbers.formatDecimal(protectValue, 0, 2, 'POINT')} : '-'">1778.92
 							</span>
 							<span th:text="#{eav.pts}">points
 							</span>
@@ -274,25 +281,50 @@
 <section class="chart">
 		<div class="container">
 			<div class="col-md-12 chart-title">
-				<h1>Euro stoxx 50 et niveau de rappel du produit</h1>
+				<h1>
+					<span th:text="${product.prdSousJacent.label}"> Euro stoxx 50 </span> 
+					<span th:if="${product.prdRule.reimbursementBarrier} and ${product.strike}">
+						<span th:text="#{prd.chart.sep}">et</span>
+						<span th:text="#{prd.chart.recall}">niveau de rappel du produit</span>
+					</span>
+					<span th:if="${product.prdRule.protectionBarrier} and ${product.strike}">
+						<span th:text="#{prd.chart.sep}">et</span>
+						<span th:text="#{prd.chart.protect}">niveau de protection du produit</span>
+					</span>
+					<span th:if="${product.prdRule.couponBarrier} and ${product.strike}">
+						<span th:text="#{prd.chart.sep}">et</span>
+						<span th:text="#{prd.chart.coupon}">niveau de coupon du produit</span>
+					</span>
+					<span th:if="${product.prdRule.airbagBarrier} and ${product.strike}">
+						<span th:text="#{prd.chart.sep}">et</span>
+						<span th:text="#{prd.chart.airbag}">niveau d'airbag du produit</span>
+					</span>
+				</h1>
 			</div>
 		</div>
 
 		<div class="container">
-	<!--	<div id="chartdiv" class="col-xs-12 col-sm-12 col-md-offset-2 col-md-12"></div> -->
-		 	<div id="chartdiv"  ></div>
+		 	<div id="chartdiv"></div>
 			<!-- end chart -->
 			<div class="col-md-12 legend">
-				<span th:text="${product.label}"><hr id="eurostoxx"/>Euro Stoxx 50</span>
+				<span th:text="${product.prdSousJacent.label}"><hr id="eurostoxx"/>Euro Stoxx 50</span>
 			</div>
-			<div class="col-md-12 legend">
-				<span><hr id="protection-level"/>Niveau de rappel du produit</span>
+			<div class="col-md-12 legend" th:if="${product.prdRule.reimbursementBarrier} and ${product.strike}">
+				<span th:text="#{prd.chart.recall}"><hr id="protection-level"/>Niveau de rappel du produit</span>
+			</div>
+			<div class="col-md-12 legend" th:if="${product.prdRule.protectionBarrier} and ${product.strike}">
+				<span th:text="#{prd.chart.protect}"><hr id="to-be-define"/>Niveau de rappel du produit</span>
+			</div>
+			<div class="col-md-12 legend" th:if="${product.prdRule.couponBarrier} and ${product.strike}">
+				<span th:text="#{prd.chart.coupon}"><hr id="to-be-define"/>Niveau de rappel du produit</span>
+			</div>
+			<div class="col-md-12 legend" th:if="${product.prdRule.airbagBarrier} and ${product.strike}">
+				<span th:text="#{prd.chart.airbag}"><hr id="to-be-define"/>Niveau de rappel du produit</span>
 			</div>
 
 			<br/><br/><br/><br/>
 			<button class="button-reset">reset</button>
 		</div>
-	</div>
 </section>
 
 	<!-- FOOTER -->
@@ -345,7 +377,7 @@
 	<script th:inline="javascript">
 		/*<![CDATA[*/
 
-		var BASE_URL = 1/*[[${BASE_URL}]]*/;
+		var BASE_URL = /*[[${BASE_URL}]]*/;
 
 		/*]]>*/
 	</script>

@@ -12,11 +12,6 @@ section {
   display: block;
 }
 
-h1 {
-  font-size: 18px;
-  margin-top: 15px;
-}
-
 b {
   font-weight: 800;
 }
@@ -33,7 +28,7 @@ b {
 /*Section ELABORATION*/
 
 section#elaboration {
-    margin-top: 35px;
+    margin-top: 40px;
 }
 
 .elaboration figure img {

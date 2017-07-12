@@ -288,7 +288,7 @@ ul>li>a:hover {
 
 .search-body p:nth-child(1) {
   padding: 40px 0 0 0;
-  font-size: 17px;
+  font-size: 21px;
 }
 
 .search-body p::first-letter {
@@ -756,10 +756,7 @@ a.panel-heading {
   right: -11px;
 }
 
-#accor-product {
-  width: 120px;
-  height: 170px;
-}
+
 
 .product {
   width: 102px;
@@ -2337,7 +2334,7 @@ input, button, submit {
     font-size: 22px;
   }
   .search-body p:nth-child(1) {
-    font-size: 15px;
+    font-size: 19px;
   }
   .search-criterion span {
     font-size: 15px;
