@@ -544,7 +544,6 @@
       <div class="container video-wrap">
           <a href="https://player.vimeo.com/video/139675350" class="html5lightbox" title="Eavest">
             <video loop="loop" muted="muted" poster="img/video-bgd.png" style="width: 1220px;" class="html5lightbox img-responsive">
-            <!-- <source src="/video/eavest.mp4" /> -->
             </video>
           </a>
       </div>
@@ -758,93 +757,80 @@
     <!-- Script for autocompleting the filter text box for searching products -->
 
     <script th:inline="javascript">
-        /*<![CDATA[*/
-        $(document).ready(function() {
-            var productTags = [
-                [$ {
-                    productNames
-                }]
-            ];
-            // var maListe = ['tata'];
-            /*console.log(productTags);*/
-            $('#find-product').autocomplete({
-                // à décommenter KNA avant commit
-                source: productTags,
-            });
-        });
+  	/*<![CDATA[*/
+  	$(document).ready(function(){
+  	 	var productTags = [[${productNames}]];
+  		// var maListe = ['tata'];
+  		/*console.log(productTags);*/
+  		$('#find-product').autocomplete({
+  		// à décommenter KNA avant commit
+  	 	source: productTags,
+  		});
+  	});
 
-        $(document).ready(function() {
-            // à décommenter KNA avant commit
-            var productTags = {
-                data: [
-                    [$ {
-                        productNames
-                    }]
-                ],
-                list: {
-                    maxNumberOfElements: 4,
-                    match: {
-                        enabled: true
-                    },
-                    sort: {
-                        enabled: true
-                    }
-                },
-                theme: "square"
-            };
-            // 	var maListe = ['tata'];
-            /*console.log(productTags);*/
-            $('#countries').easyAutocomplete(productTags);
-        });
+ 	$(document).ready(function(){
+  		// à décommenter KNA avant commit
+  		var productTags = {
+ 			data: [[${productNames}]],
+ 			list: {
+ 	        maxNumberOfElements: 4,
+ 	        match: {
+ 	            enabled: true
+ 	        },
+ 	        sort: {
+ 	            enabled: true
+ 	        }
+ 	    },
+ 			theme: "square"
+ 		};
+  	// 	var maListe = ['tata'];
+  		/*console.log(productTags);*/
+  		$('#countries').easyAutocomplete(productTags);
+  	});
 
-        $(document).ready(function() {
-            var productTags = [
-                [$ {
-                    productNames
-                }]
-            ];
-            /*console.log(productTags);*/
-            $('#super-find-product').autocomplete({
-                source: productTags
-            });
-        });
+  	$(document).ready(function(){
+  	 	var productTags = [[${productNames}]];
+  		/*console.log(productTags);*/
+  		$('#super-find-product').autocomplete({
+ 	 	 	source: productTags
+  		});
+  	});
 
+  	// ACCORDION redirection selon nombre de produits
+  	$(document).ready(function() {
+  		var refundProducts = /*[[${nbRefundProducts}]]*/ 61;
+  		var tocallProducts = /*[[${nbTocallProducts}]]*/ 67;
+  		/*
+  		console.log(refundProducts);
+  		console.log(tocallProducts);
+  		*/
 
-        // ACCORDION redirection selon nombre de produits
-        $(document).ready(function() {
-            var refundProducts = /*[[${nbRefundProducts}]]*/ 61;
-            var tocallProducts = /*[[${nbTocallProducts}]]*/ 67;
-            /*
-            console.log(refundProducts);
-            console.log(tocallProducts);
-            */
+  	  if (refundProducts <= 5) {
+  	    $( '#more-product-1, .more-product-1' ).hide();
+  	  } else {
+  	    $( '#more-product-1, .more-product-1' ).show();
+  	  };
 
-            if (refundProducts <= 5) {
-                $('#more-product-1, .more-product-1').hide();
-            } else {
-                $('#more-product-1, .more-product-1').show();
-            };
+  	  if (tocallProducts <= 5) {
+  	    $( '#more-product-2, .more-product-2' ).hide();
+  	  } else {
+ 	    $( '#more-product-2, .more-product-2' ).show();
+ 	  };
 
-            if (tocallProducts <= 5) {
-                $('#more-product-2, .more-product-2').hide();
-            } else {
-                $('#more-product-2, .more-product-2').show();
-            };
+  	  // redirection accordion au hover
+  	  // afficher l'accordion total au click qui est en display none avant
+  	  $( 'a #more-product-1' ).click(function(){
+  	    $('.hidden-refund-product').show();
+  	    $( '#more-product-1, .more-product-1' ).hide();
+  	  });
 
-            // redirection accordion au hover
-            // afficher l'accordion total au click qui est en display none avant
-            $('a #more-product-1').click(function() {
-                $('.hidden-refund-product').show();
-                $('#more-product-1, .more-product-1').hide();
-            });
-
-            $('a #more-product-2').click(function() {
-                $('.hidden-tocall-product').show();
-                $('#more-product-2, .more-product-2').hide();
-            });
-        });
-        /*]]>*/
-    </script>
+  	  $( 'a #more-product-2' ).click(function(){
+  	    $('.hidden-tocall-product').show();
+  	    $( '#more-product-2, .more-product-2' ).hide();
+  	  });
+  	});
+  	/*]]>*/
+  	</script>
 </body>
 
 </html>

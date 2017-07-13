@@ -303,19 +303,25 @@
 			</div>
 		</div>
 
+		<!-- Affichage du chart pour les abonnés -->
 		<div class="container">
-				<div id="chartdiv" style="background-color: violet;">
-					<div class="counter-absolute">
-						<div class="overlay-chart">
-							<div class="col-md-12 follow-product">
-								<p>suivez au quotidien les performances de votre produit <br/><br/>recevez des e-mails d'alerte pour piloter vos investissements</p>
-								<button type="button" class="btn btn-secondary"><span th:text="#{home.create.wallet}">créer mon portefeuille</span></button>
-							</div>
+				<div id="chartdiv"></div>
+		</div>
+		<!-- Affichage du chart statique pour les non-abonnés -->
+		<div class="container">
+				<div class="chart">
+					<img src="/img/chart-bgd.png" class="img-responsive" />
+					<span class="overlay-chart">
+						<div class="follow-product" id="follow-product">
+							<p>suivez au quotidien les performances de votre produit <br/><br/>recevez des e-mails d'alerte pour piloter vos investissements</p>
+							<button type="button" class="btn btn-secondary"><span th:text="#{home.create.wallet}">créer mon portefeuille</span></button>
 						</div>
-					</div>
+					</span>
 				</div>
+		</div>
 
-			<!-- end chart -->
+			<!-- Affichage de la légende pour les abonnés -->
+			<div class="container" id="chart-legend">
 				<div class="col-md-12 legend">
 					<span th:text="${product.prdSousJacent.label}"><hr id="eurostoxx"/>Euro Stoxx 50</span>
 				</div>
