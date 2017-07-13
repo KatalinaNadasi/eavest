@@ -23,7 +23,6 @@ section {
 #user-img {
   background-color: #F2F2F2;
   font-size: 27px;
-  font-size: 27px;
   padding: 5px;
   float: right;
   border: none;
@@ -35,26 +34,6 @@ section {
 
 .product-wallet-title {
   padding: 0;
-}
-
-.modal-body input {
-  border: 2px solid blue;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
-  border-radius: 0;
-}
-
-.form-group button,
-.modal-footer button {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
-  border-radius: 0;
-  background-color: white;
-  padding: 5px 15px;
 }
 
 .blue-uppercase {

@@ -15,7 +15,7 @@ section {
 }
 
 body {
-  padding-top: 200px;
+  padding-top: 225px;
   background: #F2F2F2;
   color: #020202;
   font-family: 'Open Sans', 'Quicksand', Arial, sans-serif;
@@ -163,7 +163,7 @@ h6 {
 	text-transform: uppercase;
 	font-weight: bold;
   font-size: 13px;
-  min-height: 95px;
+  min-height: 100px;
 }
 
 .navbar {
@@ -178,6 +178,12 @@ h6 {
 .navbar-toggle {
   margin-right: 25px !important;
   border: none !important;
+}
+
+.fa-cog {
+  font-size: 30px;
+  margin: 3px;
+  transform: translateY(6px);
 }
 
 .navbar-toggle:hover {
@@ -272,6 +278,28 @@ ul>li>a:hover {
 	padding: 0px 0;
   height: 55px;
   display: none;
+}
+
+/*MODAL*/
+
+.modal-body input {
+  border: 2px solid blue;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+
+.form-group button,
+.modal-footer button { 
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  background-color: white;
+  padding: 5px 15px;
 }
 
 /*SECTION SEARCH*/
