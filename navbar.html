@@ -69,21 +69,38 @@
             </div>
 
             <div class="col-md-12 container-fluid navbar">
-                <ul class="navbar list-inline list-unstyled list-menu">
-                    <li id="menu-home" class="selected"><a href="/home" th:text="#{eav.menu.home}">Home</a></li>
-                    <li id="menu-method"><a href="/methodology" th:text="#{eav.menu.methodology}">Methodologie</a></li>
-                    <li id="menu-mesure"><a href="http://eavest.com/sur-mesure/" th:text="#{eav.menu.handmade}">sur-mesure</a></li>
-                    <li id="menu-products"><a href="/products" th:text="#{eav.menu.products}">Produits</a></li>
-                    <li id="menu-wallet"><a href="/wallet" th:text="#{eav.menu.wallet}">Mon Portefeuille</a></li>
-                    <li id="menu-blog"><a href="http://eavest.com/category/blog/" th:text="#{eav.menu.blog}">Le Blog</a></li>
-                    <li id="menu-faq"><a href="http://eavest.com/f-a-q/" th:text="#{eav.menu.faq}">FAQ</a></li>
-                    <li id="menu-contact"><a href="mailto:contact@eavest.com" th:text="#{eav.menu.contacts}">Contact</a></li>
-                </ul>
-                <div class="slider_jquery slider hidden-xs">
-                    <div class="slider-container"></div>
-                </div>
-            </div>
-        </div>
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <ul class="collapse navbar-collapse list-inline list-unstyled list-menu hidden-xs hidden-sm">
+                  <li id="menu-home" class="selected"><a href="/home" th:text="#{eav.menu.home}">Home</a></li>
+                  <li id="menu-method"><a href="/methodology" th:text="#{eav.menu.methodology}">Methodologie</a></li>
+                  <li id="menu-mesure"><a href="http://eavest.com/sur-mesure/" th:text="#{eav.menu.handmade}">sur-mesure</a></li>
+                  <li id="menu-products"><a href="/products" th:text="#{eav.menu.products}">Produits</a></li>
+                  <li id="menu-wallet"><a href="/wallet" th:text="#{eav.menu.wallet}">Mon Portefeuille</a></li>
+                  <li id="menu-blog"><a href="http://eavest.com/category/blog/" th:text="#{eav.menu.blog}">Le Blog</a></li>
+                  <li id="menu-faq"><a href="http://eavest.com/f-a-q/" th:text="#{eav.menu.faq}">Eavestpedia</a></li>
+                  <li id="menu-contact"><a href="mailto:contact@eavest.com" th:text="#{eav.menu.contacts}">Contact</a></li>
+              </ul>
+              <ul class="panel-collapse collapse navbar-collapse list-group list-unstyled list-menu hidden-md hidden-lg" id="myNavbar">
+                  <li id="menu-home" class="selected"><a href="/home" th:text="#{eav.menu.home}">Home</a></li>
+                  <li id="menu-method"><a href="/methodology" th:text="#{eav.menu.methodology}">Methodologie</a></li>
+                  <li id="menu-mesure"><a href="http://eavest.com/sur-mesure/" th:text="#{eav.menu.handmade}">sur-mesure</a></li>
+                  <li id="menu-products"><a href="/products" th:text="#{eav.menu.products}">Produits</a></li>
+                  <li id="menu-wallet"><a href="/wallet" th:text="#{eav.menu.wallet}">Mon Portefeuille</a></li>
+                  <li id="menu-blog"><a href="http://eavest.com/category/blog/" th:text="#{eav.menu.blog}">Le Blog</a></li>
+                  <li id="menu-faq"><a href="http://eavest.com/f-a-q/" th:text="#{eav.menu.faq}">Eavestpedia</a></li>
+                  <li id="menu-contact"><a href="mailto:contact@eavest.com" th:text="#{eav.menu.contacts}">Contact</a></li>
+              </ul>
+              <div class="slider_jquery slider hidden-xs">
+                  <div class="slider-container"></div>
+              </div>
+          </div>
+      </div>
     </nav>
 
 

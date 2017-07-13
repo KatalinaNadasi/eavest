@@ -175,6 +175,15 @@ h6 {
   margin-top: 18px;
 }
 
+.navbar-toggle {
+  margin-right: 25px !important;
+  border: none !important;
+}
+
+.navbar-toggle:hover {
+  background-color: white !important;
+}
+
 .list-menu {
   text-transform: uppercase;
 }
@@ -2275,7 +2284,7 @@ input, button, submit {
   }
 }
 
-@media (max-width : 770px) {
+@media (max-width : 766px) {
   .navbar-list {
     display: inline-block;
     text-align: center;
@@ -2286,6 +2295,9 @@ input, button, submit {
     margin-right: 23px;
     padding: 5px;
     margin-bottom: 5px;
+  }
+  .navbar-collapse {
+    min-height: 370px !important;
   }
 }
 
@@ -2756,7 +2768,7 @@ input, button, submit {
 }
 
 
-@media(min-width:768px) {
+@media(min-width:770px) {
   .grey-block {
     margin-bottom: 15px;
   }
@@ -2811,6 +2823,9 @@ input, button, submit {
   }
   .methodologie {
     display: inline-block;
+  }
+  #myNavbar {
+    display: none !important;
   }
 }
 
