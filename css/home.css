@@ -28,62 +28,6 @@ body {
   justify-content: space-between;
 }
 
-/*@font-face {
-    font-family: "GothamRnd";
-    src: url("font/GothamRnd-Bold.otf") format("truetype");
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "GothamRnd";
-    src: url("font/GothamRnd-BoldIta.otf") format("truetype");
-    font-weight: bold;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "GothamRnd";
-    src: url("font/GothamRnd-Book.otf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "GothamRnd";
-    src: url("font/GothamRnd-BookIta.otf") format("truetype");
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "GothamRnd";
-    src: url("font/GothamRnd-Light.otf") format("truetype");
-    font-weight: lighter;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "GothamRnd";
-    src: url("font/GothamRnd-MedItal.otf") format("truetype");
-    font-weight: bold;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "GothamRnd";
-    src: url("font/GothamRounded-LightItalic.otf") format("truetype");
-    font-weight: lighter;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "GothamRnd";
-    src: url("font/GothamRounded-Medium.otf") format("truetype");
-    font-weight: bold;
-    font-style: normal;
-}*/
-
 h1 {
   font-size: 17px;
   font-weight: 800;
@@ -280,6 +224,20 @@ ul>li>a:hover {
   display: none;
 }
 
+/*MODAL */
+.modal-content {
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  -ms-border-radius: 0px !important;
+  -o-border-radius: 0px !important;
+  border-radius: 0px !important;
+}
+
+input, button, submit {
+  border:none;
+  background-color: transparent;
+}
+
 /*MODAL*/
 
 .modal-body input {
@@ -292,7 +250,7 @@ ul>li>a:hover {
 }
 
 .form-group button,
-.modal-footer button { 
+.modal-footer button {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -1267,90 +1225,6 @@ a.panel-heading {
 
 /*end hover*/
 
-/*SEARCH-PRODUCT*/
-/*
-.black-block{
-  background-color: black;
-  color: white;
-  margin-bottom: 0;
-  padding-bottom: 40px;
-  padding-top: 40px;
-  margin-top: 45px;
-}
-
-#black-block {
-  padding-left: 0;
-  padding-right: 0
-}
-
-.search {
-  background-color: white;
-  font-size: 14px;
-  text-align: center;
-  padding: 40px 15px 39px 15px;
-}
-
-.search-bar {
-  height: 48px !important;
-  border: solid 2px #0251FB !important;
-  margin-top: 15px !important;
-  color: black !important;
-}
-
-.search-bar:hover {
-  color: white !important;
-}
-
-.search p {
-  margin: 0;
-}*/
-
-/*.fa-search {
-  color: #0251FB;
-  border-left: none;
-  margin-top: -3px;
-  height: 37px;
-  padding-right: 5px;
-  -webkit-transform: translateX(-3px);
-  -moz-transform: translateX(-3px);
-  -ms-transform: translateX(-3px);
-  -o-transform: translateX(-3px);
-  transform: translateX(-3px);
-  padding: 3px;
-  position: absolute;
-  right: 36px;
-}*/
-
-/*section .search-product input[type=search] {
-  border: solid 1px white;
-  border-right: none;
-  height: 37px;
-  margin-bottom: 15px;
-  margin-top: 15px;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  width: 55%;
-  right: 70px;
-  -webkit-transform: translateY(2px);
-  -moz-transform: translateY(2px);
-  -ms-transform: translateY(2px);
-  -o-transform: translateY(2px);
-  transform: translateY(2px);
-  color: black;
-}
-
-section .search-product input[type="search" i]:focus {
-  background: transparent;
-  color: black !important;
-}
-
-button[type="submit"]{
-  background: transparent;
-  border: none;
-}*/
-
-
 .numbers {
   padding-left: 5px;
 }
@@ -1525,6 +1399,7 @@ button#close {
 #wallet {
   width: 80px;
   height: 69px;
+  margin-top: 40px;
 }
 
 .wallet-black-block {
@@ -2053,14 +1928,6 @@ a#arrow-position {
   text-align: center;
 }
 
-/*MODAL */
-.modal-content {
-  -webkit-border-radius: 0px !important;
-  -moz-border-radius: 0px !important;
-  -ms-border-radius: 0px !important;
-  -o-border-radius: 0px !important;
-  border-radius: 0px !important;
-}
 
 /*MEDIA QUERIES*/
 
@@ -2232,10 +2099,6 @@ a#arrow-position {
   }
 }
 
-input, button, submit {
-  border:none;
-  background-color: transparent;
-}
 
 @media only screen and (min-device-width : 401px) and (max-device-width : 420px){
   .white-block-style {
