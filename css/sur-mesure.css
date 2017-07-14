@@ -5,19 +5,20 @@ body {
 }
 
 .container {
-    width: 845px;
+    width: 688px;
 }
 
 h1 {
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 24px;
   line-height: 32px;
+  letter-spacing: 1px;
 }
 
 h2 {
   font-weight: 100;
-  font-size: 21px;
+  font-size: 20px;
   line-height: 26px;
   text-transform: initial;
   padding-top: 40px;
@@ -25,16 +26,17 @@ h2 {
   padding-bottom: 40px;
 }
 
-header, .container {
+header {
   background-color: white;
   padding-top: 30px;
 }
 
-h1:nth-child(1){
+.solutions h1{
   margin-bottom: 35px;
+  margin-top: 75px;
 }
 
-header p:nth-child(2), p:nth-child(3), p:nth-child(4) {
+.header-body {
   font-size: 15px;
   line-height: 18px;
   text-align: left;
@@ -42,7 +44,7 @@ header p:nth-child(2), p:nth-child(3), p:nth-child(4) {
 }
 
 header p:nth-child(4) {
-  margin-bottom: 32px;
+  margin-bottom: 65px;
 }
 
 hr {
@@ -54,9 +56,56 @@ hr {
 }
 
 header h2 {
-  padding: 40px 32px 40px;
+  padding: 40px 32px 50px;
 }
 
-/*header hr:nth-child(1){
-  margin-bottom: 50px;
-}*/
+/*SECTIONS*/
+
+section {
+  margin-top: 130px;
+}
+
+.section-row {
+  margin-top: 30px;
+}
+
+.section-main-p {
+  font-weight: 100;
+  font-size: 19px;
+  line-height: 26px;
+  text-transform: initial;
+}
+
+.section-title {
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 26px;
+  text-transform: uppercase;
+  margin : 45px 0 35px;
+}
+
+.section-p {
+  margin-bottom: 25px;
+}
+
+section hr {
+  margin: 50px 0;
+}
+
+.graphic-1 {
+  margin : 35px 0 0;
+}
+
+/*SECTION OPTIMISATION*/
+
+.optimisation {
+  background-color: white;
+}
+
+.optimisation h1 {
+  margin-top: 155px;
+}
+
+.graphic-2 {
+  margin: 35px 0 75px 0;
+}
