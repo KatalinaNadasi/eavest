@@ -129,3 +129,45 @@ section hr {
 #graphic-3 {
   margin: 35px 0 105px 0;
 }
+
+@media (max-width: 550px) {
+  h1, h2, .section-main-p, .section-title {
+    font-size: 20px;
+  }
+  header h2 {
+    padding: 15px 0px;
+  }
+  .header-body {
+    font-size: 14px;
+  }
+  #shield {
+    height: 75px;
+  }
+  #circle, #icon-entrelace {
+    width: 75px;
+  }
+  .section-title {
+    margin: 15px 0 27px;
+  }
+  section hr {
+    margin: 40px 0 40px;
+  }
+  .optimisation h1, section {
+    margin-top: 55px;
+  }
+}
+
+@media (max-width: 750px) {
+  header {
+    padding-top: 0px;
+  }
+}
+
+@media (max-width: 990px) {
+  .container {
+    width: 70%;
+  }
+  .section-main-p {
+    margin-top: 10px;
+  }
+}
