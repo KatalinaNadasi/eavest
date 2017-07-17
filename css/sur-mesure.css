@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-    width: 688px;
+    width: 795px;
 }
 
 h1 {
@@ -18,7 +18,7 @@ h1 {
 
 h2 {
   font-weight: 100;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 26px;
   text-transform: initial;
   padding-top: 40px;
@@ -44,7 +44,7 @@ header {
 }
 
 header p:nth-child(4) {
-  margin-bottom: 65px;
+  margin-bottom: 75px;
 }
 
 hr {
@@ -56,7 +56,7 @@ hr {
 }
 
 header h2 {
-  padding: 40px 32px 50px;
+  padding: 50px 19px 60px;
 }
 
 /*SECTIONS*/
@@ -66,34 +66,43 @@ section {
 }
 
 .section-row {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .section-main-p {
   font-weight: 100;
-  font-size: 19px;
+  font-size: 22px;
   line-height: 26px;
   text-transform: initial;
 }
 
 .section-title {
-  font-size: 1.5em;
+  font-size: 24px;
   font-weight: 600;
   line-height: 26px;
   text-transform: uppercase;
-  margin : 45px 0 35px;
+  margin: 65px 0 40px;
 }
 
 .section-p {
   margin-bottom: 25px;
+  font-size: 15px;
+  line-height: 19px;
 }
 
 section hr {
-  margin: 50px 0;
+  margin: 60px 0 50px;
 }
 
-.graphic-1 {
+#graphic-1 {
   margin : 35px 0 0;
+}
+
+/*SECTION PROTECTION*/
+
+#shield {
+  height: 105px;
+  transform: translateY(-15px);
 }
 
 /*SECTION OPTIMISATION*/
@@ -106,6 +115,17 @@ section hr {
   margin-top: 155px;
 }
 
-.graphic-2 {
-  margin: 35px 0 75px 0;
+#circle {
+  width: 90px;
+  transform: translateY(-7px);
+}
+
+#graphic-2 {
+  margin: 35px 0 105px 0;
+}
+
+/*SECTION PARTICIPATION*/
+
+#graphic-3 {
+  margin: 35px 0 105px 0;
 }
