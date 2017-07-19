@@ -188,3 +188,11 @@ $(function() {
 $(document).on('focus', 'input', function () {
    $('.contact').addClass('no-shadow');
 });
+
+
+$(function() {
+  $('#icons').click(function(){
+    $('.icon-bar').toggleClass('icon-hide');
+    $('.icon-close').toggleClass('icon-show');
+  })
+})

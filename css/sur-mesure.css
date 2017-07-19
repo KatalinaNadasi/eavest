@@ -131,8 +131,14 @@ section hr {
 }
 
 @media (max-width: 550px) {
-  h1, h2, .section-main-p, .section-title {
+  body {
+    margin-top: -100px;
+  }
+  h1, h2, .section-title {
     font-size: 20px;
+  }
+  .section-main-p {
+    font-size: 18px;
   }
   header h2 {
     padding: 15px 0px;
@@ -169,5 +175,8 @@ section hr {
   }
   .section-main-p {
     margin-top: 10px;
+  }
+  img#icon-entrelace {
+    margin-bottom: 20px;
   }
 }

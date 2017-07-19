@@ -56,32 +56,33 @@
  						        <a href="https://twitter.com/EAVEST_"><i class="fa fa-twitter"></i></a>
  						        <a href="?lang=fr_FR" class="language">fr</a>/<a href="?lang=en_EN" class="language">en</a>
 
- 					</span>
+ 					        </span>
                     <div class="zone-transit">
                         <span sec:authorize="isAuthenticated()">
- 							<form th:action="@{/logout}" method="post">
- 								<input type="submit" value="Sign Out" th:value="#{eav.sign.out}" class="btn btn-default log" />
- 							</form>
- 						</span>
+             							<form th:action="@{/logout}" method="post">
+             								<input type="submit" value="Sign Out" th:value="#{eav.sign.out}" class="btn btn-default log" />
+             							</form>
+             						</span>
 
                         <span sec:authorize="hasRole('ROLE_ADMIN')">
- 							<form th:action="@{/admin}" method="get">
- 								<input type="submit" value="Back Office" class="btn btn-default log" />
- 							</form>
- 						</span>
+             							<form th:action="@{/admin}" method="get">
+             								<input type="submit" value="Back Office" class="btn btn-default log" />
+             							</form>
+             						</span>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-12 container-fluid navbar">
               <div class="navbar-header">
-                <button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#myNavbar">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" id="icons">
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
+                  <span class="icon-close"><img id="menu-cross" src="/img/croix.png" alt="fermer"></span>
                 </button>
               </div>
-              <ul class="collapse navbar-collapse list-inline list-unstyled list-menu hidden-xs hidden-sm">
+              <ul class="navbar collapse navbar-collapse list-inline list-unstyled list-menu hidden-xs hidden-sm">
                   <li id="menu-home" class="selected"><a href="/home" th:text="#{eav.menu.home}">Home</a></li>
                   <li id="menu-method"><a href="/methodology" th:text="#{eav.menu.methodology}">Methodologie</a></li>
                   <li id="menu-mesure"><a href="http://eavest.com/sur-mesure/" th:text="#{eav.menu.handmade}">sur-mesure</a></li>
@@ -100,6 +101,10 @@
                   <li id="menu-blog"><a href="http://eavest.com/category/blog/" th:text="#{eav.menu.blog}">Le Blog</a></li>
                   <li id="menu-faq"><a href="http://eavest.com/f-a-q/" th:text="#{eav.menu.faq}">Eavestpedia</a></li>
                   <li id="menu-contact"><a href="mailto:contact@eavest.com" th:text="#{eav.menu.contacts}">Contact</a></li>
+                  <li><a th:unless="${#authorization.expression('isAuthenticated()')}"  class="italicized grey-letters">S'inscrire</a></li>
+                  <li><a th:unless="${#authorization.expression('isAuthenticated()')}" href="http://localhost:8080/login" th:href="@{/login}" class="italicized grey-letters auth" th:text="#{eav.login}">Se connecter</a></li>
+                  <li><span th:if="${session.authUserName}" th:text="${session.authUserName}" class="italicized auth">Nom de l'utilisateur</span></li>
+                  <li><input type="submit" value="Back Office" class="btn btn-default log" /></li>
               </ul>
               <div class="slider_jquery slider hidden-xs">
                   <div class="slider-container"></div>

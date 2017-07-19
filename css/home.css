@@ -115,13 +115,37 @@ h6 {
   font-size: 12px;;
   background-color: white;
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 20px !important;
   margin-top: 18px;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: transparent;
 }
 
 .navbar-toggle {
   margin-right: 25px !important;
   border: none !important;
+  top: -75px;
+  right: 0;
+}
+
+.navbar-toggle .icon-bar {
+  width: 28px;
+  height: 4px;
+  border-radius: 0px;
+}
+
+.icon-close {
+  display: none;
+}
+
+.icon-hide {
+  display: none !important;
+}
+
+.icon-show {
+  display: block !important;
 }
 
 .fa-cog {
@@ -189,7 +213,7 @@ ul>li>a:hover {
     padding-top: 15px;
 }
 
-.zone-transit input.btn.btn-default {
+.zone-transit input.btn.btn-default, .btn-default {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -2290,7 +2314,7 @@ a#arrow-position {
 }
 
 /*VIDEO MEDIA QUERIES*/
-@media (max-width: 800px) {
+@media (max-width: 770px) {
   .lightboxleft {
     width: 100%;
   }
@@ -2299,6 +2323,9 @@ a#arrow-position {
   }
   .divtext {
     margin: 12px;
+  }
+  .language-switcher {
+    display: none;
   }
 }
 /*END VIDEO MEDIA QUERIES*/
