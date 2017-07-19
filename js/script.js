@@ -184,3 +184,7 @@ $(function() {
   });
 
 });
+
+$(document).on('focus', 'input', function () {
+   $('.contact').addClass('no-shadow');
+});
