@@ -196,3 +196,7 @@ $(function() {
     $('.icon-close').toggleClass('icon-show');
   })
 })
+
+$('#collapse1').collapse({
+  show: true
+})
