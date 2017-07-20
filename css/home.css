@@ -119,6 +119,10 @@ h6 {
   margin-top: 18px;
 }
 
+.navbar-default .navbar-toggle {
+  border-color: white !important;
+}
+
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
     border-color: transparent;
 }

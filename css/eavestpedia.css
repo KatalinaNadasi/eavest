@@ -24,9 +24,11 @@ section {
 }
 
 p {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 19px;
+  margin-bottom: 15px;
 }
+
 
 /*ACCORDION*/
 
@@ -73,7 +75,7 @@ header p {
   position: relative;
   text-transform: none;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 19px;
   font-family: inherit;
   line-height: 24px;
   letter-spacing: inherit;
@@ -85,4 +87,24 @@ header p {
 
 .panel-title > a {
   color: black !important;
+}
+
+.active-title a{
+  color: blue !important;
+}
+
+/*section submit-question*/
+
+.submit-question {
+  margin-bottom: 25px;
+}
+
+.submit-question a {
+  font-size: 16px;
+  text-decoration: underline !important;
+}
+
+#enveloppe {
+  height: 30px;
+  margin-right: 10px;
 }

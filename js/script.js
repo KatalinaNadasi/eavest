@@ -195,8 +195,13 @@ $(function() {
     $('.icon-bar').toggleClass('icon-hide');
     $('.icon-close').toggleClass('icon-show');
   })
-})
 
-$('#collapse1').collapse({
-  show: true
+  $('#collapse1').collapse({
+    show: true
+  })
+
+  // $('.panel-title a').click(function() {
+  //   $('.faq-panel-heading').toggleClass('.active-title');
+  // })
+
 })
