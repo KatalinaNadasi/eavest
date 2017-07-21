@@ -72,11 +72,11 @@
                 <ul class="navbar list-inline list-unstyled list-menu">
                     <li id="menu-home" class="selected"><a href="/home" th:text="#{eav.menu.home}">Home</a></li>
                     <li id="menu-method"><a href="/methodology" th:text="#{eav.menu.methodology}">Methodologie</a></li>
-                    <li id="menu-mesure"><a href="http://eavest.com/sur-mesure/" th:text="#{eav.menu.handmade}">sur-mesure</a></li>
+                    <li id="menu-mesure"><a href="/sur-mesure" th:text="#{eav.menu.handmade}">sur-mesure</a></li>
                     <li id="menu-products"><a href="/products" th:text="#{eav.menu.products}">Produits</a></li>
                     <li id="menu-wallet"><a href="/wallet" th:text="#{eav.menu.wallet}">Mon Portefeuille</a></li>
-                    <li id="menu-blog"><a href="http://eavest.com/category/blog/" th:text="#{eav.menu.blog}">Le Blog</a></li>
-                    <li id="menu-faq"><a href="http://eavest.com/f-a-q/" th:text="#{eav.menu.faq}">FAQ</a></li>
+                    <li id="menu-blog"><a href="/category/blog/" th:text="#{eav.menu.blog}">Le Blog</a></li>
+                    <li id="menu-faq"><a href="/f-a-q/" th:text="#{eav.menu.faq}">FAQ</a></li>
                     <li id="menu-contact"><a href="mailto:contact@eavest.com" th:text="#{eav.menu.contacts}">Contact</a></li>
                 </ul>
                 <div class="slider_jquery slider hidden-xs">
@@ -90,51 +90,52 @@
     <section class="search-product">
       <div class="container">
           <div class="col-md-12 search-header">
-            <h6>cherchez un produit parmi nos 2000 références</h6>
+            <h6>
+            	<span th:utext="#{prd.search(${nbProducts})}">cherchez un produit parmi nos</span>
+            </h6>
           </div>
           <div class="col-md-12 search-body">
-            <p>émetteur, Code ISIN, Nom du produit, Sous-jacent</p>
+            <p th:text="#{prd.search.args(#{prd.bank.name}, #{prd.isin.code}, #{prd.name}, #{prd.undrl.asset})}">
+            	émetteur, Code ISIN, Nom du produit, Sous-jacent</p>
             <div class="col-md-offset-3 col-md-6">
               <div class="wrapper-search">
                 <div class="search-b">
-                  <span>
-                    <form th:object="${search}" action="#" th:action="@{/home/super-find}" method="post">
-                      <input type="search" id="super-find-product" autocomplete="off" th:field="*{text}"/>
-                      <button type="submit"><i class="fa fa-1x fa-search"></i>
-                      </button>
-                    </form>
-                  </span>
+                  <form th:object="${search}" action="#" th:action="@{/home/super-find}" method="post">
+                    <input type="search" id="super-find-product" autocomplete="off" th:field="*{text}"/>
+                    <button type="submit"><i class="fa fa-1x fa-search"></i>
+                    </button>
+                  </form>
                 </div>
               </div>
             </div>
             <div class="col-md-12 margin-search" id="margin-search">
               <div class="search-criterion">
                 <img src="/img/cross-bold.png" alt="croix" class="cross-h" id="cross"/>
-                <span id="refine">affiner les critères de recherche</span>
+                <span id="refine" th:text="#{prd.search.refine}">affiner les critères de recherche</span>
               </div>
             </div>
             <div class="col-md-12 filter-row-container-h" id="filter-row-container">
               <div th:unless="${filteredProducts}" class="row filters">
                 <div class="sous-container">
-                  <form action="#">
+                  <form action="#" th:object="${filter}" th:action="@{/products/filter}" method="POST">
 	                  <div class="col-md-12 search-row">
 	                      <div class="col-xs-12 col-sm-6 col-md-3 filter-1">
 	                        <label for="filter_1" th:text="#{prd.bank.name}">émetteur</label>
 	                        <input type="text" class="text" name="bank_name" id="filter_1"
-	                        autocomplete="off"/>
+	                        autocomplete="off" th:field="*{deliver}"/>
 	                      </div>
 	                      <div class="col-xs-12 col-sm-6 col-md-3 filter-2">
 	                        <label for="filter_2" th:text="#{prd.isin.code}">code isin</label> <input type="text" class="text" name="code_isin"
-	                        id="filter_2" autocomplete="off"/>
+	                        id="filter_2" autocomplete="off" th:field="*{isin}" />
 	                      </div>
 	                      <div class="col-xs-12 col-sm-6 col-md-3 filter-3">
 	                        <label for="filter_3" th:text="#{prd.name}">nom du produit</label> <input type="text" class="text" name="product_name"
-	                        id="filter_3" autocomplete="off"/>
+	                        id="filter_3" autocomplete="off" th:field="*{label}" />
 	                      </div>
 	                      <div class="col-xs-12 col-sm-6 col-md-3 filter-4">
 	                        <label for="filter_4" th:text="#{prd.undrl.asset}">sous-jacent</label>
 	                        <input type="text" class="text" name="base" id="filter_4"
-	                        autocomplete="off"/>
+	                        autocomplete="off" th:field="*{labelSousJacent}" />
 	                      </div>
 	                  </div>
 	                  <div class="col-md-12 col-xs-offset-2 col-sm-12 filter-search">
@@ -154,8 +155,12 @@
   <section class="follow-products">
     <div class="container">
         <div class="col-md-12 follow-body">
-          <h2>suivez au quotidien vos produits sur votre espace personnel</h2>
-          <button type="button" class="btn btn-secondary"><span th:text="#{home.create.wallet}">créer mon portefeuille</span></button>
+          <h2 th:text="#{home.wallet.teaser}">suivez au quotidien vos produits sur votre espace personnel</h2>
+		  <a href="/wallet">
+		  	<button type="button" class="btn btn-secondary">
+		  		<span th:text="#{home.create.wallet}">créer mon portefeuille</span>
+		  	</button>
+		  </a>
         </div>
     </div>
     <div class="container" id="container">
@@ -663,21 +668,50 @@
                 <h4 th:text="#{home.team}">L'équipe</h4>
             </div>
             <div class="row list-inline list-unstyled col-md-12 team">
+              <!-- Personne 1 -->
                 <div class="col-xs-4 col-sm-3 col-md-2 team-img">
                   <div class="skin">
                     <img src="/img/fondateur.png" alt="image" class="img-circle img-responsive img-team " />
                     <div class="over-team">
                       <div id="over-team1">
-                        <a href="#"><img class="more" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}"/></a>
+                        <a href="#" data-toggle="modal" data-target="#person1"><img class="more" src="/img/more-hover.png" alt="voir-plus" th:alt="#{get.more}"/></a>
                       </div>
                     </div>
+                    <!-- end skin -->
                   </div>
                     <div class="team-p grey-letters">
+                        <br />
                         <div class="team-name">Franck Magne</div>
                         <br />
                         <div class="team-role" th:text="#{home.team.role.1}">Président Fondateur</div>
                     </div>
+                    <!-- modal personne 1 -->
+                    <!-- Modal -->
+                      <div class="modal fade" id="person1" role="dialog">
+                        <div class="modal-dialog modal-lg">
+
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal"><img src="/img/croix.png" alt="close" /></button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="col-md-3">
+                                <img src="#" alt="" />
+                              </div>
+                              <div class="col-md-9">
+                                <p class="modal-main-title">Franck Magne</p>
+                                <p class="modal-title">Président fondateur</p>
+                                <p class="modal-main-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ea. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minima, vel fuga. Dolore error dignissimos magnam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, hic. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem delectus, non similique? </p>
+                                <i class="fa fa-2x fa-linkedin-square" aria-hidden="true"></i>
+                              </div>
+                            </div>
+                            <div class="modal-footer"></div>
+                          </div>
+                        </div>
+                      </div>
                 </div>
+                <!-- personne 2 -->
                 <div class="col-xs-4 col-sm-3 col-md-2 team-img">
                     <img src="/img/fondateur2.png" alt="image" class="img-circle img-responsive img-team " />
                     <div class="team-p grey-letters">
@@ -686,6 +720,7 @@
                         <div class="team-role" th:text="#{home.team.role.2}">Président Fondateur</div>
                     </div>
                 </div>
+                <!-- personne 4 -->
                 <div class="col-xs-4 col-sm-3 col-md-2 team-img">
                     <img src="/img/fondateur3.png" alt="image" class="img-circle img-responsive img-team " />
                     <div class="team-p grey-letters">
@@ -694,6 +729,7 @@
                         <div class="team-role" th:text="#{home.team.role.3}">Président Fondateur</div>
                     </div>
                 </div>
+                <!-- personne 5 -->
                 <div class="col-xs-offset-1 col-xs-4 col-sm-offset-0 col-sm-3 col-md-2 team-img">
                     <img src="/img/fondateur4.png" alt="image" class="img-circle img-responsive img-team " />
                     <div class="team-p grey-letters">
@@ -702,6 +738,7 @@
                         <div class="team-role" th:text="#{home.team.role.4}">Président Fondateur</div>
                     </div>
                 </div>
+                <!-- personne 6 -->
                 <div class="col-xs-offset-1 col-xs-4 col-sm-offset-0 col-sm-3 col-md-2 team-img">
                     <img src="/img/fondateur5.png" alt="image" class="img-circle img-responsive img-team " />
                     <div class="team-p grey-letters">
@@ -711,7 +748,7 @@
                     </div>
                 </div>
             </div>
-            <!-- <a href="http://eavest.com/" class="over">
+            <!-- <a href="/" class="over">
                 <span><img id="more-team" src="/img/more-hover.png" alt="voir-plus" /></span>
             </a> -->
         </div>
@@ -726,7 +763,7 @@
  						<ul class="list-inline list-unstyled">
  							<li><a href="mailto:contact@eavest.com">contact@eavest.com</a></li>
  							<li><a href="tel:+33142802199">+33 (1) 42 80 21 99</a></li>
- 							<li><a href="http://eavest.com/mentions-legales/"><span th:text="#{eav.legal.mention}">mentions légales</span></a></li>
+ 							<li><a href="/mentions-legales/"><span th:text="#{eav.legal.mention}">mentions légales</span></a></li>
  						</ul>
  					</small>
                     <small class="col-xs-12 col-sm-12 col-md-5 always-right">
@@ -766,7 +803,7 @@
     <script th:inline="javascript">
   	/*<![CDATA[*/
   	$(document).ready(function(){
-  	 	var productTags = [[${productNames}]];
+  	 	var productTags = [[${productPackedNames}]];
   		// var maListe = ['tata'];
   		/*console.log(productTags);*/
   		$('#find-product').autocomplete({
@@ -778,7 +815,7 @@
  	$(document).ready(function(){
   		// à décommenter KNA avant commit
   		var productTags = {
- 			data: [[${productNames}]],
+ 			data: [[${productPackedNames}]],
  			list: {
  	        maxNumberOfElements: 4,
  	        match: {
@@ -796,7 +833,7 @@
   	});
 
   	$(document).ready(function(){
-  	 	var productTags = [[${productNames}]];
+  	 	var productTags = [[${productPackedNames}]];
   		/*console.log(productTags);*/
   		$('#super-find-product').autocomplete({
  	 	 	source: productTags
@@ -836,6 +873,27 @@
   	    $( '#more-product-2, .more-product-2' ).hide();
   	  });
   	});
+
+ 	$(document).ready(function(){
+ 		// à décommenter KNA avant commit
+ 		var productNames = [[${productNames}]];
+		var bankNames = [[${bankNames}]];
+		var isinCodes = [[${isinCodes}]];
+		var bases = [[${baseNames}]];
+ 		/*console.log(productTags);*/
+ 		$('#filter_1').autocomplete({
+ 		source: bankNames
+ 		});
+		$('#filter_2').autocomplete({
+ 		source: isinCodes
+ 		});
+		$('#filter_3').autocomplete({
+ 		source: productNames
+ 		});
+		$('#filter_4').autocomplete({
+ 		source: bases
+ 		});
+ 	});
   	/*]]>*/
   	</script>
 </body>

@@ -1904,7 +1904,7 @@ section.video {
 .img-circle {
   width: 100px;
   height: 100px;
-  margin-bottom: 15px;
+  margin-bottom: 7px;
   margin-top: 10px;
 }
 
@@ -1925,6 +1925,67 @@ section.video {
   height: 100px;
   position: absolute;
   top: 65px;
+}
+
+/*MODAL TEAM*/
+.modal {
+  position: absolute;
+  top: -70px;
+  right: -1000px;
+  left: 0px;
+  left: 50px;
+  bottom: -86px;
+  z-index: 10040;
+  height: 365%;
+}
+
+.close img {
+  width: 22px;
+  margin-top: 5px;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-body {
+  padding: 0 80px;
+}
+
+.modal-main-title {
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin: 0;
+}
+
+.modal-main-p {
+  font-size: 13px;
+}
+
+.modal-body > .col-md-3 {
+  background-color: #e5e5e5;
+  height: 210px;
+}
+
+.modal-body > .col-md-9 {
+  padding: 0 45px 30px;
+}
+
+.modal-title {
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.col-md-10 > p {
+  margin: 0 0px 15px;
+}
+
+.modal-footer {
+  border: none;
 }
 
 /*PAGE CONTACT*/
