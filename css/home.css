@@ -140,6 +140,12 @@ h6 {
   border-radius: 0px;
 }
 
+.center-block {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
 .icon-close {
   display: none;
 }
@@ -156,6 +162,7 @@ h6 {
   font-size: 30px;
   margin: 3px;
   transform: translateY(6px);
+  cursor: pointer;
 }
 
 .navbar-toggle:hover {
