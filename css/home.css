@@ -847,12 +847,12 @@ a.panel-heading {
   position: relative;
 }
 
-.more-product-1, .more-product-2, .prod-accor-row, .black-block-partner, .grey-block-3, .white-block-partner, .white-block-style, .white-block-style-2, .white-bloc, .img-prod-size {
+.more-product-1, .more-product-2, .prod-accor-row, .black-block-partner, .grey-block-3, .white-block-partner, .white-block-style, .white-block-style-2, .white-bloc, .img-prod-size, .team-img {
   position: relative;
   margin: 0 auto;
 }
 
-.over a img, .over-product-row a img, .over-eavest a img, .over-agreement a img, .over-partner a img, .over-values div a img, .over-methodo div img, .over-product div img {
+.over a img, .over-product-row a img, .over-eavest a img, .over-agreement a img, .over-partner a img, .over-values div a img, .over-methodo div img, .over-product div img, .over-team  {
   position: relative;
   height: auto;
   margin: 0 auto;
@@ -911,7 +911,38 @@ a.panel-heading {
   transition: all 0.4s ease;
 }
 
-.over:hover, .over-product-row:hover, .over-blue:hover, .over:hover, .over-eavest:hover, .over-agreement:hover, .over-partner:hover, .over-values:hover, .over-methodo:hover, .over-product:hover, .over-blue:hover, .more:hover {
+.over-team {
+  position: absolute !important;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  -webkit-text-decoration: none;
+  -moz-text-decoration: none;
+  -ms-text-decoration: none;
+  -o-text-decoration: none;
+  text-decoration: none;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  -ms-opacity: 0;
+  -o-opacity: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.over:hover, .over-product-row:hover, .over-blue:hover, .over:hover, .over-eavest:hover, .over-agreement:hover, .over-partner:hover, .over-values:hover, .over-methodo:hover, .over-product:hover, .over-blue:hover, .more:hover, .over-team:hover {
   -webkit-opacity: 0.92;
   -moz-opacity: 0.92;
   -ms-opacity: 0.92;
@@ -919,17 +950,38 @@ a.panel-heading {
   opacity: 0.92;
 }
 
-.over a, .over-product-row a, .over-eavest a, .over-agreement a, .over-partner a, .over-values a, .over-methodo a, .over-product a {
+.over a, .over-product-row a, .over-eavest a, .over-agreement a, .over-partner a, .over-values a, .over-methodo a, .over-product a, .over-team a {
   display: block;
   margin: 0 auto;
   width: 75px;
   text-align: -webkit-center;
 }
 
+#over-team1 {
+  position: relative;
+  cursor: pointer;
+  padding: 13px 0px 13px 0px;
+}
+
 #more-product-1, #more-product-2 {
   position: relative;
   cursor: pointer;
   padding: 70px 0px 70px 0px;
+}
+
+.skin {
+	position:relative;
+	border-radius:50%;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+  width: 100px;
+  height: 100px;
+	overflow:hidden;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s  ease;
+	-o-transition: all .3s  ease;
+	-ms-transition: all .3s  ease;
+	transition: all .3s ease;
 }
 
 .more-product {
@@ -1854,6 +1906,10 @@ section.video {
   height: 100px;
   margin-bottom: 15px;
   margin-top: 10px;
+}
+
+.img-team {
+  transform: translateY(-10px);
 }
 
 .team-name {
