@@ -189,19 +189,35 @@ $(document).on('focus', 'input', function () {
    $('.contact').addClass('no-shadow');
 });
 
-
+// hide open close icons on menu hamburger on small size
 $(function() {
   $('#icons').click(function(){
     $('.icon-bar').toggleClass('icon-hide');
     $('.icon-close').toggleClass('icon-show');
   })
 
+
+
+  // $('.panel-title a').click(function() {
+  //   $('.faq-panel-heading').toggleClass('active-title');
+  // })
+
+  $('.panel-title a').click(function() {
+    $('.question1').removeClass('active-title');
+    $('.panel-title').removeClass('active-title');
+    $(this).parents('.panel-title').addClass('active-title');
+
+    $('.panel-title').removeClass('active-title'); //just to make a visual sense
+    $(this).parent().addClass('active-title'); //just to make a visual sense
+ });
+
+})
+
+// collapse question 1 open by default
+$(window).load(function() {
   $('#collapse1').collapse({
     show: true
   })
-
-  // $('.panel-title a').click(function() {
-  //   $('.faq-panel-heading').toggleClass('.active-title');
-  // })
-
-})
+  $('.question1').addClass('active-title');
+  $(this).parents('.question1').removeClass('active-title');
+});

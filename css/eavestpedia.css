@@ -86,10 +86,10 @@ header p {
 }
 
 .panel-title > a {
-  color: black !important;
+  color: black;
 }
 
-.active-title a{
+.active-title a {
   color: blue !important;
 }
 
