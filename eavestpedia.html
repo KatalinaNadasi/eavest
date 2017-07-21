@@ -615,5 +615,30 @@
     <script type="text/javascript" src="html5lightbox/html5lightbox.js"></script>
     <!-- Script for autocompleting the filter text box for searching products -->
 
+    <script>
+    // collapse question 1 open by default
+    $(window).load(function() {
+      $('#collapse1').collapse({
+        show: true
+      })
+      $('.question1').addClass('active-title');
+      $(this).parents('.question1').removeClass('active-title');
+    });
+
+    // blue panel title when modal is open
+    $(function() {
+      $('.panel-title a').click(function() {
+        $('.question1').removeClass('active-title');
+        $('.panel-title').removeClass('active-title');
+        $(this).parents('.panel-title').addClass('active-title');
+
+        $('.panel-title').removeClass('active-title'); //just to make a visual sense
+        $(this).parent().addClass('active-title'); //just to make a visual sense
+     });
+    })
+
+
+    </script>
+
 </body>
 </html>
